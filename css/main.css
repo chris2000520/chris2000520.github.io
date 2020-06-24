@@ -17,10 +17,10 @@
   --btn-default-hover-bg: transparent;
   --btn-default-hover-color: var(--link-hover-color);
   --btn-default-hover-border-color: var(--link-hover-color);
-  --highlight-background: #adc4de;
-  --highlight-foreground: #414242;
-  --highlight-gutter-background: #a2b7ce;
-  --highlight-gutter-foreground: #4b4f51;
+  --highlight-background: #2b303b;
+  --highlight-foreground: #c0c5ce;
+  --highlight-gutter-background: #393e49;
+  --highlight-gutter-foreground: #b1b6bf;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -372,90 +372,79 @@ body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line-last {
   transform: rotate(45deg);
   top: -5px;
 }
-/*
+/* Ocean Dark Theme */
+/* https://github.com/gavsiu */
+/* Original theme - https://github.com/chriskempson/base16 */
 
-Style with support for rainbow parens
+/* Ocean Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #65737e;
+}
 
-*/
+/* Ocean Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #bf616a;
+}
+
+/* Ocean Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #d08770;
+}
+
+/* Ocean Yellow */
+.hljs-attribute {
+  color: #ebcb8b;
+}
+
+/* Ocean Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #a3be8c;
+}
+
+/* Ocean Blue */
+.hljs-title,
+.hljs-section {
+  color: #8fa1b3;
+}
+
+/* Ocean Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #b48ead;
+}
 
 .hljs {
   display: block;
   overflow-x: auto;
+  background: #2b303b;
+  color: #c0c5ce;
   padding: 0.5em;
-  background: rgb(173,196,222);
-  color: #414242;
-}
-
-
-.hljs-comment,
-.hljs-quote {
-  color: #008b8b;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-type,
-.hljs-addition {
-  color: #cc99cc;
-}
-
-.hljs-number,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #f99157;
-}
-
-.hljs-string,
-.hljs-doctag,
-.hljs-regexp {
-  color: #DB7093;
-}
-
-.hljs-title,
-.hljs-name,
-.hljs-section,
-.hljs-built_in {
-  color: #b5bd68;
-}
-
-.hljs-variable,
-.hljs-template-variable,
-.hljs-selector-id,
-.hljs-class .hljs-title {
-   color: #ffcc66;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-subst,
-.hljs-meta,
-.hljs-link {
-  color: #f99157;
-}
-
-.hljs-deletion {
-  color: #dc322f;
-}
-
-.hljs-formula {
-  background: #eee8d5;
-}
-
-.hljs-attr,
-.hljs-attribute {
-  color: #81a2be;
 }
 
 .hljs-emphasis {
   font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
 }
 
 .highlight:hover .copy-btn,
@@ -1412,7 +1401,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fff;
+  background: #ff74ec;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
