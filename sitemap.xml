@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhaowuya.tech/about/index.html</loc>
+    
+    <lastmod>2020-06-24T10:51:42.532Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhaowuya.tech/archives/index.html</loc>
     
     <lastmod>2020-06-24T07:30:42.184Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://zhaowuya.tech/tags/index.html</loc>
     
     <lastmod>2020-06-24T07:29:03.217Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhaowuya.tech/about/index.html</loc>
-    
-    <lastmod>2020-06-24T07:28:40.038Z</lastmod>
     
   </url>
   
