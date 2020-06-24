@@ -17,10 +17,10 @@
   --btn-default-hover-bg: transparent;
   --btn-default-hover-color: var(--link-hover-color);
   --btn-default-hover-border-color: var(--link-hover-color);
-  --highlight-background: #d3d3d3;
+  --highlight-background: #adc4de;
   --highlight-foreground: #414242;
-  --highlight-gutter-background: #c4c4c4;
-  --highlight-gutter-foreground: #4f5050;
+  --highlight-gutter-background: #a2b7ce;
+  --highlight-gutter-foreground: #4b4f51;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -382,14 +382,14 @@ Style with support for rainbow parens
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #D3D3D3;
+  background: rgb(173,196,222);
   color: #414242;
 }
 
 
 .hljs-comment,
 .hljs-quote {
-  color: #90EE90;
+  color: #008b8b;
   font-style: italic;
 }
 
@@ -410,7 +410,7 @@ Style with support for rainbow parens
 .hljs-string,
 .hljs-doctag,
 .hljs-regexp {
-  color: #8abeb7;
+  color: #DB7093;
 }
 
 .hljs-title,
@@ -1412,7 +1412,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #948fff;
+  background: #fff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
