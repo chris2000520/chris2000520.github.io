@@ -1413,7 +1413,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ab1857;
+  background: #743944;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1612,7 +1612,7 @@ pre code {
   font-size: 0.8125em;
 }
 .footer {
-  color: #999;
+  color: #eff1f4;
   font-size: 0.875em;
   padding: 20px 0;
 }
@@ -2764,7 +2764,7 @@ ul.breadcrumb li + li:last-child {
   padding: initial;
 }
 .post-block {
-  background: var(--content-bg-color);
+  background: rgba(255,255,255,0.9);
   border-radius: 15px 15px 15px 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   padding: 40px;
@@ -2782,6 +2782,12 @@ ul.breadcrumb li + li:last-child {
   padding: 40px;
 }
 .tabs-comment {
+  background-image: url("https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255,255,255,0);
+  resize: vertical;
   margin-top: 1em;
 }
 .content {
@@ -2869,4 +2875,28 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+body {
+  background: url("https://s1.ax1x.com/2020/06/25/NDSMfs.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#veditor {
+  background-image: url("https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255,255,255,0);
+  resize: vertical;
 }
