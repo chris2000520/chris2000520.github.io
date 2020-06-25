@@ -1353,6 +1353,9 @@ pre code {
   color: #999;
   padding: 15px 10px;
   text-align: center;
+  background: url("/images/pic.png");
+  box-shadow: none;
+  background-repeat: round;
 }
 .cc-license {
   margin-top: 10px;
@@ -1401,7 +1404,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5bffff;
+  background: #e8ff67;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
