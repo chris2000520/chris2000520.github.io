@@ -1349,13 +1349,19 @@ pre code {
 .use-motion .menu-item {
   opacity: 0;
 }
+.sidebar {
+  background: rgba(255,255,255,0);
+}
 .sidebar-inner {
-  color: #999;
-  padding: 15px 10px;
+  color: $pink;
+  padding: 15px 50px;
   text-align: center;
-  background: url("/images/pic.png");
-  box-shadow: none;
-  background-repeat: round;
+  background: rgba(43,48,59,0.5);
+}
+.sidebar-inner p,
+.sidebar-inner span,
+.sidebar-inner a {
+  color: #ffc0cb;
 }
 .cc-license {
   margin-top: 10px;
@@ -1404,7 +1410,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e8ff67;
+  background: #4255aa;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1459,7 +1465,7 @@ pre code {
 }
 @media (max-width: 767px) {
   #sidebar-dimmer {
-    background: #000;
+    background: rgba(43,48,59,0.5);
     display: block;
     height: 100%;
     left: 0;
