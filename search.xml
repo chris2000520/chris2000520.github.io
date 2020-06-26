@@ -26,28 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>你好世界</title>
-    <url>/2020/04/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是我的第一篇博客。 戳一下 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 就能获取更多信息。 如果在使用Hexo的时候遇到了任何问题。你都能在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">麻烦刑场</a> 找到答案，或者你也可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>找到答案。</p>
-<a id="more"></a>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="写一篇新的稿子"><a href="#写一篇新的稿子" class="headerlink" title="写一篇新的稿子"></a>写一篇新的稿子</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt;: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="进行本地预览"><a href="#进行本地预览" class="headerlink" title="进行本地预览"></a>进行本地预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何搭建搭建基于Hexo的个人博客</title>
     <url>/2020/01/20/build%20my%20blog/</url>
     <content><![CDATA[<p>想做什么就一定把它做好了！</p>
@@ -113,6 +91,25 @@
       </tags>
   </entry>
   <entry>
+    <title>关于去除SQLServer中的红色下划线</title>
+    <url>/2020/04/05/sqlserver/</url>
+    <content><![CDATA[<p>这几天正在入门SQL，跟老师学的，老师用的是Microsoft的SQLServer，我也就跟着下了，很简单，直接去微软下载，然后接着下载<a href="https://baike.baidu.com/item/SSMS" target="_blank" rel="noopener">SSMS</a>，按照官方文档操作，一个最基本的人物表就出来了。</p>
+<a id="more"></a>
+<p>但是按照老师的方法来，明明已经添加过了<code>sno</code>，<code>sname</code>，<code>sdept</code>，但是查表的时候还是会出现红色下划线，强迫症表示很不爽。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">English:Invalid object name <span class="string">"xxx"</span>,Invalid column name <span class="string">"xxx"</span></span><br><span class="line">中文:对象名<span class="string">"xxx"</span>无效，列名<span class="string">"xxx"</span>无效,列名<span class="string">"xxx"</span>无效（有多少列名就有多少无效的）</span><br></pre></td></tr></table></figure>
+<p>最关键的是我根本没有写错！不过最后看<a href="https://zhdaa.github.io/2018/10/24/SQLServer%E5%88%97%E5%90%8D%E6%97%A0%E6%95%88/" target="_blank" rel="noopener">大佬的博客</a>，茅塞顿开！原来是因为SQLServer的<a href="https://baike.baidu.com/item/IntelliSense" target="_blank" rel="noopener">intellisense</a>（智能感知功能）没有感知到更改，需要重新整理一下。因为我不需要这个东西，直接在工具（TOOLS）里的选项（Options）给关了。当然也有另一个方法，用快捷键即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"Ctrl+Shift+R"</span></span><br></pre></td></tr></table></figure>
+
+
+<p>参考博客（大同小异）：</p>
+<p><a href="https://blog.csdn.net/qq_39019865/article/details/78476604?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">SQL Server列名显示无效</a></p>
+<p><a href="https://blog.csdn.net/bigheadsheep/article/details/7872299" target="_blank" rel="noopener">SQL Server2008 列名显示无效</a></p>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于Hexo博客上添加基于Live2D的看板娘</title>
     <url>/2020/04/03/live2d/</url>
     <content><![CDATA[<p>自己辛辛苦苦总结的，走了不少坑。</p>
@@ -150,6 +147,57 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你好世界</title>
+    <url>/2020/04/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是我的第一篇博客。 戳一下 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 就能获取更多信息。 如果在使用Hexo的时候遇到了任何问题。你都能在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">麻烦刑场</a> 找到答案，或者你也可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>找到答案。</p>
+<a id="more"></a>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="写一篇新的稿子"><a href="#写一篇新的稿子" class="headerlink" title="写一篇新的稿子"></a>写一篇新的稿子</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt;: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="进行本地预览"><a href="#进行本地预览" class="headerlink" title="进行本地预览"></a>进行本地预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回溯法经典例题</title>
+    <url>/2020/06/16/magicnumber/</url>
+    <content><![CDATA[<p>编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。</p>
+<a id="more"></a>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int number = <span class="number">0</span>;</span><br><span class="line">int visited[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">void makenumber(int n) &#123;</span><br><span class="line">    if (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">"ERROR!"</span> &lt;&lt; endl;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if (n == <span class="number">10</span>) &#123;</span><br><span class="line">        cout &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">        if (!visited[j]) &#123;</span><br><span class="line">            int temp = number;</span><br><span class="line">            temp = temp * <span class="number">10</span> + j;</span><br><span class="line">            if (temp % n == <span class="number">0</span>) &#123;</span><br><span class="line">                number = temp;</span><br><span class="line">                visited[j] = <span class="number">1</span>;</span><br><span class="line">                makenumber(n + <span class="number">1</span>);</span><br><span class="line">                number = number / <span class="number">10</span>;</span><br><span class="line">                visited[j] = <span class="number">0</span>;<span class="comment">//BackTracking</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    makenumber(<span class="number">1</span>);</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本题主要是采用了递归回溯法，读者需自行分析。我没有进行数学分析，只是盲目的暴力枚举。</p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>清明追思 意满九州</title>
+    <url>/2020/04/04/sadday/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">“ 已加密，请输入密码。”</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="85bdefad1dd5a02f5d4f56afa67ea6d7986c4cd84b43f9fca1a0d5e3cb1afbde">8540bf819fbef0a82ea1cfe51446b7e3b1a264f9dc38c4afa97239f845a31f169a8442c47aa8c7b6da20da0f774f47f25d7420d128f3825ec847b321f784ff86a50ba868649e04261000cd3e5061a5f0ea5113aa7819b2650413306bc1a42237079d09e6bfa9a6ff3051183b607ea95ff8c9796c69d2dca4e6765fe9081b33bad6cbd423113f82a871bec9f0684502e90970c29ed39757fcbf2d5ce3eff0568d4ce0e299e9337d96baf89f09515a0704fe7234c270cf67642705dc19b41ee34eef711b50cdc7bad40b09f67089b11abccc50175d316355d4b2be654c966669f4c6d2a093997b34c8877cda0ae59d588570d5f94bf6d30bd35d37e00a84136b2ebd0e8b2dd5fa3ba5e436dbcdb709e423969fd2e4fdcfef5831a1d0e51318f7be8ce7cb5014d95151027090069f150a7306123dc2bde3a18159b01cdc788c266eff10e71ead287239980b5c83ec6473850c261f0c9a04f99934e4850d51175499449f510d617c0d5cdfe4cfef308f19f1cbd716693ae6d9b3b3b1793edb14818ea3b220b213de161b143337e62fef1c8f374e7c5a2d528f13da3ff873136019910101f0f578cba0b5c9e5f2f22e8182df0a4164846257efe69e2a0aaa8700a87f12f46daeb6d020e2c2cb39923718425a13d55e582c44842fcc0571da0c3b6359f485fe63b393f5cdf9972ea8957f216d0aa08dbcae282a6da6d423cec18f5353b46e145cdac39c1c786e3a6f39edc6f57258e7f9b836e0c228ac272ff1ddeb9c2b8c142b0a53f7f6dab48d961640cbe7c8f40a9de164304042b52378fc38b4fcfc1933f733c89dc1a943d154c1b8d281aa62845dfc15cf3d7e775e451131f279df1c6e2358ba7c668d7470736de91f32000cc402ebc3e126dfd27f2d08127387ef5cbe57dc088ca968dce16d8d2bd3207fab450b7bd2945ae565495e10ccb80ea3309987abc0977f13d414f518b0db0d38a4e6539afc3627de626c7649ee30eea3cf063d87f6541831aab6fd8e3fd89da2b0dd940182b2f24e8483729781b28d97107ff1fd2c3eb1189d2f7cfe8232183d7b37f4194f6bcd22b5983afe8e5726bc47a15ecdd5e9218ef1495c58a0f22723e7ff696eacb8667965eb0575d1c5a792bdd70eff809c56c5517954d9b39291c554f99c176d15d1ea1f774d7ec3ce14cec257e122e2321e0ae21c9030db9dbcdf8cbb939ff3165dc37f0ebcc3060375dff41add62e9a143e7afc0157b5c4cbdc45db8438008c1df948bd4453416f54870d04e3f16b069d90a1b01b0dc2e0c2c16bcf37bc7b45e4e5dee06cd29cd088e1343a66c4c16f3ad2af2a1df3a4103b4850dd5adc1d1ce3bd240b59d30ac483efd4e8f27ffcbd8f627b28b31b927c9f9f34c58e621b16daabc8e63256448f70e2f379190df507a21a884af70499e8399312997f04351e0cd3f6e23df3290df830520410bb9ecd1225daf7ecd2c716bbb6028727c3cb577ee3c19e73f6d28c411ab275fd2f6447ea24334ce2570af70d3e846f6ce8d5af4c78e7aabee2dcdbe76441ed7d7ab48080c8a985a1a248b76c9f550493a46eb29cecb5250a171e88e8ac79c18ac4f09e75d590806580a992ea066b64dc3b9e490855ed38ecdd92f52facab28ba3643072d4e8591bd9c685e083cf2a4f7989e1ad5d734bc3c8cf5cf950b3bd738177b0a00cda1c195d6a212a52609bc1cfff785a6b8976885f017f5005082c57bbad3621df2c176f4c43b2c1f9add1143086b572793acc4ab97f3a0e5b223652ba6cdee79a02b83fe72cd6d23d73ba6e747dec61df13ca97a584b174db664ac056fff8a207bbfcfb85dd5565c5e52c37fb58fd48ee8365cdf02d75b734084c4bee659dabe6fc7404dfd88d530d5ced5b17dc5661380de6f135b5c38dc4f923fc3f8956d0c567a31c117e1bdd82fcb28d0bbc708848cca4b1a349ac94e56f984444049a0b8a229cf140cd602f51d22b09c6fce62f4ec64b683ef970c02e535849f605b88eecfbfffccd8ebb716cb4cd204cd080888f4768fc1638cd9330843fe4dbd41f01036c5185862152dd5c39595ea7eacf599be03dc860848f5c3635a2abfdfa135cad2c71fb5d3622b8e00692664f7462ace40abf84b8f5f3de0ac7527bc5cd66cb22de9e6da260feeb6864f50bdaeec1bc7133060f8a0d8ec94dad35a47c78695a93c0c24c0981f04c474d272710ab26e044194bcb4bbeada2cba8e5848b2f4f1fb137cc73f46fa7b18583f5930cf3bb8e268170e18f1faac5289b8806897623c9c261b1234c6e96cfaf893db93d414152376ff90bc8bf8f98b3ed1cab31ab90f3db64c88c481faf0cfd293ed09bb6a4bfefc2293326c011e679541f7052a3948805690c17fe8458a454c0f499dce6667f0e81950a737f76d0768d4c1cd74a0311d186246b083f6a474266d2579ea06cd9af8f762ed6335d8ffbc6e3f60957fca00793152299e6cb81f43c8c45b15616cd89c07575e0aef21d98d4fd6469cdf73b6cde19703d86210e16273095725c18014e4dd0430d0c53b0986edc9031ed7f466957dd337e75afd960e83a94780c2ec6ba74642090cd18541cf204d62534d21a13fbd6738058e157a99de02aa6887b8262b9edb7ad1e21cba407b5e64a6c3f4b2fb28a8091fc5d1732186719922105074f996be26d673b19379c7783089d39c2283e2a221525ea38e2b6f19a4de5eb3a03c28773508d1845f91bb18849e6b5e64d4a0823d50e3c378ca889ad9901036220eea7ed67068f160fc3c859f58c0c234c60ecd928e6fe629d074eaa4702e09b71e93e20ac5102bf618a73dc883f8ef33dbb43d39ee6d430ce2a727339db3b9b06ef1637f80ab35a113511cdac0be8104e21b0e38b40a5553b9f9e1f1aef76dd8a9fb5fa89a4fa193046bdcac221c067943551709db84c11db6889efa436aa91d1e48fab97c151f8ac83475d4ed2df7339e45d741c217cbd28c7c4d7b864a8f42d43bf22270ae9f0968920d6f4546c5df05308f3bc9b71b70afb209a3db943b154f7d02f9b62a9d10d3e7249c7cf2549c12c1b803d7494a9bd2269801d6c8b59972ab7cd100fc2866d86ff6a697630f97cf299d50cdb9244f790ae7ea2c84afdc4f6a7a52b0e91b57880f0b166f6dd22f524d280bc3102d627ea324601db15ea9132c89a89c83b1f1336282dffded5a8602671e2c2e1e65af2</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -272,57 +320,9 @@
       </tags>
   </entry>
   <entry>
-    <title>清明追思 意满九州</title>
-    <url>/2020/04/04/sadday/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">“ 已加密，请输入密码。”</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="85bdefad1dd5a02f5d4f56afa67ea6d7986c4cd84b43f9fca1a0d5e3cb1afbde">8540bf819fbef0a82ea1cfe51446b7e3b1a264f9dc38c4afa97239f845a31f169a8442c47aa8c7b6da20da0f774f47f25d7420d128f3825ec847b321f784ff86a50ba868649e04261000cd3e5061a5f0ea5113aa7819b2650413306bc1a42237079d09e6bfa9a6ff3051183b607ea95ff8c9796c69d2dca4e6765fe9081b33bad6cbd423113f82a871bec9f0684502e90970c29ed39757fcbf2d5ce3eff0568d4ce0e299e9337d96baf89f09515a0704fe7234c270cf67642705dc19b41ee34eef711b50cdc7bad40b09f67089b11abccc50175d316355d4b2be654c966669f4c6d2a093997b34c8877cda0ae59d588570d5f94bf6d30bd35d37e00a84136b2ebd0e8b2dd5fa3ba5e436dbcdb709e423969fd2e4fdcfef5831a1d0e51318f7be8ce7cb5014d95151027090069f150a7306123dc2bde3a18159b01cdc788c266eff10e71ead287239980b5c83ec6473850c261f0c9a04f99934e4850d51175499449f510d617c0d5cdfe4cfef308f19f1cbd716693ae6d9b3b3b1793edb14818ea3b220b213de161b143337e62fef1c8f374e7c5a2d528f13da3ff873136019910101f0f578cba0b5c9e5f2f22e8182df0a4164846257efe69e2a0aaa8700a87f12f46daeb6d020e2c2cb39923718425a13d55e582c44842fcc0571da0c3b6359f485fe63b393f5cdf9972ea8957f216d0aa08dbcae282a6da6d423cec18f5353b46e145cdac39c1c786e3a6f39edc6f57258e7f9b836e0c228ac272ff1ddeb9c2b8c142b0a53f7f6dab48d961640cbe7c8f40a9de164304042b52378fc38b4fcfc1933f733c89dc1a943d154c1b8d281aa62845dfc15cf3d7e775e451131f279df1c6e2358ba7c668d7470736de91f32000cc402ebc3e126dfd27f2d08127387ef5cbe57dc088ca968dce16d8d2bd3207fab450b7bd2945ae565495e10ccb80ea3309987abc0977f13d414f518b0db0d38a4e6539afc3627de626c7649ee30eea3cf063d87f6541831aab6fd8e3fd89da2b0dd940182b2f24e8483729781b28d97107ff1fd2c3eb1189d2f7cfe8232183d7b37f4194f6bcd22b5983afe8e5726bc47a15ecdd5e9218ef1495c58a0f22723e7ff696eacb8667965eb0575d1c5a792bdd70eff809c56c5517954d9b39291c554f99c176d15d1ea1f774d7ec3ce14cec257e122e2321e0ae21c9030db9dbcdf8cbb939ff3165dc37f0ebcc3060375dff41add62e9a143e7afc0157b5c4cbdc45db8438008c1df948bd4453416f54870d04e3f16b069d90a1b01b0dc2e0c2c16bcf37bc7b45e4e5dee06cd29cd088e1343a66c4c16f3ad2af2a1df3a4103b4850dd5adc1d1ce3bd240b59d30ac483efd4e8f27ffcbd8f627b28b31b927c9f9f34c58e621b16daabc8e63256448f70e2f379190df507a21a884af70499e8399312997f04351e0cd3f6e23df3290df830520410bb9ecd1225daf7ecd2c716bbb6028727c3cb577ee3c19e73f6d28c411ab275fd2f6447ea24334ce2570af70d3e846f6ce8d5af4c78e7aabee2dcdbe76441ed7d7ab48080c8a985a1a248b76c9f550493a46eb29cecb5250a171e88e8ac79c18ac4f09e75d590806580a992ea066b64dc3b9e490855ed38ecdd92f52facab28ba3643072d4e8591bd9c685e083cf2a4f7989e1ad5d734bc3c8cf5cf950b3bd738177b0a00cda1c195d6a212a52609bc1cfff785a6b8976885f017f5005082c57bbad3621df2c176f4c43b2c1f9add1143086b572793acc4ab97f3a0e5b223652ba6cdee79a02b83fe72cd6d23d73ba6e747dec61df13ca97a584b174db664ac056fff8a207bbfcfb85dd5565c5e52c37fb58fd48ee8365cdf02d75b734084c4bee659dabe6fc7404dfd88d530d5ced5b17dc5661380de6f135b5c38dc4f923fc3f8956d0c567a31c117e1bdd82fcb28d0bbc708848cca4b1a349ac94e56f984444049a0b8a229cf140cd602f51d22b09c6fce62f4ec64b683ef970c02e535849f605b88eecfbfffccd8ebb716cb4cd204cd080888f4768fc1638cd9330843fe4dbd41f01036c5185862152dd5c39595ea7eacf599be03dc860848f5c3635a2abfdfa135cad2c71fb5d3622b8e00692664f7462ace40abf84b8f5f3de0ac7527bc5cd66cb22de9e6da260feeb6864f50bdaeec1bc7133060f8a0d8ec94dad35a47c78695a93c0c24c0981f04c474d272710ab26e044194bcb4bbeada2cba8e5848b2f4f1fb137cc73f46fa7b18583f5930cf3bb8e268170e18f1faac5289b8806897623c9c261b1234c6e96cfaf893db93d414152376ff90bc8bf8f98b3ed1cab31ab90f3db64c88c481faf0cfd293ed09bb6a4bfefc2293326c011e679541f7052a3948805690c17fe8458a454c0f499dce6667f0e81950a737f76d0768d4c1cd74a0311d186246b083f6a474266d2579ea06cd9af8f762ed6335d8ffbc6e3f60957fca00793152299e6cb81f43c8c45b15616cd89c07575e0aef21d98d4fd6469cdf73b6cde19703d86210e16273095725c18014e4dd0430d0c53b0986edc9031ed7f466957dd337e75afd960e83a94780c2ec6ba74642090cd18541cf204d62534d21a13fbd6738058e157a99de02aa6887b8262b9edb7ad1e21cba407b5e64a6c3f4b2fb28a8091fc5d1732186719922105074f996be26d673b19379c7783089d39c2283e2a221525ea38e2b6f19a4de5eb3a03c28773508d1845f91bb18849e6b5e64d4a0823d50e3c378ca889ad9901036220eea7ed67068f160fc3c859f58c0c234c60ecd928e6fe629d074eaa4702e09b71e93e20ac5102bf618a73dc883f8ef33dbb43d39ee6d430ce2a727339db3b9b06ef1637f80ab35a113511cdac0be8104e21b0e38b40a5553b9f9e1f1aef76dd8a9fb5fa89a4fa193046bdcac221c067943551709db84c11db6889efa436aa91d1e48fab97c151f8ac83475d4ed2df7339e45d741c217cbd28c7c4d7b864a8f42d43bf22270ae9f0968920d6f4546c5df05308f3bc9b71b70afb209a3db943b154f7d02f9b62a9d10d3e7249c7cf2549c12c1b803d7494a9bd2269801d6c8b59972ab7cd100fc2866d86ff6a697630f97cf299d50cdb9244f790ae7ea2c84afdc4f6a7a52b0e91b57880f0b166f6dd22f524d280bc3102d627ea324601db15ea9132c89a89c83b1f1336282dffded5a8602671e2c2e1e65af2</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>回溯法经典例题</title>
-    <url>/2020/06/16/magicnumber/</url>
-    <content><![CDATA[<p>编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。</p>
-<a id="more"></a>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int number = <span class="number">0</span>;</span><br><span class="line">int visited[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">void makenumber(int n) &#123;</span><br><span class="line">    if (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">"ERROR!"</span> &lt;&lt; endl;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if (n == <span class="number">10</span>) &#123;</span><br><span class="line">        cout &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">        if (!visited[j]) &#123;</span><br><span class="line">            int temp = number;</span><br><span class="line">            temp = temp * <span class="number">10</span> + j;</span><br><span class="line">            if (temp % n == <span class="number">0</span>) &#123;</span><br><span class="line">                number = temp;</span><br><span class="line">                visited[j] = <span class="number">1</span>;</span><br><span class="line">                makenumber(n + <span class="number">1</span>);</span><br><span class="line">                number = number / <span class="number">10</span>;</span><br><span class="line">                visited[j] = <span class="number">0</span>;<span class="comment">//BackTracking</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    makenumber(<span class="number">1</span>);</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>本题主要是采用了递归回溯法，读者需自行分析。我没有进行数学分析，只是盲目的暴力枚举。</p>
-]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于去除SQLServer中的红色下划线</title>
-    <url>/2020/04/05/sqlserver/</url>
-    <content><![CDATA[<p>这几天正在入门SQL，跟老师学的，老师用的是Microsoft的SQLServer，我也就跟着下了，很简单，直接去微软下载，然后接着下载<a href="https://baike.baidu.com/item/SSMS" target="_blank" rel="noopener">SSMS</a>，按照官方文档操作，一个最基本的人物表就出来了。</p>
-<a id="more"></a>
-<p>但是按照老师的方法来，明明已经添加过了<code>sno</code>，<code>sname</code>，<code>sdept</code>，但是查表的时候还是会出现红色下划线，强迫症表示很不爽。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">English:Invalid object name <span class="string">"xxx"</span>,Invalid column name <span class="string">"xxx"</span></span><br><span class="line">中文:对象名<span class="string">"xxx"</span>无效，列名<span class="string">"xxx"</span>无效,列名<span class="string">"xxx"</span>无效（有多少列名就有多少无效的）</span><br></pre></td></tr></table></figure>
-<p>最关键的是我根本没有写错！不过最后看<a href="https://zhdaa.github.io/2018/10/24/SQLServer%E5%88%97%E5%90%8D%E6%97%A0%E6%95%88/" target="_blank" rel="noopener">大佬的博客</a>，茅塞顿开！原来是因为SQLServer的<a href="https://baike.baidu.com/item/IntelliSense" target="_blank" rel="noopener">intellisense</a>（智能感知功能）没有感知到更改，需要重新整理一下。因为我不需要这个东西，直接在工具（TOOLS）里的选项（Options）给关了。当然也有另一个方法，用快捷键即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"Ctrl+Shift+R"</span></span><br></pre></td></tr></table></figure>
-
-
-<p>参考博客（大同小异）：</p>
-<p><a href="https://blog.csdn.net/qq_39019865/article/details/78476604?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">SQL Server列名显示无效</a></p>
-<p><a href="https://blog.csdn.net/bigheadsheep/article/details/7872299" target="_blank" rel="noopener">SQL Server2008 列名显示无效</a></p>
-]]></content>
-      <tags>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>个人博客图片存储问题</title>
     <url>/2020/06/25/solvepic/</url>
-    <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/06/26/NroHzD.png" alt="NroHzD.png"></p>
+    <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/06/26/NswEWV.png" alt="NswEWV.png"></p>
 <a id="more"></a>
 
 <h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
