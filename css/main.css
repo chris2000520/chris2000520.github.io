@@ -1425,7 +1425,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cd8158;
+  background: #9188ee;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2862,7 +2862,7 @@ ul.breadcrumb li + li:last-child {
   background: rgba(255,255,255,0.9);
 }
 body {
-  background: url("https://imgchr.com/i/NsXFWn");
+  background: url("/images/back.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
