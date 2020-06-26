@@ -1425,7 +1425,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b5ffff;
+  background: #ffffc8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2889,6 +2889,16 @@ body {
 #valine-comments .vcards .vcard .vh .vcard {
   border: none;
   box-shadow: none;
+}
+img.vimg {
+  transition: all 1s /* 旋转时间为 1s */;
+}
+img.vimg:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
 }
 .moon-menu,
 .moon-menu-bg,
