@@ -3,7 +3,7 @@
   <entry>
     <title>个人博客图片存储问题</title>
     <url>/2020/06/25/solvepic/</url>
-    <content><![CDATA[<p><a href="https://imgchr.com/i/wH3vKx" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/21/wH3vKx.png" alt="wH3vKx.png"></a></p>
+    <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/06/26/NsOY5j.jpg" alt="NsOY5j.jpg"></p>
 <a id="more"></a>
 
 <h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
