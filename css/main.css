@@ -1489,7 +1489,7 @@ pre code {
   color: #84b8e0;
 }
 .site-brand-container {
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 0px 0px;
 }
 .cc-license {
   margin-top: 10px;
@@ -1538,7 +1538,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c475f2;
+  background: #c9ff70;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
