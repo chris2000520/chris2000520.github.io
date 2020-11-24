@@ -311,7 +311,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.1k</span>
+              <span>8.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -362,6 +362,7 @@
 <p>安装成功后，GBSDBContext.cs 就可顺利编译。</p>
 <h2 id="配置文件-Web-config"><a href="#配置文件-Web-config" class="headerlink" title="配置文件 Web.config"></a>配置文件 Web.config</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">connectionStrings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">"GBSDBContext"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">connectionString</span>=<span class="string">"Data Source=(LocalDb)\MSSQLLocalDB;</span></span></span><br><span class="line"><span class="tag"><span class="string">    AttachDbFilename=|DataDirectory|\GBSDB.mdf;</span></span></span><br><span class="line"><span class="tag"><span class="string">    Initial Catalog=GBS;</span></span></span><br><span class="line"><span class="tag"><span class="string">    Integrated Security=True"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">providerName</span>=<span class="string">"System.Data.SqlClient"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">connectionStrings</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p>把这些放在Web.config中<code>&lt;configuration&gt;&lt;/configuration&gt;</code>标签里</p>
 <ul>
 <li>GBSDBContext 是数据库上下文。</li>
 <li>GBSDB.mdf 是数据库文件名(存放在 app_data 中)，需要手动添加现有项到解决方案资源管- 理器中，才看得见。</li>
