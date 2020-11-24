@@ -23,6 +23,20 @@
       </tags>
   </entry>
   <entry>
+    <title>smallproblem</title>
+    <url>/2020/11/25/smallproblem/</url>
+    <content><![CDATA[<p>Hexo本地预览与发布的效果不一样</p>
+<a id="more"></a>
+
+<p>最近一直在修改自己的博客，提升访问速度，突然有一天，我在本地预览的颜色和样式都和预期的一样，但是成功上传之后还是没变化？🤔我直接挠头，按浏览器左上角的刷新按钮也没用，于是上网搜索。恍然大悟，原来需要对浏览器强制刷新！基本的用法我居然不知道，惭愧惭愧。</p>
+<p><kbd>Shift</kbd>+<kbd>F5</kbd></p>
+<p>强制刷新的艺术🤨</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>.NET复习</title>
     <url>/2020/11/25/webstudy/</url>
     <content><![CDATA[<p>复习文档，仅供参考。</p>
