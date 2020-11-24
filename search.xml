@@ -3,7 +3,7 @@
   <entry>
     <title>个人博客图片存储问题</title>
     <url>/2020/06/25/solvepic/</url>
-    <content><![CDATA[<p><img src="/images/pic002.jpg" alt="pic002.jpg"></p>
+    <content><![CDATA[<p><img src="/images/pic003.jpg" alt="pic002.jpg"></p>
 <a id="more"></a>
 
 <h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
@@ -11,6 +11,8 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">缩略图</span>](<span class="link">/images/pic.png</span>)</span><br></pre></td></tr></table></figure>
 <p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p>
 <h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a href="https://zhuanlan.zhihu.com/p/35270383" target="_blank" rel="noopener">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a href="https://imgchr.com" target="_blank" rel="noopener">路过图床</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a href="http://sloving.gitee.io/" target="_blank" rel="noopener">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/" target="_blank" rel="noopener">博客</a>。</p>
+<p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p>
 <p>小测试：</p>
 <p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">![Nssgde.th.png</span>](<span class="link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="link">https://imgchr.com/i/Nssgde</span>)</span><br></pre></td></tr></table></figure>
@@ -99,7 +101,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">[HttpPost]</span><br><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Login</span><span class="params">(User user)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ModelState.IsValid)</span><br><span class="line">        &#123;</span><br><span class="line">            var dbUser = db.Users.Where(a =&gt; a.Name == user.Name &amp;&amp; a.Password == user.Password).FirstOrDefault();</span><br><span class="line">            <span class="keyword">if</span> (dbUser != null)</span><br><span class="line">            &#123;</span><br><span class="line">                FormsAuthenticationTicket authTicket = <span class="keyword">new</span> FormsAuthenticationTicket(</span><br><span class="line">                    <span class="number">1</span>, dbUser.UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(<span class="number">20</span>), <span class="literal">false</span>, dbUser.SRole.ToString());</span><br><span class="line"></span><br><span class="line">                <span class="built_in">string</span> encryptedTicket = FormsAuthentication.Encrypt(authTicket);</span><br><span class="line"></span><br><span class="line">                HttpCookie authCookie = <span class="keyword">new</span> HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);</span><br><span class="line"></span><br><span class="line">                authCookie.HttpOnly = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (dbUser.SRole.ToString() == <span class="string">"管理员"</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> RedirectToAction(<span class="string">"Index"</span>, <span class="string">"Admin"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (dbUser.SRole.ToString() == <span class="string">"普通用户"</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    Session[<span class="string">"UserId"</span>] = dbUser.UserId;</span><br><span class="line">                    <span class="keyword">return</span> RedirectToAction(<span class="string">"AllWords"</span>, <span class="string">"User"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ModelState.AddModelError(<span class="string">""</span>, <span class="string">"用户名或密码错误"</span>);</span><br><span class="line">    <span class="keyword">return</span> View(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这里要获取 UserId，不然之后无法通过 UserId 选择当前用户自己的留言，也无法发布留言，因为外键为空，不符合实体完整性。具体方法就是通过 Seesion 将 UserId 保存起来，后面有用嘿嘿嘿。还有获取 Cookies 和将其加密。</p>
-<p>如果要身份验证，加了<code>[Authorize]</code>要在 Web.config 里加表单验证，不然会报错 401。loginUrl 是非法访问时跳转的登录界面。</p>
+<p>如果要身份验证，加了<code>[Authorize]</code>要在解决方案资源管理器的最后一项文件的Web.config 里加表单验证，放在<code>&lt;system.web&gt;&lt;/system.web&gt;</code>标签里面不然会报错 401。loginUrl 是非法访问时跳转的登录界面。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">authentication</span> <span class="attr">mode</span>=<span class="string">"Forms"</span>&gt;</span><span class="comment">&lt;!--有4种--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">forms</span> <span class="attr">loginUrl</span>=<span class="string">"~/Account/Login"</span> <span class="attr">defaultUrl</span>=<span class="string">"/"</span> <span class="attr">timeout</span>=<span class="string">"2880"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">authentication</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Logout</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FormsAuthentication.SignOut();</span><br><span class="line">    <span class="keyword">return</span> RedirectToAction(<span class="string">"Login"</span>, <span class="string">"Account"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -141,7 +143,9 @@
 </ul>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Create</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> View();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[HttpPost]</span><br><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Create</span><span class="params">(Guestbook gb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ModelState.IsValid)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//gb.CreatedOn = System.DateTime.Now;</span></span><br><span class="line">        gb.UserId = (<span class="keyword">int</span>)Session[<span class="string">"UserId"</span>];</span><br><span class="line">        gb.IsPass = <span class="literal">false</span>;</span><br><span class="line">        db.Guestbooks.Add(gb);</span><br><span class="line">        db.SaveChanges();</span><br><span class="line">        <span class="keyword">return</span> RedirectToAction(<span class="string">"AllWords"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> View();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>原理同用户注册，注意要把刚刚登录时获取到的 UserId 传进去，外键不能为空，否则会报错，另外，用户发布的留言需要管理员审核通过才可以展示到主页上，IsPass 设置默认值为 false。</p>
+<p>原理同用户注册，注意要把刚刚登录时获取到的 UserId 传进去，外键不能为空，否则会报错。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">SqlException: The <span class="keyword">INSERT</span> <span class="keyword">statement</span> conflicted <span class="keyword">with</span> the <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span></span><br></pre></td></tr></table></figure>
+<p>另外，用户发布的留言需要管理员审核通过才可以展示到主页上，IsPass 设置默认值为 false。</p>
 <h2 id="审核留言"><a href="#审核留言" class="headerlink" title="审核留言"></a>审核留言</h2><p>Admin</p>
 <ul>
 <li>CheckIndex</li>
@@ -206,8 +210,8 @@
 <p>这里还是用到了DAO的设计模式，将添加操作定义为一种抽像方法，几乎就体会不到数据库的存在了。</p>
 ]]></content>
       <tags>
-        <tag>Java</tag>
         <tag>SQL</tag>
+        <tag>Java</tag>
         <tag>JDBC</tag>
       </tags>
   </entry>
