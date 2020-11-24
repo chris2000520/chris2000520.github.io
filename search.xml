@@ -134,17 +134,6 @@
       </tags>
   </entry>
   <entry>
-    <title>北岛的诗</title>
-    <url>/2020/04/03/answer/</url>
-    <content><![CDATA[<p>读起这首诗的时候，总会想起高一那会我们几个一起瞎写诗的日子。</p>
-<a id="more"></a>
-<h1 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h1><h2 id="北岛"><a href="#北岛" class="headerlink" title="北岛"></a>北岛</h2><p>卑鄙是卑鄙者的通行证，<br>高尚是高尚者的墓志铭。<br>看吧，在那镀金的天空中，<br>飘满了死者弯曲的倒影。<br>冰川纪过去了，<br>为什么到处都是冰凌？<br>好望角发现了，<br>为什么死海里千帆相竞？<br>我来到这个世界上，<br>只带着纸、绳索和身影，<br>为了在审判之前，<br>宣读那些被判决了的声音：<br>告诉你吧，世界，<br>我——不——相——信！<br>纵使你脚下有一千名挑战者，<br>那就把我算做第一千零一名。<br>我不相信天是蓝的，<br>我不相信雷的回声；<br>我不相信梦是假的，<br>我不相信死无报应。<br>如果海洋注定要决堤，<br>就让所有的苦水都注入我心中；<br>如果陆地注定要上升，<br>就让人类重新选择生存的峰顶。<br>新的转机和闪闪的星斗，<br>正在缀满没有遮拦的天空，<br>那是五千年的象形文字，<br>那是未来人们凝视的眼睛。</p>
-]]></content>
-      <tags>
-        <tag>文学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>你好世界</title>
     <url>/2020/04/03/hello-world/</url>
     <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是我的第一篇博客。 戳一下 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 就能获取更多信息。 如果在使用Hexo的时候遇到了任何问题。你都能在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">麻烦刑场</a> 找到答案，或者你也可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>找到答案。</p>
@@ -164,6 +153,17 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>北岛的诗</title>
+    <url>/2020/04/03/answer/</url>
+    <content><![CDATA[<p>读起这首诗的时候，总会想起高一那会我们几个一起瞎写诗的日子。</p>
+<a id="more"></a>
+<h1 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h1><h2 id="北岛"><a href="#北岛" class="headerlink" title="北岛"></a>北岛</h2><p>卑鄙是卑鄙者的通行证，<br>高尚是高尚者的墓志铭。<br>看吧，在那镀金的天空中，<br>飘满了死者弯曲的倒影。<br>冰川纪过去了，<br>为什么到处都是冰凌？<br>好望角发现了，<br>为什么死海里千帆相竞？<br>我来到这个世界上，<br>只带着纸、绳索和身影，<br>为了在审判之前，<br>宣读那些被判决了的声音：<br>告诉你吧，世界，<br>我——不——相——信！<br>纵使你脚下有一千名挑战者，<br>那就把我算做第一千零一名。<br>我不相信天是蓝的，<br>我不相信雷的回声；<br>我不相信梦是假的，<br>我不相信死无报应。<br>如果海洋注定要决堤，<br>就让所有的苦水都注入我心中；<br>如果陆地注定要上升，<br>就让人类重新选择生存的峰顶。<br>新的转机和闪闪的星斗，<br>正在缀满没有遮拦的天空，<br>那是五千年的象形文字，<br>那是未来人们凝视的眼睛。</p>
+]]></content>
+      <tags>
+        <tag>文学</tag>
       </tags>
   </entry>
   <entry>
@@ -286,59 +286,6 @@
       </tags>
   </entry>
   <entry>
-    <title>算法期末试卷总结</title>
-    <url>/2020/06/28/mytest/</url>
-    <content><![CDATA[<p>这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。</p>
-<a id="more"></a>
-
-
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>算法是由若干条指令组成的序列，且满足有输入、输出、可行性、有穷性和确定性五个特性。</p>
-<p>评价算法的主要标准是算法实现的时间，算法实现的存储空间和代码要易于理解。</p>
-<p>贪心法，分治法，和动态规划法的区别和联系：<br>分治法与动态规划都是将问题分解成若干个较小规模的子问题。而分治法是将原问题分解为多个子问题，通过计算出子问题的结果构造出最优解，分治法分解后的子问题被看成是相互独立的。动态规划通过迭代法自底向上求解，动态规划将分解后的子问题理解为相互有联系。贪心算法是依赖于当前已经做出的选择，采用自顶向下的解决方法。具体分析请看这里：<a href="https://zhuanlan.zhihu.com/p/33048876" target="_blank" rel="noopener">贪心法，分治法，和动态规划法</a>。</p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="开灯问题"><a href="#开灯问题" class="headerlink" title="开灯问题"></a>开灯问题</h2><p>有n盏灯，编号为1~n，每个灯有个开关，按一下打开，再按一下关闭，再按一下打开。第1个人把所有灯打开，第2个人按下编号为2的倍数的灯的开关，第3个人按下编号为3的倍数的灯的开关，依此类推，一共有k个人，问最后有哪些灯开着？输入n和k，输出开着的灯的编号。k&lt;=n&lt;=1000。</p>
-<p>将灯的状态存入一维数组中，设灯亮的状态为1，第一层循环为从第1个人到第k个人(i代表第几个人)，第二层循环为在所有的n盏灯中（j代表第几盏灯），当第i个人按i的倍数的开关时，即灯的编号能整除i，此时灯的状态取反。代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		<span class="keyword">if</span>(j%i==<span class="number">0</span>)</span><br><span class="line">			a[j]=!a[j];</span><br></pre></td></tr></table></figure>
-<p>可以优化第二层循环，不用判断，直接修改数组值。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j+=i)</span><br><span class="line">		a[j]=!a[j];</span><br></pre></td></tr></table></figure>
-<p>最后遍历输出值为1的数组下标即可。更多讨论请看这里<a href="https://www.nowcoder.com/questionTerminal/406a54ff2b354bdcb1b1077605620465" target="_blank" rel="noopener">开灯问题</a>。</p>
-<h2 id="博弈问题"><a href="#博弈问题" class="headerlink" title="博弈问题"></a>博弈问题</h2><p>给定N（N&gt;20) 张牌，两个人轮流取牌，每人每次最少取 1 张牌，最多取 5 张牌。我们判定取完最后一张牌的人输。请你给出两人的最佳博弈方法。</p>
-<p>考试之前以为不知道有多难呢，结果下来一看解析，哦豁，懂了。</p>
-<p>思路：<br>首先N=1+4=5</p>
-<p>（54-1）/5=10余3</p>
-<p>故先拿牌者取3张即可稳保胜利。</p>
-<p>操作如下：</p>
-<p>先手拿三张后，执行如下原则：</p>
-<p>玩家拿1张，先手拿4张；</p>
-<p>玩家拿2张，先手拿3张；</p>
-<p>玩家拿3张，先手拿2张；</p>
-<p>玩家拿4张，先手拿1张；</p>
-<p>就是保持每轮双方一共拿走5张牌，这样先手最后一次取牌后扑克牌就只剩一张，玩家必输。</p>
-<p>要保证每轮拿牌总数在自己控制之内，所以每轮拿5张牌，对方拿N张，则自己拿5-N张，十轮可以拿50张牌，所以问题相当于，一共54-50=4张牌，自己先拿，要给对方省一张牌，所以第一次自己拿3张，以后每次都拿5-N张，其中N为对方拿牌数，1 &lt;= n &lt;= 4。<br>代码参考<a href="https://blog.csdn.net/u011262780/article/details/52698975?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">此博客</a>。</p>
-<h2 id="4色图问题"><a href="#4色图问题" class="headerlink" title="4色图问题"></a>4色图问题</h2><p>4色地图问题的优化求解算法可由( )设计实现</p>
-<h2 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h2><h2 id="12银币问题"><a href="#12银币问题" class="headerlink" title="12银币问题"></a>12银币问题</h2><h2 id="给余猜数问题"><a href="#给余猜数问题" class="headerlink" title="给余猜数问题"></a>给余猜数问题</h2><p>有一堆苹果，3 个 3 个地数，最后余 2 个；5 个 5 个地数，最后余 3 个；7 个 7 个地数，最后余 4 个。<br>问这堆苹果最少有多少个。</p>
-<h2 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h2><h2 id="残缺棋盘问题"><a href="#残缺棋盘问题" class="headerlink" title="残缺棋盘问题"></a>残缺棋盘问题</h2><h2 id="算法优劣问题"><a href="#算法优劣问题" class="headerlink" title="算法优劣问题"></a>算法优劣问题</h2><h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="分治法求最值"><a href="#分治法求最值" class="headerlink" title="分治法求最值"></a>分治法求最值</h2><h2 id="走格子问题"><a href="#走格子问题" class="headerlink" title="走格子问题"></a>走格子问题</h2><h1 id="考试小结"><a href="#考试小结" class="headerlink" title="考试小结"></a>考试小结</h1><p>我做算法题竟然做出了当年语文考试的样子，最后时刻快交卷了，我还有好多策略原理题没写（别问为什么不写代码，问就是不会），就开始狂草起来，那速度，没得说，那字，估计也没得看，想的啥就写啥，跟语文考试写作文写不完的时候一模（mu）一样，就离谱。哎呀，我裂开了呀。最后还是没写完！</p>
-<p>其实还是知识点掌握的不够牢固。</p>
-]]></content>
-      <tags>
-        <tag>算法</tag>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo发布时的问题</title>
-    <url>/2020/11/25/smallproblem/</url>
-    <content><![CDATA[<p>Hexo本地预览与发布的效果不一样</p>
-<a id="more"></a>
-
-<p>最近一直在修改自己的博客，提升访问速度，突然有一天，我在本地预览的颜色和样式都和预期的一样，但是成功上传之后还是没变化？🤔我直接挠头，按浏览器左上角的刷新按钮也没用，于是上网搜索。恍然大悟，原来需要对浏览器强制刷新！基本的用法我居然不知道，惭愧惭愧。</p>
-<p><kbd>Shift</kbd>+<kbd>F5</kbd></p>
-<p>强制刷新的艺术🤨</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>回溯法经典例题</title>
     <url>/2020/06/16/magicnumber/</url>
     <content><![CDATA[<p>编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。</p>
@@ -349,25 +296,6 @@
 ]]></content>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于去除SQLServer中的红色下划线</title>
-    <url>/2020/04/05/sqlserver/</url>
-    <content><![CDATA[<p>这几天正在入门SQL，跟老师学的，老师用的是Microsoft的SQLServer，我也就跟着下了，很简单，直接去微软下载，然后接着下载<a href="https://baike.baidu.com/item/SSMS" target="_blank" rel="noopener">SSMS</a>，按照官方文档操作，一个最基本的人物表就出来了。</p>
-<a id="more"></a>
-<p>但是按照老师的方法来，明明已经添加过了<code>sno</code>，<code>sname</code>，<code>sdept</code>，但是查表的时候还是会出现红色下划线，强迫症表示很不爽。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">English:Invalid object name <span class="string">"xxx"</span>,Invalid column name <span class="string">"xxx"</span></span><br><span class="line">中文:对象名<span class="string">"xxx"</span>无效，列名<span class="string">"xxx"</span>无效,列名<span class="string">"xxx"</span>无效（有多少列名就有多少无效的）</span><br></pre></td></tr></table></figure>
-<p>最关键的是我根本没有写错！不过最后看<a href="https://zhdaa.github.io/2018/10/24/SQLServer%E5%88%97%E5%90%8D%E6%97%A0%E6%95%88/" target="_blank" rel="noopener">大佬的博客</a>，茅塞顿开！原来是因为SQLServer的<a href="https://baike.baidu.com/item/IntelliSense" target="_blank" rel="noopener">intellisense</a>（智能感知功能）没有感知到更改，需要重新整理一下。因为我不需要这个东西，直接在工具（TOOLS）里的选项（Options）给关了。当然也有另一个方法，用快捷键即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"Ctrl+Shift+R"</span></span><br></pre></td></tr></table></figure>
-
-
-<p>参考博客（大同小异）：</p>
-<p><a href="https://blog.csdn.net/qq_39019865/article/details/78476604?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">SQL Server列名显示无效</a></p>
-<p><a href="https://blog.csdn.net/bigheadsheep/article/details/7872299" target="_blank" rel="noopener">SQL Server2008 列名显示无效</a></p>
-]]></content>
-      <tags>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -490,6 +418,59 @@
       </tags>
   </entry>
   <entry>
+    <title>算法期末试卷总结</title>
+    <url>/2020/06/28/mytest/</url>
+    <content><![CDATA[<p>这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。</p>
+<a id="more"></a>
+
+
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>算法是由若干条指令组成的序列，且满足有输入、输出、可行性、有穷性和确定性五个特性。</p>
+<p>评价算法的主要标准是算法实现的时间，算法实现的存储空间和代码要易于理解。</p>
+<p>贪心法，分治法，和动态规划法的区别和联系：<br>分治法与动态规划都是将问题分解成若干个较小规模的子问题。而分治法是将原问题分解为多个子问题，通过计算出子问题的结果构造出最优解，分治法分解后的子问题被看成是相互独立的。动态规划通过迭代法自底向上求解，动态规划将分解后的子问题理解为相互有联系。贪心算法是依赖于当前已经做出的选择，采用自顶向下的解决方法。具体分析请看这里：<a href="https://zhuanlan.zhihu.com/p/33048876" target="_blank" rel="noopener">贪心法，分治法，和动态规划法</a>。</p>
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="开灯问题"><a href="#开灯问题" class="headerlink" title="开灯问题"></a>开灯问题</h2><p>有n盏灯，编号为1~n，每个灯有个开关，按一下打开，再按一下关闭，再按一下打开。第1个人把所有灯打开，第2个人按下编号为2的倍数的灯的开关，第3个人按下编号为3的倍数的灯的开关，依此类推，一共有k个人，问最后有哪些灯开着？输入n和k，输出开着的灯的编号。k&lt;=n&lt;=1000。</p>
+<p>将灯的状态存入一维数组中，设灯亮的状态为1，第一层循环为从第1个人到第k个人(i代表第几个人)，第二层循环为在所有的n盏灯中（j代表第几盏灯），当第i个人按i的倍数的开关时，即灯的编号能整除i，此时灯的状态取反。代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		<span class="keyword">if</span>(j%i==<span class="number">0</span>)</span><br><span class="line">			a[j]=!a[j];</span><br></pre></td></tr></table></figure>
+<p>可以优化第二层循环，不用判断，直接修改数组值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j+=i)</span><br><span class="line">		a[j]=!a[j];</span><br></pre></td></tr></table></figure>
+<p>最后遍历输出值为1的数组下标即可。更多讨论请看这里<a href="https://www.nowcoder.com/questionTerminal/406a54ff2b354bdcb1b1077605620465" target="_blank" rel="noopener">开灯问题</a>。</p>
+<h2 id="博弈问题"><a href="#博弈问题" class="headerlink" title="博弈问题"></a>博弈问题</h2><p>给定N（N&gt;20) 张牌，两个人轮流取牌，每人每次最少取 1 张牌，最多取 5 张牌。我们判定取完最后一张牌的人输。请你给出两人的最佳博弈方法。</p>
+<p>考试之前以为不知道有多难呢，结果下来一看解析，哦豁，懂了。</p>
+<p>思路：<br>首先N=1+4=5</p>
+<p>（54-1）/5=10余3</p>
+<p>故先拿牌者取3张即可稳保胜利。</p>
+<p>操作如下：</p>
+<p>先手拿三张后，执行如下原则：</p>
+<p>玩家拿1张，先手拿4张；</p>
+<p>玩家拿2张，先手拿3张；</p>
+<p>玩家拿3张，先手拿2张；</p>
+<p>玩家拿4张，先手拿1张；</p>
+<p>就是保持每轮双方一共拿走5张牌，这样先手最后一次取牌后扑克牌就只剩一张，玩家必输。</p>
+<p>要保证每轮拿牌总数在自己控制之内，所以每轮拿5张牌，对方拿N张，则自己拿5-N张，十轮可以拿50张牌，所以问题相当于，一共54-50=4张牌，自己先拿，要给对方省一张牌，所以第一次自己拿3张，以后每次都拿5-N张，其中N为对方拿牌数，1 &lt;= n &lt;= 4。<br>代码参考<a href="https://blog.csdn.net/u011262780/article/details/52698975?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">此博客</a>。</p>
+<h2 id="4色图问题"><a href="#4色图问题" class="headerlink" title="4色图问题"></a>4色图问题</h2><p>4色地图问题的优化求解算法可由( )设计实现</p>
+<h2 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h2><h2 id="12银币问题"><a href="#12银币问题" class="headerlink" title="12银币问题"></a>12银币问题</h2><h2 id="给余猜数问题"><a href="#给余猜数问题" class="headerlink" title="给余猜数问题"></a>给余猜数问题</h2><p>有一堆苹果，3 个 3 个地数，最后余 2 个；5 个 5 个地数，最后余 3 个；7 个 7 个地数，最后余 4 个。<br>问这堆苹果最少有多少个。</p>
+<h2 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h2><h2 id="残缺棋盘问题"><a href="#残缺棋盘问题" class="headerlink" title="残缺棋盘问题"></a>残缺棋盘问题</h2><h2 id="算法优劣问题"><a href="#算法优劣问题" class="headerlink" title="算法优劣问题"></a>算法优劣问题</h2><h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="分治法求最值"><a href="#分治法求最值" class="headerlink" title="分治法求最值"></a>分治法求最值</h2><h2 id="走格子问题"><a href="#走格子问题" class="headerlink" title="走格子问题"></a>走格子问题</h2><h1 id="考试小结"><a href="#考试小结" class="headerlink" title="考试小结"></a>考试小结</h1><p>我做算法题竟然做出了当年语文考试的样子，最后时刻快交卷了，我还有好多策略原理题没写（别问为什么不写代码，问就是不会），就开始狂草起来，那速度，没得说，那字，估计也没得看，想的啥就写啥，跟语文考试写作文写不完的时候一模（mu）一样，就离谱。哎呀，我裂开了呀。最后还是没写完！</p>
+<p>其实还是知识点掌握的不够牢固。</p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo发布时的问题</title>
+    <url>/2020/11/25/smallproblem/</url>
+    <content><![CDATA[<p>Hexo本地预览与发布的效果不一样</p>
+<a id="more"></a>
+
+<p>最近一直在修改自己的博客，提升访问速度，突然有一天，我在本地预览的颜色和样式都和预期的一样，但是成功上传之后还是没变化？🤔我直接挠头，按浏览器左上角的刷新按钮也没用，于是上网搜索。恍然大悟，原来需要对浏览器强制刷新！基本的用法我居然不知道，惭愧惭愧。</p>
+<p><kbd>Shift</kbd>+<kbd>F5</kbd></p>
+<p>强制刷新的艺术🤨</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>清明追思 意满九州</title>
     <url>/2020/04/04/sadday/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
@@ -503,6 +484,25 @@
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于去除SQLServer中的红色下划线</title>
+    <url>/2020/04/05/sqlserver/</url>
+    <content><![CDATA[<p>这几天正在入门SQL，跟老师学的，老师用的是Microsoft的SQLServer，我也就跟着下了，很简单，直接去微软下载，然后接着下载<a href="https://baike.baidu.com/item/SSMS" target="_blank" rel="noopener">SSMS</a>，按照官方文档操作，一个最基本的人物表就出来了。</p>
+<a id="more"></a>
+<p>但是按照老师的方法来，明明已经添加过了<code>sno</code>，<code>sname</code>，<code>sdept</code>，但是查表的时候还是会出现红色下划线，强迫症表示很不爽。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">English:Invalid object name <span class="string">"xxx"</span>,Invalid column name <span class="string">"xxx"</span></span><br><span class="line">中文:对象名<span class="string">"xxx"</span>无效，列名<span class="string">"xxx"</span>无效,列名<span class="string">"xxx"</span>无效（有多少列名就有多少无效的）</span><br></pre></td></tr></table></figure>
+<p>最关键的是我根本没有写错！不过最后看<a href="https://zhdaa.github.io/2018/10/24/SQLServer%E5%88%97%E5%90%8D%E6%97%A0%E6%95%88/" target="_blank" rel="noopener">大佬的博客</a>，茅塞顿开！原来是因为SQLServer的<a href="https://baike.baidu.com/item/IntelliSense" target="_blank" rel="noopener">intellisense</a>（智能感知功能）没有感知到更改，需要重新整理一下。因为我不需要这个东西，直接在工具（TOOLS）里的选项（Options）给关了。当然也有另一个方法，用快捷键即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"Ctrl+Shift+R"</span></span><br></pre></td></tr></table></figure>
+
+
+<p>参考博客（大同小异）：</p>
+<p><a href="https://blog.csdn.net/qq_39019865/article/details/78476604?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">SQL Server列名显示无效</a></p>
+<p><a href="https://blog.csdn.net/bigheadsheep/article/details/7872299" target="_blank" rel="noopener">SQL Server2008 列名显示无效</a></p>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
