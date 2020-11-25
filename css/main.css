@@ -1426,7 +1426,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b0ffb6;
+  background: #2e3d3c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1517,7 +1517,6 @@ pre code {
   color: #ffcf56;
 }
 .sidebar-nav .sidebar-nav-active {
-  border-bottom-color: #ffcf56;
   color: #ffcf56;
 }
 .sidebar-nav .sidebar-nav-active:hover {
@@ -2855,9 +2854,6 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
-}
-.sidebar p {
-  color: #586d8a;
 }
 .header-inner {
   background: #fff;
