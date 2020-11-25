@@ -334,8 +334,8 @@
 <p>这里还是用到了DAO的设计模式，将添加操作定义为一种抽像方法，几乎就体会不到数据库的存在了。</p>
 ]]></content>
       <tags>
-        <tag>Java</tag>
         <tag>SQL</tag>
+        <tag>Java</tag>
         <tag>JDBC</tag>
       </tags>
   </entry>
