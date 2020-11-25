@@ -1373,10 +1373,8 @@ pre code {
   text-align: center;
   background: rgba(43,48,59,0.5);
 }
-.sidebar-inner p,
-.sidebar-inner span,
-.sidebar-inner a {
-  color: #84b8e0;
+.sidebar-inner p {
+  color: #555;
 }
 .site-brand-container {
   border-radius: 0px 0px;
@@ -1428,7 +1426,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #11263d;
+  background: #b4f9ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2754,7 +2752,7 @@ ul.breadcrumb li + li:last-child {
   margin-top: 12px;
 }
 .post-block:hover {
-  box-shadow: 0 0 8px 3px rgba(0,0,0,0.25);
+  box-shadow: 0 0 8px 4px rgba(0,0,0,0.3);
 }
 .comments {
   background: var(--content-bg-color);
