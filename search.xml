@@ -1,174 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>个人博客图片存储问题</title>
-    <url>/2020/06/25/solvepic/</url>
-    <content><![CDATA[<img style="border-radius:0.25em" src="/images/pic006.jpg"  alt="pic006"/>
-
+    <title>北岛的诗</title>
+    <url>/2020/04/03/answer/</url>
+    <content><![CDATA[<p>读起这首诗的时候，总会想起高一那会我们几个一起瞎写诗的日子。</p>
 <a id="more"></a>
+<h1 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h1><h2 id="北岛"><a href="#北岛" class="headerlink" title="北岛"></a>北岛</h2><p>卑鄙是卑鄙者的通行证，<br>高尚是高尚者的墓志铭。<br>看吧，在那镀金的天空中，<br>飘满了死者弯曲的倒影。<br>冰川纪过去了，<br>为什么到处都是冰凌？<br>好望角发现了，<br>为什么死海里千帆相竞？<br>我来到这个世界上，<br>只带着纸、绳索和身影，<br>为了在审判之前，<br>宣读那些被判决了的声音：<br>告诉你吧，世界，<br>我——不——相——信！<br>纵使你脚下有一千名挑战者，<br>那就把我算做第一千零一名。<br>我不相信天是蓝的，<br>我不相信雷的回声；<br>我不相信梦是假的，<br>我不相信死无报应。<br>如果海洋注定要决堤，<br>就让所有的苦水都注入我心中；<br>如果陆地注定要上升，<br>就让人类重新选择生存的峰顶。<br>新的转机和闪闪的星斗，<br>正在缀满没有遮拦的天空，<br>那是五千年的象形文字，<br>那是未来人们凝视的眼睛。</p>
+]]></content>
+      <tags>
+        <tag>文学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你好世界</title>
+    <url>/2020/04/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是我的第一篇博客。 戳一下 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 就能获取更多信息。 如果在使用Hexo的时候遇到了任何问题。你都能在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">麻烦刑场</a> 找到答案，或者你也可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>找到答案。</p>
+<a id="more"></a>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="写一篇新的稿子"><a href="#写一篇新的稿子" class="headerlink" title="写一篇新的稿子"></a>写一篇新的稿子</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
-<h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">缩略图</span>](<span class="link">/images/pic.png</span>)</span><br></pre></td></tr></table></figure>
-<p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p>
-<h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a href="https://zhuanlan.zhihu.com/p/35270383" target="_blank" rel="noopener">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a href="https://imgchr.com" target="_blank" rel="noopener">路过图床</a>。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a href="http://sloving.gitee.io/" target="_blank" rel="noopener">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/" target="_blank" rel="noopener">博客</a>。</p>
-<p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p>
-<p>小测试：</p>
-<p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">![Nssgde.th.png</span>](<span class="link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="link">https://imgchr.com/i/Nssgde</span>)</span><br></pre></td></tr></table></figure>
+<p>更多信息在这-&gt;: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="进行本地预览"><a href="#进行本地预览" class="headerlink" title="进行本地预览"></a>进行本地预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>更多信息在这-&gt; <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hexo发布时的问题</title>
-    <url>/2020/11/25/smallproblem/</url>
-    <content><![CDATA[<p>Hexo本地预览与发布的效果不一样</p>
+    <title>如何搭建搭建基于Hexo的个人博客</title>
+    <url>/2020/01/20/build%20my%20blog/</url>
+    <content><![CDATA[<p>想做什么就一定把它做好了！</p>
 <a id="more"></a>
-
-<p>最近一直在修改自己的博客，提升访问速度，突然有一天，我在本地预览的颜色和样式都和预期的一样，但是成功上传之后还是没变化？🤔我直接挠头，按浏览器左上角的刷新按钮也没用，于是上网搜索。恍然大悟，原来需要对浏览器强制刷新！基本的用法我居然不知道，惭愧惭愧。</p>
-<p><kbd>Shift</kbd>+<kbd>F5</kbd></p>
-<p>强制刷新的艺术🤨</p>
+<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>1.第一次看到博客是在我大一的时候，那时候还在做C的算法题，有些东西自己完全想不出来了，就去问度娘（那个时候还不会科学上网），看到了一个一个的有趣的网站，更巧的是，上面也有大部分的题解思路，我就想着自己能不能也有一个博客，来分享自己的写题经验和点，大家共勉。于是就在CSDN上发了几个自己的题解，发现好像还是跟某某大牛的不一样，他们都有自己的网站，还有打赏🙃。我以为是要学习如何做网站，如何传数据，才能做出一个像样的网站，才大一的我就放弃了(T~T)。<br>2. 第二次灵感迸发是在昨天晚上的时候，看到我🐏哥的视频里有写手把手教你搭建自己的博客，就跟着🐏哥一步一步来，最后做成了一个Hello World的博客，哈哈哈，第一次只用了2个小时就完成了，太高兴了(可能我太菜了)。废话不多说，下面给出方法（ps：如果不想看文章，可以去🐏哥b站<a href="https://www.bilibili.com/video/av44544186?t=1132" target="_blank" rel="noopener">看看</a>。</p>
+<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><ol>
+<li><p>去官网下载Node.js，<a href="https://www.nodejs.org" target="_blank" rel="noopener">传送门</a>，下载安装。</p>
+</li>
+<li><p>打开命令行cmd，输入<code>node -v</code>，<code>npm -v</code>来检查是否安装成功。</p>
+</li>
+<li><p>如果电脑上没有git，需要先去官网git<a href="https://git-scm.com" target="_blank" rel="noopener">下载</a> ，安装教程<a href="https://www.jianshu.com/p/414ccd423efc" target="_blank" rel="noopener">相关链接</a> ，然后配置好环境变量，和之前做Java的时候差不多，都是把git下的bin的路径找到，添加到系统变量，<code>e.g.C:\Program Files\Git\bin</code>。最后可以通过在命令行输入<code>git</code>来检查是否安装成功。</p>
+</li>
+<li><p>安装hexo博客框架，在命令行输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>等待几分钟后，就欧克了，输入<code>cnpm -v</code>检查</p>
+</li>
+<li><p>通过cnpm安装hexo，输入<code>cnpm install -g hexo-cli</code>会自行下载。输入<code>hexo -v</code>检查。</p>
+</li>
+<li><p>在你需要建立的文件夹的文件路径那输入cmd（例如blog），在当前目录打开命令行。（这些都可以用命令行实现）接下来在命令行输入<code>hexo init</code>来初始化博客，等待几分钟。</p>
+</li>
+<li><p>可以去我的电脑查看生成的文件，启动博客本地端口localhost4000<code>hexo s</code>用来预览。</p>
+</li>
+<li><p>在命令行输入<code>hexo n “我的第一篇博客”</code>，进入source文件，你会看到我的第一篇博客.md的文件，用VScode打开，编辑保存退出。</p>
+</li>
+<li><p>在blog下打开命令行，输入<code>hexo -clean</code>，<code>hexo g</code>，来生成。只是在本地启动。</p>
+</li>
+<li><p>通过github来将博客部署到远端。首先要有一个github账号，新建一个仓库，仓库名必须是: <code>用户名.github.io</code></p>
+</li>
+<li><p>回到命令行blog下，输入<code>cnpm install --save hexo-deployer-git</code>，会有一些warn，不用管。</p>
+</li>
+<li><p>在blog中找到_config.yml，用Notepad打开，翻到最底部，修改参数<code>type： git      repo: https://github.com/你自己github账号/仓库名 branch: master</code> 保存退出。</p>
+</li>
+<li><p>部署到远端，还是在blog文件下命令行，输入<code>hexo d</code>，部署完成。</p>
+</li>
+<li><p>可以通过username.github.io访问，别人也能看，自己也能看。每次修改都要上传的远端，实现同步，可能github比较慢。</p>
+</li>
+<li><p>这样一篇基本的博客就完成了，里面还有很多多西可以自己去设置，自己去挖掘。这里我就不说了。</p>
+</li>
+<li><p>[更新于2020/4/3] 由于上次的博客搞得太花里胡哨，上传经常失败，而且加载特别慢，于是我又想重头再来了，找到了一篇<a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?depth_1-" target="_blank" rel="noopener">史上最全搭建Hexo的博客</a>，那真是手把手教的，不过在主题方面我纠结了许久，最终决定选择一个朴实无华的，结果这个太小众，动不动就出错（我没有怪作者的意思，是我看不懂英文😭），一连创建了5个blog文件，搞了整整12小时，才整出这给网站来，不容易哦，希望以后的编程之路不会使我头秃了。</p>
+</li>
+</ol>
+<h2 id="干什么"><a href="#干什么" class="headerlink" title="干什么"></a>干什么</h2><p>   1.当然是记录自己的coding之路啊，也可以在以后的面试中给面试官一个好印象。<br>   2.也可以分享自己的题解或者学习的经验，对了，还有生活！</p>
+<h2 id="总结下"><a href="#总结下" class="headerlink" title="总结下"></a>总结下</h2><p>   谢谢捧场！🤭🤭🤭</p>
 ]]></content>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>.NET复习</title>
-    <url>/2020/11/25/webstudy/</url>
-    <content><![CDATA[<p>复习文档，仅供参考。</p>
+    <title>关于读过的书（不定期更新）</title>
+    <url>/2020/01/21/book/</url>
+    <content><![CDATA[<p>有时候就只喜欢闻书香味。</p>
 <a id="more"></a>
-
-<h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="HTML常见的块级元素和行内元素"><a href="#HTML常见的块级元素和行内元素" class="headerlink" title="HTML常见的块级元素和行内元素"></a>HTML常见的块级元素和行内元素</h3><h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p>div、p、h1~h6、ul、ol、dl、li、dd、table、hr、blockquote、address、table、menu、pre，HTML5新增的header、section、aside、footer。<br>块级元素新开启一行（即使是设置了width属性也是独占一行）、尽可能撑满父级元素的宽度，可以设置width和height属性；table元素浏览器默认的display属性为table。</p>
-<h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><p>span、img、a、lable、input、abbr（缩写）、em（强调）、big、cite（引用）、i（斜体）、q（短引用）、textarea、select、small、sub、sup，strong、u（下划线）、button（默认display：inline-block）</p>
-<h3 id="ul和ol区别"><a href="#ul和ol区别" class="headerlink" title="ul和ol区别"></a>ul和ol区别</h3><p>ul是项目列表，li做列表项，每一项的符号默认是小黑圆点；<br>ol是编号列表，li做列表项，每一项的符号默认是数字；<br>li是 list item 即列表项，但列表有很两种，所以外面得有ul或者ol用来区别无序列表（小点点）和有序列表（1,2,3…）。</p>
-<h3 id="video标签支持的视频格式"><a href="#video标签支持的视频格式" class="headerlink" title="video标签支持的视频格式"></a>video标签支持的视频格式</h3><p>MP4 = MPEG 4文件使用 H264 视频编解码器和AAC音频编解码器，<br>WebM = WebM 文件使用 VP8 视频编解码器和 Vorbis 音频编解码器，<br>Ogg = Ogg 文件使用 Theora 视频编解码器和 Vorbis音频编解码器，<br>通过上面的信息我们会发现只有h264编码的MP4视频（MPEG-LA公司）、VP8编码的webm格式的视频（Google公司）和Theora编码的ogg格式的视频（iTouch开发）可以支持html5的video标签。</p>
-<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>text    定义 单行的输入文本字段，用户可在其中输入文本。默认宽度为20个字符。单行文本字段。换行符将自动从输入值中删除。</p>
-<p>checkbox    定义复选框。 允许选择/取消选择单个值的复选框。</p>
-<p>password    定义密码字段。该字段中的字符被掩码。值被隐藏的单行文本字段。使用maxlength和minlength属性指定 可输入值的最大长度。</p>
-<p>hidden    隐藏的输入值: 定义隐藏的输入字段。不显示但其值提交给服务器的控件。</p>
-<p>file    选择文件. 定义输入字段和 “浏览”按钮，供文件上传。允许用户选择文件的控件。使用accept属性定义控件可以选择的文件类型。</p>
-<p>button    默认行为的按钮: 定义可点击按钮。一个没有默认行为的按钮。</p>
-<p>radio    定义 单选按钮。一个单选按钮，允许从多个选项中选择一个值。</p>
-<p>reset    定义 重置按钮。重置按钮会 清除表单中的所有数据。将表单内容重置为默认值的按钮。</p>
-<p>submit    定义 提交按钮。提交按钮会把表单数据发送到服务器。提交表单的按钮。</p>
-<p>image    图片提交按钮: 定义 图像形式的提交按钮。一个图形化的提交按钮。必须使用src属性 定义图像的源，使用alt属性定义替代文本。可以使用height高度和width宽度属性 以像素为单位 定义图像的大小。</p>
-<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><table>
-<thead>
-<tr>
-<th>标签</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>select</td>
-<td>定义了下拉选项列表</td>
-</tr>
-<tr>
-<td>input</td>
-<td>创建一个最简单的文本输入框</td>
-</tr>
-<tr>
-<td>textarea</td>
-<td>输入多行、多字数文本</td>
-</tr>
-<tr>
-<td>label</td>
-<td>label是input的描述，它本身不会有特殊效果</td>
-</tr>
-</tbody></table>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>CSS是Cascading Style Sheets（层叠样式表单）的简称，CSS就是一种叫做样式表（stylesheet）的技术，也有的人称之为“层叠样式表”（Cascading Stylesheet）。</p>
-<p>在主页制作时采用CSS技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。</p>
-<p>只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。</p>
-<h3 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h3><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>类选择器</td>
-<td>通过类名进行选择.test</td>
-</tr>
-<tr>
-<td>id选择器</td>
-<td>通过id进行选择#test</td>
-</tr>
-<tr>
-<td>标签选择器</td>
-<td>通过id进行选择span</td>
-</tr>
-<tr>
-<td>分组选择器</td>
-<td>可一次选择多个标签以设置相同样式p,a,li</td>
-</tr>
-<tr>
-<td>后代选择器</td>
-<td>选择某个标签的所有后代以设置相同样式div ul li</td>
-</tr>
-<tr>
-<td>属性选择器</td>
-<td>通过属性（如name属性）进行选择以设置相同的样式[name=”test”]</td>
-</tr>
-<tr>
-<td>通用选择器</td>
-<td>选择所有标签以设置相同样式*</td>
-</tr>
-<tr>
-<td>兄弟选择器</td>
-<td>选择兄弟关系的标签设置样式p+a</td>
-</tr>
-<tr>
-<td>直接父子选择器</td>
-<td>选择父子关系的标签中子标签设置样式div-&gt;p</td>
-</tr>
-</tbody></table>
-<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><p>text-align 文本对齐 </p>
-<p>text-decoration文本修饰</p>
-<p>line-height 行高</p>
-<p>text-shadow 阴影 水平方向偏移量 垂直方向偏移量 模糊度 阴影颜色</p>
-<p>background-repeat 表示设置该元素平铺的方式</p>
-<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>box：盒子，每一个元素在页面中都会生成一个矩形区域（盒子）</p>
-<p>盒子类型：</p>
-<ol>
-<li><p>行盒，display等于inline元素 </p>
-</li>
-<li><p>块盒，display等于block元素</p>
-</li>
-</ol>
-<p>行盒在页面中不换行，块盒独占一行。</p>
-<p>display默认值是inline</p>
-<p>浏览器默认样式表设置的块盒：容器元素，h1~h2，p。</p>
-<p>常见的行盒：span,a,img,video,audio</p>
-<h4 id="盒子的组成部分"><a href="#盒子的组成部分" class="headerlink" title="盒子的组成部分"></a>盒子的组成部分</h4><p>无论是行盒，还是块盒，都由下面几个部分组成，从内到外分别是：</p>
-<ol>
-<li>内容 content<br> width，height，设置的是盒子的内容的宽高</li>
-<li>填充 padding<br> padding简写属性，写四个，代表上，右，下，左。写两个，代表上下，左右，写一个，代表上下左右等宽，三个代表，上，左右，下。<br> padding-top，padding-right，padding-bottom，padding-left<br> 填充区+内容区= <strong>填充盒 padding-box</strong></li>
-<li>边框 border<br> 没有设置颜色，默认字体颜色<br> 有箭头，表示这个属性为速写属性，同上padding<br> boder 宽度 样式 颜色</li>
-<li>外边距 margin<br> 盒子与盒子之间的距离</li>
-</ol>
-<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="结合实例"><a href="#结合实例" class="headerlink" title="结合实例"></a>结合实例</h3><h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h4><p>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/ab+c/</span>;</span><br></pre></td></tr></table></figure>
-<p>脚本加载后，正则表达式字面量就会被编译。当正则表达式保持不变时，使用此方法可获得更好的性能。</p>
-<p>或者调用RegExp对象的构造函数，如下所示：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"ab+c"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>在脚本运行过程中，用构造函数创建的正则表达式会被编译。如果正则表达式将会改变，或者它将会从用户输入等来源中动态地产生，就需要使用构造函数来创建正则表达式。</p>
-<h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">\d：数字 <span class="number">0</span><span class="number">-9</span>  </span><br><span class="line">\D：非数字  </span><br><span class="line">\s：空格  </span><br><span class="line">\S：非空格  </span><br><span class="line">\w: 字符( 字母a-z 数字<span class="number">0</span><span class="number">-9</span> 下划线_ )  </span><br><span class="line">\W: 非字符  </span><br><span class="line">\b: 端点 ( 起始、结束、空格 )  </span><br><span class="line">\B: 非端点</span><br></pre></td></tr></table></figure>
-
-<h4 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">i：执行对大小写不敏感的匹配。  </span><br><span class="line">g：执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。  </span><br><span class="line">m：执行多行匹配。</span><br></pre></td></tr></table></figure>
-
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h2 id="Linq"><a href="#Linq" class="headerlink" title="Linq"></a>Linq</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+<p>不知不觉就大二下学期了，但是我感觉还是什么不会啊，大一的寒假和暑假完完全全就是混过去的鸭，大一寒假就狂玩刺激战场，嗯，那个时候还叫刺激战场，苟到吐也要苟到王牌，大二暑假也是，肝到2点，还把朋友叫到我家来玩。现在看看又有什么用呢？闲来无事来总结一下自己一路走过来看过的书啦！</p>
+<h2 id="学术篇"><a href="#学术篇" class="headerlink" title="学术篇"></a>学术篇</h2><h3 id="C语言程序与设计"><a href="#C语言程序与设计" class="headerlink" title="C语言程序与设计"></a><a href="https://baike.baidu.com/item/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/3941" target="_blank" rel="noopener">C语言程序与设计</a></h3><p>大一上课的时候，用到无聊的一本书，经典红色，清华大学出版社，其中的指针我现在都没搞懂，更别说双指针了，还有寒假的时候，我们可爱的的李老师给我们布置的课设，写一个学生成绩管理系统，后来班上还真有人做了，奖励了sodu两颗糖哈哈哈。有一说一，这本书还真是有点不适合初学者，但如果有老师带就可以。说来惭愧，C语言从第一个Hello World开始学了4个多月，考试却没考好。</p>
+<h3 id="C-程序与设计"><a href="#C-程序与设计" class="headerlink" title="C++程序与设计"></a><a href="https://baike.baidu.com/item/C%2B%2B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/13878767" target="_blank" rel="noopener">C++程序与设计</a></h3><p>大一下的时候，还是这个老师，我开始意识到学习的重要性，同时也意识到娱乐的重要性，最后五五开的结局，可想而知了，老师上课的时候没有将全，可能是基于C语言基础上的，这个面向对象语言，我们那个时候就天天拿这个开玩笑，“没有对象？新建一个？”。后面的C++最实用的STL也没有强调去讲。</p>
+<h2 id="文学篇"><a href="#文学篇" class="headerlink" title="文学篇"></a>文学篇</h2><h3 id="百年孤独"><a href="#百年孤独" class="headerlink" title="百年孤独"></a><a href="https://baike.baidu.com/item/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/688708" target="_blank" rel="noopener">百年孤独</a></h3><p>这本书虽然名字听起来很有诗意，但当你翻开书的正文部分第二页的时候，里面的名字就足够让你记不住了，我高二那个时候不知道从哪听说的这本书，书名就足够打动我了，买回来看完了马孔多家族的故事。里面的名字，我还特地做了笔记。</p>
+]]></content>
       <tags>
-        <tag>Web</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>JS</tag>
+        <tag>书籍</tag>
       </tags>
   </entry>
   <entry>
@@ -305,78 +228,56 @@
       </tags>
   </entry>
   <entry>
-    <title>Java+JDBC+Swing+Mysql校园招聘系统</title>
-    <url>/2020/09/21/swingjdbcmysql/</url>
-    <content><![CDATA[<p>大二数据库课程设计，要求我们做一个简易的具有图形化界面的管理系统，用到了数据库的知识，在这里做一个整理。</p>
+    <title>关于Hexo博客上添加基于Live2D的看板娘</title>
+    <url>/2020/04/03/live2d/</url>
+    <content><![CDATA[<p>自己辛辛苦苦总结的，走了不少坑。</p>
 <a id="more"></a>
+<h2 id="检查package-json文件里有没有这一项"><a href="#检查package-json文件里有没有这一项" class="headerlink" title="检查package.json文件里有没有这一项"></a>检查package.json文件里有没有这一项</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"hexo-helper-live2d"</span>: <span class="string">"^3.1.1"</span></span><br></pre></td></tr></table></figure>
+<p>（这个文件在博客根目录下就会有）如果没有这一项的话不要紧，后面会安装的，只是如果有旧版本的话，要先卸载，我也是听大佬说的。卸载代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<h2 id="检查自己的core-js"><a href="#检查自己的core-js" class="headerlink" title="检查自己的core-js"></a>检查自己的core-js</h2><p>就在你的博客的根目录下，因为如果你的core-js版本低于3的话，是不支持<code>hexo-helper-live2d</code>的。会出现如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm WARN deprecated core-js@2.6.11: </span><br><span class="line">core-js@&lt;3 is no longer maintained and not recommended <span class="keyword">for</span> usage due to the number of issues.</span><br><span class="line">Please, upgrade your dependencies to the actual version of core-js@3.</span><br></pre></td></tr></table></figure>
+<p>这里我看的是这位<a href="https://blog.csdn.net/weixin_43675566/article/details/104344744" target="_blank" rel="noopener">大佬的博客</a>，大概就是强制安装一个高版本的。特别强调了全局安装，安装代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save  -g core-js@^3</span><br></pre></td></tr></table></figure>
 
-<h1 id="确定设计模式"><a href="#确定设计模式" class="headerlink" title="确定设计模式"></a>确定设计模式</h1><p>在学习之前，都没有听说过的MVC。</p>
-<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>MVC模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p>
-<p>Model（模型）：模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
-<p>View（视图）：视图代表模型包含的数据的可视化。</p>
-<p>Controller（控制器）：控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
-<p>所以我们根据这个模式先创建了一个Java工程和四个包，分别是com.java.Dao，com.java.Model，com.java.Util，com.java.View。</p>
-<h2 id="DAO模式"><a href="#DAO模式" class="headerlink" title="DAO模式"></a>DAO模式</h2><p>DAO(DataAccessobjects 数据存取对象)是指位于业务逻辑和持久化数据之间实现对持久化数据的访问。通俗来讲，就是将数据库操作都封装起来。因为当时是跟着做的，不知道为啥要写这个包，现在来弄明白来。</p>
-<p>DAO接口：把对数据库的所有操作定义成抽象方法，可以提供多种实现。</p>
-<p>DAO实现类：针对不同数据库给出DAO接口定义方法的具体实现。<br>实体类：用于存放与传输对象数据。</p>
-<p>数据库连接和关闭工具类：避免了数据库连接和关闭代码的重复使用，方便修改。</p>
-<h1 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.java1234.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DbUtil</span> </span>&#123;</span><br><span class="line">		<span class="keyword">private</span> String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;<span class="comment">//驱动名称</span></span><br><span class="line">        <span class="keyword">private</span> String url=<span class="string">"jdbc:mysql://localhost:3306/demo?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT"</span>;</span><br><span class="line">        <span class="keyword">private</span> String user=<span class="string">"root"</span>;<span class="comment">//数据库用户</span></span><br><span class="line">        <span class="keyword">private</span> String psd=<span class="string">"mysql1970s"</span>;<span class="comment">//数据库密码</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> Connection <span class="title">getCon</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        	Class.forName(driver);</span><br><span class="line">        	Connection con=DriverManager.getConnection(url,user,psd);</span><br><span class="line">        	<span class="keyword">return</span> con;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            关闭数据库</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">closeCon</span><span class="params">(Connection con)</span><span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        	<span class="keyword">if</span>(con!=<span class="keyword">null</span>) &#123;</span><br><span class="line">        		con.close();</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Alt + / 是自动提示</span></span><br><span class="line">        <span class="comment">//main syso</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        	DbUtil dbUtil=<span class="keyword">new</span> DbUtil();</span><br><span class="line">        	<span class="keyword">try</span> &#123;</span><br><span class="line">        		dbUtil.getCon();</span><br><span class="line">        		System.out.println(<span class="string">"数据库连接成功！"</span>);</span><br><span class="line">        	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        		e.printStackTrace();</span><br><span class="line">        		System.out.println(<span class="string">"数据库连接失败！"</span>);</span><br><span class="line">        	&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先我们需要将mysql-connector-java-8.0.19.jar包添加到Bulid Path里面，然后加载驱动<code>&quot;com.mysql.cj.jdbc.Driver&quot;</code>。那些URL都是有固定格式的，可以上网查一下，URL那里把demo换成自己的数据库名就可以了。用完数据库后要断开连接，释放资源，直接<code>con.close</code>就可以。我们在捕获异常里写一个输出，来显示异常。</p>
-<h1 id="创建登陆窗口"><a href="#创建登陆窗口" class="headerlink" title="创建登陆窗口"></a>创建登陆窗口</h1><p>我们用Eclipse里的插件<a href="https://blog.csdn.net/xueba8/article/details/78561351" target="_blank" rel="noopener">WindowBuilder</a>来实现图形化编程，可以说很方便了，在设计界面直接拖拽，勾选，修改，都会在源码界面直接生成代码，但是要自己写各个块的功能。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loginActionPerfromed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">		String username=<span class="keyword">this</span>.textField.getText();</span><br><span class="line">		String password=<span class="keyword">new</span> String(<span class="keyword">this</span>.passwordField.getPassword());</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		  判空事件</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="keyword">if</span>(StringUtil.isEmpty(username)) &#123;</span><br><span class="line">			JOptionPane.showMessageDialog(<span class="keyword">null</span>,<span class="string">"用户名不能为空！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(StringUtil.isEmpty(password)) &#123;</span><br><span class="line">			JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"密码不能为空！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		   登陆验证</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		User user=<span class="keyword">new</span> User(username,password);</span><br><span class="line">		Connection con=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			con=dbUtil.getCon();</span><br><span class="line">			User currentUser=userdao.login(con, user);</span><br><span class="line">			<span class="keyword">if</span>(currentUser!=<span class="keyword">null</span>) &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"登陆成功！"</span>);</span><br><span class="line">				</span><br><span class="line">				dispose();<span class="comment">//销毁窗口</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">new</span> MainFrame().setVisible(<span class="keyword">true</span>);<span class="comment">//诱导新窗口</span></span><br><span class="line">				</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"用户名或密码错误！"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				dbUtil.closeCon(con);</span><br><span class="line">			&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(Connection con ,User user)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		User resultUser=<span class="keyword">null</span>;</span><br><span class="line">		String sql=<span class="string">"select * from userlog where uname=? and upsd=?"</span>;</span><br><span class="line">		PreparedStatement pstmt=con.prepareStatement(sql);</span><br><span class="line">		pstmt.setString(<span class="number">1</span>, user.getUsername());</span><br><span class="line">		pstmt.setString(<span class="number">2</span>, user.getPassword());</span><br><span class="line">		ResultSet rs=pstmt.executeQuery();</span><br><span class="line">		<span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">			resultUser=<span class="keyword">new</span> User();</span><br><span class="line">			resultUser.setId(rs.getInt(<span class="string">"id"</span>));</span><br><span class="line">			resultUser.setUsername(rs.getString(<span class="string">"uname"</span>));</span><br><span class="line">			resultUser.setPassword(rs.getString(<span class="string">"upsd"</span>));</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> resultUser;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>登陆的逻辑就很简单直接取出两个文本框里的内容去登陆表里一个一个去比较，这里的login就是在UserDao里实现的抽象方法，登陆成功后，要跳转到新的页面，就在登陆按钮的事件里新建一个Jframe窗口，再把登陆的Jframe窗口销毁，就能做出跳转的样子了。对了，说一下PreparedStatement这个类，在数据库的操作过程中，PreparedStatement 对象是一个很不起眼但是记为重要的接口对象，它继承于Statement，并与之在两方面有所不同：</p>
-<p>1）PreparedStatement 实例包含已编译的 SQL 语句。这就是使语句“准备好”。包含于 PreparedStatement 对象中的 SQL 语句可具有一个或多个 IN 参数。IN参数的值在 SQL 语句创建时未被指定。相反的，该语句为每个 IN 参数保留一个问号(“?”)作为占位符。每个问号的值必须在该语句执行之前，通过适当的setXXX 方法来提供。</p>
-<p>2）由于 PreparedStatement 对象已预编译过，所以其执行速度要快于 Statement 对象。因此，多次执行的 SQL 语句经常创建为 PreparedStatement 对象，以提高效率。</p>
-<p>作为 Statement 的子类，PreparedStatement 继承了 Statement 的所有功能。同时，三种方法 execute、 executeQuery 和 executeUpdate 已被更改以使之不再需要参数。这些方法的 Statement 形式（接受 SQL 语句参数的形式）不应该用于 PreparedStatement 对象。</p>
-<h1 id="主页面的功能"><a href="#主页面的功能" class="headerlink" title="主页面的功能"></a>主页面的功能</h1><p> 这里我们用到了JMenu，菜单有二级，三级等等，我的系统实现很简单，主页面就只有退出，添加，修改密码，查询，删除这几个功能。</p>
-<h1 id="添加职位信息"><a href="#添加职位信息" class="headerlink" title="添加职位信息"></a>添加职位信息</h1> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">workAddActionPerformed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">			String wname=<span class="keyword">this</span>.textField.getText();</span><br><span class="line">			String waddress=<span class="keyword">this</span>.textField_1.getText();</span><br><span class="line">			String wpost=<span class="keyword">this</span>.textField_2.getText();</span><br><span class="line">			<span class="keyword">if</span>(StringUtil.isEmpty(wname)||StringUtil.isEmpty(waddress)||StringUtil.isEmpty(wpost)) &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"这三个选项为必填选项！"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line"> 			WorkType workType=<span class="keyword">new</span> WorkType(wname, waddress, wpost);</span><br><span class="line"> 			Connection con=<span class="keyword">null</span>;</span><br><span class="line"> 			<span class="keyword">try</span> &#123;</span><br><span class="line"> 				con=dbUtil.getCon();</span><br><span class="line"> 				<span class="keyword">int</span> n=workDao.add(con, workType);</span><br><span class="line"> 				<span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line"> 					JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"成功添加一条记录！"</span>);</span><br><span class="line"> 					<span class="keyword">this</span>.resetValue();</span><br><span class="line"> 				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line"> 					JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"添加记录失败！"</span>);</span><br><span class="line"> 				&#125;</span><br><span class="line"> 				</span><br><span class="line"> 			&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line"> 				e.printStackTrace();</span><br><span class="line"> 			&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line"> 					<span class="keyword">try</span> &#123;</span><br><span class="line">						dbUtil.closeCon(con);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resetValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.textField.setText(<span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">this</span>.textField_1.setText(<span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">this</span>.textField_2.setText(<span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resetValueActionPerformed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">       	<span class="keyword">this</span>.resetValue();	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(Connection con,WorkType work)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">	String sql=<span class="string">"insert into work values(?,?,?)"</span>;</span><br><span class="line">	<span class="comment">//依次是名称，地址，岗位</span></span><br><span class="line">	PreparedStatement pstmt=con.prepareStatement(sql);</span><br><span class="line">	pstmt.setString(<span class="number">1</span>, work.getWname());</span><br><span class="line">	pstmt.setString(<span class="number">2</span>, work.getWaddress());</span><br><span class="line">	pstmt.setString(<span class="number">3</span>, work.getWpost());</span><br><span class="line">	<span class="keyword">return</span> pstmt.executeUpdate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里还是用到了DAO的设计模式，将添加操作定义为一种抽像方法，几乎就体会不到数据库的存在了。</p>
+<h2 id="正式安装hexo-helper-live2d"><a href="#正式安装hexo-helper-live2d" class="headerlink" title="正式安装hexo-helper-live2d"></a>正式安装hexo-helper-live2d</h2><p>代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-helper-live2d</span><br><span class="line">or</span><br><span class="line">$ npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<p>这个插件就好像一个应用市场，在在次基础上下载自己喜欢的板娘，官网也有预览图，貌似打不开了，可以在<a href="https://blog.csdn.net/wang_123_zy/article/details/87181892?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">这里看</a>。顺便把<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">官网</a>的也贴出来吧，免得迷路。这里面也有详细的介绍，只不过我看不懂罢了。<br>下载后检查自己的package.json文件里有没有多出来这一项<code>&quot;hexo-helper-live2d&quot;: &quot;^3.1.1&quot;</code>。</p>
+<h2 id="选好自己的板娘后下载"><a href="#选好自己的板娘后下载" class="headerlink" title="选好自己的板娘后下载"></a>选好自己的板娘后下载</h2><p>下载代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install live2d-widget-model-shizuku</span><br></pre></td></tr></table></figure>
+<p>这个我不知道怎么翻译，十足库还蛮好看的。下载完成后，检查自己的node_modules里有没有多出来<code>live2d-widget-model-shizuku</code>和<code>live2d-widget</code>。</p>
+<h2 id="配置自己的站点-config-yml"><a href="#配置自己的站点-config-yml" class="headerlink" title="配置自己的站点_config.yml"></a>配置自己的站点_config.yml</h2><p>记住不是主题里的那个就行，代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment">#启用板娘</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span> <span class="comment">#默认</span></span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span> <span class="comment">#默认不启用</span></span><br><span class="line">  debug: <span class="literal">false</span> <span class="comment">#默认不启用</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-shizuku <span class="comment">#这个是你要修改的！！！</span></span><br><span class="line">  display:</span><br><span class="line">    position: right <span class="comment">#在屏幕上的显示位置</span></span><br><span class="line">    width: 100 <span class="comment">#显示宽度</span></span><br><span class="line">    height: 200 <span class="comment">#显示高度</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span> <span class="comment">#手机端是否显示</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.8 <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
+<h2 id="开始测试效果"><a href="#开始测试效果" class="headerlink" title="开始测试效果"></a>开始测试效果</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>先在本地打开看看效果，确认无误后再推远端。</p>
+<h2 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h2><p>我刚开始也是按照流程一步一步来的，本地都能显示，可就是域名访问不了，刚开始我以为是这个文件太大了，可能要等几个小时。直到我看到<a href="https://www.e-learn.cn/topic/924109" target="_blank" rel="noopener">这篇博客</a>，我人都傻了，这么坑的吗？</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">如果你和我一样是纯新手，而且完全按照上述教程进行，那么恭喜你，看板娘一定不会出现！</span><br></pre></td></tr></table></figure>
+<p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，否则无法正常显示。而前面的教程中并没有指出这一点，因此缺少依赖的博客，一定不会加载出看板娘。<br>其次是autoload.js的路径设置问题。怎么解决就去传送门吧，反正我搞了半天没搞好，还是太菜了啊。</p>
+<h2 id="最后成功了"><a href="#最后成功了" class="headerlink" title="最后成功了"></a>最后成功了</h2><p>最后的我不知道怎么了，装了又卸载换一个板娘，执行npm install出现如下提醒：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">added 253 packages from 162 contributors and audited 1117 packages <span class="keyword">in</span> 42.157s</span><br><span class="line">found 5 vulnerabilities (1 low, 4 high)</span><br><span class="line">run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details html</span><br></pre></td></tr></table></figure>
+<p>按照它的命令，输入之后好像是修复了某些东西，弹出：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package update <span class="keyword">for</span> 5 vulns involved breaking changes</span><br><span class="line">use `npm audit fix --force` to install breaking changes; or <span class="keyword">do</span> it by hand</span><br></pre></td></tr></table></figure>
+<p>就顺了这孩子吧，最后好像修复了什么什么npm就突然加载出来了。百思不得其解，也不去深究了，这里还有<a href="https://blog.csdn.net/weixin_40817115/article/details/81007774" target="_blank" rel="noopener">一篇博客</a>写<code>npm audit fix</code>的可以参考一下。</p>
+<p>Tips:在blog\themes\pure\layout\layout.ejs文件的body标签中加入</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以直接获取一只哦，只不过我不知道怎么设置参数罢了。</p>
+<p>🌙溜了溜了睡觉去了🌙</p>
 ]]></content>
       <tags>
-        <tag>SQL</tag>
-        <tag>Java</tag>
-        <tag>JDBC</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>算法期末试卷总结</title>
-    <url>/2020/06/28/mytest/</url>
-    <content><![CDATA[<p>这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。</p>
+    <title>回溯法经典例题</title>
+    <url>/2020/06/16/magicnumber/</url>
+    <content><![CDATA[<p>编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。</p>
 <a id="more"></a>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int number = <span class="number">0</span>;</span><br><span class="line">int visited[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">void makenumber(int n) &#123;</span><br><span class="line">    if (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">"ERROR!"</span> &lt;&lt; endl;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if (n == <span class="number">10</span>) &#123;</span><br><span class="line">        cout &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">        if (!visited[j]) &#123;</span><br><span class="line">            int temp = number;</span><br><span class="line">            temp = temp * <span class="number">10</span> + j;</span><br><span class="line">            if (temp % n == <span class="number">0</span>) &#123;</span><br><span class="line">                number = temp;</span><br><span class="line">                visited[j] = <span class="number">1</span>;</span><br><span class="line">                makenumber(n + <span class="number">1</span>);</span><br><span class="line">                number = number / <span class="number">10</span>;</span><br><span class="line">                visited[j] = <span class="number">0</span>;<span class="comment">//BackTracking</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    makenumber(<span class="number">1</span>);</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>算法是由若干条指令组成的序列，且满足有输入、输出、可行性、有穷性和确定性五个特性。</p>
-<p>评价算法的主要标准是算法实现的时间，算法实现的存储空间和代码要易于理解。</p>
-<p>贪心法，分治法，和动态规划法的区别和联系：<br>分治法与动态规划都是将问题分解成若干个较小规模的子问题。而分治法是将原问题分解为多个子问题，通过计算出子问题的结果构造出最优解，分治法分解后的子问题被看成是相互独立的。动态规划通过迭代法自底向上求解，动态规划将分解后的子问题理解为相互有联系。贪心算法是依赖于当前已经做出的选择，采用自顶向下的解决方法。具体分析请看这里：<a href="https://zhuanlan.zhihu.com/p/33048876" target="_blank" rel="noopener">贪心法，分治法，和动态规划法</a>。</p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="开灯问题"><a href="#开灯问题" class="headerlink" title="开灯问题"></a>开灯问题</h2><p>有n盏灯，编号为1~n，每个灯有个开关，按一下打开，再按一下关闭，再按一下打开。第1个人把所有灯打开，第2个人按下编号为2的倍数的灯的开关，第3个人按下编号为3的倍数的灯的开关，依此类推，一共有k个人，问最后有哪些灯开着？输入n和k，输出开着的灯的编号。k&lt;=n&lt;=1000。</p>
-<p>将灯的状态存入一维数组中，设灯亮的状态为1，第一层循环为从第1个人到第k个人(i代表第几个人)，第二层循环为在所有的n盏灯中（j代表第几盏灯），当第i个人按i的倍数的开关时，即灯的编号能整除i，此时灯的状态取反。代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		<span class="keyword">if</span>(j%i==<span class="number">0</span>)</span><br><span class="line">			a[j]=!a[j];</span><br></pre></td></tr></table></figure>
-<p>可以优化第二层循环，不用判断，直接修改数组值。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j+=i)</span><br><span class="line">		a[j]=!a[j];</span><br></pre></td></tr></table></figure>
-<p>最后遍历输出值为1的数组下标即可。更多讨论请看这里<a href="https://www.nowcoder.com/questionTerminal/406a54ff2b354bdcb1b1077605620465" target="_blank" rel="noopener">开灯问题</a>。</p>
-<h2 id="博弈问题"><a href="#博弈问题" class="headerlink" title="博弈问题"></a>博弈问题</h2><p>给定N（N&gt;20) 张牌，两个人轮流取牌，每人每次最少取 1 张牌，最多取 5 张牌。我们判定取完最后一张牌的人输。请你给出两人的最佳博弈方法。</p>
-<p>考试之前以为不知道有多难呢，结果下来一看解析，哦豁，懂了。</p>
-<p>思路：<br>首先N=1+4=5</p>
-<p>（54-1）/5=10余3</p>
-<p>故先拿牌者取3张即可稳保胜利。</p>
-<p>操作如下：</p>
-<p>先手拿三张后，执行如下原则：</p>
-<p>玩家拿1张，先手拿4张；</p>
-<p>玩家拿2张，先手拿3张；</p>
-<p>玩家拿3张，先手拿2张；</p>
-<p>玩家拿4张，先手拿1张；</p>
-<p>就是保持每轮双方一共拿走5张牌，这样先手最后一次取牌后扑克牌就只剩一张，玩家必输。</p>
-<p>要保证每轮拿牌总数在自己控制之内，所以每轮拿5张牌，对方拿N张，则自己拿5-N张，十轮可以拿50张牌，所以问题相当于，一共54-50=4张牌，自己先拿，要给对方省一张牌，所以第一次自己拿3张，以后每次都拿5-N张，其中N为对方拿牌数，1 &lt;= n &lt;= 4。<br>代码参考<a href="https://blog.csdn.net/u011262780/article/details/52698975?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">此博客</a>。</p>
-<h2 id="4色图问题"><a href="#4色图问题" class="headerlink" title="4色图问题"></a>4色图问题</h2><p>4色地图问题的优化求解算法可由( )设计实现</p>
-<h2 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h2><h2 id="12银币问题"><a href="#12银币问题" class="headerlink" title="12银币问题"></a>12银币问题</h2><h2 id="给余猜数问题"><a href="#给余猜数问题" class="headerlink" title="给余猜数问题"></a>给余猜数问题</h2><p>有一堆苹果，3 个 3 个地数，最后余 2 个；5 个 5 个地数，最后余 3 个；7 个 7 个地数，最后余 4 个。<br>问这堆苹果最少有多少个。</p>
-<h2 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h2><h2 id="残缺棋盘问题"><a href="#残缺棋盘问题" class="headerlink" title="残缺棋盘问题"></a>残缺棋盘问题</h2><h2 id="算法优劣问题"><a href="#算法优劣问题" class="headerlink" title="算法优劣问题"></a>算法优劣问题</h2><h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="分治法求最值"><a href="#分治法求最值" class="headerlink" title="分治法求最值"></a>分治法求最值</h2><h2 id="走格子问题"><a href="#走格子问题" class="headerlink" title="走格子问题"></a>走格子问题</h2><h1 id="考试小结"><a href="#考试小结" class="headerlink" title="考试小结"></a>考试小结</h1><p>我做算法题竟然做出了当年语文考试的样子，最后时刻快交卷了，我还有好多策略原理题没写（别问为什么不写代码，问就是不会），就开始狂草起来，那速度，没得说，那字，估计也没得看，想的啥就写啥，跟语文考试写作文写不完的时候一模（mu）一样，就离谱。哎呀，我裂开了呀。最后还是没写完！</p>
-<p>其实还是知识点掌握的不够牢固。</p>
+<p>本题主要是采用了递归回溯法，读者需自行分析。我没有进行数学分析，只是盲目的暴力枚举。</p>
 ]]></content>
       <tags>
         <tag>算法</tag>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -499,16 +400,90 @@
       </tags>
   </entry>
   <entry>
-    <title>回溯法经典例题</title>
-    <url>/2020/06/16/magicnumber/</url>
-    <content><![CDATA[<p>编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。</p>
+    <title>明国时期的爱情</title>
+    <url>/2020/04/05/loveword/</url>
+    <content><![CDATA[<p>可能总是会想起高中的那会的笔记本上的摘抄。</p>
 <a id="more"></a>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int number = <span class="number">0</span>;</span><br><span class="line">int visited[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">void makenumber(int n) &#123;</span><br><span class="line">    if (n &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">"ERROR!"</span> &lt;&lt; endl;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if (n == <span class="number">10</span>) &#123;</span><br><span class="line">        cout &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = <span class="number">1</span>; j &lt;= <span class="number">9</span>; ++j) &#123;</span><br><span class="line">        if (!visited[j]) &#123;</span><br><span class="line">            int temp = number;</span><br><span class="line">            temp = temp * <span class="number">10</span> + j;</span><br><span class="line">            if (temp % n == <span class="number">0</span>) &#123;</span><br><span class="line">                number = temp;</span><br><span class="line">                visited[j] = <span class="number">1</span>;</span><br><span class="line">                makenumber(n + <span class="number">1</span>);</span><br><span class="line">                number = number / <span class="number">10</span>;</span><br><span class="line">                visited[j] = <span class="number">0</span>;<span class="comment">//BackTracking</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    makenumber(<span class="number">1</span>);</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="沈从文致张兆和"><a href="#沈从文致张兆和" class="headerlink" title="沈从文致张兆和"></a>沈从文致张兆和</h2><p>我一辈子走过许多地方的路，行过许多地方的桥，看过许多形状的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。</p>
+<p>在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。</p>
+<p>我用手去触摸你的眼睛，太冷了。倘若你的眼睛这样冷，有个人的心会结成冰。</p>
+<p>你的眼睛还没掉转来望我，只起了一个势，我早惊乱得同一只听到弹弓弦子响中的小雀了。</p>
+<h2 id="胡兰成致张爱玲"><a href="#胡兰成致张爱玲" class="headerlink" title="胡兰成致张爱玲"></a>胡兰成致张爱玲</h2><p>梦醒来，我身在忘川，立在属于我的那块三生石旁，三生石上只有爱玲的名字，可是我看不到爱玲你在哪儿，原是今生今世已惘然，山河岁月空惆怅，而我，终将是要等着你的。</p>
+<h2 id="鲁迅致许广平"><a href="#鲁迅致许广平" class="headerlink" title="鲁迅致许广平"></a>鲁迅致许广平</h2><p>我寄你的信，总要送往邮局，不喜欢放在街边的绿色邮筒中，我总疑心那里会慢一点。</p>
+<h2 id="朱生豪致宋清如"><a href="#朱生豪致宋清如" class="headerlink" title="朱生豪致宋清如"></a>朱生豪致宋清如</h2><p>不要愁老之将至，你老了一定很可爱。而且，假如你老了十岁，我当然也同样老了十岁，世界也老了十岁，上帝也老了十岁，一切都是一样。</p>
+<h2 id="林徽因致梁思成"><a href="#林徽因致梁思成" class="headerlink" title="林徽因致梁思成"></a>林徽因致梁思成</h2><p>梁思成问：”为什么是我？”林徽因回答说：”我会用一生来回答，你准备好了吗？”寥寥数语，却笃定从容。</p>
+]]></content>
+      <tags>
+        <tag>文学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法期末试卷总结</title>
+    <url>/2020/06/28/mytest/</url>
+    <content><![CDATA[<p>这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。</p>
+<a id="more"></a>
 
-<p>本题主要是采用了递归回溯法，读者需自行分析。我没有进行数学分析，只是盲目的暴力枚举。</p>
+
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>算法是由若干条指令组成的序列，且满足有输入、输出、可行性、有穷性和确定性五个特性。</p>
+<p>评价算法的主要标准是算法实现的时间，算法实现的存储空间和代码要易于理解。</p>
+<p>贪心法，分治法，和动态规划法的区别和联系：<br>分治法与动态规划都是将问题分解成若干个较小规模的子问题。而分治法是将原问题分解为多个子问题，通过计算出子问题的结果构造出最优解，分治法分解后的子问题被看成是相互独立的。动态规划通过迭代法自底向上求解，动态规划将分解后的子问题理解为相互有联系。贪心算法是依赖于当前已经做出的选择，采用自顶向下的解决方法。具体分析请看这里：<a href="https://zhuanlan.zhihu.com/p/33048876" target="_blank" rel="noopener">贪心法，分治法，和动态规划法</a>。</p>
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="开灯问题"><a href="#开灯问题" class="headerlink" title="开灯问题"></a>开灯问题</h2><p>有n盏灯，编号为1~n，每个灯有个开关，按一下打开，再按一下关闭，再按一下打开。第1个人把所有灯打开，第2个人按下编号为2的倍数的灯的开关，第3个人按下编号为3的倍数的灯的开关，依此类推，一共有k个人，问最后有哪些灯开着？输入n和k，输出开着的灯的编号。k&lt;=n&lt;=1000。</p>
+<p>将灯的状态存入一维数组中，设灯亮的状态为1，第一层循环为从第1个人到第k个人(i代表第几个人)，第二层循环为在所有的n盏灯中（j代表第几盏灯），当第i个人按i的倍数的开关时，即灯的编号能整除i，此时灯的状态取反。代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		<span class="keyword">if</span>(j%i==<span class="number">0</span>)</span><br><span class="line">			a[j]=!a[j];</span><br></pre></td></tr></table></figure>
+<p>可以优化第二层循环，不用判断，直接修改数组值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j+=i)</span><br><span class="line">		a[j]=!a[j];</span><br></pre></td></tr></table></figure>
+<p>最后遍历输出值为1的数组下标即可。更多讨论请看这里<a href="https://www.nowcoder.com/questionTerminal/406a54ff2b354bdcb1b1077605620465" target="_blank" rel="noopener">开灯问题</a>。</p>
+<h2 id="博弈问题"><a href="#博弈问题" class="headerlink" title="博弈问题"></a>博弈问题</h2><p>给定N（N&gt;20) 张牌，两个人轮流取牌，每人每次最少取 1 张牌，最多取 5 张牌。我们判定取完最后一张牌的人输。请你给出两人的最佳博弈方法。</p>
+<p>考试之前以为不知道有多难呢，结果下来一看解析，哦豁，懂了。</p>
+<p>思路：<br>首先N=1+4=5</p>
+<p>（54-1）/5=10余3</p>
+<p>故先拿牌者取3张即可稳保胜利。</p>
+<p>操作如下：</p>
+<p>先手拿三张后，执行如下原则：</p>
+<p>玩家拿1张，先手拿4张；</p>
+<p>玩家拿2张，先手拿3张；</p>
+<p>玩家拿3张，先手拿2张；</p>
+<p>玩家拿4张，先手拿1张；</p>
+<p>就是保持每轮双方一共拿走5张牌，这样先手最后一次取牌后扑克牌就只剩一张，玩家必输。</p>
+<p>要保证每轮拿牌总数在自己控制之内，所以每轮拿5张牌，对方拿N张，则自己拿5-N张，十轮可以拿50张牌，所以问题相当于，一共54-50=4张牌，自己先拿，要给对方省一张牌，所以第一次自己拿3张，以后每次都拿5-N张，其中N为对方拿牌数，1 &lt;= n &lt;= 4。<br>代码参考<a href="https://blog.csdn.net/u011262780/article/details/52698975?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">此博客</a>。</p>
+<h2 id="4色图问题"><a href="#4色图问题" class="headerlink" title="4色图问题"></a>4色图问题</h2><p>4色地图问题的优化求解算法可由( )设计实现</p>
+<h2 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h2><h2 id="12银币问题"><a href="#12银币问题" class="headerlink" title="12银币问题"></a>12银币问题</h2><h2 id="给余猜数问题"><a href="#给余猜数问题" class="headerlink" title="给余猜数问题"></a>给余猜数问题</h2><p>有一堆苹果，3 个 3 个地数，最后余 2 个；5 个 5 个地数，最后余 3 个；7 个 7 个地数，最后余 4 个。<br>问这堆苹果最少有多少个。</p>
+<h2 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h2><h2 id="残缺棋盘问题"><a href="#残缺棋盘问题" class="headerlink" title="残缺棋盘问题"></a>残缺棋盘问题</h2><h2 id="算法优劣问题"><a href="#算法优劣问题" class="headerlink" title="算法优劣问题"></a>算法优劣问题</h2><h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="分治法求最值"><a href="#分治法求最值" class="headerlink" title="分治法求最值"></a>分治法求最值</h2><h2 id="走格子问题"><a href="#走格子问题" class="headerlink" title="走格子问题"></a>走格子问题</h2><h1 id="考试小结"><a href="#考试小结" class="headerlink" title="考试小结"></a>考试小结</h1><p>我做算法题竟然做出了当年语文考试的样子，最后时刻快交卷了，我还有好多策略原理题没写（别问为什么不写代码，问就是不会），就开始狂草起来，那速度，没得说，那字，估计也没得看，想的啥就写啥，跟语文考试写作文写不完的时候一模（mu）一样，就离谱。哎呀，我裂开了呀。最后还是没写完！</p>
+<p>其实还是知识点掌握的不够牢固。</p>
 ]]></content>
       <tags>
         <tag>算法</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo发布时的问题</title>
+    <url>/2020/11/25/smallproblem/</url>
+    <content><![CDATA[<p>Hexo本地预览与发布的效果不一样</p>
+<a id="more"></a>
+
+<p>最近一直在修改自己的博客，提升访问速度，突然有一天，我在本地预览的颜色和样式都和预期的一样，但是成功上传之后还是没变化？🤔我直接挠头，按浏览器左上角的刷新按钮也没用，于是上网搜索。恍然大悟，原来需要对浏览器强制刷新！基本的用法我居然不知道，惭愧惭愧。</p>
+<p><kbd>Shift</kbd>+<kbd>F5</kbd></p>
+<p>强制刷新的艺术🤨</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>清明追思 意满九州</title>
+    <url>/2020/04/04/sadday/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">“ 已加密，请输入密码。”</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="e1cfac34284dc0716350ed687f8ad7a4ac25a230a5372a79628b533f5415449f">8540bf819fbef0a82ea1cfe51446b7e3b1a264f9dc38c4afa97239f845a31f169a8442c47aa8c7b6da20da0f774f47f25d7420d128f3825ec847b321f784ff86a50ba868649e04261000cd3e5061a5f0ea5113aa7819b2650413306bc1a42237079d09e6bfa9a6ff3051183b607ea95fc8984f68bbcb3d56e5f10c1b51a247fa5b64c5ae3ee367c83408f8c06a8428b434a92f218954a93c30cf3b4e40cb38e6388a0eff40b75feec11f5fa2bbe1c22b77faef15b21c9d8d86a8e3485dba559bdedf754bf2ac727f4d084a5b4e5ce2472a1c207b7c8d493fe60cfee2bc702a2741b15c315e1320ebd4973b269d40e188b20e0e6bf3591d8218eef8317f7b3eeb20e582c409274007f4ee05d430ce7f2ab5b2acc85854ca555cbf987c8efc18b9c9731a05018755989a800ca8030e15d5a85ead039f1c2b448ac08904d32dcda82c91be7d7b649ba4606d2f05300593130f5e082013d579fb1e4742e0cd57ee32f499b67613ec4d744b0309d0cbc400cda945a91f68b4e9f87e4b9f3cc860e375866d562c7f6090ab399d9eb076cdc3c6e88368bc341dfc7fe4a03f351e4e409576cadcb763c1b9f1e1f9068584973c507975b06df0f922d447ff001b766141164cee4e0a5e37aa5da51939bade6242904fbbcec784991491cd5aa095437570d9af3eba0713326db454fe45b9af606777df612891d3d1e15f6bd9dc3de19130daa8620eafceb3b4029077748c1d4baa7a3258644a6a8faa1bce3e02bc52e3d311083aba979ba3e3c738b1caf7742efbc8e704c6dfe9242372778bb53817f51da4ae75fc912fe184ab0c7a6e0dcda148f9d0fbbea16091c78775f0a1ef917c786445e101db68b4abe49291f5f7f1c26a12a5ddc19d1a9ba652d25391ba8d7b635b0fea26a112a3146178b10255d3e252489f7ff2b5b651ff66a3f0c350c84faf10d5e1770de74dcebe4779c0cff028e3852b87194ac1543cc11a124ecca0fa5df8c2bd7db16ebbaac4a64c9056491c61a40388e5bdc4790c85004ed37b984a123a54e5a490f8d1bc28b23f1a11d7a40fbc9175fdd34db99ca33d5a4db93444e6fe5808895e817e33caaad909123b3caf399397dce49a9b7e3f368130aa2083936dbafb42915b7cb520d45d74c4bc808ec714fd9650b44dce664a1b3881333991c16b91d3fd6cbb30fd1ab350b07ba75b9d41c8699c17fbcc3d11b4be43b9d402f8132addb7f91244daaf20eff22893ebab1aa4bf45f41d71ea8676b544a86fb6b70c83de22636e83e332a16d845a9a6425bd3b8338f4efb1dd9ec84d0d17b5d54bad1f41b6ee3c391fc24233df6fbcc46bbb395bcd92ed4e8f546256b42e7a498a85e89a5837f8a76190b4a983d25329afe7f9ca77d5ff73604316fb6c16e2d1e9e24eeda48055647a1f73d0b8f6379ffff5387a84eaf68cee4359690bcca751fdd3499169ad705efcf0890612fc8630f7a1544979496af5fb71ed1e6fefb45c761e6f16b66edc88cf986050beebec72b4d93fecc3336070ff83eab959bad34120cfe52b1e0bc4f19cd04d3c9255c12dbe3db32e58f81531769c75e598b2a4fa635bd1585d7ec13a94e1f74ef973addd728b760ca067ae47d3eb3c30701d343ef7cc9cb285312c7c2b7c53cbdb90535a39ce36e75cc31603b308e1ffcebe3a03726080dc4e7ebf1a9a261894e8586d408d8b14c3de5d7bf9a0395b9ce4680c8b2449acfe0bcaf5cf0d6f8a6787c761739c58febb6dcd010e91d47ff8fc947c87f6b19426ce2f795f5913d21c4c3619e051adcbce9b7a15fa08bbcfcc1e9683ab373545cd07e7b9977ae4242a82b46d92f9162c06746d07e36728f4086244b6615deb1d7fee7fe055d74d7b0f73f4d503008ea7c519db09f5e9d35bca84b69114fe36f2898594cc002f77c5dfaf279622b9ca95a0fbfed7943c7f70928039eeecb645eeaa1efd6f5697e515366c804326ce0ae7f2a3d930722519dbb27d1df8d564b4176f5212c89b703c784d2d012c7ed38376c210bf5fe2735bbc8547203d5cdd9bbd2cb39eed8a371725369ff51ff85b378df52f2fc25ac223e7b4b2d937d3bee989a14b3bea28e410bab5cb9b4f44bd2bc2af830606cd46e349540cca54a5b170eac29e6d49ad1e3c230a3d96a81e6c5e0723b58c3c8cea6d1a8c098caef8402c29c617de67196196821a38dbe35af9dd9117ed1c5fb82dd8b1ac066a05d93ed617d68461b33e1b4ee86cbc0b6807e6f0281c2c68d50c251354ce4529e9d5ec927069e60dece9337b2f04bd01c695e22a417af8f6df34265af9240a4f89821a7e697a980639383f2e64ffc55bb4c50bd39113047ab35e7e16b29d5e84640edaebe5e7e74747f38d00d2303737101d52dd6921d5041734f4444d0b7ba3f106238c1e3f08cff1d4fc147a011490a7c8c09e1d111cdc670ec7dfd1cc31d43791d8ce2659337a43c73ddb50ef5a281103993390c4796c62bd2f3da8df934e8b5ff2ccb7e2d6c6883c70e32f7b1d5737c3e87746ac35a7d2eb40ee626a5eb448fbe799cd6ddfb589e6a89f1d679135d0cf509669898d4a8c19c26e9b28694d47c9532b17151aba1e2a0c62345acf3fd4d6deeae3890965da02a6e7c04f708c9ee872dc09b6a16ccd9d73dc8b3819beaeb2d983df050f7ca07287bff5e7f7472e83361bfc94a561f7829cdf30a70b49f4bf3bdb344a5e5833c75eb548ccda40bf3fd035fb59b78881b5518a3fab609ea22a2716840fce645fccba132752e7ae2b76c8375b7218f433fe24249c5976eb36d153c216cf5ccdf6983acd0842c4ef1b8a7f987aaaeb63d50bb802291822725a5a55fedd8365a034049999f8ddb62585b6385bb1fbc588113ea963e624902fb31ad78ca33b28638497c05629fce890a794ef64234ada44df43b4800193bca06d2f0d82b7468b928941f3cd1bad2c47033c08741517e041283fa405c5c52ae55faf4ffb0cb2744d74ab72aaccce3696926b708f82d89b659a250d43c1ddc8827e11cb2de3ab26d01760c6113f3b43cc98cf3038baffe4dc2ff09da6d44ac19222241cd791d163d37946fb2c5fb2ac61346d1631e3e546529b749878397d9c7b68a8f1</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -531,171 +506,196 @@
       </tags>
   </entry>
   <entry>
-    <title>明国时期的爱情</title>
-    <url>/2020/04/05/loveword/</url>
-    <content><![CDATA[<p>可能总是会想起高中的那会的笔记本上的摘抄。</p>
-<a id="more"></a>
-<h2 id="沈从文致张兆和"><a href="#沈从文致张兆和" class="headerlink" title="沈从文致张兆和"></a>沈从文致张兆和</h2><p>我一辈子走过许多地方的路，行过许多地方的桥，看过许多形状的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。</p>
-<p>在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。</p>
-<p>我用手去触摸你的眼睛，太冷了。倘若你的眼睛这样冷，有个人的心会结成冰。</p>
-<p>你的眼睛还没掉转来望我，只起了一个势，我早惊乱得同一只听到弹弓弦子响中的小雀了。</p>
-<h2 id="胡兰成致张爱玲"><a href="#胡兰成致张爱玲" class="headerlink" title="胡兰成致张爱玲"></a>胡兰成致张爱玲</h2><p>梦醒来，我身在忘川，立在属于我的那块三生石旁，三生石上只有爱玲的名字，可是我看不到爱玲你在哪儿，原是今生今世已惘然，山河岁月空惆怅，而我，终将是要等着你的。</p>
-<h2 id="鲁迅致许广平"><a href="#鲁迅致许广平" class="headerlink" title="鲁迅致许广平"></a>鲁迅致许广平</h2><p>我寄你的信，总要送往邮局，不喜欢放在街边的绿色邮筒中，我总疑心那里会慢一点。</p>
-<h2 id="朱生豪致宋清如"><a href="#朱生豪致宋清如" class="headerlink" title="朱生豪致宋清如"></a>朱生豪致宋清如</h2><p>不要愁老之将至，你老了一定很可爱。而且，假如你老了十岁，我当然也同样老了十岁，世界也老了十岁，上帝也老了十岁，一切都是一样。</p>
-<h2 id="林徽因致梁思成"><a href="#林徽因致梁思成" class="headerlink" title="林徽因致梁思成"></a>林徽因致梁思成</h2><p>梁思成问：”为什么是我？”林徽因回答说：”我会用一生来回答，你准备好了吗？”寥寥数语，却笃定从容。</p>
-]]></content>
-      <tags>
-        <tag>文学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>清明追思 意满九州</title>
-    <url>/2020/04/04/sadday/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">“ 已加密，请输入密码。”</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="e1cfac34284dc0716350ed687f8ad7a4ac25a230a5372a79628b533f5415449f">8540bf819fbef0a82ea1cfe51446b7e3b1a264f9dc38c4afa97239f845a31f169a8442c47aa8c7b6da20da0f774f47f25d7420d128f3825ec847b321f784ff86a50ba868649e04261000cd3e5061a5f0ea5113aa7819b2650413306bc1a42237079d09e6bfa9a6ff3051183b607ea95fc8984f68bbcb3d56e5f10c1b51a247fa5b64c5ae3ee367c83408f8c06a8428b434a92f218954a93c30cf3b4e40cb38e6388a0eff40b75feec11f5fa2bbe1c22b77faef15b21c9d8d86a8e3485dba559bdedf754bf2ac727f4d084a5b4e5ce2472a1c207b7c8d493fe60cfee2bc702a2741b15c315e1320ebd4973b269d40e188b20e0e6bf3591d8218eef8317f7b3eeb20e582c409274007f4ee05d430ce7f2ab5b2acc85854ca555cbf987c8efc18b9c9731a05018755989a800ca8030e15d5a85ead039f1c2b448ac08904d32dcda82c91be7d7b649ba4606d2f05300593130f5e082013d579fb1e4742e0cd57ee32f499b67613ec4d744b0309d0cbc400cda945a91f68b4e9f87e4b9f3cc860e375866d562c7f6090ab399d9eb076cdc3c6e88368bc341dfc7fe4a03f351e4e409576cadcb763c1b9f1e1f9068584973c507975b06df0f922d447ff001b766141164cee4e0a5e37aa5da51939bade6242904fbbcec784991491cd5aa095437570d9af3eba0713326db454fe45b9af606777df612891d3d1e15f6bd9dc3de19130daa8620eafceb3b4029077748c1d4baa7a3258644a6a8faa1bce3e02bc52e3d311083aba979ba3e3c738b1caf7742efbc8e704c6dfe9242372778bb53817f51da4ae75fc912fe184ab0c7a6e0dcda148f9d0fbbea16091c78775f0a1ef917c786445e101db68b4abe49291f5f7f1c26a12a5ddc19d1a9ba652d25391ba8d7b635b0fea26a112a3146178b10255d3e252489f7ff2b5b651ff66a3f0c350c84faf10d5e1770de74dcebe4779c0cff028e3852b87194ac1543cc11a124ecca0fa5df8c2bd7db16ebbaac4a64c9056491c61a40388e5bdc4790c85004ed37b984a123a54e5a490f8d1bc28b23f1a11d7a40fbc9175fdd34db99ca33d5a4db93444e6fe5808895e817e33caaad909123b3caf399397dce49a9b7e3f368130aa2083936dbafb42915b7cb520d45d74c4bc808ec714fd9650b44dce664a1b3881333991c16b91d3fd6cbb30fd1ab350b07ba75b9d41c8699c17fbcc3d11b4be43b9d402f8132addb7f91244daaf20eff22893ebab1aa4bf45f41d71ea8676b544a86fb6b70c83de22636e83e332a16d845a9a6425bd3b8338f4efb1dd9ec84d0d17b5d54bad1f41b6ee3c391fc24233df6fbcc46bbb395bcd92ed4e8f546256b42e7a498a85e89a5837f8a76190b4a983d25329afe7f9ca77d5ff73604316fb6c16e2d1e9e24eeda48055647a1f73d0b8f6379ffff5387a84eaf68cee4359690bcca751fdd3499169ad705efcf0890612fc8630f7a1544979496af5fb71ed1e6fefb45c761e6f16b66edc88cf986050beebec72b4d93fecc3336070ff83eab959bad34120cfe52b1e0bc4f19cd04d3c9255c12dbe3db32e58f81531769c75e598b2a4fa635bd1585d7ec13a94e1f74ef973addd728b760ca067ae47d3eb3c30701d343ef7cc9cb285312c7c2b7c53cbdb90535a39ce36e75cc31603b308e1ffcebe3a03726080dc4e7ebf1a9a261894e8586d408d8b14c3de5d7bf9a0395b9ce4680c8b2449acfe0bcaf5cf0d6f8a6787c761739c58febb6dcd010e91d47ff8fc947c87f6b19426ce2f795f5913d21c4c3619e051adcbce9b7a15fa08bbcfcc1e9683ab373545cd07e7b9977ae4242a82b46d92f9162c06746d07e36728f4086244b6615deb1d7fee7fe055d74d7b0f73f4d503008ea7c519db09f5e9d35bca84b69114fe36f2898594cc002f77c5dfaf279622b9ca95a0fbfed7943c7f70928039eeecb645eeaa1efd6f5697e515366c804326ce0ae7f2a3d930722519dbb27d1df8d564b4176f5212c89b703c784d2d012c7ed38376c210bf5fe2735bbc8547203d5cdd9bbd2cb39eed8a371725369ff51ff85b378df52f2fc25ac223e7b4b2d937d3bee989a14b3bea28e410bab5cb9b4f44bd2bc2af830606cd46e349540cca54a5b170eac29e6d49ad1e3c230a3d96a81e6c5e0723b58c3c8cea6d1a8c098caef8402c29c617de67196196821a38dbe35af9dd9117ed1c5fb82dd8b1ac066a05d93ed617d68461b33e1b4ee86cbc0b6807e6f0281c2c68d50c251354ce4529e9d5ec927069e60dece9337b2f04bd01c695e22a417af8f6df34265af9240a4f89821a7e697a980639383f2e64ffc55bb4c50bd39113047ab35e7e16b29d5e84640edaebe5e7e74747f38d00d2303737101d52dd6921d5041734f4444d0b7ba3f106238c1e3f08cff1d4fc147a011490a7c8c09e1d111cdc670ec7dfd1cc31d43791d8ce2659337a43c73ddb50ef5a281103993390c4796c62bd2f3da8df934e8b5ff2ccb7e2d6c6883c70e32f7b1d5737c3e87746ac35a7d2eb40ee626a5eb448fbe799cd6ddfb589e6a89f1d679135d0cf509669898d4a8c19c26e9b28694d47c9532b17151aba1e2a0c62345acf3fd4d6deeae3890965da02a6e7c04f708c9ee872dc09b6a16ccd9d73dc8b3819beaeb2d983df050f7ca07287bff5e7f7472e83361bfc94a561f7829cdf30a70b49f4bf3bdb344a5e5833c75eb548ccda40bf3fd035fb59b78881b5518a3fab609ea22a2716840fce645fccba132752e7ae2b76c8375b7218f433fe24249c5976eb36d153c216cf5ccdf6983acd0842c4ef1b8a7f987aaaeb63d50bb802291822725a5a55fedd8365a034049999f8ddb62585b6385bb1fbc588113ea963e624902fb31ad78ca33b28638497c05629fce890a794ef64234ada44df43b4800193bca06d2f0d82b7468b928941f3cd1bad2c47033c08741517e041283fa405c5c52ae55faf4ffb0cb2744d74ab72aaccce3696926b708f82d89b659a250d43c1ddc8827e11cb2de3ab26d01760c6113f3b43cc98cf3038baffe4dc2ff09da6d44ac19222241cd791d163d37946fb2c5fb2ac61346d1631e3e546529b749878397d9c7b68a8f1</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Hexo博客上添加基于Live2D的看板娘</title>
-    <url>/2020/04/03/live2d/</url>
-    <content><![CDATA[<p>自己辛辛苦苦总结的，走了不少坑。</p>
-<a id="more"></a>
-<h2 id="检查package-json文件里有没有这一项"><a href="#检查package-json文件里有没有这一项" class="headerlink" title="检查package.json文件里有没有这一项"></a>检查package.json文件里有没有这一项</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"hexo-helper-live2d"</span>: <span class="string">"^3.1.1"</span></span><br></pre></td></tr></table></figure>
-<p>（这个文件在博客根目录下就会有）如果没有这一项的话不要紧，后面会安装的，只是如果有旧版本的话，要先卸载，我也是听大佬说的。卸载代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-<h2 id="检查自己的core-js"><a href="#检查自己的core-js" class="headerlink" title="检查自己的core-js"></a>检查自己的core-js</h2><p>就在你的博客的根目录下，因为如果你的core-js版本低于3的话，是不支持<code>hexo-helper-live2d</code>的。会出现如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm WARN deprecated core-js@2.6.11: </span><br><span class="line">core-js@&lt;3 is no longer maintained and not recommended <span class="keyword">for</span> usage due to the number of issues.</span><br><span class="line">Please, upgrade your dependencies to the actual version of core-js@3.</span><br></pre></td></tr></table></figure>
-<p>这里我看的是这位<a href="https://blog.csdn.net/weixin_43675566/article/details/104344744" target="_blank" rel="noopener">大佬的博客</a>，大概就是强制安装一个高版本的。特别强调了全局安装，安装代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save  -g core-js@^3</span><br></pre></td></tr></table></figure>
+    <title>个人博客图片存储问题</title>
+    <url>/2020/06/25/solvepic/</url>
+    <content><![CDATA[<img style="border-radius:0.25em" src="/images/pic006.jpg"  alt="pic006"/>
 
-<h2 id="正式安装hexo-helper-live2d"><a href="#正式安装hexo-helper-live2d" class="headerlink" title="正式安装hexo-helper-live2d"></a>正式安装hexo-helper-live2d</h2><p>代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-helper-live2d</span><br><span class="line">or</span><br><span class="line">$ npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-<p>这个插件就好像一个应用市场，在在次基础上下载自己喜欢的板娘，官网也有预览图，貌似打不开了，可以在<a href="https://blog.csdn.net/wang_123_zy/article/details/87181892?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3" target="_blank" rel="noopener">这里看</a>。顺便把<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">官网</a>的也贴出来吧，免得迷路。这里面也有详细的介绍，只不过我看不懂罢了。<br>下载后检查自己的package.json文件里有没有多出来这一项<code>&quot;hexo-helper-live2d&quot;: &quot;^3.1.1&quot;</code>。</p>
-<h2 id="选好自己的板娘后下载"><a href="#选好自己的板娘后下载" class="headerlink" title="选好自己的板娘后下载"></a>选好自己的板娘后下载</h2><p>下载代码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install live2d-widget-model-shizuku</span><br></pre></td></tr></table></figure>
-<p>这个我不知道怎么翻译，十足库还蛮好看的。下载完成后，检查自己的node_modules里有没有多出来<code>live2d-widget-model-shizuku</code>和<code>live2d-widget</code>。</p>
-<h2 id="配置自己的站点-config-yml"><a href="#配置自己的站点-config-yml" class="headerlink" title="配置自己的站点_config.yml"></a>配置自己的站点_config.yml</h2><p>记住不是主题里的那个就行，代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment">#启用板娘</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span> <span class="comment">#默认</span></span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span> <span class="comment">#默认不启用</span></span><br><span class="line">  debug: <span class="literal">false</span> <span class="comment">#默认不启用</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-shizuku <span class="comment">#这个是你要修改的！！！</span></span><br><span class="line">  display:</span><br><span class="line">    position: right <span class="comment">#在屏幕上的显示位置</span></span><br><span class="line">    width: 100 <span class="comment">#显示宽度</span></span><br><span class="line">    height: 200 <span class="comment">#显示高度</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span> <span class="comment">#手机端是否显示</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.8 <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
-<h2 id="开始测试效果"><a href="#开始测试效果" class="headerlink" title="开始测试效果"></a>开始测试效果</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>先在本地打开看看效果，确认无误后再推远端。</p>
-<h2 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h2><p>我刚开始也是按照流程一步一步来的，本地都能显示，可就是域名访问不了，刚开始我以为是这个文件太大了，可能要等几个小时。直到我看到<a href="https://www.e-learn.cn/topic/924109" target="_blank" rel="noopener">这篇博客</a>，我人都傻了，这么坑的吗？</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">如果你和我一样是纯新手，而且完全按照上述教程进行，那么恭喜你，看板娘一定不会出现！</span><br></pre></td></tr></table></figure>
-<p>本插件需要jQuery和font-awesome支持，请确保它们已在页面中加载，否则无法正常显示。而前面的教程中并没有指出这一点，因此缺少依赖的博客，一定不会加载出看板娘。<br>其次是autoload.js的路径设置问题。怎么解决就去传送门吧，反正我搞了半天没搞好，还是太菜了啊。</p>
-<h2 id="最后成功了"><a href="#最后成功了" class="headerlink" title="最后成功了"></a>最后成功了</h2><p>最后的我不知道怎么了，装了又卸载换一个板娘，执行npm install出现如下提醒：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">added 253 packages from 162 contributors and audited 1117 packages <span class="keyword">in</span> 42.157s</span><br><span class="line">found 5 vulnerabilities (1 low, 4 high)</span><br><span class="line">run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details html</span><br></pre></td></tr></table></figure>
-<p>按照它的命令，输入之后好像是修复了某些东西，弹出：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package update <span class="keyword">for</span> 5 vulns involved breaking changes</span><br><span class="line">use `npm audit fix --force` to install breaking changes; or <span class="keyword">do</span> it by hand</span><br></pre></td></tr></table></figure>
-<p>就顺了这孩子吧，最后好像修复了什么什么npm就突然加载出来了。百思不得其解，也不去深究了，这里还有<a href="https://blog.csdn.net/weixin_40817115/article/details/81007774" target="_blank" rel="noopener">一篇博客</a>写<code>npm audit fix</code>的可以参考一下。</p>
-<p>Tips:在blog\themes\pure\layout\layout.ejs文件的body标签中加入</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>可以直接获取一只哦，只不过我不知道怎么设置参数罢了。</p>
-<p>🌙溜了溜了睡觉去了🌙</p>
+<a id="more"></a>
+
+<h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
+<h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">缩略图</span>](<span class="link">/images/pic.png</span>)</span><br></pre></td></tr></table></figure>
+<p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p>
+<h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a href="https://zhuanlan.zhihu.com/p/35270383" target="_blank" rel="noopener">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a href="https://imgchr.com" target="_blank" rel="noopener">路过图床</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a href="http://sloving.gitee.io/" target="_blank" rel="noopener">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/" target="_blank" rel="noopener">博客</a>。</p>
+<p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p>
+<p>小测试：</p>
+<p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">![Nssgde.th.png</span>](<span class="link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="link">https://imgchr.com/i/Nssgde</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
-    <title>北岛的诗</title>
-    <url>/2020/04/03/answer/</url>
-    <content><![CDATA[<p>读起这首诗的时候，总会想起高一那会我们几个一起瞎写诗的日子。</p>
+    <title>Java+JDBC+Swing+Mysql校园招聘系统</title>
+    <url>/2020/09/21/swingjdbcmysql/</url>
+    <content><![CDATA[<p>大二数据库课程设计，要求我们做一个简易的具有图形化界面的管理系统，用到了数据库的知识，在这里做一个整理。</p>
 <a id="more"></a>
-<h1 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h1><h2 id="北岛"><a href="#北岛" class="headerlink" title="北岛"></a>北岛</h2><p>卑鄙是卑鄙者的通行证，<br>高尚是高尚者的墓志铭。<br>看吧，在那镀金的天空中，<br>飘满了死者弯曲的倒影。<br>冰川纪过去了，<br>为什么到处都是冰凌？<br>好望角发现了，<br>为什么死海里千帆相竞？<br>我来到这个世界上，<br>只带着纸、绳索和身影，<br>为了在审判之前，<br>宣读那些被判决了的声音：<br>告诉你吧，世界，<br>我——不——相——信！<br>纵使你脚下有一千名挑战者，<br>那就把我算做第一千零一名。<br>我不相信天是蓝的，<br>我不相信雷的回声；<br>我不相信梦是假的，<br>我不相信死无报应。<br>如果海洋注定要决堤，<br>就让所有的苦水都注入我心中；<br>如果陆地注定要上升，<br>就让人类重新选择生存的峰顶。<br>新的转机和闪闪的星斗，<br>正在缀满没有遮拦的天空，<br>那是五千年的象形文字，<br>那是未来人们凝视的眼睛。</p>
+
+<h1 id="确定设计模式"><a href="#确定设计模式" class="headerlink" title="确定设计模式"></a>确定设计模式</h1><p>在学习之前，都没有听说过的MVC。</p>
+<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>MVC模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p>
+<p>Model（模型）：模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
+<p>View（视图）：视图代表模型包含的数据的可视化。</p>
+<p>Controller（控制器）：控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
+<p>所以我们根据这个模式先创建了一个Java工程和四个包，分别是com.java.Dao，com.java.Model，com.java.Util，com.java.View。</p>
+<h2 id="DAO模式"><a href="#DAO模式" class="headerlink" title="DAO模式"></a>DAO模式</h2><p>DAO(DataAccessobjects 数据存取对象)是指位于业务逻辑和持久化数据之间实现对持久化数据的访问。通俗来讲，就是将数据库操作都封装起来。因为当时是跟着做的，不知道为啥要写这个包，现在来弄明白来。</p>
+<p>DAO接口：把对数据库的所有操作定义成抽象方法，可以提供多种实现。</p>
+<p>DAO实现类：针对不同数据库给出DAO接口定义方法的具体实现。<br>实体类：用于存放与传输对象数据。</p>
+<p>数据库连接和关闭工具类：避免了数据库连接和关闭代码的重复使用，方便修改。</p>
+<h1 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.java1234.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DbUtil</span> </span>&#123;</span><br><span class="line">		<span class="keyword">private</span> String driver=<span class="string">"com.mysql.cj.jdbc.Driver"</span>;<span class="comment">//驱动名称</span></span><br><span class="line">        <span class="keyword">private</span> String url=<span class="string">"jdbc:mysql://localhost:3306/demo?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT"</span>;</span><br><span class="line">        <span class="keyword">private</span> String user=<span class="string">"root"</span>;<span class="comment">//数据库用户</span></span><br><span class="line">        <span class="keyword">private</span> String psd=<span class="string">"mysql1970s"</span>;<span class="comment">//数据库密码</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> Connection <span class="title">getCon</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        	Class.forName(driver);</span><br><span class="line">        	Connection con=DriverManager.getConnection(url,user,psd);</span><br><span class="line">        	<span class="keyword">return</span> con;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            关闭数据库</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">closeCon</span><span class="params">(Connection con)</span><span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        	<span class="keyword">if</span>(con!=<span class="keyword">null</span>) &#123;</span><br><span class="line">        		con.close();</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Alt + / 是自动提示</span></span><br><span class="line">        <span class="comment">//main syso</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        	DbUtil dbUtil=<span class="keyword">new</span> DbUtil();</span><br><span class="line">        	<span class="keyword">try</span> &#123;</span><br><span class="line">        		dbUtil.getCon();</span><br><span class="line">        		System.out.println(<span class="string">"数据库连接成功！"</span>);</span><br><span class="line">        	&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        		e.printStackTrace();</span><br><span class="line">        		System.out.println(<span class="string">"数据库连接失败！"</span>);</span><br><span class="line">        	&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先我们需要将mysql-connector-java-8.0.19.jar包添加到Bulid Path里面，然后加载驱动<code>&quot;com.mysql.cj.jdbc.Driver&quot;</code>。那些URL都是有固定格式的，可以上网查一下，URL那里把demo换成自己的数据库名就可以了。用完数据库后要断开连接，释放资源，直接<code>con.close</code>就可以。我们在捕获异常里写一个输出，来显示异常。</p>
+<h1 id="创建登陆窗口"><a href="#创建登陆窗口" class="headerlink" title="创建登陆窗口"></a>创建登陆窗口</h1><p>我们用Eclipse里的插件<a href="https://blog.csdn.net/xueba8/article/details/78561351" target="_blank" rel="noopener">WindowBuilder</a>来实现图形化编程，可以说很方便了，在设计界面直接拖拽，勾选，修改，都会在源码界面直接生成代码，但是要自己写各个块的功能。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loginActionPerfromed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">		String username=<span class="keyword">this</span>.textField.getText();</span><br><span class="line">		String password=<span class="keyword">new</span> String(<span class="keyword">this</span>.passwordField.getPassword());</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		  判空事件</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="keyword">if</span>(StringUtil.isEmpty(username)) &#123;</span><br><span class="line">			JOptionPane.showMessageDialog(<span class="keyword">null</span>,<span class="string">"用户名不能为空！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(StringUtil.isEmpty(password)) &#123;</span><br><span class="line">			JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"密码不能为空！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		   登陆验证</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		User user=<span class="keyword">new</span> User(username,password);</span><br><span class="line">		Connection con=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			con=dbUtil.getCon();</span><br><span class="line">			User currentUser=userdao.login(con, user);</span><br><span class="line">			<span class="keyword">if</span>(currentUser!=<span class="keyword">null</span>) &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"登陆成功！"</span>);</span><br><span class="line">				</span><br><span class="line">				dispose();<span class="comment">//销毁窗口</span></span><br><span class="line">				</span><br><span class="line">				<span class="keyword">new</span> MainFrame().setVisible(<span class="keyword">true</span>);<span class="comment">//诱导新窗口</span></span><br><span class="line">				</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"用户名或密码错误！"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				dbUtil.closeCon(con);</span><br><span class="line">			&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(Connection con ,User user)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		User resultUser=<span class="keyword">null</span>;</span><br><span class="line">		String sql=<span class="string">"select * from userlog where uname=? and upsd=?"</span>;</span><br><span class="line">		PreparedStatement pstmt=con.prepareStatement(sql);</span><br><span class="line">		pstmt.setString(<span class="number">1</span>, user.getUsername());</span><br><span class="line">		pstmt.setString(<span class="number">2</span>, user.getPassword());</span><br><span class="line">		ResultSet rs=pstmt.executeQuery();</span><br><span class="line">		<span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">			resultUser=<span class="keyword">new</span> User();</span><br><span class="line">			resultUser.setId(rs.getInt(<span class="string">"id"</span>));</span><br><span class="line">			resultUser.setUsername(rs.getString(<span class="string">"uname"</span>));</span><br><span class="line">			resultUser.setPassword(rs.getString(<span class="string">"upsd"</span>));</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> resultUser;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>登陆的逻辑就很简单直接取出两个文本框里的内容去登陆表里一个一个去比较，这里的login就是在UserDao里实现的抽象方法，登陆成功后，要跳转到新的页面，就在登陆按钮的事件里新建一个Jframe窗口，再把登陆的Jframe窗口销毁，就能做出跳转的样子了。对了，说一下PreparedStatement这个类，在数据库的操作过程中，PreparedStatement 对象是一个很不起眼但是记为重要的接口对象，它继承于Statement，并与之在两方面有所不同：</p>
+<p>1）PreparedStatement 实例包含已编译的 SQL 语句。这就是使语句“准备好”。包含于 PreparedStatement 对象中的 SQL 语句可具有一个或多个 IN 参数。IN参数的值在 SQL 语句创建时未被指定。相反的，该语句为每个 IN 参数保留一个问号(“?”)作为占位符。每个问号的值必须在该语句执行之前，通过适当的setXXX 方法来提供。</p>
+<p>2）由于 PreparedStatement 对象已预编译过，所以其执行速度要快于 Statement 对象。因此，多次执行的 SQL 语句经常创建为 PreparedStatement 对象，以提高效率。</p>
+<p>作为 Statement 的子类，PreparedStatement 继承了 Statement 的所有功能。同时，三种方法 execute、 executeQuery 和 executeUpdate 已被更改以使之不再需要参数。这些方法的 Statement 形式（接受 SQL 语句参数的形式）不应该用于 PreparedStatement 对象。</p>
+<h1 id="主页面的功能"><a href="#主页面的功能" class="headerlink" title="主页面的功能"></a>主页面的功能</h1><p> 这里我们用到了JMenu，菜单有二级，三级等等，我的系统实现很简单，主页面就只有退出，添加，修改密码，查询，删除这几个功能。</p>
+<h1 id="添加职位信息"><a href="#添加职位信息" class="headerlink" title="添加职位信息"></a>添加职位信息</h1> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">workAddActionPerformed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">			String wname=<span class="keyword">this</span>.textField.getText();</span><br><span class="line">			String waddress=<span class="keyword">this</span>.textField_1.getText();</span><br><span class="line">			String wpost=<span class="keyword">this</span>.textField_2.getText();</span><br><span class="line">			<span class="keyword">if</span>(StringUtil.isEmpty(wname)||StringUtil.isEmpty(waddress)||StringUtil.isEmpty(wpost)) &#123;</span><br><span class="line">				JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"这三个选项为必填选项！"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line"> 			WorkType workType=<span class="keyword">new</span> WorkType(wname, waddress, wpost);</span><br><span class="line"> 			Connection con=<span class="keyword">null</span>;</span><br><span class="line"> 			<span class="keyword">try</span> &#123;</span><br><span class="line"> 				con=dbUtil.getCon();</span><br><span class="line"> 				<span class="keyword">int</span> n=workDao.add(con, workType);</span><br><span class="line"> 				<span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line"> 					JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"成功添加一条记录！"</span>);</span><br><span class="line"> 					<span class="keyword">this</span>.resetValue();</span><br><span class="line"> 				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line"> 					JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"添加记录失败！"</span>);</span><br><span class="line"> 				&#125;</span><br><span class="line"> 				</span><br><span class="line"> 			&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line"> 				e.printStackTrace();</span><br><span class="line"> 			&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line"> 					<span class="keyword">try</span> &#123;</span><br><span class="line">						dbUtil.closeCon(con);</span><br><span class="line">					&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resetValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.textField.setText(<span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">this</span>.textField_1.setText(<span class="keyword">null</span>);</span><br><span class="line">		<span class="keyword">this</span>.textField_2.setText(<span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resetValueActionPerformed</span><span class="params">(ActionEvent evt)</span> </span>&#123;</span><br><span class="line">       	<span class="keyword">this</span>.resetValue();	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(Connection con,WorkType work)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">	String sql=<span class="string">"insert into work values(?,?,?)"</span>;</span><br><span class="line">	<span class="comment">//依次是名称，地址，岗位</span></span><br><span class="line">	PreparedStatement pstmt=con.prepareStatement(sql);</span><br><span class="line">	pstmt.setString(<span class="number">1</span>, work.getWname());</span><br><span class="line">	pstmt.setString(<span class="number">2</span>, work.getWaddress());</span><br><span class="line">	pstmt.setString(<span class="number">3</span>, work.getWpost());</span><br><span class="line">	<span class="keyword">return</span> pstmt.executeUpdate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里还是用到了DAO的设计模式，将添加操作定义为一种抽像方法，几乎就体会不到数据库的存在了。</p>
 ]]></content>
       <tags>
-        <tag>文学</tag>
+        <tag>SQL</tag>
+        <tag>Java</tag>
+        <tag>JDBC</tag>
       </tags>
   </entry>
   <entry>
-    <title>你好世界</title>
-    <url>/2020/04/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是我的第一篇博客。 戳一下 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 就能获取更多信息。 如果在使用Hexo的时候遇到了任何问题。你都能在<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">麻烦刑场</a> 找到答案，或者你也可以在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>找到答案。</p>
+    <title>.NET复习</title>
+    <url>/2020/11/25/webstudy/</url>
+    <content><![CDATA[<p>复习文档，仅供参考。</p>
 <a id="more"></a>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="写一篇新的稿子"><a href="#写一篇新的稿子" class="headerlink" title="写一篇新的稿子"></a>写一篇新的稿子</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>更多信息在这-&gt;: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="进行本地预览"><a href="#进行本地预览" class="headerlink" title="进行本地预览"></a>进行本地预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>更多信息在这-&gt; <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于读过的书（不定期更新）</title>
-    <url>/2020/01/21/book/</url>
-    <content><![CDATA[<p>有时候就只喜欢闻书香味。</p>
-<a id="more"></a>
-<p>不知不觉就大二下学期了，但是我感觉还是什么不会啊，大一的寒假和暑假完完全全就是混过去的鸭，大一寒假就狂玩刺激战场，嗯，那个时候还叫刺激战场，苟到吐也要苟到王牌，大二暑假也是，肝到2点，还把朋友叫到我家来玩。现在看看又有什么用呢？闲来无事来总结一下自己一路走过来看过的书啦！</p>
-<h2 id="学术篇"><a href="#学术篇" class="headerlink" title="学术篇"></a>学术篇</h2><h3 id="C语言程序与设计"><a href="#C语言程序与设计" class="headerlink" title="C语言程序与设计"></a><a href="https://baike.baidu.com/item/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/3941" target="_blank" rel="noopener">C语言程序与设计</a></h3><p>大一上课的时候，用到无聊的一本书，经典红色，清华大学出版社，其中的指针我现在都没搞懂，更别说双指针了，还有寒假的时候，我们可爱的的李老师给我们布置的课设，写一个学生成绩管理系统，后来班上还真有人做了，奖励了sodu两颗糖哈哈哈。有一说一，这本书还真是有点不适合初学者，但如果有老师带就可以。说来惭愧，C语言从第一个Hello World开始学了4个多月，考试却没考好。</p>
-<h3 id="C-程序与设计"><a href="#C-程序与设计" class="headerlink" title="C++程序与设计"></a><a href="https://baike.baidu.com/item/C%2B%2B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/13878767" target="_blank" rel="noopener">C++程序与设计</a></h3><p>大一下的时候，还是这个老师，我开始意识到学习的重要性，同时也意识到娱乐的重要性，最后五五开的结局，可想而知了，老师上课的时候没有将全，可能是基于C语言基础上的，这个面向对象语言，我们那个时候就天天拿这个开玩笑，“没有对象？新建一个？”。后面的C++最实用的STL也没有强调去讲。</p>
-<h2 id="文学篇"><a href="#文学篇" class="headerlink" title="文学篇"></a>文学篇</h2><h3 id="百年孤独"><a href="#百年孤独" class="headerlink" title="百年孤独"></a><a href="https://baike.baidu.com/item/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/688708" target="_blank" rel="noopener">百年孤独</a></h3><p>这本书虽然名字听起来很有诗意，但当你翻开书的正文部分第二页的时候，里面的名字就足够让你记不住了，我高二那个时候不知道从哪听说的这本书，书名就足够打动我了，买回来看完了马孔多家族的故事。里面的名字，我还特地做了笔记。</p>
-]]></content>
-      <tags>
-        <tag>书籍</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何搭建搭建基于Hexo的个人博客</title>
-    <url>/2020/01/20/build%20my%20blog/</url>
-    <content><![CDATA[<p>想做什么就一定把它做好了！</p>
-<a id="more"></a>
-<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>1.第一次看到博客是在我大一的时候，那时候还在做C的算法题，有些东西自己完全想不出来了，就去问度娘（那个时候还不会科学上网），看到了一个一个的有趣的网站，更巧的是，上面也有大部分的题解思路，我就想着自己能不能也有一个博客，来分享自己的写题经验和点，大家共勉。于是就在CSDN上发了几个自己的题解，发现好像还是跟某某大牛的不一样，他们都有自己的网站，还有打赏🙃。我以为是要学习如何做网站，如何传数据，才能做出一个像样的网站，才大一的我就放弃了(T~T)。<br>2. 第二次灵感迸发是在昨天晚上的时候，看到我🐏哥的视频里有写手把手教你搭建自己的博客，就跟着🐏哥一步一步来，最后做成了一个Hello World的博客，哈哈哈，第一次只用了2个小时就完成了，太高兴了(可能我太菜了)。废话不多说，下面给出方法（ps：如果不想看文章，可以去🐏哥b站<a href="https://www.bilibili.com/video/av44544186?t=1132" target="_blank" rel="noopener">看看</a>。</p>
-<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><ol>
-<li><p>去官网下载Node.js，<a href="https://www.nodejs.org" target="_blank" rel="noopener">传送门</a>，下载安装。</p>
+<h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="HTML常见的块级元素和行内元素"><a href="#HTML常见的块级元素和行内元素" class="headerlink" title="HTML常见的块级元素和行内元素"></a>HTML常见的块级元素和行内元素</h3><h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><p>div、p、h1~h6、ul、ol、dl、li、dd、table、hr、blockquote、address、table、menu、pre，HTML5新增的header、section、aside、footer。<br>块级元素新开启一行（即使是设置了width属性也是独占一行）、尽可能撑满父级元素的宽度，可以设置width和height属性；table元素浏览器默认的display属性为table。</p>
+<h4 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h4><p>span、img、a、lable、input、abbr（缩写）、em（强调）、big、cite（引用）、i（斜体）、q（短引用）、textarea、select、small、sub、sup，strong、u（下划线）、button（默认display：inline-block）</p>
+<h3 id="ul和ol区别"><a href="#ul和ol区别" class="headerlink" title="ul和ol区别"></a>ul和ol区别</h3><p>ul是项目列表，li做列表项，每一项的符号默认是小黑圆点；<br>ol是编号列表，li做列表项，每一项的符号默认是数字；<br>li是 list item 即列表项，但列表有很两种，所以外面得有ul或者ol用来区别无序列表（小点点）和有序列表（1,2,3…）。</p>
+<h3 id="video标签支持的视频格式"><a href="#video标签支持的视频格式" class="headerlink" title="video标签支持的视频格式"></a>video标签支持的视频格式</h3><p>MP4 = MPEG 4文件使用 H264 视频编解码器和AAC音频编解码器，<br>WebM = WebM 文件使用 VP8 视频编解码器和 Vorbis 音频编解码器，<br>Ogg = Ogg 文件使用 Theora 视频编解码器和 Vorbis音频编解码器，<br>通过上面的信息我们会发现只有h264编码的MP4视频（MPEG-LA公司）、VP8编码的webm格式的视频（Google公司）和Theora编码的ogg格式的视频（iTouch开发）可以支持html5的video标签。</p>
+<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>text    定义 单行的输入文本字段，用户可在其中输入文本。默认宽度为20个字符。单行文本字段。换行符将自动从输入值中删除。</p>
+<p>checkbox    定义复选框。 允许选择/取消选择单个值的复选框。</p>
+<p>password    定义密码字段。该字段中的字符被掩码。值被隐藏的单行文本字段。使用maxlength和minlength属性指定 可输入值的最大长度。</p>
+<p>hidden    隐藏的输入值: 定义隐藏的输入字段。不显示但其值提交给服务器的控件。</p>
+<p>file    选择文件. 定义输入字段和 “浏览”按钮，供文件上传。允许用户选择文件的控件。使用accept属性定义控件可以选择的文件类型。</p>
+<p>button    默认行为的按钮: 定义可点击按钮。一个没有默认行为的按钮。</p>
+<p>radio    定义 单选按钮。一个单选按钮，允许从多个选项中选择一个值。</p>
+<p>reset    定义 重置按钮。重置按钮会 清除表单中的所有数据。将表单内容重置为默认值的按钮。</p>
+<p>submit    定义 提交按钮。提交按钮会把表单数据发送到服务器。提交表单的按钮。</p>
+<p>image    图片提交按钮: 定义 图像形式的提交按钮。一个图形化的提交按钮。必须使用src属性 定义图像的源，使用alt属性定义替代文本。可以使用height高度和width宽度属性 以像素为单位 定义图像的大小。</p>
+<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>select</td>
+<td>定义了下拉选项列表</td>
+</tr>
+<tr>
+<td>input</td>
+<td>创建一个最简单的文本输入框</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td>输入多行、多字数文本</td>
+</tr>
+<tr>
+<td>label</td>
+<td>label是input的描述，它本身不会有特殊效果</td>
+</tr>
+</tbody></table>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>CSS是Cascading Style Sheets（层叠样式表单）的简称，CSS就是一种叫做样式表（stylesheet）的技术，也有的人称之为“层叠样式表”（Cascading Stylesheet）。</p>
+<p>在主页制作时采用CSS技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。</p>
+<p>只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。</p>
+<h3 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类选择器</td>
+<td>通过类名进行选择.test</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>通过id进行选择#test</td>
+</tr>
+<tr>
+<td>标签选择器</td>
+<td>通过id进行选择span</td>
+</tr>
+<tr>
+<td>分组选择器</td>
+<td>可一次选择多个标签以设置相同样式p,a,li</td>
+</tr>
+<tr>
+<td>后代选择器</td>
+<td>选择某个标签的所有后代以设置相同样式div ul li</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>通过属性（如name属性）进行选择以设置相同的样式[name=”test”]</td>
+</tr>
+<tr>
+<td>通用选择器</td>
+<td>选择所有标签以设置相同样式*</td>
+</tr>
+<tr>
+<td>兄弟选择器</td>
+<td>选择兄弟关系的标签设置样式p+a</td>
+</tr>
+<tr>
+<td>直接父子选择器</td>
+<td>选择父子关系的标签中子标签设置样式div-&gt;p</td>
+</tr>
+</tbody></table>
+<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><p>text-align 文本对齐 </p>
+<p>text-decoration文本修饰</p>
+<p>line-height 行高</p>
+<p>text-shadow 阴影 水平方向偏移量 垂直方向偏移量 模糊度 阴影颜色</p>
+<p>background-repeat 表示设置该元素平铺的方式</p>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>box：盒子，每一个元素在页面中都会生成一个矩形区域（盒子）</p>
+<p>盒子类型：</p>
+<ol>
+<li><p>行盒，display等于inline元素 </p>
 </li>
-<li><p>打开命令行cmd，输入<code>node -v</code>，<code>npm -v</code>来检查是否安装成功。</p>
-</li>
-<li><p>如果电脑上没有git，需要先去官网git<a href="https://git-scm.com" target="_blank" rel="noopener">下载</a> ，安装教程<a href="https://www.jianshu.com/p/414ccd423efc" target="_blank" rel="noopener">相关链接</a> ，然后配置好环境变量，和之前做Java的时候差不多，都是把git下的bin的路径找到，添加到系统变量，<code>e.g.C:\Program Files\Git\bin</code>。最后可以通过在命令行输入<code>git</code>来检查是否安装成功。</p>
-</li>
-<li><p>安装hexo博客框架，在命令行输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>等待几分钟后，就欧克了，输入<code>cnpm -v</code>检查</p>
-</li>
-<li><p>通过cnpm安装hexo，输入<code>cnpm install -g hexo-cli</code>会自行下载。输入<code>hexo -v</code>检查。</p>
-</li>
-<li><p>在你需要建立的文件夹的文件路径那输入cmd（例如blog），在当前目录打开命令行。（这些都可以用命令行实现）接下来在命令行输入<code>hexo init</code>来初始化博客，等待几分钟。</p>
-</li>
-<li><p>可以去我的电脑查看生成的文件，启动博客本地端口localhost4000<code>hexo s</code>用来预览。</p>
-</li>
-<li><p>在命令行输入<code>hexo n “我的第一篇博客”</code>，进入source文件，你会看到我的第一篇博客.md的文件，用VScode打开，编辑保存退出。</p>
-</li>
-<li><p>在blog下打开命令行，输入<code>hexo -clean</code>，<code>hexo g</code>，来生成。只是在本地启动。</p>
-</li>
-<li><p>通过github来将博客部署到远端。首先要有一个github账号，新建一个仓库，仓库名必须是: <code>用户名.github.io</code></p>
-</li>
-<li><p>回到命令行blog下，输入<code>cnpm install --save hexo-deployer-git</code>，会有一些warn，不用管。</p>
-</li>
-<li><p>在blog中找到_config.yml，用Notepad打开，翻到最底部，修改参数<code>type： git      repo: https://github.com/你自己github账号/仓库名 branch: master</code> 保存退出。</p>
-</li>
-<li><p>部署到远端，还是在blog文件下命令行，输入<code>hexo d</code>，部署完成。</p>
-</li>
-<li><p>可以通过username.github.io访问，别人也能看，自己也能看。每次修改都要上传的远端，实现同步，可能github比较慢。</p>
-</li>
-<li><p>这样一篇基本的博客就完成了，里面还有很多多西可以自己去设置，自己去挖掘。这里我就不说了。</p>
-</li>
-<li><p>[更新于2020/4/3] 由于上次的博客搞得太花里胡哨，上传经常失败，而且加载特别慢，于是我又想重头再来了，找到了一篇<a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?depth_1-" target="_blank" rel="noopener">史上最全搭建Hexo的博客</a>，那真是手把手教的，不过在主题方面我纠结了许久，最终决定选择一个朴实无华的，结果这个太小众，动不动就出错（我没有怪作者的意思，是我看不懂英文😭），一连创建了5个blog文件，搞了整整12小时，才整出这给网站来，不容易哦，希望以后的编程之路不会使我头秃了。</p>
+<li><p>块盒，display等于block元素</p>
 </li>
 </ol>
-<h2 id="干什么"><a href="#干什么" class="headerlink" title="干什么"></a>干什么</h2><p>   1.当然是记录自己的coding之路啊，也可以在以后的面试中给面试官一个好印象。<br>   2.也可以分享自己的题解或者学习的经验，对了，还有生活！</p>
-<h2 id="总结下"><a href="#总结下" class="headerlink" title="总结下"></a>总结下</h2><p>   谢谢捧场！🤭🤭🤭</p>
-]]></content>
+<p>行盒在页面中不换行，块盒独占一行。</p>
+<p>display默认值是inline</p>
+<p>浏览器默认样式表设置的块盒：容器元素，h1~h2，p。</p>
+<p>常见的行盒：span,a,img,video,audio</p>
+<h4 id="盒子的组成部分"><a href="#盒子的组成部分" class="headerlink" title="盒子的组成部分"></a>盒子的组成部分</h4><p>无论是行盒，还是块盒，都由下面几个部分组成，从内到外分别是：</p>
+<ol>
+<li>内容 content<br> width，height，设置的是盒子的内容的宽高</li>
+<li>填充 padding<br> padding简写属性，写四个，代表上，右，下，左。写两个，代表上下，左右，写一个，代表上下左右等宽，三个代表，上，左右，下。<br> padding-top，padding-right，padding-bottom，padding-left<br> 填充区+内容区= <strong>填充盒 padding-box</strong></li>
+<li>边框 border<br> 没有设置颜色，默认字体颜色<br> 有箭头，表示这个属性为速写属性，同上padding<br> boder 宽度 样式 颜色</li>
+<li>外边距 margin<br> 盒子与盒子之间的距离</li>
+</ol>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="结合实例"><a href="#结合实例" class="headerlink" title="结合实例"></a>结合实例</h3><h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h4><p>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/ab+c/</span>;</span><br></pre></td></tr></table></figure>
+<p>脚本加载后，正则表达式字面量就会被编译。当正则表达式保持不变时，使用此方法可获得更好的性能。</p>
+<p>或者调用RegExp对象的构造函数，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"ab+c"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在脚本运行过程中，用构造函数创建的正则表达式会被编译。如果正则表达式将会改变，或者它将会从用户输入等来源中动态地产生，就需要使用构造函数来创建正则表达式。</p>
+<h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">\d：数字 <span class="number">0</span><span class="number">-9</span>  </span><br><span class="line">\D：非数字  </span><br><span class="line">\s：空格  </span><br><span class="line">\S：非空格  </span><br><span class="line">\w: 字符( 字母a-z 数字<span class="number">0</span><span class="number">-9</span> 下划线_ )  </span><br><span class="line">\W: 非字符  </span><br><span class="line">\b: 端点 ( 起始、结束、空格 )  </span><br><span class="line">\B: 非端点</span><br></pre></td></tr></table></figure>
+
+<h4 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">i：执行对大小写不敏感的匹配。  </span><br><span class="line">g：执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。  </span><br><span class="line">m：执行多行匹配。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h2 id="Linq"><a href="#Linq" class="headerlink" title="Linq"></a>Linq</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Web</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
