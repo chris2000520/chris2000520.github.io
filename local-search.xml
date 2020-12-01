@@ -119,7 +119,7 @@
     <link href="/2020/06/25/solvepic/"/>
     <url>/2020/06/25/solvepic/</url>
     
-    <content type="html"><![CDATA[<img style="border-radius:0.25em" src="https://chris2000520.gitee.io/images/pic006.jpg"  alt="pic006"/><a id="more"></a><h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p><h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用</p><pre><code class="hljs arcade">![缩略图](<span class="hljs-regexp">/images/</span>pic.png)</code></pre><p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p><h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a href="https://zhuanlan.zhihu.com/p/35270383">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a href="https://imgchr.com/">路过图床</a>。</p><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a href="http://sloving.gitee.io/">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/">博客</a>。</p><p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p><p>小测试：</p><p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p><pre><code class="hljs Markdown">[<span class="hljs-string">![Nssgde.th.png</span>](<span class="hljs-link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="hljs-link">https://imgchr.com/i/Nssgde</span>)</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p><h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用</p><pre><code class="hljs arcade">![缩略图](<span class="hljs-regexp">/images/</span>pic.png)</code></pre><p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p><h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a href="https://zhuanlan.zhihu.com/p/35270383">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a href="https://imgchr.com/">路过图床</a>。</p><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a href="http://sloving.gitee.io/">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/">博客</a>。</p><p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p><p>小测试：</p><p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p><pre><code class="hljs Markdown">[<span class="hljs-string">![Nssgde.th.png</span>](<span class="hljs-link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="hljs-link">https://imgchr.com/i/Nssgde</span>)</code></pre>]]></content>
     
     
     
@@ -263,25 +263,6 @@
     <tags>
       
       <tag>文学</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2020/04/03/hello-world/"/>
-    <url>/2020/04/03/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>欢迎来到Hexo的世界，这是你的第一个页面。点击<a href="https://hexo.io/docs/">文档</a>来获取更多帮助。</p><a id="more"></a><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Hexo</tag>
       
     </tags>
     
