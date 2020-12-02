@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4k 字
+      4.4k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      45
+      50
        分钟
     </span>
   
@@ -414,11 +414,12 @@
 <td>选择父子关系的标签中子标签设置样式 div-&gt;p</td>
 </tr>
 </tbody></table>
-<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><p>text-align 文本对齐</p>
-<p>text-decoration 设置文本的修饰线外观<br>none:无<br>underline:下划线<br>overline:上划线<br>line-through:删除线</p>
-<p>line-height 行高</p>
-<p>text-shadow 阴影 水平方向偏移量 垂直方向偏移量 模糊度 阴影颜色</p>
-<p>background-repeat 表示设置该元素平铺的方式</p>
+<h3 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h3><h4 id="text-align"><a href="#text-align" class="headerlink" title="text-align"></a>text-align</h4><p>属性定义行内内容如何相对它的块父元素对齐。text-align并不控制块元素自己的对齐，只控制它的行内内容的对齐。center为居中对齐，right为右对齐，justify为两端对齐文本效果。</p>
+<h4 id="text-decoration"><a href="#text-decoration" class="headerlink" title="text-decoration"></a>text-decoration</h4><p>设置文本的修饰线外观，none就是没有下划线，underline为下划线，overline为上划线，line-through为删除线，默认值为underline。</p>
+<h4 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h4><p>行高，通常用来设置垂直居中。</p>
+<h4 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h4><p>速写属性依次为：阴影，水平方向偏移量，垂直方向偏移量，模糊度，阴影颜色。</p>
+<h4 id="background-repeat"><a href="#background-repeat" class="headerlink" title="background-repeat"></a>background-repeat</h4><p>表示设置该元素平铺的方式，默认值为repeat。no-repeat，图片不会重复，space，图片会尽可能重复，但不会裁剪，repeat-x或-y，在水平方向或者垂直方向上重复。</p>
+<h4 id="list-style-type"><a href="#list-style-type" class="headerlink" title="list-style-type"></a>list-style-type</h4><p>设置列表元素的marker，比如圆点、符号、或者自定义计数器样式。disc为实心圆点 (默认值)，circle为空心圆点，square为实心方块，decimal为十进制阿拉伯数字。</p>
 <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>box：盒子，每一个元素在页面中都会生成一个矩形区域（盒子）。</p>
 <p>盒子类型：</p>
 <ol>
@@ -518,6 +519,27 @@
     <span class="hljs-keyword">return</span> result;
 &#125;</code></pre></div>
 
+<h5 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h5><p>WindowOrWorkerGlobalScope的<code>setInterval()</code>方法重复调用一个函数或执行一个代码段，在每次调用之间具有固定的时间延迟。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> intervalID = scope.setInterval(func, delay, [arg1, arg2, ...]);
+<span class="hljs-keyword">var</span> intervalID = scope.setInterval(code, delay);</code></pre></div>
+<ul>
+<li>func：执行时触发的函数。</li>
+<li>code：可选，传递一个字符串来代替一个函数对象。</li>
+<li>delay：延迟的秒数，单位时毫秒。</li>
+<li>arg：当定时器过期的时候，将被传递给func指定函数的附加参数。</li>
+</ul>
+<div class="note note-warning">
+            <p>setInterval()方法会不停地调用函数，直到clearInterval()被调用或窗口被关闭。由 setInterval()返回的 ID 值可用作 clearInterval()方法的参数。</p><p>如果你只想执行一次可以使用setTimeout()方法。</p>
+          </div>
+
+<h4 id="Web-API接口"><a href="#Web-API接口" class="headerlink" title="Web API接口"></a>Web API接口</h4><p>window.location 只读属性，返回一个 Location  对象，其中包含有关文档当前位置的信息。</p>
+<p>简单例子，显示当前网站的URL。</p>
+<div class="hljs"><pre><code class="hljs js">alert(location);</code></pre></div>
+<p>一般用法，导航到一个新的界面。</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location = <span class="hljs-string">&quot;http://www.example.com&quot;</span></code></pre></div>
+<p>强制从服务器重新加载当前页面</p>
+<div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location.reload(<span class="hljs-literal">true</span>);</code></pre></div>
+<p>更多用法<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/location">请看这里</a>。</p>
 <h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件能为网页添加真实的交互能力。它可以捕捉浏览器操作并运行一些代码做为响应。最简单的事件是点击事件，鼠标的点击操作会触发该事件。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;html&quot;</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     alert(<span class="hljs-string">&quot;Hello World&quot;</span>);
