@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.1k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      13
        分钟
     </span>
   
@@ -253,14 +253,14 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年12月1日 晚上
+                  本文最后更新于：2020年12月2日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <p>自己辛辛苦苦总结的，走了不少坑。</p>
+              <p>最近在美化自己的博客，突然发现看板娘好像挺有意思的，于是准备自己配一个，发现没那么简单，途中踩了不少坑，不过好在最后成功了，在此记录配置过程。</p>
 <a id="more"></a>
-<h2 id="检查package-json文件里有没有这一项"><a href="#检查package-json文件里有没有这一项" class="headerlink" title="检查package.json文件里有没有这一项"></a>检查package.json文件里有没有这一项</h2><div class="hljs"><pre><code class="hljs bash"><span class="hljs-string">&quot;hexo-helper-live2d&quot;</span>: <span class="hljs-string">&quot;^3.1.1&quot;</span></code></pre></div>
+<h2 id="检查package-json文件"><a href="#检查package-json文件" class="headerlink" title="检查package.json文件"></a>检查package.json文件</h2><div class="hljs"><pre><code class="hljs bash"><span class="hljs-string">&quot;hexo-helper-live2d&quot;</span>: <span class="hljs-string">&quot;^3.1.1&quot;</span></code></pre></div>
 <p>（这个文件在博客根目录下就会有）如果没有这一项的话不要紧，后面会安装的，只是如果有旧版本的话，要先卸载，我也是听大佬说的。卸载代码：</p>
 <div class="hljs"><pre><code class="hljs bash">$ npm uninstall hexo-helper-live2d</code></pre></div>
 <h2 id="检查自己的core-js"><a href="#检查自己的core-js" class="headerlink" title="检查自己的core-js"></a>检查自己的core-js</h2><p>就在你的博客的根目录下，因为如果你的core-js版本低于3的话，是不支持<code>hexo-helper-live2d</code>的。会出现如下错误：</p>
