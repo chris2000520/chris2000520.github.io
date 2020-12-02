@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"47.99.96.122","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -523,13 +523,37 @@
     alert(<span class="hljs-string">&quot;Hello World&quot;</span>);
 &#125;;</code></pre></div>
 
-<p>将事件与元素绑定有许多方法。在这里选用了 <html> 元素，把一个匿名函数（就是没有命名的函数，这里的匿名函数包含单击鼠标时要运行的代码）赋值给了 html 的 onclick 属性。<br>|事件|解释|<br>|—|—|<br>|onkeyup|当用户释放键盘按钮时执行|<br>|onkeydown|当用户按下所有键盘按钮时执行|<br>|onkeypress|当键盘按键被按下并释放一个键时执行|<br>|onchange|当用户改变 input 输入框内容时执行|</p>
+<p>将事件与元素绑定有许多方法。在这里选用了html元素，把一个匿名函数（就是没有命名的函数，这里的匿名函数包含单击鼠标时要运行的代码）赋值给了 html 的 onclick 属性。</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onkeyup</td>
+<td>当用户释放键盘按钮时执行</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>当用户按下所有键盘按钮时执行</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>当键盘按键被按下并释放一个键时执行</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>当用户改变 input 输入框内容时执行</td>
+</tr>
+</tbody></table>
 <div class="note note-warning">
             <p>onkeyup，onkeypress 仅对文本按键有效，<br>当按下不属于文本显示的按键（比如 Tab 键，Del 键，Shift 键）时，onkeydown 执行，而 onkeypress，onkeyup 不执行，Enter 键除外。</p>
           </div>
 
 <h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p><code>JSON.stringify()</code>方法将一个 JavaScript 对象或值转换为 JSON 字符串，如果指定了一个 replacer 函数，则可以选择性地替换值，或者指定的 replacer 是数组，则可选择性地仅包含数组指定的属性。</p>
-<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h4><p>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/ab+c/</span>;</code></pre></div>
 
 <p>脚本加载后，正则表达式字面量就会被编译。当正则表达式保持不变时，使用此方法可获得更好的性能。</p>
@@ -537,7 +561,7 @@
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> re = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;ab+c&quot;</span>);</code></pre></div>
 
 <p>在脚本运行过程中，用构造函数创建的正则表达式会被编译。如果正则表达式将会改变，或者它将会从用户输入等来源中动态地产生，就需要使用构造函数来创建正则表达式。</p>
-<h4 id="转义字符："><a href="#转义字符：" class="headerlink" title="转义字符："></a>转义字符：</h4><div class="hljs"><pre><code class="hljs js">\d：数字 <span class="hljs-number">0</span>-<span class="hljs-number">9</span>
+<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><div class="hljs"><pre><code class="hljs js">\d：数字 <span class="hljs-number">0</span>-<span class="hljs-number">9</span>
 \D：非数字
 \s：空格
 \S：非空格
@@ -546,13 +570,13 @@
 \b: 端点 ( 起始、结束、空格 )
 \B: 非端点</code></pre></div>
 
-<h4 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h4><div class="hljs"><pre><code class="hljs js">i：执行对大小写不敏感的匹配。
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><div class="hljs"><pre><code class="hljs js">i：执行对大小写不敏感的匹配。
 g：执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
 m：执行多行匹配。</code></pre></div>
 
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Asynchronous JavaScript + XML（异步 JavaScript 和 XML）， 其本身不是一种新技术，而是一个在 2005 年被 Jesse James Garrett 提出的新术语，用来描述一种使用现有技术集合的新方法，包括：HTML 或 XHTML，CSS，JavaScript，DOM，XML，XSLT,，以及最重要的 XMLHttpRequest。当使用结合了这些技术的 AJAX 模型以后，网页应用能够快速地将增量更新呈现在用户界面上，而不需要重载（刷新）整个页面。这使得程序能够更快地回应用户的操作。</p>
 <h2 id="LINQ"><a href="#LINQ" class="headerlink" title="LINQ"></a>LINQ</h2><p>LINQ 是 .NET Framework 3.5 的新特性，其全称是 Language Integrated Query，即语言集成查询，是指将查询功能和语言结合起来。从而为我们提供一种统一的方式，让我们能在 C#或 VB.NET 语言中直接查询和操作各种数据。</p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>LINQ 中最基本的数据单元是 sequences 和 elements。一个 sequence 是实现了 IEnumerable&lt;T&gt;的对象，而一个 element 是 sequence 中的每一个元素。如下，names 就是一个 sequence，“Tom”，“Dick”和“Harry”则是 elements。</p>
+<h3 id="开始-1"><a href="#开始-1" class="headerlink" title="开始"></a>开始</h3><p>LINQ 中最基本的数据单元是 sequences 和 elements。一个 sequence 是实现了 IEnumerable&lt;T&gt;的对象，而一个 element 是 sequence 中的每一个元素。如下，names 就是一个 sequence，“Tom”，“Dick”和“Harry”则是 elements。</p>
 <div class="hljs"><pre><code class="hljs c#"><span class="hljs-built_in">string</span>[] names = &#123; <span class="hljs-string">&quot;Tom&quot;</span>, <span class="hljs-string">&quot;David&quot;</span>, <span class="hljs-string">&quot;Jack&quot;</span> &#125;;</code></pre></div>
 
 <h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>查询表达式是一种使用查询语法表示的表达式，它用于查询和转换来自任意支持 LINQ 的数据源中的数据。查询表达式使用许多常见的 C#语言构造，易读简洁，容易掌握。它由一组类似于 SQL 或 XQuery 的声明性语法编写的子句组成。每一个子句可以包含一个或多个 C#表达式。这些 C#表达式本身也可能是查询表达式或包含查询表达式。</p>
@@ -757,6 +781,13 @@ m：执行多行匹配。</code></pre></div>
 
 
   
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">鄂ICP备2020021519号</a>
+    
+  </div>
+
 
   
 </footer>
