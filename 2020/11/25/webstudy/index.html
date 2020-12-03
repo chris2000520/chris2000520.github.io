@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.4k 字
+      4.6k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      50
+      52
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年12月2日 上午
+                  本文最后更新于：2020年12月3日 晚上
                 
               </p>
             
@@ -371,6 +371,7 @@ more -->
 <h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>element 的<code>innerHTML</code>属性设置或获取 HTML 语法表示的元素的后代。用 innerHTML 插入文本到网页中并不罕见。但这有可能成为网站攻击的媒介，从而产生潜在的安全风险问题。</p>
 <p>tr 的<code>rowIndex</code>属性，返回某一行(rows)在表格的行集合中的位置（row index），索引从零开始。</p>
 <p>table 的<code>deleteRow()</code>方法，用于从表格删除指定位置的行。</p>
+<p>HTMLSelectElement的<code>selectedIndex</code>属性是一个长整型数，它反映了被选中的第一个option元素的下标值。值为-1时表明没有元素被选中。</p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>CSS 是 Cascading Style Sheets（层叠样式表单）的简称，CSS 就是一种叫做样式表（stylesheet）的技术，也有的人称之为“层叠样式表”（Cascading Stylesheet）。</p>
 <p>在主页制作时采用 CSS 技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。</p>
 <p>只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。</p>
@@ -575,7 +576,20 @@ more -->
             <p>onkeyup，onkeypress 仅对文本按键有效，<br>当按下不属于文本显示的按键（比如 Tab 键，Del 键，Shift 键）时，onkeydown 执行，而 onkeypress，onkeyup 不执行，Enter 键除外。</p>
           </div>
 
-<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p><code>JSON.stringify()</code>方法将一个 JavaScript 对象或值转换为 JSON 字符串，如果指定了一个 replacer 函数，则可以选择性地替换值，或者指定的 replacer 是数组，则可选择性地仅包含数组指定的属性。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><h4 id="JSON语法"><a href="#JSON语法" class="headerlink" title="JSON语法"></a>JSON语法</h4><p>JSON语法是JS对象表示语法的子集,有如下特点:</p>
+<ul>
+<li>数据在键值对中(键名即属性名必须加双引号)</li>
+<li>数据由逗号分隔</li>
+<li>花括号保存对象</li>
+<li>方括号保存数组</li>
+</ul>
+<p>JSON可通过JavaScript进行解析，JSON值可以是：数字、字符串、逻辑值、数组(在中括号中)、对象(在大括号中)、null。</p>
+<div class="note note-warning">
+            <p>注意JSON不能存储Date对象，如果需要则用字符串表示。</p>
+          </div>
+
+
+<p><code>JSON.stringify()</code>方法将一个 JavaScript 对象或值转换为 JSON 字符串，如果指定了一个 replacer 函数，则可以选择性地替换值，或者指定的 replacer 是数组，则可选择性地仅包含数组指定的属性。</p>
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/ab+c/</span>;</code></pre></div>
 
