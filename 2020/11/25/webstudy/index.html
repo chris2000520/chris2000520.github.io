@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.6k 字
+      4.7k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      52
+      53
        分钟
     </span>
   
@@ -534,7 +534,7 @@ more -->
             <p>setInterval()方法会不停地调用函数，直到clearInterval()被调用或窗口被关闭。由 setInterval()返回的 ID 值可用作 clearInterval()方法的参数。</p><p>如果你只想执行一次可以使用setTimeout()方法。</p>
           </div>
 
-<h4 id="Web-API接口"><a href="#Web-API接口" class="headerlink" title="Web API接口"></a>Web API接口</h4><p>window.location 只读属性，返回一个 Location  对象，其中包含有关文档当前位置的信息。</p>
+<h4 id="Web-API接口"><a href="#Web-API接口" class="headerlink" title="Web API接口"></a>Web API接口</h4><p>window.location只读属性，返回一个 Location  对象，其中包含有关文档当前位置的信息。</p>
 <p>简单例子，显示当前网站的URL。</p>
 <div class="hljs"><pre><code class="hljs js">alert(location);</code></pre></div>
 <p>一般用法，导航到一个新的界面。</p>
@@ -542,6 +542,8 @@ more -->
 <p>强制从服务器重新加载当前页面</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">window</span>.location.reload(<span class="hljs-literal">true</span>);</code></pre></div>
 <p>更多用法<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/location">请看这里</a>。</p>
+<p>Node.parentElement返回当前节点的父元素节点，如果该元素没有父节点，或者父节点不是一个 DOM 元素，则返回 null。</p>
+<p>Node.insertBefore()方法在参考节点之前插入一个拥有指定父节点的子节点。如果给定的子节点是对文档中现有节点的引用，insertBefore()会将其从当前位置移动到新位置，用来冒泡排序中的交换最好不过了。</p>
 <h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>事件能为网页添加真实的交互能力。它可以捕捉浏览器操作并运行一些代码做为响应。最简单的事件是点击事件，鼠标的点击操作会触发该事件。</p>
 <div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;html&quot;</span>).onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     alert(<span class="hljs-string">&quot;Hello World&quot;</span>);
