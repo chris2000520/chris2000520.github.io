@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      2k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      22
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月10日 下午
+                  本文最后更新于：2021年1月12日 下午
                 
               </p>
             
@@ -310,13 +310,49 @@
 <p>例如：</p>
 <div class="hljs"><pre><code class="hljs c#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IUserAppService</span>:<span class="hljs-title">IAppService</span> &#123;&#125;</code></pre></div>
 
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>继承于<code>项目名+AppServiceBase</code>和<code>IUserAppService</code>,只有继承了这两个接口，在创建时，被发现才能映射到前面去。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>继承于<code>项目名+AppServiceBase</code>和<code>IUserAppService</code>,只有继承了这两个接口，在创建时，被发现才能映射到前面去。Test是我自己的项目名。</p>
 <div class="hljs"><pre><code class="hljs c#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TaskAppService</span> : <span class="hljs-title">TestAppServiceBase</span>, <span class="hljs-title">ITaskAppService</span> &#123;&#125;</code></pre></div>
 
 <p>然后依赖注入</p>
 <p>打开Swagger UI 找到自己的接口，try一下。如果数据库有数据，会按照json格式显示出来。</p>
 <h3 id="仓储"><a href="#仓储" class="headerlink" title="仓储"></a>仓储</h3><p>仓储（Repository） 用来操作数据库进行数据存取。仓储接口在领域层定义，而仓储的实现类应该写在基础设施层。</p>
-<p>在ABP中，仓储类要实现<code>IRepository</code>接口，接口定义了常用的增删改查以及聚合方法，其中包括同步及异步方法。如果业务简单，那ABP自带的泛型仓储就足够用了。</p>
+<p>在ABP中，仓储类要实现<code>IRepository</code>接口，接口定义了常用的增删改查以及聚合方法，其中包括同步及异步方法。如果业务简单，那ABP自带的泛型仓储就足够用了。<code>IRepository</code>定义了从<strong>数据库</strong>中检索实体的常用方法。下面列举一些常用的方法。</p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Get</span>(<span class="hljs-params">TPrimaryKey id</span>)</span>;</code></pre></div>
+
+<p>Get方法被用于根据主键值(Id)取得对应的<strong>单一实体</strong>。当数据库中根据主键值找不到相符合的实体时,它会抛出异常。</p>
+<div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function">List&lt;TEntity&gt; <span class="hljs-title">GetAllList</span>(<span class="hljs-params"></span>)</span>;</code></pre></div>
+
+<p>GetAllList方法被用于从数据库中检索<strong>所有实体</strong>。重载并且提供过滤实体的功能（相当于条件查询）。例如：</p>
+<div class="hljs"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> allPeople = _personRepository.GetAllList();
+<span class="hljs-keyword">var</span> somePeople = _personRepository.GetAllList(person =&gt; person.IsActive &amp;&amp; person.Age &gt; <span class="hljs-number">42</span>);</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function">IQueryable&lt;TEntity&gt; <span class="hljs-title">GetAll</span>(<span class="hljs-params"></span>)</span>;</code></pre></div>
+
+<p>GetAll方法返回IQueryable&lt;T&gt;类型的<strong>对象</strong>。因此我们可以在调用完这个方法之后进行Linq操作。例如：</p>
+<div class="hljs"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> query = <span class="hljs-keyword">from</span> p <span class="hljs-keyword">in</span> _personRepository.GetAll()
+			<span class="hljs-keyword">where</span> p.Age == <span class="hljs-number">20</span>
+			<span class="hljs-keyword">orderby</span> p.Name
+			<span class="hljs-keyword">select</span> p;</code></pre></div>
+<p>说明：关于IQueryable&lt;T&gt; 当你调用GetAll这个方法在Repository对象以外的地方,必定会开启数据库连接。这是因为IQueryable&lt;T&gt;允许延迟执行。它会<strong>直到</strong>你调用ToList方法或在forEach循环上(或是一些存取已查询的对象方法)使用IQueryable&lt;T&gt;时,才会实际<strong>执行数据库的查询</strong>。因此,当你调用ToList方法时,数据库连接必需是启用状态。总结，GetAll方法不会查询数据库，而是知道之行到ToList方法时才会与查询数据库。</p>
+<h4 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h4><div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Insert</span>(<span class="hljs-params">TEntity entity</span>)</span>;
+<span class="hljs-function">TPrimaryKey <span class="hljs-title">InsertAndGetId</span>(<span class="hljs-params">TEntity entity</span>)</span>;
+<span class="hljs-function">TEntity <span class="hljs-title">InsertOrUpdate</span>(<span class="hljs-params">TEntity entity</span>)</span>;
+<span class="hljs-function">TPrimaryKey <span class="hljs-title">InsertOrUpdateAndGetId</span>(<span class="hljs-params">TEntity entity</span>)</span>;</code></pre></div>
+<p>新增方法会新增实体到数据库并且返回相同的已新增实体。InsertAndGetId方法返回新增实体的标识符(Id)。当我们采用自动递增标识符值且需要取得实体的新产生标识符值时非常好用。InsertOfUpdate会新增或更新实体,选择那一种是根据Id是否有值来决定。最后,InsertOrUpdatedAndGetId会在实体被新增或更新后返回Id值。总结，注意参数和返回值，基本上和查询系列方法类似。</p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Update</span>(<span class="hljs-params">TEntity entity</span>)</span>;</code></pre></div>
+
+<p>IRepository定义一个方法来实现更新一个<strong>已存在</strong>于数据库中的实体。它更新实体并返回相同的实体对象。</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">TEntity entity</span>)</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">TPrimaryKey id</span>)</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;</code></pre></div>
+
+<p>上面两个方法一个是删除实体，一个是通过Id删除，第三个方法接受一个条件来删除符合条件的实体。要注意,所有符合predicate表达式的实体会<strong>先被检索而后删除</strong>。</p>
+<h4 id="其它方法"><a href="#其它方法" class="headerlink" title="其它方法"></a>其它方法</h4><div class="hljs"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">Count</span>(<span class="hljs-params"></span>)</span>;
+<span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">Count</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;
+<span class="hljs-function">Long <span class="hljs-title">LongCount</span>(<span class="hljs-params"></span>)</span>;
+<span class="hljs-function">Long <span class="hljs-title">LongCount</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;</code></pre></div>
+
+<p>IRepository也提供一些方法来取得数据表中实体的数量。要注意的同删除系列的predicate表达式。</p>
 <h2 id="Core-领域层"><a href="#Core-领域层" class="headerlink" title="Core 领域层"></a>Core 领域层</h2><p>在这里写实体类，写各种限制。</p>
 <h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3><p>我们定义一个实体类Person，并且为它定义两个属性。父类Entity具有主键属性Id。所有继承Entity类的子类都将具有主键为Id的属性。</p>
 <p>Id数据类型可以被更改。默认是 int类型。如果你想给 Id 定义其它类型，你应该像下面示例一样来指定 Id 的类型。</p>
