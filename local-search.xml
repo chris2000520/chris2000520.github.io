@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>linuxshell</title>
+    <link href="/2021/05/07/linuxshell/"/>
+    <url>/2021/05/07/linuxshell/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Linux与Shell编程"><a href="#Linux与Shell编程" class="headerlink" title="Linux与Shell编程"></a>Linux与Shell编程</h1><h2 id="Linux-介绍"><a href="#Linux-介绍" class="headerlink" title="Linux 介绍"></a>Linux 介绍</h2><h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Shell</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ABP框架初体验</title>
     <link href="/2021/01/11/abp/"/>
     <url>/2021/01/11/abp/</url>
