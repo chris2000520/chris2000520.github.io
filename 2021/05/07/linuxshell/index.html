@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.4k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      16
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年5月7日 上午
+                  本文最后更新于：2021年5月9日 凌晨
                 
               </p>
             
@@ -277,32 +277,25 @@
 
 <p>其中，major为主版本号，minor为次版本号，patchlevel表示对当前版本的修订次数。</p>
 <p>发行版本是由各个公司推出的版本，通常将安装界面，系统设定，管理工具集成在一起，构成一个套件，从而方便用户使用，尽管这样，普通用户使用Linux发行版本的人数还是很少，软件支持的也少。目前，有Red Hat，Debian，Ubuntu，红旗Linux，Deepin等发行版。</p>
-<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><ol>
-<li><p>who<br><code>who</code>列出所有正在使用系统的用户，所用终端名和注册到系统的时间。而<code>whoami</code>将列出当前用户信息。</p>
-<div class="hljs"><pre><code class="hljs bash">$ who
+<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><h4 id="1-who"><a href="#1-who" class="headerlink" title="1.who"></a>1.who</h4><p><code>who</code>列出所有正在使用系统的用户，所用终端名和注册到系统的时间。而<code>whoami</code>将列出当前用户信息。</p>
+   <div class="hljs"><pre><code class="hljs bash">$ who
 chris    :0           2021-05-07 17:43 (:0)
 $ whoami 
 chris</code></pre></div>
 
-
-
-</li>
-</ol>
-<ol start="2">
-<li><p>echo<br>将命令行中参数标准输出，相当于<code>cout</code>，<code>printf</code>。要注意空格折叠的问题，例如：</p>
-<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> Hello world
+<h4 id="2-echo"><a href="#2-echo" class="headerlink" title="2.echo"></a>2.echo</h4><p>将命令行中参数标准输出，相当于<code>cout</code>，<code>printf</code>。要注意空格折叠的问题，例如：</p>
+   <div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> Hello world
 Hello world
 $ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;bye    bye&#x27;</span>
 <span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span>
 $ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span>
 <span class="hljs-built_in">bye</span> <span class="hljs-built_in">bye</span></code></pre></div>
-</li>
-<li><p>date<br>用来显示当前日期和时间，例如：</p>
+
+<h4 id="3-date"><a href="#3-date" class="headerlink" title="3.date"></a>3.date</h4><p>用来显示当前日期和时间，例如：</p>
 <div class="hljs"><pre><code class="hljs bash">$ date
 Fri May  7 17:14:49 CST 2021</code></pre></div>
-</li>
-<li><p>cal</p>
-<p>用来显示公元1~9999年中任意一年或者一个月的日历，第一个参数为月份（也可以用英文缩写表示），第二参数为年份，若不写参数，则显示当前月份的日历，例如：</p>
+
+<h4 id="4-cal"><a href="#4-cal" class="headerlink" title="4.cal"></a>4.cal</h4><p>用来显示公元1~9999年中任意一年或者一个月的日历，第一个参数为月份（也可以用英文缩写表示），第二参数为年份，若不写参数，则显示当前月份的日历，例如：</p>
 <div class="hljs"><pre><code class="hljs bash">$ cal 2 2021
    February 2021
 Su Mo Tu We Th Fr Sa
@@ -311,12 +304,12 @@ Su Mo Tu We Th Fr Sa
 14 15 16 17 18 19 20
 21 22 23 24 25 26 27
 28</code></pre></div>
-</li>
-<li><p>clear<br>用来清除屏幕上的信息。清屏后，提示符移到屏幕左上角。例如：</p>
+
+<h4 id="5-clear"><a href="#5-clear" class="headerlink" title="5.clear"></a>5.clear</h4><p>用来清除屏幕上的信息。清屏后，提示符移到屏幕左上角。例如：</p>
 <div class="hljs"><pre><code class="hljs bash">$ clear
 $ _</code></pre></div>
-</li>
-<li><p>passwd<br>用来修改口令，也就是密码。Linux的安全特性允许用户控制自己的口令，输入后，按照提示来就可修改密码，出于安全考虑，输入的密码都不会在屏幕上显示，所以不要以为自己的键盘⌨坏了哟。例如：</p>
+
+<h4 id="6-passwd"><a href="#6-passwd" class="headerlink" title="6.passwd"></a>6.passwd</h4><p>用来修改口令，也就是密码。Linux的安全特性允许用户控制自己的口令，输入后，按照提示来就可修改密码，出于安全考虑，输入的密码都不会在屏幕上显示，所以不要以为自己的键盘⌨坏了哟。例如：</p>
 <div class="hljs"><pre><code class="hljs bash">$ passwd
 Change password <span class="hljs-keyword">for</span> user chris
 (current) UNIX password:
@@ -324,10 +317,59 @@ New UNIX password:
 Retype new UNIX password:
 passwd:all authentication tokens updated successfully.</code></pre></div>
 
+<h4 id="7-pwd"><a href="#7-pwd" class="headerlink" title="7.pwd"></a>7.pwd</h4><p>用来显示当前工作目录，全称为<code>Print Working Directory</code>。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span>
+/home/chris/Downloads</code></pre></div>
+
+<h4 id="8-cd"><a href="#8-cd" class="headerlink" title="8.cd"></a>8.cd</h4><p>用来进入某个文件夹，全称为<code>Change Directory</code>，也就是改变工作目录。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">~$ <span class="hljs-built_in">cd</span> Downloads
+Downloads$ _</code></pre></div>
+
+<h4 id="9-rm"><a href="#9-rm" class="headerlink" title="9.rm"></a>9.rm</h4><p>用来删除文件或者目录下的文件，不加任何参数的话，只能删除文件，不能删除文件夹，全称为<code>Remove</code>。注意， 该命令是一个危险的命令，使用的时候要特别当心，尤其对于新手，否则整个系统就会毁在这个命令（比如在根目录下执行<code>rm -rf ./*</code>）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>忽略不存在的文件，不会出现警告信息</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归删除，后可接上文件夹</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示指令的详细执行过程</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>删除前会询问用户是否操作</td>
+</tr>
+</tbody></table>
+<div class="hljs"><pre><code class="hljs bash">$ rm -r Study
+$ rm hello.c</code></pre></div>
+
+<h4 id="10-cp"><a href="#10-cp" class="headerlink" title="10.cp"></a>10.cp</h4><p>用来对文件进行复制，全称为<code>Copy</code>。后面的文件可以不存在，系统会帮你创建。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ cp hello.c h.c</code></pre></div>
+
+<h4 id="11-mv"><a href="#11-mv" class="headerlink" title="11.mv"></a>11.mv</h4><p>用来对文件或文件夹进行移动，全称为<code>Move</code>如果文件或文件夹存在于当前工作目录，还可以对文件或文件夹进行重命名。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ mv hello.c /home/chris/Downloads</code></pre></div>
+
+<h4 id="12-cat"><a href="#12-cat" class="headerlink" title="12.cat"></a>12.cat</h4><p>用来在标准输出（监控器或屏幕）上查看文件内容，全称为<code>Concatenate and Print Files</code>。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ cat hello.c
+\<span class="hljs-comment">#include&lt;stdio.h&gt;</span>
+int main()
+&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);
+        <span class="hljs-built_in">return</span> 0;
+&#125;</code></pre></div>
 
 
-</li>
-</ol>
+
 <h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2>
             </div>
             <hr>
