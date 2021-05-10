@@ -17,7 +17,7 @@
   <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
-  <title>Linux初体验 | Zhaowuya&#39;s Blog</title>
+  <title>Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Linux初体验">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      2.1k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      16
+      24
        分钟
     </span>
   
@@ -249,16 +249,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux初体验</h1>
+            <h1 style="display: none"></h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年5月9日 凌晨
+                  本文最后更新于：2021年5月10日 早上
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="Linux与Shell编程"><a href="#Linux与Shell编程" class="headerlink" title="Linux与Shell编程"></a>Linux与Shell编程</h1><h2 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>1991年，芬兰赫尔辛基大学的学生Linus Torvalds在Intel 386个人计算机上开发了Linux核心，并利用Internet发布了源码，从而创建了Linux操作系统。之后，有许多大佬给它不断完善，改进和提高。近年来，Linux得到了许多硬件公司的支持，他们开发Linux应用软件，将Linux系统的应用推向各个领域。Linux成功的意义不仅在于Linux操作系统本身，还在于Linus多建立的全新的软件开发方法和GNU精神。自由软件从此变得流行起来。</p>
+              <h1 id="Linux与Shell编程"><a href="#Linux与Shell编程" class="headerlink" title="Linux与Shell编程"></a>Linux与Shell编程</h1><h2 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>1991年，芬兰赫尔辛基大学的学生🧑Linus Torvalds在Intel 386个人计算机上开发了Linux核心，并利用Internet发布了源码，从而创建了Linux操作系统。之后，有许多大佬给它不断完善，改进和提高。近年来，Linux得到了许多硬件公司的支持，他们开发Linux应用软件，将Linux系统的应用推向各个领域。Linux成功的意义不仅在于Linux操作系统本身，还在于Linus多建立的全新的软件开发方法和GNU精神。自由软件从此变得流行起来。</p>
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
 <li><p>与UNIX系统兼容。现在的Linux已经具有了全部UNIX的特征，遵循IEEE POSIX标准的操作系统。Linux系统上使用的命令多数与UNIX命令在名称，格式，功能上相同。</p>
 </li>
@@ -368,9 +368,59 @@ $ rm hello.c</code></pre></div>
         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;</code></pre></div>
 
+<h3 id="快乐命令"><a href="#快乐命令" class="headerlink" title="快乐命令"></a>快乐命令</h3><h4 id="1-sl"><a href="#1-sl" class="headerlink" title="1.sl"></a>1.sl</h4><p>你会看到火车🚄从屏幕右边开往左边。相关的参数可以去搜一下。</p>
+<p>安装：</p>
+<div class="hljs"><pre><code class="hljs bash">$ sudo apt-get install sl</code></pre></div>
 
+<p>运行：</p>
+<div class="hljs"><pre><code class="hljs bash">$ sl</code></pre></div>
 
-<h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2>
+<p>可以来个恶作剧，把<code>ls</code>和<code>sl</code>绑定在一起哈哈哈哈。</p>
+<h4 id="2-fortune"><a href="#2-fortune" class="headerlink" title="2.fortune"></a>2.fortune</h4><p>输出一句话，有笑话🤗，名人名言🙍‍♂️，唐诗宋词📔等等。</p>
+<p>安装：</p>
+<div class="hljs"><pre><code class="hljs bash">$ sudo apt-get install fortune</code></pre></div>
+
+<p>运行：</p>
+<div class="hljs"><pre><code class="hljs bash">$ fortune</code></pre></div>
+
+<h4 id="3-cowsay"><a href="#3-cowsay" class="headerlink" title="3.cowsay"></a>3.cowsay</h4><p>用ASCII字符打印牛🐂，羊🐏等动物，哈哈哈，快来试试吧！</p>
+<p>安装：</p>
+<div class="hljs"><pre><code class="hljs bash">$ sudo apt-get install cowsay</code></pre></div>
+
+<p>运行：</p>
+<div class="hljs"><pre><code class="hljs bash">$ cowsay <span class="hljs-string">&quot;I am a cool boy&quot;</span>
+$ cowsay -f tux <span class="hljs-string">&quot;wuwuwu&quot;</span></code></pre></div>
+
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>标准输入重定向（STDIN，文件描述符为0）：默认从键盘输入，也可从其他文件或命令中输入。</p>
+<p>标准输出重定向（STDOUT，文件描述符为1）：默认输出到屏幕。</p>
+<p>错误输出重定向（STDERR，文件描述符为2）：默认输出到屏幕。</p>
+<p>常用小技巧😄，将命令执行的标准输出重定向到一个文件中（清空原有文件的数据），例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt; file.txt
+$ cat file.txt
+/home/chris</code></pre></div>
+
+<p>将错误输出重定向到一个文件中（清空原有文件的数据），例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> 2&gt; file.txt</code></pre></div>
+
+<p>将标准输出重定向到一个文件中，注意和第一个不同，这个<code>&gt;&gt;</code>是追加到原有内容的后面，不会清空原有数据，同理，也能将错误输出重定向到文件中（追加），继续上面的操作来，例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt
+$ cat file.txt
+/home/chris
+/home/chris
+$ <span class="hljs-built_in">pwd</span> 2&gt;&gt; file.txt</code></pre></div>
+
+<p>最后是将标准输出与错误输出共同写入到文件中（追加到原有内容的后面用<code>&gt;&gt;</code>，覆盖原有用<code>&gt;</code>），有两种方法，例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt 2&gt;&amp;1
+$ <span class="hljs-built_in">pwd</span> &amp;&gt;&gt; file.txt</code></pre></div>
+
+<h2 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h2><p><code>|</code>在键盘上👆按下<kbd>Shift</kbd>+<kbd>\</kbd>就可以看到管道符啦。其执行格式为<code>oder A | oder B</code>。管道符的作用，用我们老师的话来说就是把前一个命令的输出当作后一个命令的输入，是不是好懂些了？例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ ls -l | wc -l</code></pre></div>
+
+<p>这个命令的解释就是列出当前目录的文件，然后统计其行数，当然，文件list是不会在屏幕上显示的，因为它又被当作输入了。因此，最后的结果仅仅为一个数。</p>
+<div class="hljs"><pre><code class="hljs bash">7</code></pre></div>
+
+<p>这个管道符就像一个法宝，可以将它套用到其他不同的命令上。</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2>
             </div>
             <hr>
             <div>
