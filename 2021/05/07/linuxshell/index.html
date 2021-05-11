@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      3.4k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25
+      39
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年5月11日 上午
+                  本文最后更新于：2021年5月11日 下午
                 
               </p>
             
@@ -325,7 +325,7 @@ passwd:all authentication tokens updated successfully.</code></pre></div>
 <div class="hljs"><pre><code class="hljs bash">~$ <span class="hljs-built_in">cd</span> Downloads
 Downloads$ _</code></pre></div>
 
-<h4 id="9-rm"><a href="#9-rm" class="headerlink" title="9.rm"></a>9.rm</h4><p>用来删除文件或者目录下的文件，不加任何参数的话，只能删除文件，不能删除文件夹，全称为<code>Remove</code>。注意， 该命令是一个危险的命令，使用的时候要特别当心，尤其对于新手，否则整个系统就会毁在这个命令（比如在根目录下执行<code>rm -rf ./*</code>）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
+<h4 id="9-rm"><a href="#9-rm" class="headerlink" title="9.rm"></a>9.rm</h4><p>用来删除文件或者目录下的文件，不加任何参数的话，只能删除文件，不能删除文件夹，全称为<code>Remove</code>。注意， 该命令是一个危险的命令，使用的时候要特别当心，尤其对于新手，否则整个系统就会毁在这个命令（比如在根目录下执行<code>rm -rf /*</code>）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
 <table>
 <thead>
 <tr>
@@ -420,7 +420,131 @@ $ <span class="hljs-built_in">pwd</span> &amp;&gt;&gt; file.txt</code></pre></di
 <div class="hljs"><pre><code class="hljs bash">7</code></pre></div>
 
 <p>这个管道符就像一个法宝，可以将它套用到其他不同的命令上。</p>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><table>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>大家可能都有提笔忘字的时候，程序员也不例外，当然，我们是敲盘忘字。比如说我们想找一个文件名以a开头的文件，又隐隐约约记不得后面的单词了，这个时候，通配符就可以大展身手了🤝。</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>匹配含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>任意字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>单个任意字符</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>单个小写字母</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>单个大写字母</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>单个数字</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>任意字母</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>任意大写字母</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>任意小写字母</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td>所有数字</td>
+</tr>
+<tr>
+<td>[:alnum:]</td>
+<td>任意字母加数字</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td>标点符号</td>
+</tr>
+</tbody></table>
+<p>通配符还可以和大括号<code>&#123;&#125;</code>结合起来用，字段之间用逗号<code>,</code>间隔，例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> file&#123;1,2,3,4&#125;
+file1 file2 file3 file4</code></pre></div>
+
+<h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h2><p>为了能够更好地理解用户的表达，Shell解释器还提供了特别丰富的转义字符来处理输入的特殊数据。在网上找到了4个最常用的转义字符🙋‍♂️！</p>
+<ul>
+<li><p>反斜杠（\）：使反斜杠后面的一个变量变为<strong>单纯的字符</strong>。</p>
+</li>
+<li><p>单引号（’’）：转义其中所有的变量为<strong>单纯的字符串</strong>。</p>
+</li>
+<li><p>双引号（””）：<strong>保留</strong>其中的变量属性，不进行转义处理。</p>
+</li>
+<li><p>反引号（``）：把其中的命令<strong>执行后返回结果</strong>，其中放的是像ls，pwd，date类似的命令。</p>
+</li>
+</ul>
+<p>下面看几个例子：</p>
+<div class="hljs"><pre><code class="hljs bash">$ price=2
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is <span class="hljs-variable">$price</span>&quot;</span>
+Price is 5</code></pre></div>
+
+<p>可以看到我们想要输出的美元符号不见了，不标明货币单位，那有时候可能会出大问题的哦👊。那我们想要输出美元符号，应该怎么做呢？聪明的你应该猜到了。</p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is $<span class="hljs-variable">$price</span>&quot;</span>
+Price is 3577price</code></pre></div>
+
+<p>很不幸的是，$$刚好是显示当前程序的进程ID号码，所以结果还是不对。正确的应该是这样的：</p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is \$<span class="hljs-variable">$price</span>&quot;</span>
+Price is <span class="hljs-variable">$5</span></code></pre></div>
+
+<p>反引号的例子如下：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> `<span class="hljs-built_in">pwd</span>`
+/home/chris/bin</code></pre></div>
+
+<p>就是先执行反引号里的命令，然后再标准输出到屏幕上。</p>
+<p>单引号是最简单的啦，最单纯的，不管里面有啥东西，照搬着输出就可以了。例如：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;$price is \$price&#x27;</span>
+<span class="hljs-variable">$price</span> is \<span class="hljs-variable">$price</span></code></pre></div>
+
+<p>以上的转义字符都不容易出错，而什么时候该用双引号却是一个问题。因为好像大多数情况下加不加效果都一样：</p>
+<div class="hljs"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb ccc&quot;</span>
+aaa bbb ccc
+$ <span class="hljs-built_in">echo</span> aaa bbb ccc
+aaa bbb ccc</code></pre></div>
+
+<p>区别在于用户无法得知第一种执行方式中到底有几个参数，是的，不能确定！因为有可能把“aaa bbb ccc”当作了一个参数整体直接输出到了屏幕，也有可能是分别将aaa、bbb和ccc输出到了屏幕。因此给大家总结一个简单小技巧，可能不够严谨，就是参数中如果出现了空格，那么就加双引号，如果参数中没有空格，那就不用加。（来自刘遄老师的小提示）</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell简介"><a href="#Shell简介" class="headerlink" title="Shell简介"></a>Shell简介</h3><p>shell可以理解为一种脚本语言，像javascript等其它脚本语言一样，只需要一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以shell脚本的本质是：以某种语法格式将shell命令组织起来的由shell程序解析执行的脚本文本文件。主要包括三个部分：</p>
+<ol>
+<li><strong>shell命令</strong>：即<code>ls/cd</code>等linux命令，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/2-shellcmd/index.html">shell命令</a></li>
+<li><strong>shell解释器</strong>：即<code>sh/bash/zsh</code>等shell应用程序，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/1-shellenv/1-shellsoft/index.html">shell应用程序</a></li>
+<li><strong>shell语法</strong>：即<code>数据类型/变量/控制流语句/函数</code>等编程语法</li>
+</ol>
+<h3 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h3><p>像学习我们的第一门编程语言，C语言时，我们现在也来模仿着写一个Hello World的程序，虽然可能现在搞不明白它的结构和过程，但是没关系，大家都是这么过来的。先创建一个demo.sh文件，然后进去编辑它：</p>
+<div class="hljs"><pre><code class="hljs bash">$ vim demo.sh</code></pre></div>
+
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment"># 这行是注释信息</span>
+str=<span class="hljs-string">&quot;Hello World&quot;</span>
+
+<span class="hljs-function"><span class="hljs-title">test</span></span>()&#123;
+        <span class="hljs-built_in">echo</span> <span class="hljs-variable">$str</span>
+&#125;
+
+<span class="hljs-built_in">test</span> echo_str</code></pre></div>
+
+<p>写完后输入<code>:wq</code>保存退出，然后运行脚本。脚本都以<code>#!/bin/bash</code>开头，<code>#</code>称为<code>sharp</code>，<code>!</code>在unix行话里称为<code>bang</code>，合起来简称就是常见的<code>shabang</code>。是不是很搞笑，同时也突然觉得自己变成高手了🐶。而运行脚本文件的方法有两种：</p>
+<ol>
+<li>将脚本作为bash解释器的参数执行：此时首行的<code>#!/bin/bash</code>shabang可以不用写</li>
+<li><code>chmod +x demo.sh</code>：给脚本添加执行权限,<code>./demo.sh</code>：执行脚本文件</li>
+</ol>
+<p>最后Hello World就会出现在终端上：</p>
+<div class="hljs"><pre><code class="hljs bash">Hello World</code></pre></div>
+
+<h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><table>
 <thead>
 <tr>
 <th>变量</th>
@@ -482,8 +606,6 @@ zwy 2
 demo.sh
 zwy
 2</code></pre></div>
-
-
             </div>
             <hr>
             <div>
