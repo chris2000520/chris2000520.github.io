@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.2k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      24
+      25
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年5月10日 早上
+                  本文最后更新于：2021年5月11日 上午
                 
               </p>
             
@@ -420,7 +420,70 @@ $ <span class="hljs-built_in">pwd</span> &amp;&gt;&gt; file.txt</code></pre></di
 <div class="hljs"><pre><code class="hljs bash">7</code></pre></div>
 
 <p>这个管道符就像一个法宝，可以将它套用到其他不同的命令上。</p>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$$</td>
+<td>Shell本身的PID</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>Shell最后运行的后台Process的PID</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>最后运行代码的返回值</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>所有参数列表</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>所有参数列表(好像并没有什么不同，我也不知道)</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>参数的个数</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>Shell脚本的文件名</td>
+</tr>
+<tr>
+<td>$1~n</td>
+<td>各个参数的值</td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$$&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$!&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$?&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$#</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span></code></pre></div>
+
+<div class="hljs"><pre><code class="hljs bash">$ bash demo.sh zwy 2
+91
+
+0
+zwy 2
+zwy 2
+2
+demo.sh
+zwy
+2</code></pre></div>
+
+
             </div>
             <hr>
             <div>
