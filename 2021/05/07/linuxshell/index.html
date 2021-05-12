@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.4k 字
+      4.2k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      39
+      48
        分钟
     </span>
   
@@ -258,7 +258,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年5月12日 凌晨
+                  本文最后更新于：2021年5月12日 下午
                 
               </p>
             
@@ -475,11 +475,100 @@
 <p>区别在于用户无法得知第一种执行方式中到底有几个参数，是的，不能确定！因为有可能把“aaa bbb ccc”当作了一个参数整体直接输出到了屏幕，也有可能是分别将aaa、bbb和ccc输出到了屏幕。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>给大家总结一个简单小技巧，就是参数中如果出现了空格，那么就加双引号，如果参数中没有空格，那就不用加。（来自刘遄老师的小提示）<br>&#123;% endnote %&#125;<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell简介"><a href="#Shell简介" class="headerlink" title="Shell简介"></a>Shell简介</h3><p>shell可以理解为一种脚本语言，像javascript等其它脚本语言一样，只需要一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以shell脚本的本质是：以某种语法格式将shell命令组织起来的由shell程序解析执行的脚本文本文件。主要包括三个部分：</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>变量是计算机系统里用于保存可变值的数据类型。在Linux系统中，变量名称一般都是大写的，而命令都是小写的，也算一种规范了。下面我们来看看最基本的变量。如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>变量名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HOME</td>
+<td>用户的主目录（家目录）</td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td>用户在使用的Shell解释器名称</td>
+</tr>
+<tr>
+<td>HISTSIZE</td>
+<td>输出的历史命令记录条数</td>
+</tr>
+<tr>
+<td>MAIL</td>
+<td>邮件保存路径</td>
+</tr>
+<tr>
+<td>LANG</td>
+<td>系统语言</td>
+</tr>
+<tr>
+<td>RANDOM</td>
+<td>随机数字</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>定义解释器搜索用户执行命令的路径</td>
+</tr>
+<tr>
+<td>PS1</td>
+<td>Bash解释器的提示符</td>
+</tr>
+<tr>
+<td>EDITOR</td>
+<td>用户默认文本编辑器</td>
+</tr>
+</tbody></table>
+<div class="note note-warning">
+            <p>Linux作为一个多用户多任务的操作系统，能够为每个用户提供独立的、合适的工作运行环境，因此，一个相同的变量会因为用户身份的不同而具有不同的值。</p>
+          </div>
+
+<p>我们可以使用下述命令来查看变量的值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$HOME</span><br>/home/chris<br></code></pre></div></td></tr></table></figure>
+
+<p>其实变量是由固定的变量名与用户或者系统设置的变量两部分组成的，完全可以自行创建变量。例如设置名叫<code>WORKDIR</code>的变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ mkdir /home/workdir<br>$ WORKDIR=/home/workdir<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
+
+<p>但是此时的变量不具有全局性，格局小了呀🤨，不能被其他用户使用，但是我们可以使用<code>export</code>命令将其提升为全局变量。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">export</span> WORKDIR<br>$ su ordinary<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
+
+<p>后面要是不用这个变量了，也可以取消它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">unset</span> WORKDIR<br></code></pre></div></td></tr></table></figure>
+
+<div class="note note-warning">
+            <p>直接在终端设置的变量能够立即生效，但重启服务器后就会消失掉，因此我们需要将变量和变量值写入到.bashrc或者.bash_profile文件中以确保永久能使用它们。</p>
+          </div>
+
+<h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><p>在Linux中，命令行中也能编辑文本，这时就能用到vim了。基本上vim共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和<strong>底线命令模式（Last line mode）</strong>。</p>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>当我们打开vim编辑文件的时候，我们首先进入的就是命令模式，此时你按键盘输入，文本上是不会显示的，而是被当作一个命令。常用的有：</p>
+<ul>
+<li><code>i</code> 切换到输入模式，以输入字符。</li>
+<li><code>x</code> 删除当前光标所在处的字符，最后还是停留在命令模式。</li>
+<li><code>:</code> 切换到底线命令模式，以在最底一行输入命令。</li>
+</ul>
+<h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><p>基本就是正常输入，有几个要注意的：</p>
+<ul>
+<li>按下<kbd>Insert</kbd>，切换光标为输入/替换模式。</li>
+<li>按下<kbd>Esc</kbd>，退出输入模式，切换到命令模式。</li>
+</ul>
+<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><p>在命令模式下按下<code>:</code>就进入了底线命令模式。底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
+<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+<ul>
+<li><code>w</code>将编辑的数据写入硬件中，也就是保存。</li>
+<li><code>q</code>离开退出vim。</li>
+<li><code>q!</code>强制退出vim，没有保存修改。</li>
+<li><code>wq</code>保存退出。</li>
+<li><code>ZZ</code>大写的Z，如果修改过，保存当前文件，然后退出。</li>
+<li><code>dd</code>删除光标所在的一整行。</li>
+<li><code>set nu</code>为vim设置行号。</li>
+<li><code>set nonu</code>取消vim中的行号。</li>
+</ul>
+<h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell简介"><a href="#Shell简介" class="headerlink" title="Shell简介"></a>Shell简介</h3><p>shell可以理解为一种脚本语言，像javascript等其它脚本语言一样，只需要一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以shell脚本的本质是：以某种语法格式将shell命令组织起来的由shell程序解析执行的脚本文本文件。主要包括三个部分：</p>
 <ol>
-<li><strong>shell命令</strong>：即<code>ls/cd</code>等linux命令，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/2-shellcmd/index.html">shell命令</a></li>
-<li><strong>shell解释器</strong>：即<code>sh/bash/zsh</code>等shell应用程序，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/1-shellenv/1-shellsoft/index.html">shell应用程序</a></li>
-<li><strong>shell语法</strong>：即<code>数据类型/变量/控制流语句/函数</code>等编程语法</li>
+<li><strong>shell命令</strong>：即<code>ls/cd</code>等linux命令，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/2-shellcmd/index.html">shell命令</a>。</li>
+<li><strong>shell解释器</strong>：即<code>sh/bash/zsh</code>等shell应用程序，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/1-shellenv/1-shellsoft/index.html">shell应用程序。</a></li>
+<li><strong>shell语法</strong>：即<code>数据类型/变量/控制流语句/函数</code>等编程语法。</li>
 </ol>
 <h3 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h3><p>像学习我们的第一门编程语言，C语言时，我们现在也来模仿着写一个Hello World的程序，虽然可能现在搞不明白它的结构和过程，但是没关系，大家都是这么过来的。先创建一个demo.sh文件，然后进去编辑它：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ vim demo.sh<br></code></pre></div></td></tr></table></figure>
@@ -488,8 +577,8 @@
 
 <p>写完后输入<code>:wq</code>保存退出，然后运行脚本。脚本都以<code>#!/bin/bash</code>开头，<code>#</code>称为<code>sharp</code>，<code>!</code>在unix行话里称为<code>bang</code>，合起来简称就是常见的<code>shabang</code>。是不是很搞笑，同时也突然觉得自己变成高手了🐶。而运行脚本文件的方法有两种：</p>
 <ol>
-<li>将脚本作为bash解释器的参数执行：此时首行的<code>#!/bin/bash</code>shabang可以不用写</li>
-<li><code>chmod +x demo.sh</code>：给脚本添加执行权限,<code>./demo.sh</code>：执行脚本文件</li>
+<li>将脚本作为bash解释器的参数执行：此时首行的<code>#!/bin/bash</code>shabang可以不用写。</li>
+<li><code>chmod +x demo.sh</code>：给脚本添加执行权限,<code>./demo.sh</code>：执行脚本文件。</li>
 </ol>
 <p>最后Hello World就会出现在终端上：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">Hello World<br></code></pre></div></td></tr></table></figure>
