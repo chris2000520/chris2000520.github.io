@@ -1149,11 +1149,11 @@ a.fancybox:hover {
   text-decoration: none;
 }
 #nprogress .bar {
-  height: 4px !important;
-  background-color: #383a59 !important;
+  height: 3px !important;
+  background-color: #29d !important;
 }
 #nprogress .peg {
-  box-shadow: 0 0 14px #383a59, 0 0 8px #383a59 !important;
+  box-shadow: 0 0 14px #29d, 0 0 8px #29d !important;
 }
 .v[data-class=v] .status-bar,
 .v[data-class=v] .veditor,
