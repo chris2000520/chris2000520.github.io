@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
+  
   <title>关于 | Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
@@ -53,7 +54,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -151,13 +152,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -166,7 +167,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -187,12 +188,12 @@
 
   <main>
     
-      <div class="container nopadding-md">
+      <div class="container nopadding-x-md">
         <div class="py-5" id="board"
           >
           
             <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif"
+              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload
                    class="img-fluid" alt="avatar">
             </div>
           
@@ -210,9 +211,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://github.com/chris2000520" class="
+        <a href=https://github.com/chris2000520 class="
            hint--bottom hint--rounded"
            aria-label=GitHub
+           target="_blank"
         >
           <i class="iconfont icon-github-fill" aria-hidden="true"></i>
           
@@ -221,9 +223,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://space.bilibili.com/389608849" class="
+        <a href=https://space.bilibili.com/389608849 class="
            hint--bottom hint--rounded"
            aria-label=Bilibili
+           target="_blank"
         >
           <i class="iconfont icon-bilibili-fill" aria-hidden="true"></i>
           
@@ -232,9 +235,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://gitee.com/chris2000520" class="
+        <a href=https://gitee.com/chris2000520 class="
            hint--bottom hint--rounded"
            aria-label=Gitee
+           target="_blank"
         >
           <i class="iconfont icon-gitee-fill" aria-hidden="true"></i>
           
@@ -243,9 +247,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/a-ya-3-29" class="
+        <a href=https://www.zhihu.com/people/a-ya-3-29 class="
            hint--bottom hint--rounded"
            aria-label=Zhihu
+           target="_blank"
         >
           <i class="iconfont icon-pinterest-fill" aria-hidden="true"></i>
           
@@ -255,8 +260,9 @@
   </div>
 </div>
 
-<article class="mt-5 markdown-body">
-  <div class="note note-info">
+<article class="about-content page-content mt-5">
+  <div class="markdown-body">
+    <div class="note note-info">
             <p>这二十多年来我有好多要感激的人，希望最后我们都能成为自己心目中的样子。</p>
           </div>
 
@@ -264,15 +270,16 @@
 <h1 id="目前状态"><a href="#目前状态" class="headerlink" title="目前状态"></a>目前状态</h1><p>学历🏫：本科大三，计算机科学与技术专业</p>
 <p>过去🌅：来自一个小乡镇，但我很喜欢它</p>
 <p>未来💻：去大厂工作，做有趣的开发</p>
-<p>邮箱📫：<a href="mailto:&#122;&#x68;&#x61;&#111;&#x77;&#x75;&#x79;&#x61;&#x40;&#102;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#122;&#x68;&#x61;&#111;&#x77;&#x75;&#x79;&#x61;&#x40;&#102;&#x6f;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>邮箱📫：<a href="mailto:&#x7a;&#x68;&#97;&#111;&#x77;&#x75;&#x79;&#97;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x7a;&#x68;&#97;&#111;&#x77;&#x75;&#x79;&#97;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
 <br />
 
 <div class="note note-success">
             <p>由于备案的时候没有选交互式网站，我只能惨痛关闭我维护好久的评论区，如果想联系我的话，记得发邮件哦。</p>
           </div>
+  </div>
+
+  
 </article>
-
-
 
               </div>
             </div>
@@ -345,26 +352,30 @@
   </div>
 
 
-  <div style="text-align: center;">Copyright © 2019-现在 Zhaowuya</div>
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">鄂ICP备2020021519号-1</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        鄂ICP备2020021519号-1
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>鄂公网备42011102004248号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+            
+            <span>鄂公网备42011102004248号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -373,17 +384,15 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -392,7 +401,6 @@
 
 <script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -400,7 +408,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -418,6 +426,7 @@
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
 
 
 
@@ -442,11 +451,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -483,7 +493,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

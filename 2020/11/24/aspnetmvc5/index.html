@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
+  
   <title>基于ASP.NET MVC5的留言板系统 | Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
@@ -55,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -168,7 +169,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -241,11 +242,11 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
@@ -273,75 +274,19 @@
 <li>添加数据库连接字符串</li>
 <li>数据库迁移</li>
 </ol>
-<h1 id="项目实例"><a href="#项目实例" class="headerlink" title="项目实例"></a>项目实例</h1><h2 id="GuestBook-类"><a href="#GuestBook-类" class="headerlink" title="GuestBook 类"></a>GuestBook 类</h2><div class="hljs"><pre><code class="hljs C++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Guestbook</span></span>
-<span class="hljs-class">&#123;</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> GuestbookId &#123; get; <span class="hljs-built_in">set</span>; &#125;
-
-    [Required(ErrorMessage = <span class="hljs-string">&quot;留言标题不能为空&quot;</span>)]
-    [MaxLength(<span class="hljs-number">20</span>, ErrorMessage = <span class="hljs-string">&quot;留言标题不超过20个字符&quot;</span>)]
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Title &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言标题</span>
-
-
-
-    [Required(ErrorMessage = <span class="hljs-string">&quot;留言内容不能为空&quot;</span>)]
-    [MinLength(<span class="hljs-number">10</span>, ErrorMessage = <span class="hljs-string">&quot;留言内容不少于10个字符&quot;</span>)]
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Content &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言内容</span>
-
-
-
-    [Required(ErrorMessage = <span class="hljs-string">&quot;留言人的邮箱不能为空&quot;</span>)]
-    [EmailAddress(ErrorMessage = <span class="hljs-string">&quot;email格式不对&quot;</span>)]
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> AuthorEmail &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言邮箱</span>
-
-
-
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    <span class="hljs-keyword">public</span> DateTime CreatedOn &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//创建日期时间</span>
-
-    <span class="hljs-keyword">public</span> Boolean IsPass &#123; get; <span class="hljs-built_in">set</span>; &#125;<span class="hljs-comment">//审核功能</span>
-
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> UserId &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> User User &#123; get; <span class="hljs-built_in">set</span>; &#125;
-&#125;
-</code></pre></div>
+<h1 id="项目实例"><a href="#项目实例" class="headerlink" title="项目实例"></a>项目实例</h1><h2 id="GuestBook-类"><a href="#GuestBook-类" class="headerlink" title="GuestBook 类"></a>GuestBook 类</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Guestbook</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> GuestbookId &#123; get; <span class="hljs-built_in">set</span>; &#125;<br><br>    [Required(ErrorMessage = <span class="hljs-string">&quot;留言标题不能为空&quot;</span>)]<br>    [MaxLength(<span class="hljs-number">20</span>, ErrorMessage = <span class="hljs-string">&quot;留言标题不超过20个字符&quot;</span>)]<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Title &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言标题</span><br><br><br><br>    [Required(ErrorMessage = <span class="hljs-string">&quot;留言内容不能为空&quot;</span>)]<br>    [MinLength(<span class="hljs-number">10</span>, ErrorMessage = <span class="hljs-string">&quot;留言内容不少于10个字符&quot;</span>)]<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Content &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言内容</span><br><br><br><br>    [Required(ErrorMessage = <span class="hljs-string">&quot;留言人的邮箱不能为空&quot;</span>)]<br>    [EmailAddress(ErrorMessage = <span class="hljs-string">&quot;email格式不对&quot;</span>)]<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> AuthorEmail &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//留言邮箱</span><br><br><br><br>    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]<br>    <span class="hljs-keyword">public</span> DateTime CreatedOn &#123; get; <span class="hljs-built_in">set</span>; &#125; <span class="hljs-comment">//创建日期时间</span><br><br>    <span class="hljs-keyword">public</span> Boolean IsPass &#123; get; <span class="hljs-built_in">set</span>; &#125;<span class="hljs-comment">//审核功能</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> UserId &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> User User &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
 
 <p>这里面做了一些限制，相当于数据库建表时候的那些限制，之后在页面上如果格式不对，就弹出这个错误信息。</p>
-<h2 id="User-类"><a href="#User-类" class="headerlink" title="User 类"></a>User 类</h2><div class="hljs"><pre><code class="hljs C++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span></span>
-<span class="hljs-class">&#123;</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> UserId &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    [Display(Name = <span class="hljs-string">&quot;留言人邮箱&quot;</span>, Order = <span class="hljs-number">15000</span>)]
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Email &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Name &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    [DataType(DataType.Password)]
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Password &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    <span class="hljs-keyword">public</span> SystemRole SRole &#123; get; <span class="hljs-built_in">set</span>; &#125;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> ICollection&lt;Guestbook&gt; Guestbooks &#123; get; <span class="hljs-built_in">set</span>; &#125;
-&#125;
-
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">SystemRole</span> &#123;</span> 普通用户, 管理员 &#125;</code></pre></div>
+<h2 id="User-类"><a href="#User-类" class="headerlink" title="User 类"></a>User 类</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> UserId &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    [Display(Name = <span class="hljs-string">&quot;留言人邮箱&quot;</span>, Order = <span class="hljs-number">15000</span>)]<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Email &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Name &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    [DataType(DataType.Password)]<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> Password &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    <span class="hljs-keyword">public</span> SystemRole SRole &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">virtual</span> ICollection&lt;Guestbook&gt; Guestbooks &#123; get; <span class="hljs-built_in">set</span>; &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">SystemRole</span> &#123;</span> 普通用户, 管理员 &#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>这里面我加了角色<code>Role</code>，方便以后判断登陆跳转。</p>
-<h2 id="GBSDBContext-类"><a href="#GBSDBContext-类" class="headerlink" title="GBSDBContext 类"></a>GBSDBContext 类</h2><div class="hljs"><pre><code class="hljs c++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GBSDBContext</span> :</span> DbContext
-&#123;
-    <span class="hljs-keyword">public</span> DbSet&lt;Guestbook&gt; Guestbooks &#123; get; <span class="hljs-built_in">set</span>; &#125;
-
-    <span class="hljs-keyword">public</span> DbSet&lt;User&gt; Users &#123; get; <span class="hljs-built_in">set</span>; &#125;
-
-&#125;</code></pre></div>
+<h2 id="GBSDBContext-类"><a href="#GBSDBContext-类" class="headerlink" title="GBSDBContext 类"></a>GBSDBContext 类</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GBSDBContext</span> :</span> DbContext<br>&#123;<br>    <span class="hljs-keyword">public</span> DbSet&lt;Guestbook&gt; Guestbooks &#123; get; <span class="hljs-built_in">set</span>; &#125;<br><br>    <span class="hljs-keyword">public</span> DbSet&lt;User&gt; Users &#123; get; <span class="hljs-built_in">set</span>; &#125;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>数据库上下文类，数据库上下文类是继承 DbContext 类的，此时应该安装 EntityFramework 包，打开 NuGet 包管理器，输入</p>
-<div class="hljs"><pre><code class="hljs apache"><span class="hljs-attribute">Install</span>-Package EntityFramework -Version <span class="hljs-number">6</span>.<span class="hljs-number">4</span>.<span class="hljs-number">4</span></code></pre></div>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">Install</span>-Package EntityFramework -Version <span class="hljs-number">6</span>.<span class="hljs-number">4</span>.<span class="hljs-number">4</span><br></code></pre></div></td></tr></table></figure>
 
 <p>安装成功后，GBSDBContext.cs 就可顺利编译。</p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">connectionStrings</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;GBSDBContext&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">connectionString</span>=<span class="hljs-string">&quot;Data Source=(LocalDb)\MSSQLLocalDB;</span></span>
-<span class="hljs-tag"><span class="hljs-string">    AttachDbFilename=|DataDirectory|\GBSDB.mdf;</span></span>
-<span class="hljs-tag"><span class="hljs-string">    Initial Catalog=GBS;</span></span>
-<span class="hljs-tag"><span class="hljs-string">    Integrated Security=True&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">providerName</span>=<span class="hljs-string">&quot;System.Data.SqlClient&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">connectionStrings</span>&gt;</span>
-</code></pre></div>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">connectionStrings</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;GBSDBContext&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">connectionString</span>=<span class="hljs-string">&quot;Data Source=(LocalDb)\MSSQLLocalDB;</span></span><br><span class="hljs-tag"><span class="hljs-string">    AttachDbFilename=|DataDirectory|\GBSDB.mdf;</span></span><br><span class="hljs-tag"><span class="hljs-string">    Initial Catalog=GBS;</span></span><br><span class="hljs-tag"><span class="hljs-string">    Integrated Security=True&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">providerName</span>=<span class="hljs-string">&quot;System.Data.SqlClient&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">connectionStrings</span>&gt;</span><br><br></code></pre></div></td></tr></table></figure>
 
 <p>把这些放在Web.config中<code>&lt;configuration&gt;&lt;/configuration&gt;</code>标签里</p>
 <ul>
@@ -351,9 +296,7 @@
 <li>  Integrated Security=True”代表用当前 Windows 帐户凭据进行身份验证。(不用输入数据库服务器用户名和密码即可登录)</li>
 </ul>
 <h2 id="数据库迁移"><a href="#数据库迁移" class="headerlink" title="数据库迁移"></a>数据库迁移</h2><p>三行搞定，出金不要慌，出红就重来吧 🤨</p>
-<div class="hljs"><pre><code class="hljs pgsql"><span class="hljs-keyword">Enable</span>-Migrations
-<span class="hljs-keyword">Add</span>-Migration InitialCreate
-<span class="hljs-keyword">Update</span>-<span class="hljs-keyword">Database</span></code></pre></div>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-keyword">Enable</span>-Migrations<br><span class="hljs-keyword">Add</span>-Migration InitialCreate<br><span class="hljs-keyword">Update</span>-<span class="hljs-keyword">Database</span><br></code></pre></div></td></tr></table></figure>
 
 <p>然后数据库就生成了，要搞清楚这两个表之间的关系，UserId 是 GuestBook 的外键，要保证实体完整性。开始需要手动添加管理员信息，毕竟管理员也不能注册对吧！</p>
 <h2 id="登录登出"><a href="#登录登出" class="headerlink" title="登录登出"></a>登录登出</h2><p>头是 Controller，下面是 Action。（下面的结构也一样）</p>
@@ -362,66 +305,16 @@
 <li>  Login</li>
 <li>  Logout</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++">[HttpPost]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Login</span><span class="hljs-params">(User user)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span> (ModelState.IsValid)
-        &#123;
-            var dbUser = db.Users.Where(a =&gt; a.Name == user.Name &amp;&amp; a.Password == user.Password).FirstOrDefault();
-            <span class="hljs-keyword">if</span> (dbUser != null)
-            &#123;
-                FormsAuthenticationTicket authTicket = <span class="hljs-keyword">new</span> FormsAuthenticationTicket(
-                    <span class="hljs-number">1</span>, dbUser.UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(<span class="hljs-number">20</span>), <span class="hljs-literal">false</span>, dbUser.SRole.ToString());
-
-                <span class="hljs-built_in">string</span> encryptedTicket = FormsAuthentication.Encrypt(authTicket);
-
-                HttpCookie authCookie = <span class="hljs-keyword">new</span> HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-
-                authCookie.HttpOnly = <span class="hljs-literal">true</span>;
-
-                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
-
-                <span class="hljs-keyword">if</span> (dbUser.SRole.ToString() == <span class="hljs-string">&quot;管理员&quot;</span>)
-                &#123;
-                    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Index&quot;</span>, <span class="hljs-string">&quot;Admin&quot;</span>);
-                &#125;
-                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dbUser.SRole.ToString() == <span class="hljs-string">&quot;普通用户&quot;</span>)
-                &#123;
-                    Session[<span class="hljs-string">&quot;UserId&quot;</span>] = dbUser.UserId;
-                    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;AllWords&quot;</span>, <span class="hljs-string">&quot;User&quot;</span>);
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-    ModelState.AddModelError(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;用户名或密码错误&quot;</span>);
-    <span class="hljs-keyword">return</span> View(user);
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">[HttpPost]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Login</span><span class="hljs-params">(User user)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (ModelState.IsValid)<br>        &#123;<br>            var dbUser = db.Users.Where(a =&gt; a.Name == user.Name &amp;&amp; a.Password == user.Password).FirstOrDefault();<br>            <span class="hljs-keyword">if</span> (dbUser != null)<br>            &#123;<br>                FormsAuthenticationTicket authTicket = <span class="hljs-keyword">new</span> FormsAuthenticationTicket(<br>                    <span class="hljs-number">1</span>, dbUser.UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(<span class="hljs-number">20</span>), <span class="hljs-literal">false</span>, dbUser.SRole.ToString());<br><br>                <span class="hljs-built_in">string</span> encryptedTicket = FormsAuthentication.Encrypt(authTicket);<br><br>                HttpCookie authCookie = <span class="hljs-keyword">new</span> HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);<br><br>                authCookie.HttpOnly = <span class="hljs-literal">true</span>;<br><br>                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);<br><br>                <span class="hljs-keyword">if</span> (dbUser.SRole.ToString() == <span class="hljs-string">&quot;管理员&quot;</span>)<br>                &#123;<br>                    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Index&quot;</span>, <span class="hljs-string">&quot;Admin&quot;</span>);<br>                &#125;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dbUser.SRole.ToString() == <span class="hljs-string">&quot;普通用户&quot;</span>)<br>                &#123;<br>                    Session[<span class="hljs-string">&quot;UserId&quot;</span>] = dbUser.UserId;<br>                    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;AllWords&quot;</span>, <span class="hljs-string">&quot;User&quot;</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    ModelState.AddModelError(<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;用户名或密码错误&quot;</span>);<br>    <span class="hljs-keyword">return</span> View(user);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>这里要获取 UserId，不然之后无法通过 UserId 选择当前用户自己的留言，也无法发布留言，因为外键为空，不符合实体完整性。具体方法就是通过 Seesion 将 UserId 保存起来，后面有用嘿嘿嘿。还有获取 Cookies 和将其加密。</p>
 <p>如果要身份验证，加了<code>[Authorize]</code>要在解决方案资源管理器的最后一项文件的Web.config 里加表单验证，放在<code>&lt;system.web&gt;&lt;/system.web&gt;</code>标签里面不然会报错 401。loginUrl 是非法访问时跳转的登录界面。</p>
-<div class="hljs"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">authentication</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;Forms&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--有4种--&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">forms</span> <span class="hljs-attr">loginUrl</span>=<span class="hljs-string">&quot;~/Account/Login&quot;</span> <span class="hljs-attr">defaultUrl</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">timeout</span>=<span class="hljs-string">&quot;2880&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">authentication</span>&gt;</span></code></pre></div>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">authentication</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;Forms&quot;</span>&gt;</span><span class="hljs-comment">&lt;!--有4种--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">forms</span> <span class="hljs-attr">loginUrl</span>=<span class="hljs-string">&quot;~/Account/Login&quot;</span> <span class="hljs-attr">defaultUrl</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">timeout</span>=<span class="hljs-string">&quot;2880&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">authentication</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<div class="hljs"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Logout</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    FormsAuthentication.SignOut();
-    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Login&quot;</span>, <span class="hljs-string">&quot;Account&quot;</span>);
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Logout</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    FormsAuthentication.SignOut();<br>    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Login&quot;</span>, <span class="hljs-string">&quot;Account&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>还要避免普通用户正常登录后，通过浏览器地址栏进去后台管理，Admin 控制器也要加身份验证<code>[Authorize (Roles =&quot;管理员&quot;)]</code>，加上后在 Global.asax 文件中加这一个方法，具体原理还在研究中。</p>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Application_AuthorizeRequest</span><span class="hljs-params">(object sender, System.EventArgs e)</span></span>
-<span class="hljs-function"></span>&#123;
-    HttpApplication App = (HttpApplication)sender;
-    HttpContext Ctx = App.Context; <span class="hljs-comment">//获取本次Http请求相关的HttpContext对象</span>
-    <span class="hljs-keyword">if</span> (Ctx.Request.IsAuthenticated == <span class="hljs-literal">true</span>) <span class="hljs-comment">//验证过的用户才进行role的处理</span>
-    &#123;
-        FormsIdentity Id = (FormsIdentity)Ctx.User.Identity;
-        FormsAuthenticationTicket Ticket = Id.Ticket; <span class="hljs-comment">//取得身份验证票</span>
-        <span class="hljs-built_in">string</span>[] Roles = Ticket.UserData.Split(<span class="hljs-string">&#x27;,&#x27;</span>); <span class="hljs-comment">//将身份验证票中的role数据转成字符串数组</span>
-        Ctx.User = <span class="hljs-keyword">new</span> GenericPrincipal(Id, Roles); <span class="hljs-comment">//将原有的Identity加上角色信息新建一个GenericPrincipal表示当前用户,这样当前用户就拥有了role信息</span>
-    &#125;
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Application_AuthorizeRequest</span><span class="hljs-params">(object sender, System.EventArgs e)</span></span><br><span class="hljs-function"></span>&#123;<br>    HttpApplication App = (HttpApplication)sender;<br>    HttpContext Ctx = App.Context; <span class="hljs-comment">//获取本次Http请求相关的HttpContext对象</span><br>    <span class="hljs-keyword">if</span> (Ctx.Request.IsAuthenticated == <span class="hljs-literal">true</span>) <span class="hljs-comment">//验证过的用户才进行role的处理</span><br>    &#123;<br>        FormsIdentity Id = (FormsIdentity)Ctx.User.Identity;<br>        FormsAuthenticationTicket Ticket = Id.Ticket; <span class="hljs-comment">//取得身份验证票</span><br>        <span class="hljs-built_in">string</span>[] Roles = Ticket.UserData.Split(<span class="hljs-string">&#x27;,&#x27;</span>); <span class="hljs-comment">//将身份验证票中的role数据转成字符串数组</span><br>        Ctx.User = <span class="hljs-keyword">new</span> GenericPrincipal(Id, Roles); <span class="hljs-comment">//将原有的Identity加上角色信息新建一个GenericPrincipal表示当前用户,这样当前用户就拥有了role信息</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>用户必须点击登出按钮登出，会清除 Cookies，之后不能通过浏览器地址访问用户个人主页。</p>
 <h2 id="用户注册"><a href="#用户注册" class="headerlink" title="用户注册"></a>用户注册</h2><p>Account</p>
@@ -429,28 +322,7 @@
 <li>  RegisterIndex</li>
 <li>  Register</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++">[AllowAnonymous]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">RegisterIndex</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">return</span> View();
-&#125;
-[AllowAnonymous]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Register</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">return</span> View();
-&#125;
-[AllowAnonymous]
-[HttpPost]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Register</span><span class="hljs-params">(User user)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span> (ModelState.IsValid)
-    &#123;
-        db.Users.Add(user);
-        db.SaveChanges();
-        <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Login&quot;</span>, <span class="hljs-string">&quot;Account&quot;</span>);
-    &#125;
-    <span class="hljs-keyword">return</span> View();
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">[AllowAnonymous]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">RegisterIndex</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> View();<br>&#125;<br>[AllowAnonymous]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Register</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> View();<br>&#125;<br>[AllowAnonymous]<br>[HttpPost]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Register</span><span class="hljs-params">(User user)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (ModelState.IsValid)<br>    &#123;<br>        db.Users.Add(user);<br>        db.SaveChanges();<br>        <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Login&quot;</span>, <span class="hljs-string">&quot;Account&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> View();<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>通过表单提交 post 请求，插入一行记录，完成后跳到登录界面</p>
 <h2 id="删除留言"><a href="#删除留言" class="headerlink" title="删除留言"></a>删除留言</h2><h3 id="用户删除自己留言"><a href="#用户删除自己留言" class="headerlink" title="用户删除自己留言"></a>用户删除自己留言</h3><p>User</p>
@@ -460,31 +332,7 @@
 <li>  DeleteConfired</li>
 </ul>
 <p>先通过 UserId 选择出只有自己留言的页面</p>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">MyWords</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">int</span> UserId = (<span class="hljs-keyword">int</span>)Session[<span class="hljs-string">&quot;UserId&quot;</span>];
-    var gb = from u in db.Guestbooks
-            where u.IsPass == <span class="hljs-literal">true</span> &amp;&amp; u.UserId == UserId
-            orderby u.CreatedOn descending
-            select u;
-
-    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;MyWords&quot;</span>, gb.ToList());
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Delete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    <span class="hljs-keyword">return</span> View(gb);
-&#125;
-
-[HttpPost, ActionName(<span class="hljs-string">&quot;Delete&quot;</span>)]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteConfired</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    db.Guestbooks.Remove(gb);
-    db.SaveChanges();
-    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;MyWords&quot;</span>, <span class="hljs-string">&quot;User&quot;</span>);
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">MyWords</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> UserId = (<span class="hljs-keyword">int</span>)Session[<span class="hljs-string">&quot;UserId&quot;</span>];<br>    var gb = from u in db.Guestbooks<br>            where u.IsPass == <span class="hljs-literal">true</span> &amp;&amp; u.UserId == UserId<br>            orderby u.CreatedOn descending<br>            select u;<br><br>    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;MyWords&quot;</span>, gb.ToList());<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Delete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    <span class="hljs-keyword">return</span> View(gb);<br>&#125;<br><br>[HttpPost, ActionName(<span class="hljs-string">&quot;Delete&quot;</span>)]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteConfired</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    db.Guestbooks.Remove(gb);<br>    db.SaveChanges();<br>    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;MyWords&quot;</span>, <span class="hljs-string">&quot;User&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>选择删除，确认删除。</p>
 <h3 id="管理员删除留言"><a href="#管理员删除留言" class="headerlink" title="管理员删除留言"></a>管理员删除留言</h3><p>Admin</p>
@@ -493,57 +341,17 @@
 <li>  Delete</li>
 <li>  DeleteConfired</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteIndex</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = from u in db.Guestbooks
-                where u.IsPass == <span class="hljs-literal">true</span>
-                orderby u.CreatedOn descending
-                select u;
-    <span class="hljs-keyword">return</span> View(gb.ToList());
-&#125;
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Delete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    <span class="hljs-keyword">return</span> View(gb);
-&#125;
-
-[HttpPost, ActionName(<span class="hljs-string">&quot;Delete&quot;</span>)]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteConfired</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    db.Guestbooks.Remove(gb);
-    db.SaveChanges();
-    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;DeleteIndex&quot;</span>,<span class="hljs-string">&quot;Admin&quot;</span>);
-
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteIndex</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = from u in db.Guestbooks<br>                where u.IsPass == <span class="hljs-literal">true</span><br>                orderby u.CreatedOn descending<br>                select u;<br>    <span class="hljs-keyword">return</span> View(gb.ToList());<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Delete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    <span class="hljs-keyword">return</span> View(gb);<br>&#125;<br><br>[HttpPost, ActionName(<span class="hljs-string">&quot;Delete&quot;</span>)]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteConfired</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    db.Guestbooks.Remove(gb);<br>    db.SaveChanges();<br>    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;DeleteIndex&quot;</span>,<span class="hljs-string">&quot;Admin&quot;</span>);<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>原理和上面一样</p>
 <h2 id="增加留言"><a href="#增加留言" class="headerlink" title="增加留言"></a>增加留言</h2><p>User</p>
 <ul>
 <li>  Create</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Create</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">return</span> View();
-&#125;
-
-[HttpPost]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Create</span><span class="hljs-params">(Guestbook gb)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span> (ModelState.IsValid)
-    &#123;
-        <span class="hljs-comment">//gb.CreatedOn = System.DateTime.Now;</span>
-        gb.UserId = (<span class="hljs-keyword">int</span>)Session[<span class="hljs-string">&quot;UserId&quot;</span>];
-        gb.IsPass = <span class="hljs-literal">false</span>;
-        db.Guestbooks.Add(gb);
-        db.SaveChanges();
-        <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;AllWords&quot;</span>);
-    &#125;
-    <span class="hljs-keyword">return</span> View();
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Create</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> View();<br>&#125;<br><br>[HttpPost]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">Create</span><span class="hljs-params">(Guestbook gb)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (ModelState.IsValid)<br>    &#123;<br>        <span class="hljs-comment">//gb.CreatedOn = System.DateTime.Now;</span><br>        gb.UserId = (<span class="hljs-keyword">int</span>)Session[<span class="hljs-string">&quot;UserId&quot;</span>];<br>        gb.IsPass = <span class="hljs-literal">false</span>;<br>        db.Guestbooks.Add(gb);<br>        db.SaveChanges();<br>        <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;AllWords&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> View();<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>原理同用户注册，注意要把刚刚登录时获取到的 UserId 传进去，外键不能为空，否则会报错。</p>
-<div class="hljs"><pre><code class="hljs sql">SqlException: The <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">statement</span> conflicted <span class="hljs-keyword">with</span> the <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span></code></pre></div>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">SqlException: The <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">statement</span> conflicted <span class="hljs-keyword">with</span> the <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <br></code></pre></div></td></tr></table></figure>
 <p>另外，用户发布的留言需要管理员审核通过才可以展示到主页上，IsPass 设置默认值为 false。</p>
 <h2 id="审核留言"><a href="#审核留言" class="headerlink" title="审核留言"></a>审核留言</h2><p>Admin</p>
 <ul>
@@ -551,29 +359,7 @@
 <li>  CheckMessage</li>
 <li>  CheckMessage1</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckIndex</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = from u in db.Guestbooks
-            where u.IsPass == <span class="hljs-literal">false</span>
-            orderby u.CreatedOn descending
-            select u;
-
-    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;CheckIndex&quot;</span>, gb.ToList());
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    <span class="hljs-keyword">return</span> View(gb);
-&#125;
-[HttpPost, ActionName(<span class="hljs-string">&quot;CheckMessage&quot;</span>)]
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckMessage1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span><span class="hljs-comment">//通过审核方法</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = db.Guestbooks.Find(id);
-    gb.IsPass = <span class="hljs-literal">true</span>;
-    db.SaveChanges();
-    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;CheckIndex&quot;</span>, <span class="hljs-keyword">new</span> &#123; target = <span class="hljs-string">&quot;fc&quot;</span> &#125;);
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckIndex</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = from u in db.Guestbooks<br>            where u.IsPass == <span class="hljs-literal">false</span><br>            orderby u.CreatedOn descending<br>            select u;<br><br>    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;CheckIndex&quot;</span>, gb.ToList());<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    <span class="hljs-keyword">return</span> View(gb);<br>&#125;<br>[HttpPost, ActionName(<span class="hljs-string">&quot;CheckMessage&quot;</span>)]<br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CheckMessage1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span><span class="hljs-comment">//通过审核方法</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = db.Guestbooks.Find(id);<br>    gb.IsPass = <span class="hljs-literal">true</span>;<br>    db.SaveChanges();<br>    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;CheckIndex&quot;</span>, <span class="hljs-keyword">new</span> &#123; target = <span class="hljs-string">&quot;fc&quot;</span> &#125;);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>管理员点击审核通过后，执行方法，将 IsPass 设置为 True，主页就可以正常显示该留言了。</p>
 <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p>Admin</p>
@@ -581,49 +367,14 @@
 <li>  UserManger</li>
 <li>  DeleteUser</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">UserManage</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    var user = from u in db.Users
-                select u;
-    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;UserManage&quot;</span>, user.ToList());
-&#125;
-
-
-<span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteUser</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span>
-<span class="hljs-function"></span>&#123;
-    User user = db.Users.Find(id);
-    <span class="hljs-keyword">if</span> (user != null)
-    &#123;
-        db.Users.Remove(user);
-        db.SaveChanges();
-    &#125;
-    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;UserManage&quot;</span>);
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">UserManage</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    var user = from u in db.Users<br>                select u;<br>    <span class="hljs-keyword">return</span> View(<span class="hljs-string">&quot;UserManage&quot;</span>, user.ToList());<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">DeleteUser</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span></span><br><span class="hljs-function"></span>&#123;<br>    User user = db.Users.Find(id);<br>    <span class="hljs-keyword">if</span> (user != null)<br>    &#123;<br>        db.Users.Remove(user);<br>        db.SaveChanges();<br>    &#125;<br>    <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;UserManage&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>选择所有用户，遍历每一行，显示在页面上，删除同删除留言，通过主键删除。</p>
 <h2 id="留言统计"><a href="#留言统计" class="headerlink" title="留言统计"></a>留言统计</h2><p>Admin</p>
 <ul>
 <li>  CommentSummary</li>
 </ul>
-<div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CommentSummary</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    var gb = from u in db.Guestbooks
-                where u.IsPass == <span class="hljs-literal">true</span>
-                orderby u.CreatedOn descending
-                select u;
-    <span class="hljs-keyword">int</span> count = gb.Count();
-
-    var gb2 = from u in db.Guestbooks
-                where u.IsPass == <span class="hljs-literal">false</span>
-                orderby u.CreatedOn descending
-                select u;
-    <span class="hljs-keyword">int</span> count2 = gb2.Count();
-
-    ViewBag.count = count;
-    ViewBag.count2 = count2;
-    <span class="hljs-keyword">return</span> View();
-
-&#125;</code></pre></div>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">public</span> ActionResult <span class="hljs-title">CommentSummary</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    var gb = from u in db.Guestbooks<br>                where u.IsPass == <span class="hljs-literal">true</span><br>                orderby u.CreatedOn descending<br>                select u;<br>    <span class="hljs-keyword">int</span> count = gb.Count();<br><br>    var gb2 = from u in db.Guestbooks<br>                where u.IsPass == <span class="hljs-literal">false</span><br>                orderby u.CreatedOn descending<br>                select u;<br>    <span class="hljs-keyword">int</span> count2 = gb2.Count();<br><br>    ViewBag.count = count;<br>    ViewBag.count2 = count2;<br>    <span class="hljs-keyword">return</span> View();<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>通过数据库筛选，分别得出审核通过和待审核的留言，前端显示。</p>
 <h1 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h1><p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/chris2000520/GuestBookSystem">留言板系统</a></p>
 <p>理解 ASP .NET MVC 开发，软件工程模式，尝试用 Git 进行分布式管理。</p>
@@ -645,9 +396,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/ASP-NET/">ASP.NET</a>
-                    
                       <a class="hover-with-bg" href="/tags/C/">C#</a>
+                    
+                      <a class="hover-with-bg" href="/tags/ASP-NET/">ASP.NET</a>
                     
                       <a class="hover-with-bg" href="/tags/MVC/">MVC</a>
                     
@@ -655,10 +406,14 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -769,26 +524,30 @@
   </div>
 
 
-  <div style="text-align: center;">Copyright © 2019-现在 Zhaowuya</div>
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">鄂ICP备2020021519号-1</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        鄂ICP备2020021519号-1
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>鄂公网备42011102004248号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+            
+            <span>鄂公网备42011102004248号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -797,17 +556,15 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -816,7 +573,6 @@
 
 <script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -824,7 +580,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -849,6 +605,7 @@
 
 
 
+
   <script defer src="/js/leancloud.js" ></script>
 
 
@@ -870,11 +627,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -911,7 +669,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

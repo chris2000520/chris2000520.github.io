@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
+  
   <title>Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
@@ -39,7 +40,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"zhaowuya.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fb8JKfbrOd1MzyvUBsjgT1oe-gzGzoHsz","app_key":"8G8dx3dj1nYQOhSx7uqOthj3","server_url":"https://fb8jkfbr.lc-cn-n1-shared.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -137,13 +138,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -152,7 +153,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -177,7 +178,7 @@
 
   <main>
     
-      <div class="container nopadding-md">
+      <div class="container nopadding-x-md">
         <div class="py-5" id="board"
           style=margin-top:0>
           
@@ -192,31 +193,29 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/06/25/numbertower/" target="_self">
-          <img src="/img/pic006.jpg" srcset="/img/loading.gif" alt="数塔问题-简单的动态规划">
+          <img src="/img/pic006.jpg" srcset="/img/loading.gif" lazyload alt="数塔问题-简单的动态规划">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/06/25/numbertower/">数塔问题-简单的动态规划</a>
+        <a href="/2020/06/25/numbertower/" target="_self">
+          数塔问题-简单的动态规划
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/06/25/numbertower/">
+        <a href="/2020/06/25/numbertower/" target="_self">
           
           
             
           
           如下图是一个数塔，从顶部出发在每一个节点可以选择向左或者向右走，一直走到底层，要求找出一条路径，使得路径上的数字之和最大。
-9
-12	15
-10	6	8
-2	18	9	5
-19	7	10	4	16
+12345912	1510	6	82	18	9	519	7	10	4	16
 
 
-算法分析我们可以这样想，从最后一层倒过来看，到倒数第二层，可以选择一个较大的路径，例如，假设我们一步走到了2这里，下一步应该怎么走？只有19或7这两种选择，既然我们想让总的路径之和最大，那我们肯定每
+算法分析我们可以这样想，从最后一层倒过来看，到倒数第二层，可以选择一个较大的路径，例如，假设我们一步走到了2这里，下一步应该怎么走？只有19或7这两种选择，既然我们想让总的路径之和最大，那我们肯定
         </a>
       </p>
 
@@ -256,31 +255,26 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/06/16/magicnumber/" target="_self">
-          <img src="/img/pic010.jpg" srcset="/img/loading.gif" alt="回溯法经典例题">
+          <img src="/img/pic010.jpg" srcset="/img/loading.gif" lazyload alt="回溯法经典例题">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/06/16/magicnumber/">回溯法经典例题</a>
+        <a href="/2020/06/16/magicnumber/" target="_self">
+          回溯法经典例题
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/06/16/magicnumber/">
+        <a href="/2020/06/16/magicnumber/" target="_self">
           
           
             
           
           编写一个由1-9组成的9位数，并且数字不重复，前N项能被N整除。
-#include &lt;iostream&gt;
-using namespace std;
-
-int number = 0;
-int visited[10] = &#123;1, 0, 0, 0, 0, 0, 0, 0, 0, 0&#125;;
-
-void makenumber(int n) &#123;
-    if (n &l
+12345678910111213141516171819202122232425262728293031323334#include &lt;iostream&gt;using namespace std;int number = 0;int visited[10] = &#123;1, 0, 0, 0, 0, 0, 0, 0, 
         </a>
       </p>
 
@@ -318,18 +312,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/05/sqlserver/" target="_self">
-          <img src="/img/pic007.jpg" srcset="/img/loading.gif" alt="关于去除SQLServer中的红色下划线">
+          <img src="/img/pic007.jpg" srcset="/img/loading.gif" lazyload alt="关于去除SQLServer中的红色下划线">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/05/sqlserver/">关于去除SQLServer中的红色下划线</a>
+        <a href="/2020/04/05/sqlserver/" target="_self">
+          关于去除SQLServer中的红色下划线
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/05/sqlserver/">
+        <a href="/2020/04/05/sqlserver/" target="_self">
           
           
             
@@ -372,18 +368,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/05/loveword/" target="_self">
-          <img src="/img/pic009.jpg" srcset="/img/loading.gif" alt="民国时期的爱情">
+          <img src="/img/pic009.jpg" srcset="/img/loading.gif" lazyload alt="民国时期的爱情">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/05/loveword/">民国时期的爱情</a>
+        <a href="/2020/04/05/loveword/" target="_self">
+          民国时期的爱情
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/05/loveword/">
+        <a href="/2020/04/05/loveword/" target="_self">
           
           
             
@@ -430,18 +428,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/04/sadday/" target="_self">
-          <img src="/img/pic011.jpg" srcset="/img/loading.gif" alt="清明追思 意满九州">
+          <img src="/img/pic011.jpg" srcset="/img/loading.gif" lazyload alt="清明追思 意满九州">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/04/sadday/">清明追思 意满九州</a>
+        <a href="/2020/04/04/sadday/" target="_self">
+          清明追思 意满九州
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/04/sadday/">
+        <a href="/2020/04/04/sadday/" target="_self">
           
           
             
@@ -485,18 +485,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/03/live2d/" target="_self">
-          <img src="/img/pic012.jpg" srcset="/img/loading.gif" alt="关于Hexo博客上添加基于Live2D的看板娘">
+          <img src="/img/pic012.jpg" srcset="/img/loading.gif" lazyload alt="关于Hexo博客上添加基于Live2D的看板娘">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/03/live2d/">关于Hexo博客上添加基于Live2D的看板娘</a>
+        <a href="/2020/04/03/live2d/" target="_self">
+          关于Hexo博客上添加基于Live2D的看板娘
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/03/live2d/">
+        <a href="/2020/04/03/live2d/" target="_self">
           
           
             
@@ -539,18 +541,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/03/answer/" target="_self">
-          <img src="/img/pic013.jpg" srcset="/img/loading.gif" alt="北岛的诗">
+          <img src="/img/pic013.jpg" srcset="/img/loading.gif" lazyload alt="北岛的诗">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/03/answer/">北岛的诗</a>
+        <a href="/2020/04/03/answer/" target="_self">
+          北岛的诗
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/03/answer/">
+        <a href="/2020/04/03/answer/" target="_self">
           
           
             
@@ -595,18 +599,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/04/03/hello-world/" target="_self">
-          <img src="/img/pic014.jpg" srcset="/img/loading.gif" alt="你好世界">
+          <img src="/img/pic014.jpg" srcset="/img/loading.gif" lazyload alt="你好世界">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/04/03/hello-world/">你好世界</a>
+        <a href="/2020/04/03/hello-world/" target="_self">
+          你好世界
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/04/03/hello-world/">
+        <a href="/2020/04/03/hello-world/" target="_self">
           
           
             
@@ -649,18 +655,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/01/21/book/" target="_self">
-          <img src="/img/pic017.jpg" srcset="/img/loading.gif" alt="关于读过的书（不定期更新）">
+          <img src="/img/pic017.jpg" srcset="/img/loading.gif" lazyload alt="关于读过的书（不定期更新）">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/01/21/book/">关于读过的书（不定期更新）</a>
+        <a href="/2020/01/21/book/" target="_self">
+          关于读过的书（不定期更新）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/01/21/book/">
+        <a href="/2020/01/21/book/" target="_self">
           
           
             
@@ -704,18 +712,20 @@ void makenumber(int n) &#123;
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/01/20/build%20my%20blog/" target="_self">
-          <img src="/img/pic016.jpg" srcset="/img/loading.gif" alt="如何搭建搭建基于Hexo的个人博客">
+          <img src="/img/pic016.jpg" srcset="/img/loading.gif" lazyload alt="如何搭建搭建基于Hexo的个人博客">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/01/20/build%20my%20blog/">如何搭建搭建基于Hexo的个人博客</a>
+        <a href="/2020/01/20/build%20my%20blog/" target="_self">
+          如何搭建搭建基于Hexo的个人博客
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/01/20/build%20my%20blog/">
+        <a href="/2020/01/20/build%20my%20blog/" target="_self">
           
           
             
@@ -758,15 +768,9 @@ void makenumber(int n) &#123;
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -841,26 +845,30 @@ void makenumber(int n) &#123;
   </div>
 
 
-  <div style="text-align: center;">Copyright © 2019-现在 Zhaowuya</div>
   
   <!-- 备案信息 -->
   <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">鄂ICP备2020021519号-1</a>
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        鄂ICP备2020021519号-1
+      </a>
+    </span>
     
       
-        <a
-          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
-          rel="nofollow noopener"
-          class="beian-police"
-          target="_blank"
-        >
-          
-            <span style="visibility: hidden; width: 0">|</span>
-            <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-          
-          <span>鄂公网备42011102004248号</span>
-        </a>
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102004248"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+            
+            <span>鄂公网备42011102004248号</span>
+          </a>
+        </span>
       
     
   </div>
@@ -869,17 +877,15 @@ void makenumber(int n) &#123;
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -888,7 +894,6 @@ void makenumber(int n) &#123;
 
 <script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -896,7 +901,7 @@ void makenumber(int n) &#123;
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -912,6 +917,7 @@ void makenumber(int n) &#123;
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
 
 
 
@@ -936,11 +942,12 @@ void makenumber(int n) &#123;
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -977,7 +984,6 @@ void makenumber(int n) &#123;
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
