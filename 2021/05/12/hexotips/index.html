@@ -17,9 +17,25 @@
   <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
-  <title>归档 | Zhaowuya&#39;s Blog</title>
+  <title>Fluid小技巧 | Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -158,9 +174,59 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="Fluid小技巧">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      兀年
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-12 09:45" pubdate>
+        2021年5月12日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      318 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -173,52 +239,177 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/05/12/hexotips/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Fluid小技巧</span>
-      <time style="float: right;">05-12</time>
-    </a>
-  
-    
-    <a href="/2021/05/07/linuxshell/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title"></span>
-      <time style="float: right;">05-06</time>
-    </a>
-  
-    
-    <a href="/2021/01/11/abp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ABP框架初体验</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Fluid小技巧</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年5月12日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Fluid-Tag插件"><a href="#Fluid-Tag插件" class="headerlink" title="Fluid Tag插件"></a>Fluid Tag插件</h1><p>最近在写文章的时候，长篇大论，颜色单一，很难有读下去的欲望。于是准备去Fluid的配置指南找点灵感。咦！还真找到了Tag插件，有7种颜色可以选择，彩虹🌈面板不再是梦想。</p>
+<h2 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h2><p>在 markdown 中加入如下的代码来使用便签：</p>
+<div class="hljs"><pre><code class="hljs markdown">&#123;% note success %&#125;
+文字 或者 <span class="hljs-code">`markdown`</span> 均可
+&#123;% endnote %&#125;</code></pre></div>
 
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div>
 
-
-
-              </div>
-            </div>
+<p>第一种是我最近经常用到的，感觉比HTML来的快。</p>
+<p>可选便签：</p>
+<div class="note note-primary">
+            <p>primary</p>
           </div>
+
+<div class="note note-secondary">
+            <p>secondary</p>
+          </div>
+
+<div class="note note-success">
+            <p>success</p>
+          </div>
+
+<div class="note note-danger">
+            <p>danger</p>
+          </div>
+
+<div class="note note-warning">
+            <p>warning</p>
+          </div>
+
+<div class="note note-info">
+            <p>info</p>
+          </div>
+
+<div class="note note-light">
+            <p>light</p>
+          </div>
+
+<p>使用时 <code>&#123;% note primary %&#125;` 和 `&#123;% endnote %&#125;</code> 需单独一行，否则会出现问题。</p>
+<h2 id="行内标签"><a href="#行内标签" class="headerlink" title="行内标签"></a>行内标签</h2><p>在 markdown 中加入如下的代码来使用 Label：</p>
+<div class="hljs"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;</code></pre></div>
+
+<p>或者使用 HTML 形式：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label label-primary&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre></div>
+
+<p>可选Label有<code>primary</code>，<code>default</code>，<code>info</code>，<code>success</code>，<code>warning</code>，<code>danger</code>。</p>
+<span class="label label-primary">primary</span>
+
+<span class="label label-default">default</span>
+
+<span class="label label-info">info</span>
+
+<span class="label label-success">success</span>
+
+<span class="label label-warning">warning</span>
+
+<span class="label label-danger">danger</span>
+
+<h2 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h2><p>你可以在markdown中加入如下的代码来使用Button：</p>
+<div class="hljs"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;&#123;% btn url, text, title %&#125;</code></pre></div>
+
+<p>或者使用HTML形式：</p>
+<div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>跳转链接</td>
+</tr>
+<tr>
+<td>text</td>
+<td>显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>鼠标悬停时显示的文字（可选）</td>
+</tr>
+</tbody></table>
+<p><a class="btn" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UA411376M)" title="元气小姐姐哦">点击前往B站</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/07/linuxshell/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -349,9 +540,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 
