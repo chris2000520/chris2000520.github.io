@@ -18,9 +18,25 @@
   <meta name="author" content="兀年">
   <meta name="keywords" content="">
   
-  <title>归档 | Zhaowuya&#39;s Blog</title>
+  <title>MySQL中MD5加密 | Zhaowuya&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -52,7 +68,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,9 +179,59 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="MySQL中MD5加密">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      兀年
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-13 13:15" pubdate>
+        2021年5月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      394 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -178,40 +244,137 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 22 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/11/abp/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">ABP框架初体验</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MySQL中MD5加密</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年5月13日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h1><p>MySQL的SQL语句中，除了标准的SQL语句之外，另外增加了很多功能的内容，比如一些全局变量、函数等。在JAVA EE的学习中，需要创建用户表并进行加密，这里简答介绍一个在MySQL中用来进行md5加密的函数，函数名为<code>md5</code>。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>一般来说有两种方法，第一个就是用户表中已经存在了一个用户的用户名和密码，我们现在想把密码加密，第二种就是我们需要插入一个用户信息并且想在插入时就加密密码。来看例子：</p>
+<h2 id="1-更新"><a href="#1-更新" class="headerlink" title="1.更新"></a>1.更新</h2><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">update admin set password&#x3D;md5(&#39;123456&#39;) where username&#x3D;&#39;zhaowuya&#39;;<br></code></pre></div></td></tr></table></figure>
 
+<p>这样就把admin表中的用户名为zhoawuya，原密码为123456的用户的密码成功加密了。</p>
+<h2 id="2-插入"><a href="#2-插入" class="headerlink" title="2.插入"></a>2.插入</h2><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">insert into admin(username,password) values(&#39;tutu&#39;,md5(&#39;12&#39;));<br></code></pre></div></td></tr></table></figure>
 
-
-
-              </div>
-            </div>
+<p>这样我们就成功插入了用户名为tutu的，原密码为12的用户，并且加密了密码，在数据库里变成了一大串的数字字母组合。</p>
+<p>结果为：</p>
+<table>
+<thead>
+<tr>
+<th>username</th>
+<th>password</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tutu</td>
+<td>c20ad4d76fe97759aa27a0c99bff6710</td>
+</tr>
+</tbody></table>
+<div class="note note-info">
+            <p>这样存放在数据中的密码信息是保密存放的，但是通过md5加密后的数据是不能逆向使用的，也就是说如果想查询用户的密码信息，则需要通过数据查询匹配来实现。</p>
           </div>
+
+<h1 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h1><p>如需要进行用户身份认证，则需要执行下面查询语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select * from admin where username&#x3D;&#39;zhaowuya&#39; and passwd&#x3D;md5(&#39;123456&#39;);<br></code></pre></div></td></tr></table></figure>
+
+<p>结果为：</p>
+<table>
+<thead>
+<tr>
+<th>username</th>
+<th>password</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>admin</td>
+<td>e10adc3949ba59abbe56e057f20f883e</td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Mysql/">Mysql</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/12/hexotips/">
+                        <span class="hidden-mobile">Fluid小技巧</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -343,9 +506,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
