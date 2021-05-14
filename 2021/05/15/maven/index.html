@@ -264,13 +264,13 @@
             
             <div class="markdown-body">
               <h1 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h1><div class="note note-primary">
-            <p>如果拿一个普通的JavaWeb项目和一个由maven工程搭建的项目相比较，你会发现maven项目要小的多！原因主要是因为前面WEB程序要运行，我们必须将项目运行所需的Jar包复制到工程目录中，从而导致了工程很大。而maven项目通过在<code>pom.xml</code>文件中添加所需jar包的坐标，这样就很好的避免了jar直接引入进来，在需要用到 jar 包的时候，只要查找<code>pom.xml</code>文件，再通过 <code>pom.xml</code> 文件中的坐标，到一个专门用于存放jar包的仓库(maven仓库)中根据坐标从而找到这些 jar 包，再把这些 jar 包拿去运行，当然就很小了。</p>
+            <p>如果拿一个普通的JavaWeb项目和一个由maven工程搭建的项目相比较，你会发现maven项目要小的多！原因主要是因为前面WEB程序要运行，我们必须将项目运行所需的Jar包复制到工程目录中，从而导致了工程很大。而maven项目通过在<code>pom.xml</code>文件中添加所需jar包的坐标，这样就很好的避免了jar直接引入进来，在需要用到jar包的时候，只要查找<code>pom.xml</code>文件，再通过<code>pom.xml</code>文件中的坐标，到一个专门用于存放jar包的仓库(maven仓库)中根据坐标从而找到这些jar包，再把这jar包拿去运行，当然就很小了。</p>
           </div>
 
-<p>maven在美国是一个口语化的词语，代表专家、内行的意思。一个对maven比较正式的定义是这么说的：maven是一个项目管理工具，它包含了一个<strong>项目对象模型</strong> (<strong>POM</strong>：<strong>Project Object Model</strong>)，一组<strong>标准集合</strong>，一个<strong>项目生命周期(Project Lifecycle)**，一个</strong>依赖管理系统(Dependency Management System)<strong>，和用来运行定义在</strong>生命周期阶段(phase)中插件(plugin)目标(goal)**的逻辑。</p>
+<p>maven在美国是一个口语化的词语，代表专家、内行的意思。一个对maven比较正式的定义是这么说的：maven是一个项目管理工具，它包含了一个<strong>项目对象模型</strong> (POM：Project Object Model)，一组<strong>标准集合</strong>，一个<strong>项目生命周期</strong>(Project Lifecycle)，一个<strong>依赖管理系统</strong>(Dependency Management System)，和用来运行定义在<strong>生命周期阶段</strong>(phase)中<strong>插件</strong>(plugin)<strong>目标</strong>(goal)的逻辑。</p>
 <p>maven的一个核心特性就是依赖管理。当我们涉及到多模块的项目（包含成百个模块或者子项目），管理依赖就变成一项困难的任务。maven展示出了它对处理这种情形的高度控制。</p>
 <h1 id="Maven的使用"><a href="#Maven的使用" class="headerlink" title="Maven的使用"></a>Maven的使用</h1><p>我们一般从官网(<a target="_blank" rel="noopener" href="https://maven.apache.org/">Maven – Welcome to Apache Maven</a>)下载最新版的maven解压到一个没有空隔没有中文的路径下就好了，一定要记住这个路径，以后会经常用到的。</p>
-<p>然后我们需要配置环境变量，和JDK一样，是为了让电脑能识别到它，配好之后打开命令行，输入<code>mvn -v</code>，如果弹出一些版本信息，说明你已经配置好了。我的是这样的：</p>
+<p>然后我们需要配置好环境变量，和配置JDK环境变量一样，为了让电脑能识别到它，配好之后打开命令行，输入<code>mvn -v</code>，如果弹出一些版本信息，说明你已经配置好了。我的是这样的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">C:\Users\Chris&gt;mvn -v<br>Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)<br>Maven home: D:\Development\Maven\apache-maven-3.6.3\bin\..<br>Java version: 1.8.0_251, vendor: Oracle Corporation, runtime: D:\Development\Java\JDK8\jre<br>Default locale: zh_CN, platform encoding: GBK<br>OS name: <span class="hljs-string">&quot;windows 10&quot;</span>, version: <span class="hljs-string">&quot;10.0&quot;</span>, arch: <span class="hljs-string">&quot;amd64&quot;</span>, family: <span class="hljs-string">&quot;windows&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>最开始的时候，我们是不用IDEA运行的，直接在命令行输入指令。</p>
