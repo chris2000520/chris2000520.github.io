@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="书山有路勤为径，学海无涯苦作舟。">
+  <meta name="author" content="赵吴涯">
+  <meta name="keywords" content="">
+  
+  <title>Maven笔记 | 赵吴涯的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":180,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>赵吴涯的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Maven笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      赵吴涯
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-14 23:11" pubdate>
+        2021年5月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Maven笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年5月14日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h1><div class="note note-primary">
+            <p>如果拿一个普通的JavaWeb项目和一个由maven工程搭建的项目相比较，你会发现maven项目要小的多！原因主要是因为前面WEB程序要运行，我们必须将项目运行所需的Jar包复制到工程目录中，从而导致了工程很大。而maven项目通过在<code>pom.xml</code>文件中添加所需jar包的坐标，这样就很好的避免了jar直接引入进来，在需要用到jar包的时候，只要查找<code>pom.xml</code>文件，再通过<code>pom.xml</code>文件中的坐标，到一个专门用于存放jar包的仓库(maven仓库)中根据坐标从而找到这些jar包，再把这jar包拿去运行，当然就很小了。</p>
+          </div>
+
+<p>maven在美国是一个口语化的词语，代表专家、内行的意思。一个对maven比较正式的定义是这么说的：maven是一个项目管理工具，它包含了一个<strong>项目对象模型</strong> (POM：Project Object Model)，一组<strong>标准集合</strong>，一个<strong>项目生命周期</strong>(Project Lifecycle)，一个<strong>依赖管理系统</strong>(Dependency Management System)，和用来运行定义在<strong>生命周期阶段</strong>(phase)中<strong>插件</strong>(plugin)<strong>目标</strong>(goal)的逻辑。</p>
+<p>maven的一个核心特性就是依赖管理。当我们涉及到多模块的项目（包含成百个模块或者子项目），管理依赖就变成一项困难的任务。maven展示出了它对处理这种情形的高度控制。</p>
+<h1 id="Maven的使用"><a href="#Maven的使用" class="headerlink" title="Maven的使用"></a>Maven的使用</h1><p>我们一般从官网(<a target="_blank" rel="noopener" href="https://maven.apache.org/">Maven – Welcome to Apache Maven</a>)下载最新版的maven解压到一个没有空隔没有中文的路径下就好了，一定要记住这个路径，以后会经常用到的。</p>
+<p>然后我们需要配置好环境变量，和配置JDK环境变量一样，为了让电脑能识别到它，配好之后打开命令行，输入<code>mvn -v</code>，如果弹出一些版本信息，说明你已经配置好了。我的是这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">C:\Users\Chris&gt;mvn -v<br>Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)<br>Maven home: D:\Development\Maven\apache-maven-3.6.3\bin\..<br>Java version: 1.8.0_251, vendor: Oracle Corporation, runtime: D:\Development\Java\JDK8\jre<br>Default locale: zh_CN, platform encoding: GBK<br>OS name: <span class="hljs-string">&quot;windows 10&quot;</span>, version: <span class="hljs-string">&quot;10.0&quot;</span>, arch: <span class="hljs-string">&quot;amd64&quot;</span>, family: <span class="hljs-string">&quot;windows&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>最开始的时候，我们是不用IDEA运行的，直接在命令行输入指令。</p>
+<h1 id="Maven的目录结构"><a href="#Maven的目录结构" class="headerlink" title="Maven的目录结构"></a>Maven的目录结构</h1><p>打开maven目录，或者在该目录下打开命令行输入<code>tree</code>，我们可以看到：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">D:\Development\Maven\apache-maven-3.6.3&gt;tree<br>├─bin<br>├─boot<br>├─conf<br>│  └─logging<br>└─lib<br>    ├─ext<br>    └─jansi-native<br>        ├─freebsd32<br>        ├─freebsd64<br>        ├─linux32<br>        ├─linux64<br>        ├─osx<br>        ├─windows32<br>        └─windows64<br><br></code></pre></div></td></tr></table></figure>
+
+<p>分别来解释一下各个目录的大概作用。</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bin</td>
+<td>存放了maven命令，比如mvn tomcat:run</td>
+</tr>
+<tr>
+<td>boot</td>
+<td>存放了一些maven本身的引导程序，如类加载器等</td>
+</tr>
+<tr>
+<td>conf</td>
+<td>存放了maven的一些配置文件，如setting.xml</td>
+</tr>
+<tr>
+<td>lib</td>
+<td>存放了maven本身运行所需要的一些jar包</td>
+</tr>
+</tbody></table>
+<h1 id="Maven仓库"><a href="#Maven仓库" class="headerlink" title="Maven仓库"></a>Maven仓库</h1><p>maven仓库一般分为三种：</p>
+<h2 id="1-本地仓库"><a href="#1-本地仓库" class="headerlink" title="1.本地仓库"></a>1.本地仓库</h2><p>用来存储从<span class="label label-primary">远程仓库</span>或<span class="label label-info">中央仓库</span>下载的插件和jar包，项目使用一些插件或jar包，优先从本地仓库查找<br>默认本地仓库位置在 <code>$&#123;user.dir&#125;/.m2/repository</code>，${user.dir}表示 Windows 用户目录。比如我的就是<code>C:\Users\Chris</code>。</p>
+<h2 id="2-远程仓库"><a href="#2-远程仓库" class="headerlink" title="2.远程仓库"></a>2.远程仓库</h2><p>如果本地需要插件或者jar包，本地仓库没有，默认去远程仓库下载。远程仓库可以在互联网内也可以在局域网内。公司里面一般为了在没网的时候也能写项目，用得就是这个。</p>
+<h2 id="3-中央仓库"><a href="#3-中央仓库" class="headerlink" title="3.中央仓库"></a>3.中央仓库</h2><p>在maven软件中内置一个远程仓库地址 <a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2">https://repo1.maven.org/maven2</a> ，它是中央仓库，服务于整个互联网，它是由maven团队自己维护，里面存储了非常全的jar包，加起来有几个G了，它包含了世界上大部分流行的开源项目构件。当然我们平时写代码肯定只用了其中的一小部分。</p>
+<h1 id="Maven常用命令"><a href="#Maven常用命令" class="headerlink" title="Maven常用命令"></a>Maven常用命令</h1><p>我们可以在命令行中通过一系列的maven命令来对我们的maven-helloworld工程进行编译、测试、运行、打包、安装、部署。</p>
+<h2 id="mvn-compile"><a href="#mvn-compile" class="headerlink" title="mvn compile"></a>mvn compile</h2><p>compile是maven工程的编译命令，执行<code>mvn compile</code>后，将src/main/java下的文件编译为class文件输出到target目录下。</p>
+<h2 id="mvn-test"><a href="#mvn-test" class="headerlink" title="mvn test"></a>mvn test</h2><p>test是maven工程的测试命令，<code>mvn test</code>会执行src/test/java下的单元测试类。作用除了编译src/main/java下的文件，同时也编译了src/main/test下的文件，输出到target目录下。</p>
+<h2 id="mvn-package"><a href="#mvn-package" class="headerlink" title="mvn package"></a>mvn package</h2><p>package是maven工程的打包命令，对于Java工程执行 <code>mvn package</code>打成jar包，对于WEB工程打成war包。</p>
+<h2 id="mvn-install"><a href="#mvn-install" class="headerlink" title="mvn install"></a>mvn install</h2><p>install是maven工程的安装命令，执行 <code>mvn install</code> 将maven打成jar包或war包发布到本地仓库。</p>
+<blockquote>
+<p>从运行结果中，不难看出，当后面的命令执行时，前面的操作过程也都会自动执行。</p>
+</blockquote>
+<h2 id="mvn-clean"><a href="#mvn-clean" class="headerlink" title="mvn clean"></a>mvn clean</h2><p>clean是maven工程的清理命令，执行<code>mvn clean</code>会删除target目录及内容。</p>
+<h1 id="Maven生命周期"><a href="#Maven生命周期" class="headerlink" title="Maven生命周期"></a>Maven生命周期</h1><p>我第一次听到<code>生命周期</code>这个词时就觉得很生动，把项目构建的过程比作一个人的生命历程，从出生到童年，到少年，到中年，到老年，最后死亡🏃‍♂️。</p>
+<p>maven对项目构建过程分为三套相互独立的生命周期，请注意这里说的是“三套”，而且“相互独立”，这三套生命周期分别是：</p>
+<ul>
+<li><p>Clean Lifecycle 在进行真正的构建之前进行一些清理工作。</p>
+</li>
+<li><p>Default Lifecycle 构建的核心部分，编译，测试，打包，部署等等。</p>
+</li>
+<li><p>Site Lifecycle 生成项目报告，站点，发布站点。</p>
+</li>
+</ul>
+<h2 id="1-Clean-Lifecycle"><a href="#1-Clean-Lifecycle" class="headerlink" title="1.Clean Lifecycle"></a>1.Clean Lifecycle</h2><p>clean生命周期的目的是<strong>清理项目</strong>，它包含三个阶段：</p>
+<ul>
+<li><code>pre-clean</code>执行一些清理前需要完成的工作。</li>
+<li><code>clean</code>清理上一次构建生成的文件。</li>
+<li><code>post-clean</code>执行一些清理后需要完成的工作。</li>
+</ul>
+<h2 id="2-Default-Lifecycle"><a href="#2-Default-Lifecycle" class="headerlink" title="2.Default Lifecycle"></a>2.Default Lifecycle</h2><p>default 生命周期定义了<strong>真正构建时所需要执行的所有步骤</strong>，它是所有生命周期中最核心的部分，其包含的阶段如下，这里只对重要的阶段进行解释：</p>
+<ul>
+<li><code>validate</code></li>
+<li><code>initialize</code></li>
+<li><code>generate-sources</code></li>
+<li><code>process-sources</code>处理项目主资源文件。一般来说，是对<code>src/main/resources</code>目录的内容进行变量替换等工作后，复制到项目输出的主<code>classpath</code>目录中。</li>
+<li><code>generate-resources</code></li>
+<li><code>process-resources</code></li>
+<li><code>compile</code>编译项目的主源码。一般来说，是编译<code>src/main/java</code>目录下的<code>Java</code>文件至项目输出的主<code>classpath</code>目录中。</li>
+<li><code>process-classes</code></li>
+<li><code>generate-test-sources</code></li>
+<li><code>process-test-sources</code>处理项目测试资源文件。一般来说，是对<code>src/test/resources</code>目录的内容进行变量替换等工作后，复制到项目输出的测试<code>classpath</code>目录中。</li>
+<li><code>generate-test-resources</code></li>
+<li><code>process-test-resources</code></li>
+<li><code>test-compile</code>编译项目的测试代码。一般来说，是编译src/test/java目录下的Java文件至项目输出的测试classpath目录中。</li>
+<li><code>process-test-classes</code></li>
+<li><code>test</code>使用单元测试框架运行测试，测试代码不会被打包或部署。</li>
+<li><code>prepare-package</code></li>
+<li><code>package</code>接受编译好的代码，打包成可发布的格式，如JAR。</li>
+<li><code>pre-integration-test</code></li>
+<li><code>integration-test</code></li>
+<li><code>post-integration-test</code></li>
+<li><code>verify</code></li>
+<li><code>install</code>将包安装到Maven本地仓库，供本地其他Maven项目使用。</li>
+<li><code>deploy</code>将最终的包复制到远程仓库，供其他开发人员和Maven项目使用。</li>
+</ul>
+<h2 id="3-Site-Lifecycle"><a href="#3-Site-Lifecycle" class="headerlink" title="3.Site Lifecycle"></a>3.Site Lifecycle</h2><p>site生命周期的目的是<strong>建立和发布项目站点</strong>。该生命周期包含如下阶段：</p>
+<ul>
+<li><code>pre-site</code>执行一些在生成项目站点之前需要完成的工作。</li>
+<li><code>site</code>生成项目站点文档。</li>
+<li><code>post-site</code>执行一些在生成项目站点之后需要完成的工作。</li>
+<li><code>site-deploy</code>将生成的项目站点发布到服务器上。</li>
+</ul>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangdong5678999/article/details/72848044">Maven生命周期_栋先生-CSDN博客</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JavaWeb/">JavaWeb</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/07/08/git/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git入门</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/13/md5/">
+                        <span class="hidden-mobile">MySQL中MD5加密</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
