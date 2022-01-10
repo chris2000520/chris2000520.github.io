@@ -18,9 +18,25 @@
   <meta name="author" content="赵吴涯">
   <meta name="keywords" content="">
   
-  <title>归档 | 赵吴涯的博客</title>
+  <title>Python入门 | 赵吴涯的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -52,7 +68,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,9 +179,51 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="Python入门">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      赵吴涯
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-10 14:09" pubdate>
+        2022年1月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      479 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -178,40 +236,122 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 26 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/10/28/subnet-mask/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">子网掩码的理解</span>
-      <time style="float: right;">10-27</time>
-    </a>
-  
-</div>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python入门</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年1月10日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><h2 id="Python和PyCharm安装文档"><a href="#Python和PyCharm安装文档" class="headerlink" title="Python和PyCharm安装文档"></a>Python和PyCharm安装文档</h2><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><ol>
+<li>搜索Python官网下载（<a target="_blank" rel="noopener" href="https://www.python.org/">Welcome to Python.org</a>）。</li>
+<li>选择3.7.0的版本下载，首先看版本，x86-64是64位版本，x86是32位版本，macOS是苹果电脑的操作系统，需要下载跟你电脑系统一致的版本。</li>
+<li>运行可执行文件，注意要把Add to PATH勾上，不然要自己去环境变量里面去配置了。</li>
+<li>最好安装在C盘之外，免得像我一样分区了，给C盘分得又少，导致装不下的情况。</li>
+<li>检查是否安装成功，打开CMD，输入<code>Python -V</code>来检查，如果弹出版本号，说明成功，如果是Python was not found，大概率是环境变量的问题。</li>
+<li>然后就可以你好世界了！</li>
+</ol>
+<h3 id="PyCharm安装"><a href="#PyCharm安装" class="headerlink" title="PyCharm安装"></a>PyCharm安装</h3><ol>
+<li><p>搜索PyCharm官网下载社区版，功能简单但是学习足够了（<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/">PyCharm: the Python IDE for Professional Developers by JetBrains</a>），如果之前用过IDEA的同学，有JetBrains Toolbox可以直接那里面下载。</p>
+</li>
+<li><p>第一次打开的时候要选择主题，调节字体大小等等。</p>
+</li>
+<li><p>然后就开始创建第一个项目了，会出现设置项目名称和选择解释器。</p>
+</li>
+<li><p><strong>这里默认使用的Python的虚拟环境，如果你不使用虚拟环境，一定要修改。</strong><br>如果出现<strong>Interpreter field is empty</strong>表示Python的环境变量有问题。</p>
+</li>
+<li><p>自己配置的话就是要找到Python的安装路径，将里面的python.exe添加进来，最后Create即可。</p>
+</li>
+<li><p>项目创建成功后，会有一个默认的main文件，点击运行，会出现结果，现在我们自己来写一个测试文件，在左边区域项目名称上（day01）右键，添加名为test的python文件，写下如下代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">print(<span class="hljs-string">&quot;Hello World!&quot;</span>)<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>右键运行，大功告成！</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;D:\Program Files\Python\python.exe&quot;</span> D:/Python/day01/test.py<br>Hello World!<br><br>Process finished <span class="hljs-keyword">with</span> exit code <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
 
 
+</li>
+</ol>
 
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/28/subnet-mask/">
+                        <span class="hidden-mobile">子网掩码的理解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -315,9 +455,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

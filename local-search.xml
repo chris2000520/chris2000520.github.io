@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Python入门</title>
+    <link href="/2022/01/10/pythonstudy/"/>
+    <url>/2022/01/10/pythonstudy/</url>
+    
+    <content type="html"><![CDATA[<h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><h2 id="Python和PyCharm安装文档"><a href="#Python和PyCharm安装文档" class="headerlink" title="Python和PyCharm安装文档"></a>Python和PyCharm安装文档</h2><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><ol><li>搜索Python官网下载（<a href="https://www.python.org/">Welcome to Python.org</a>）。</li><li>选择3.7.0的版本下载，首先看版本，x86-64是64位版本，x86是32位版本，macOS是苹果电脑的操作系统，需要下载跟你电脑系统一致的版本。</li><li>运行可执行文件，注意要把Add to PATH勾上，不然要自己去环境变量里面去配置了。</li><li>最好安装在C盘之外，免得像我一样分区了，给C盘分得又少，导致装不下的情况。</li><li>检查是否安装成功，打开CMD，输入<code>Python -V</code>来检查，如果弹出版本号，说明成功，如果是Python was not found，大概率是环境变量的问题。</li><li>然后就可以你好世界了！</li></ol><h3 id="PyCharm安装"><a href="#PyCharm安装" class="headerlink" title="PyCharm安装"></a>PyCharm安装</h3><ol><li><p>搜索PyCharm官网下载社区版，功能简单但是学习足够了（<a href="https://www.jetbrains.com/pycharm/">PyCharm: the Python IDE for Professional Developers by JetBrains</a>），如果之前用过IDEA的同学，有JetBrains Toolbox可以直接那里面下载。</p></li><li><p>第一次打开的时候要选择主题，调节字体大小等等。</p></li><li><p>然后就开始创建第一个项目了，会出现设置项目名称和选择解释器。</p></li><li><p><strong>这里默认使用的Python的虚拟环境，如果你不使用虚拟环境，一定要修改。</strong><br>如果出现<strong>Interpreter field is empty</strong>表示Python的环境变量有问题。</p></li><li><p>自己配置的话就是要找到Python的安装路径，将里面的python.exe添加进来，最后Create即可。</p></li><li><p>项目创建成功后，会有一个默认的main文件，点击运行，会出现结果，现在我们自己来写一个测试文件，在左边区域项目名称上（day01）右键，添加名为test的python文件，写下如下代码。</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">print(<span class="hljs-string">&quot;Hello World!&quot;</span>)<br></code></pre></div></td></tr></table></figure></li><li><p>右键运行，大功告成！</p><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;D:\Program Files\Python\python.exe&quot;</span> D:/Python/day01/test.py<br>Hello World!<br><br>Process finished <span class="hljs-keyword">with</span> exit code <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>子网掩码的理解</title>
     <link href="/2021/10/28/subnet-mask/"/>
     <url>/2021/10/28/subnet-mask/</url>
