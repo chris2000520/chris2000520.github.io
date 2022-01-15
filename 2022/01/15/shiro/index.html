@@ -18,7 +18,7 @@
   <meta name="author" content="赵吴涯">
   <meta name="keywords" content="">
   
-  <title>Python入门 | 赵吴涯的博客</title>
+  <title>Shir权限管理 | 赵吴涯的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python入门">
+            <span class="h2" id="subtitle" title="Shir权限管理">
               
             </span>
 
@@ -194,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-10 14:09" pubdate>
-        2022年1月10日 下午
+      <time datetime="2022-01-15 12:16" pubdate>
+        2022年1月15日 中午
       </time>
     </span>
   
@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      479 字
+      981 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      11
        分钟
     </span>
   
@@ -246,43 +246,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python入门</h1>
+            <h1 style="display: none">Shir权限管理</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月10日 早上
+                  本文最后更新于：2022年1月15日 凌晨
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><h2 id="Python和PyCharm安装文档"><a href="#Python和PyCharm安装文档" class="headerlink" title="Python和PyCharm安装文档"></a>Python和PyCharm安装文档</h2><h3 id="Python安装"><a href="#Python安装" class="headerlink" title="Python安装"></a>Python安装</h3><ol>
-<li>搜索Python官网下载（<a target="_blank" rel="noopener" href="https://www.python.org/">Welcome to Python.org</a>）。</li>
-<li>选择3.7.0的版本下载，首先看版本，x86-64是64位版本，x86是32位版本，macOS是苹果电脑的操作系统，需要下载跟你电脑系统一致的版本。</li>
-<li>运行可执行文件，注意要把Add to PATH勾上，不然要自己去环境变量里面去配置了。</li>
-<li>最好安装在C盘之外，免得像我一样分区了，给C盘分得又少，导致装不下的情况。</li>
-<li>检查是否安装成功，打开CMD，输入<code>Python -V</code>来检查，如果弹出版本号，说明成功，如果是Python was not found，大概率是环境变量的问题。</li>
-<li>然后就可以你好世界了！</li>
-</ol>
-<h3 id="PyCharm安装"><a href="#PyCharm安装" class="headerlink" title="PyCharm安装"></a>PyCharm安装</h3><ol>
-<li><p>搜索PyCharm官网下载社区版，功能简单但是学习足够了（<a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/">PyCharm: the Python IDE for Professional Developers by JetBrains</a>），如果之前用过IDEA的同学，有JetBrains Toolbox可以直接那里面下载。</p>
-</li>
-<li><p>第一次打开的时候要选择主题，调节字体大小等等。</p>
-</li>
-<li><p>然后就开始创建第一个项目了，会出现设置项目名称和选择解释器。</p>
-</li>
-<li><p><strong>这里默认使用的Python的虚拟环境，如果你不使用虚拟环境，一定要修改。</strong><br>如果出现<strong>Interpreter field is empty</strong>表示Python的环境变量有问题。</p>
-</li>
-<li><p>自己配置的话就是要找到Python的安装路径，将里面的python.exe添加进来，最后Create即可。</p>
-</li>
-<li><p>项目创建成功后，会有一个默认的main文件，点击运行，会出现结果，现在我们自己来写一个测试文件，在左边区域项目名称上（day01）右键，添加名为test的python文件，写下如下代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">print(<span class="hljs-string">&quot;Hello World!&quot;</span>)<br></code></pre></div></td></tr></table></figure>
-</li>
-<li><p>右键运行，大功告成！</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;D:\Program Files\Python\python.exe&quot;</span> D:/Python/day01/test.py<br>Hello World!<br><br>Process finished <span class="hljs-keyword">with</span> exit code <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
+              <h1 id="Shiro"><a href="#Shiro" class="headerlink" title="Shiro"></a>Shiro</h1><h2 id="权限管理概念"><a href="#权限管理概念" class="headerlink" title="权限管理概念"></a>权限管理概念</h2><p>基本上涉及到用户参与的系统都要进行权限管理，权限管理属于系统安全的范畴，权限管理实现<code>对用户访问系统的控制</code>，按照安全规则或者<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/160028.htm">安全策略</a>控制用户可以访问而且只能访问自己被授权的资源。权限管理包括用户<code>身份认证</code>和<code>授权</code>两部分，简称<code>认证授权</code>。对于需要访问控制的资源用户首先经过身份认证，认证通过后用户具有该资源的访问权限方可访问。</p>
+<h2 id="Shiro-Core"><a href="#Shiro-Core" class="headerlink" title="Shiro Core"></a>Shiro Core</h2><h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p><code>Subject即主体</code>，外部应用与subject进行交互，subject记录了当前操作用户，将用户的概念理解为当前操作的主体，可能是一个通过浏览器请求的用户，也可能是一个运行的程序。    Subject在shiro中是一个接口，接口中定义了很多认证授相关的方法，外部程序通过subject进行认证授，而subject是通过SecurityManager安全管理器进行认证授权</p>
+<h3 id="SecurityManager"><a href="#SecurityManager" class="headerlink" title="SecurityManager"></a>SecurityManager</h3><p><code>SecurityManager即安全管理器</code>，对全部的subject进行安全管理，它是shiro的核心，负责对所有的subject进行安全管理。通过SecurityManager可以完成subject的认证、授权等，实质上SecurityManager是通过Authenticator进行认证，通过Authorizer进行授权，通过SessionManager进行会话管理等。</p>
+<p><code>SecurityManager是一个接口，继承了Authenticator, Authorizer, SessionManager这三个接口。</code></p>
+<h3 id="Authenticator"><a href="#Authenticator" class="headerlink" title="Authenticator"></a>Authenticator</h3><p><code>Authenticator即认证器</code>，对用户身份进行认证，Authenticator是一个接口，shiro提供ModularRealmAuthenticator实现类，通过ModularRealmAuthenticator基本上可以满足大多数需求，也可以自定义认证器。</p>
+<h3 id="Authorizer"><a href="#Authorizer" class="headerlink" title="Authorizer"></a>Authorizer</h3><p><code>Authorizer即授权器</code>，用户通过认证器认证通过，在访问功能时需要通过授权器判断用户是否有此功能的操作权限。</p>
+<h3 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h3><p><code>Realm即领域</code>，相当于datasource数据源，securityManager进行安全认证需要通过Realm获取用户权限数据，比如：如果用户身份数据在数据库那么realm就需要从数据库获取用户身份信息。</p>
+<blockquote>
+<p>注意：不要把realm理解成只是从数据源取数据，在realm中还有认证授权校验的相关的代码。</p>
+</blockquote>
+<h3 id="SessionManager"><a href="#SessionManager" class="headerlink" title="SessionManager"></a>SessionManager</h3><p><code>sessionManager即会话管理</code>，shiro框架定义了一套会话管理，它不依赖web容器的session，所以shiro可以使用在非web应用上，也可以将分布式应用的会话集中在一点管理，此特性可使它实现单点登录。</p>
+<h3 id="SessionDAO"><a href="#SessionDAO" class="headerlink" title="SessionDAO"></a>SessionDAO</h3><p><code>SessionDAO即会话dao</code>，是对session会话操作的一套接口，比如要将session存储到数据库，可以通过jdbc将会话存储到数据库。</p>
+<h3 id="CacheManager"><a href="#CacheManager" class="headerlink" title="CacheManager"></a>CacheManager</h3><p><code>CacheManager即缓存管理</code>，将用户权限数据存储在缓存，这样可以提高性能。</p>
+<h3 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h3><p>​    <code>Cryptography即密码管理</code>，shiro提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。</p>
+<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><h4 id="1-创建项目并引入依赖"><a href="#1-创建项目并引入依赖" class="headerlink" title="1. 创建项目并引入依赖"></a>1. 创建项目并引入依赖</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.shiro<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>shiro-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.5.3<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
+<h4 id="2-引入shiro配置文件并配置"><a href="#2-引入shiro配置文件并配置" class="headerlink" title="2.引入shiro配置文件并配置"></a>2.引入shiro配置文件并配置</h4><figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[users]</span><br><span class="hljs-attr">zwy</span>=<span class="hljs-number">123</span><br><span class="hljs-attr">fhy</span>=<span class="hljs-number">456</span><br></code></pre></div></td></tr></table></figure>
 
-</li>
+<h4 id="3-认证代码"><a href="#3-认证代码" class="headerlink" title="3.认证代码"></a>3.认证代码</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestAuthenticator</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-comment">//创建securityManager</span><br>        DefaultSecurityManager defaultSecurityManager = <span class="hljs-keyword">new</span> DefaultSecurityManager();<br>        defaultSecurityManager.setRealm(<span class="hljs-keyword">new</span> IniRealm(<span class="hljs-string">&quot;classpath:shiro.ini&quot;</span>));<br>        <span class="hljs-comment">//将安装工具类中设置默认安全管理器</span><br>        SecurityUtils.setSecurityManager(defaultSecurityManager);<br>        <span class="hljs-comment">//获取主体对象</span><br>        Subject subject = SecurityUtils.getSubject();<br>        <span class="hljs-comment">//创建token令牌</span><br>        UsernamePasswordToken token = <span class="hljs-keyword">new</span> UsernamePasswordToken(<span class="hljs-string">&quot;zwy&quot;</span>, <span class="hljs-string">&quot;123&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            subject.login(token);<span class="hljs-comment">//用户登录</span><br>            System.out.println(<span class="hljs-string">&quot;登录成功！&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (UnknownAccountException e) &#123;<br>            e.printStackTrace();<br>            System.out.println(<span class="hljs-string">&quot;用户名错误!!&quot;</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (IncorrectCredentialsException e)&#123;<br>            e.printStackTrace();<br>            System.out.println(<span class="hljs-string">&quot;密码错误!!!&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>分析源码可知：</p>
+<ol>
+<li>最终执行用户名比较<code>SimpleAccountRealm</code>，<code>doGetAuthenticationinfo</code>在这个方法中完成用户名校验。</li>
+<li>最终密码校验是在<code>AuthenticatingRealm</code>中<code>assertCredentialIsMatch</code>。</li>
 </ol>
+<p>总结，<code>AuthenticatingRealm</code>认证realm，<code>doGetAuthenticationInfo</code>，<code>AuthorizingRealm</code>授权realm，<code>doGetAuthorizzationInfo</code>。</p>
 
             </div>
             <hr>
@@ -300,7 +298,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
                     
                   </div>
                 
@@ -317,18 +315,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/15/shiro/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Shir权限管理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/28/subnet-mask/">
-                        <span class="hidden-mobile">子网掩码的理解</span>
+                      <a href="/2022/01/10/pythonstudy/">
+                        <span class="hidden-mobile">Python入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
