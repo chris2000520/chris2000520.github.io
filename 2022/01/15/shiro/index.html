@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      2k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      23
        分钟
     </span>
   
@@ -281,7 +281,7 @@
 <li>最终密码校验是在<code>AuthenticatingRealm</code>中<code>assertCredentialIsMatch</code>。</li>
 </ol>
 <p>总结，<code>AuthenticatingRealm</code>认证realm，<code>doGetAuthenticationInfo</code>，<code>AuthorizingRealm</code>授权realm，<code>doGetAuthorizzationInfo</code>。</p>
-<h2 id="MD5和Salt"><a href="#MD5和Salt" class="headerlink" title="MD5和Salt"></a>MD5和Salt</h2><p><code>MD5</code>算法，一般用于加密或者签名（校验和），特点是：MD5算法不可逆，内容相同无论执行多少次MD5生成的结果始终是一致的。可以用来校验文件是否完整（验证游戏完整性）。网站上有的解密算法，都是通过穷举法来的，比如一些简单的密码，“123”，“123456”等等。所以密码最好加上自己的一些信息。<strong>生成的结果： 不管源文件有多大多小，始终是一个16进制32位长度字符串。</strong></p>
+<h3 id="MD5和Salt"><a href="#MD5和Salt" class="headerlink" title="MD5和Salt"></a>MD5和Salt</h3><p><code>MD5</code>算法，一般用于加密或者签名（校验和），特点是：MD5算法不可逆，内容相同无论执行多少次MD5生成的结果始终是一致的。可以用来校验文件是否完整（验证游戏完整性）。网站上有的解密算法，都是通过穷举法来的，比如一些简单的密码，“123”，“123456”等等。所以密码最好加上自己的一些信息。<strong>生成的结果： 不管源文件有多大多小，始终是一个16进制32位长度字符串。</strong></p>
 <p><code>Salt</code>盐，给用户密码加点盐，就是在原先的明文密码后加一串随机字符串，更咸了，密码也就更复杂了一些。所以在数据库里要加盐，并在数据库中保存下来。虽然不能确保系统的百分之百安全，但是能更加相对安全，因为不知道盐加在那个位置，生成了几次。</p>
 <ol>
 <li>用户注册时，通过服务层加盐，确定业务规则，并将盐保存在数据库中。</li>
@@ -293,6 +293,38 @@
 <p>指出加盐。</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">protected</span> AuthenticationInfo <span class="hljs-title">doGetAuthenticationInfo</span><span class="hljs-params">(AuthenticationToken token)</span> <span class="hljs-keyword">throws</span> AuthenticationException </span>&#123;<br>        String principal = (String) token.getPrincipal();<br>        <span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;zwy&quot;</span>.equals(principal))&#123;<br>            String password = <span class="hljs-string">&quot;e4f9bf3e0c58f045e62c23c533fcf633&quot;</span>;<br>            String salt = <span class="hljs-string">&quot;X0*7ps&quot;</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SimpleAuthenticationInfo(principal,password, ByteSource.Util.bytes(salt),<span class="hljs-keyword">this</span>.getName());<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    &#125;<br></code></pre></div></td></tr></table></figure>
 
+<h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><p>授权，即访问控制，控制谁能访问哪些资源。主体进行身份认证后需要分配权限方可访问系统的资源，对于某些资源没有权限是无法访问的。</p>
+<h3 id="关键对象"><a href="#关键对象" class="headerlink" title="关键对象"></a>关键对象</h3><p><strong>授权可简单理解为Who对What进行How操作：</strong></p>
+<p><code>Who，即主体（Subject）</code>，主体需要访问系统中的资源。</p>
+<p><code>What，即资源（Resource)</code>，如系统菜单、页面、按钮、类方法、系统商品信息等。资源包括<code>资源类型</code>和<code>资源实例</code>，比如<code>商品信息为资源类型</code>，类型为t01的商品为<code>资源实例</code>，编号为001的商品信息也属于资源实例。</p>
+<p><code>How，权限/许可（Permission)</code>，规定了主体对资源的操作许可，权限离开资源没有意义，如用户查询权限、用户添加权限、某个类方法的调用权限、编号为001用户的修改权限等，通过权限可知主体对哪些资源都有哪些操作许可。</p>
+<h3 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h3><p><img src="/img/pic030.jpg" srcset="/img/loading.gif" lazyload alt="image"></p>
+<h3 id="授权方式"><a href="#授权方式" class="headerlink" title="授权方式"></a>授权方式</h3><ul>
+<li><p><strong>基于角色的访问控制</strong></p>
+<ul>
+<li><p>RBAC基于角色的访问控制（Role-Based Access Control）是以角色为中心进行访问控制</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(subject.hasRole(<span class="hljs-string">&quot;admin&quot;</span>))&#123;<br>   <span class="hljs-comment">//操作什么资源</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>基于资源的访问控制</strong></p>
+<ul>
+<li><p>RBAC基于资源的访问控制（Resource-Based Access Control）是以资源为中心进行访问控制</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(subject.isPermission(<span class="hljs-string">&quot;user:update:01&quot;</span>))&#123; <span class="hljs-comment">//资源实例</span><br>  <span class="hljs-comment">//对01用户进行修改</span><br>&#125;<br><span class="hljs-keyword">if</span>(subject.isPermission(<span class="hljs-string">&quot;user:update:*&quot;</span>))&#123;  <span class="hljs-comment">//资源类型</span><br>  <span class="hljs-comment">//对01用户进行修改</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="权限字符串"><a href="#权限字符串" class="headerlink" title="权限字符串"></a>权限字符串</h3><p>​        权限字符串的规则是：<strong>资源标识符：操作：资源实例标识符</strong>，意思是对哪个资源的哪个实例具有什么操作，“:”是资源/操作/实例的分割符，权限字符串也可以使用*通配符。</p>
+<p>例子：</p>
+<ul>
+<li>用户创建权限：user:create，或user:create:*</li>
+<li>用户修改实例001的权限：user:update:001</li>
+<li>用户实例001的所有权限：user:*：001</li>
+</ul>
 
             </div>
             <hr>
