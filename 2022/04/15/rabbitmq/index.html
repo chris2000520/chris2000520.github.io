@@ -18,9 +18,25 @@
   <meta name="author" content="赵吴涯">
   <meta name="keywords" content="">
   
-  <title>归档 | 庐山烟雨浙江潮</title>
+  <title>消息中间件RabbitMQ | 庐山烟雨浙江潮</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -52,7 +68,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,9 +179,51 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="消息中间件RabbitMQ">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      赵吴涯
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-15 14:12" pubdate>
+        2022年4月15日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      729 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -178,88 +236,145 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 29 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/04/05/loveword/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">民国时期的爱情</span>
-      <time style="float: right;">04-04</time>
-    </a>
-  
-    
-    <a href="/2020/04/04/sadday/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">清明追思 意满九州</span>
-      <time style="float: right;">04-04</time>
-    </a>
-  
-    
-    <a href="/2020/04/03/live2d/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">关于Hexo博客上添加基于Live2D的看板娘</span>
-      <time style="float: right;">04-03</time>
-    </a>
-  
-    
-    <a href="/2020/04/03/answer/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">北岛的诗</span>
-      <time style="float: right;">04-03</time>
-    </a>
-  
-    
-    <a href="/2020/04/03/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">你好世界</span>
-      <time style="float: right;">04-03</time>
-    </a>
-  
-    
-    <a href="/2020/01/21/book/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">关于读过的书（不定期更新）</span>
-      <time style="float: right;">01-21</time>
-    </a>
-  
-    
-    <a href="/2020/01/20/build%20my%20blog/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">如何搭建搭建基于Hexo的个人博客</span>
-      <time style="float: right;">01-19</time>
-    </a>
-  
-    
-    <a href="/2020/01/01/JDBCStudy/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">JDBC学习文档</span>
-      <time style="float: right;">01-01</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">消息中间件RabbitMQ</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年4月15日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="MQ引言"><a href="#MQ引言" class="headerlink" title="MQ引言"></a>MQ引言</h2><h3 id="什么是MQ"><a href="#什么是MQ" class="headerlink" title="什么是MQ"></a>什么是MQ</h3><p><code>MQ</code>(Message Quene) :  翻译为 <code>消息队列</code>,通过典型的 <code>生产者</code>和<code>消费者</code>模型,生产者不断向消息队列中生产消息，消费者不断的从队列中获取消息。因为消息的生产和消费都是异步的，而且只关心消息的发送和接收，没有业务逻辑的侵入,轻松的实现系统间解耦。别名为 <code>消息中间件</code>    通过利用高效可靠的消息传递机制进行平台无关的数据交流，并基于数据通信来进行分布式系统的集成。</p>
+<h3 id="MQ有哪些"><a href="#MQ有哪些" class="headerlink" title="MQ有哪些"></a>MQ有哪些</h3><p>当今市面上有很多主流的消息中间件，如老牌的<code>ActiveMQ</code>、<code>RabbitMQ</code>，炙手可热的<code>Kafka</code>，阿里巴巴自主开发<code>RocketMQ</code>等。</p>
+<h3 id="不同MQ特点"><a href="#不同MQ特点" class="headerlink" title="不同MQ特点"></a>不同MQ特点</h3><p>####　ActiveMQ</p>
+<p>ActiveMQ 是Apache出品，最流行的，能力强劲的开源消息总线。它是一个完全支持JMS规范的的消息中间件。丰富的API,多种集群架构模式让ActiveMQ在业界成为老牌的消息中间件,在中小型企业颇受欢迎!</p>
+<p>####　Kafka</p>
+<p>Kafka是LinkedIn开源的分布式发布-订阅消息系统，目前归属于Apache顶级项目。Kafka主要特点是基于Pull的模式来处理消息消费，追求高吞吐量，一开始的目的就是用于日志收集和传输。0.8版本开始支持复制，不支持事务，对消息的重复、丢失、错误没有严格要求，适合产生大量数据的互联网服务的数据收集业务。</p>
+<h4 id="RocketMQ"><a href="#RocketMQ" class="headerlink" title="RocketMQ"></a>RocketMQ</h4><p>RocketMQ是阿里开源的消息中间件，它是纯Java开发，具有高吞吐量、高可用性、适合大规模分布式系统应用的特点。RocketMQ思路起源于Kafka，但并不是Kafka的一个Copy，它对消息的可靠传输及事务性做了优化，目前在阿里集团被广泛应用于交易、充值、流计算、消息推送、日志流式处理、binglog分发等场景。</p>
+<h4 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h4><p>RabbitMQ是使用Erlang语言开发的开源消息队列系统，基于AMQP协议来实现。AMQP的主要特征是面向消息、队列、路由（包括点对点和发布/订阅）、可靠性、安全。AMQP协议更多用在企业系统内对数据一致性、稳定性和可靠性要求很高的场景，对性能和吞吐量的要求还在其次。</p>
+<blockquote>
+<p>RabbitMQ比Kafka可靠，Kafka更适合IO高吞吐的处理，一般应用在大数据日志处理或对实时性（少量延迟），可靠性（少量丢数据）要求稍低的场景使用，比如ELK日志收集。</p>
+</blockquote>
+<hr>
+<h2 id="RabbitMQ-的引言"><a href="#RabbitMQ-的引言" class="headerlink" title="RabbitMQ 的引言"></a>RabbitMQ 的引言</h2><h3 id="RabbitMQ-1"><a href="#RabbitMQ-1" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3><blockquote>
+<p>基于<code>AMQP</code>协议，erlang语言开发，是部署最广泛的开源消息中间件,是最受欢迎的开源消息中间件之一。</p>
+</blockquote>
+<p><code>官网</code>: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a></p>
+<p><code>官方教程</code>: <a target="_blank" rel="noopener" href="https://www.rabbitmq.com/#getstarted">https://www.rabbitmq.com/#getstarted</a></p>
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2020/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MQ/">MQ</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/10/jwt/">
+                        <span class="hidden-mobile">JWT学习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "v8KheA0gGhi6jT6xYH7a0L31-MdYXbMMI",
+          app_key: "LR3FBkUy8ltvC0GELXuCiUd3",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "robohash",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://v8khea0g.api.lncldglobal.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -363,9 +478,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
