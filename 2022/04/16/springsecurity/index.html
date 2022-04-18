@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      3.2k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      41
        分钟
     </span>
   
@@ -250,7 +250,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月17日 凌晨
+                  本文最后更新于：2022年4月17日 早上
                 
               </p>
             
@@ -272,7 +272,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-warning">
-            <p>注意：Spring Boot和Spring Security之间版本有依赖关系，各个版本不一样，详细请参考[官方文档](<a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/spring-security/5.1.2.RELEASE/reference/get-spring-security.html#release-numbering">Spring Security 中文文档 - 3. 获得 Spring Security | Docs4dev</a>)，作者Spring Boot版本是2.6，对应的Spring Security版本是5.6，由于Spring Boot提供了一个Maven BOM来Management依赖版本，因此无需指定版本。如果您想覆盖Spring Security版本，可以通过提供Maven属性来实现。</p>
+            <p>注意：Spring Boot和Spring Security之间版本有依赖关系，各个版本不一样，详细请参考<a target="_blank" rel="noopener" href="https://www.docs4dev.com/docs/zh/spring-security/5.1.2.RELEASE/reference/get-spring-security.html#release-numbering">官方文档</a>，作者Spring Boot版本是2.6，对应的Spring Security版本是5.6，由于Spring Boot提供了一个Maven BOM来Management依赖版本，因此无需指定版本。如果您想覆盖Spring Security版本，可以通过提供Maven属性来实现。</p>
           </div>
 </li>
 <li><p>编写Controller类。</p>
@@ -288,6 +288,175 @@
 </li>
 </ol>
 <h1 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h1><p>Spring Security本质是是一个<strong>过滤器链</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>过滤器</th>
+<th>过滤器作用</th>
+<th>默认是否加载</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ChannelProcessingFilter</td>
+<td>过滤请求协议 HTTP 、HTTPS</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>WebAsyncManagerIntegrationFilter</code></td>
+<td>将 WebAsyncManger 与 SpringSecurity 上下文进行集成</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>SecurityContextPersistenceFilter</code></td>
+<td>在处理请求之前,将安全信息加载到 SecurityContextHolder 中</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>HeaderWriterFilter</code></td>
+<td>处理头信息加入响应中</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>CorsFilter</td>
+<td>处理跨域问题</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>CsrfFilter</code></td>
+<td>处理 CSRF 攻击</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>LogoutFilter</code></td>
+<td>处理注销登录</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>OAuth2AuthorizationRequestRedirectFilter</td>
+<td>处理 OAuth2 认证重定向</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Saml2WebSsoAuthenticationRequestFilter</td>
+<td>处理 SAML 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>X509AuthenticationFilter</td>
+<td>处理 X509 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>AbstractPreAuthenticatedProcessingFilter</td>
+<td>处理预认证问题</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>CasAuthenticationFilter</td>
+<td>处理 CAS 单点登录</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>OAuth2LoginAuthenticationFilter</td>
+<td>处理 OAuth2 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Saml2WebSsoAuthenticationFilter</td>
+<td>处理 SAML 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>UsernamePasswordAuthenticationFilter</code></td>
+<td>处理表单登录</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>OpenIDAuthenticationFilter</td>
+<td>处理 OpenID 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>DefaultLoginPageGeneratingFilter</code></td>
+<td>配置默认登录页面</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>DefaultLogoutPageGeneratingFilter</code></td>
+<td>配置默认注销页面</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>ConcurrentSessionFilter</td>
+<td>处理 Session 有效期</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>DigestAuthenticationFilter</td>
+<td>处理 HTTP 摘要认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>BearerTokenAuthenticationFilter</td>
+<td>处理 OAuth2 认证的 Access Token</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>BasicAuthenticationFilter</code></td>
+<td>处理 HttpBasic 登录</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>RequestCacheAwareFilter</code></td>
+<td>处理请求缓存</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>SecurityContextHolder&lt;br /&gt;AwareRequestFilter</code></td>
+<td>包装原始请求</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>JaasApiIntegrationFilter</td>
+<td>处理 JAAS 认证</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>RememberMeAuthenticationFilter</code></td>
+<td>处理 RememberMe 登录</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>AnonymousAuthenticationFilter</code></td>
+<td>配置匿名认证</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>OAuth2AuthorizationCodeGrantFilter</td>
+<td>处理OAuth2认证中授权码</td>
+<td>NO</td>
+</tr>
+<tr>
+<td><code>SessionManagementFilter</code></td>
+<td>处理 session 并发问题</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>ExceptionTranslationFilter</code></td>
+<td>处理认证/授权中的异常</td>
+<td>YES</td>
+</tr>
+<tr>
+<td><code>FilterSecurityInterceptor</code></td>
+<td>处理授权相关</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>SwitchUserFilter</td>
+<td>处理账户切换</td>
+<td>NO</td>
+</tr>
+</tbody></table>
 <h1 id="Web权限方案"><a href="#Web权限方案" class="headerlink" title="Web权限方案"></a>Web权限方案</h1><h2 id="设置登录用户名和密码"><a href="#设置登录用户名和密码" class="headerlink" title="设置登录用户名和密码"></a>设置登录用户名和密码</h2><h3 id="通过配置文件"><a href="#通过配置文件" class="headerlink" title="通过配置文件"></a>通过配置文件</h3><p>在<code>application.properties</code>里面加上用户名和密码。</p>
 <figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-meta">spring.security.user.name</span>=<span class="hljs-string">zwy</span><br><span class="hljs-meta">spring.security.user.password</span>=<span class="hljs-string">123</span><br></code></pre></div></td></tr></table></figure>
 
@@ -312,8 +481,72 @@
             <p>这里为了测试方便，并没有给数据库里的密码加密，但是在正常开发里，是必须加密的。</p>
           </div>
 
+<p>为什么要加密？2011年12月21日，有人在网络上公开了一个包含600万个CSDN用户资料的数据库，数据全部为明文储存，包含用户名、密码以及注册邮箱。事件发生后CSDN在微博、官方网站等渠道发出了声明，解释说此数据库系2009年备份所用，因不明原因泄露，已经向警方报案，后又在官网发出了公开道歉信。在接下来的十多天里，金山、网易、京东、当当、新浪等多家公司被卷入到这次事件中。整个事件中最触目惊心的莫过于CSDN把用户密码明文存储，由于很多用户是多个网站共用一个密码，因此一个网站密码泄露就会造成很大的安全隐患。由于有了这么多前车之鉴，我们现在做系统时，密码都要加密处理。</p>
+<p>这次泄密，也留下了一些有趣的事情，特别是对于广大程序员设置密码这一项。人们从CSDN泄密的文件中，发现了一些好玩的密码，例如如下这些：</p>
+<ul>
+<li><code>ppnn13%dkstFeb.1st</code> 这段密码的中文解析是：娉娉袅袅十三余，豆蔻梢头二月初。</li>
+<li><code>csbt34.ydhl12s</code> 这段密码的中文解析是：池上碧苔三四点，叶底黄鹂一两声。</li>
+</ul>
+<p>等等不一而足，你会发现很多程序员的人文素养还是非常高的，让人啧啧称奇🙌。</p>
 <p>小坑：在一开始的时候，我直接存入数据库的密码是123，但是这里会报错<code>There is no PasswordEncoder mapped for the id “null”</code>，后来查资料后发现，在Spring Security中密码的存储格式是“{id}…………”。前面的id是加密方式，id可以是bcrypt、sha256等，不加密就是noop，后面跟着的是加密后的密码。也就是说，程序拿到传过来的密码的时候，会首先查找被“{”和“}”包括起来的id，来确定后面的密码是被怎么样加密的，如果找不到就认为id是null。</p>
 <h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在登录界面输入<code>zwy</code>和<code>123</code>就可以正常访问资源了👍！</p>
+<h2 id="自定义登录界面和规则"><a href="#自定义登录界面和规则" class="headerlink" title="自定义登录界面和规则"></a>自定义登录界面和规则</h2><p>使用<code>Thymeleaf</code>模板引擎简化开发：</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>自定义登录控制器：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginController</span> </span>&#123;<br><br>    <span class="hljs-meta">@RequestMapping(&quot;/login.html&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">login</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;login&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>前端页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span> <span class="hljs-attr">xmlns:th</span>=<span class="hljs-string">&quot;https://www.thymeleaf.org&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>用户登录<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">th:action</span>=<span class="hljs-string">&quot;@&#123;/doLogin&#125;&quot;</span>&gt;</span><br>    用户名:<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;uname&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>    密码:<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;passwd&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;登录&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>需要注意的是</strong></p>
+<ul>
+<li>登录表单 method 必须为 <code>post</code>，action 的请求路径为 <code>/doLogin</code></li>
+<li>用户名的 name 属性为 <code>uname</code></li>
+<li>密码的 name 属性为 <code>passwd</code> ，后面会用到属性</li>
+</ul>
+<p>配置配置类：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebSecurityConfigurer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebSecurityConfigurerAdapter</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>        http.authorizeHttpRequests()<br>                .mvcMatchers(<span class="hljs-string">&quot;/index&quot;</span>).permitAll()<span class="hljs-comment">//放行</span><br>                .mvcMatchers(<span class="hljs-string">&quot;/login.html&quot;</span>).permitAll()<span class="hljs-comment">//放行</span><br>                .anyRequest().authenticated()<span class="hljs-comment">//其他都要认证</span><br>                .and()<br>                .formLogin()<br>                .loginPage(<span class="hljs-string">&quot;/login.html&quot;</span>)<span class="hljs-comment">//指定登录界面</span><br>                .loginProcessingUrl(<span class="hljs-string">&quot;/doLogin&quot;</span>)<span class="hljs-comment">//执行登录控制器，不用自己写👍</span><br>                .usernameParameter(<span class="hljs-string">&quot;uname&quot;</span>)<span class="hljs-comment">//用户名参数</span><br>                .passwordParameter(<span class="hljs-string">&quot;passwd&quot;</span>)<span class="hljs-comment">//密码变量</span><br>                .successForwardUrl(<span class="hljs-string">&quot;/index&quot;</span>)<span class="hljs-comment">//跳转到指定页面 8080/doLogin</span><br>			<span class="hljs-comment">// .defaultSuccessUrl(&quot;/index&quot;)//重定向，优先跳转到之前请求的路径，如果不存在了，就到指定页面</span><br>                .failureUrl(<span class="hljs-string">&quot;/login.html&quot;</span>)<span class="hljs-comment">//认证失败还是登录界面</span><br>                .and()<br>                .csrf().disable();<br><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>successForwardUrl 、defaultSuccessUrl 这两个方法都可以实现成功之后跳转</p>
+<ul>
+<li>successForwardUrl  默认使用 <code>forward </code>跳转     <strong>注意:不会跳转到之前请求路径</strong></li>
+<li>defaultSuccessUrl   默认使用 <code>redirect</code> 跳转      <strong>注意:如果之前请求路径,会有优先跳转之前请求路径,可以传入第二个参数进行修改</strong></li>
+</ul>
+<h2 id="自定义登录成功处理"><a href="#自定义登录成功处理" class="headerlink" title="自定义登录成功处理"></a>自定义登录成功处理</h2><p>有时候页面跳转并不能满足我们，特别是在前后端分离开发中就不需要成功之后跳转页面。只需要给前端返回一个 JSON 通知登录成功还是失败与否。这个时候可以通过自定义 <code>AuthenticationSucccessHandler</code> 实现。</p>
+<p>自定义 AuthenticationSuccessHandler 实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAuthenticationSuccessHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AuthenticationSuccessHandler</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAuthenticationSuccess</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Authentication authentication)</span> <span class="hljs-keyword">throws</span> IOException, ServletException </span>&#123;<br>        Map&lt;String, Object&gt; result = <span class="hljs-keyword">new</span> HashMap&lt;String, Object&gt;();<br>        result.put(<span class="hljs-string">&quot;msg&quot;</span>, <span class="hljs-string">&quot;登录成功&quot;</span>);<br>        result.put(<span class="hljs-string">&quot;status&quot;</span>, <span class="hljs-number">200</span>);<br>        response.setContentType(<span class="hljs-string">&quot;application/json;charset=UTF-8&quot;</span>);<br>        String s = <span class="hljs-keyword">new</span> ObjectMapper().writeValueAsString(result);<br>        response.getWriter().println(s);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>配置 AuthenticationSuccessHandler：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebSecurityConfigurer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebSecurityConfigurerAdapter</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>        http.authorizeHttpRequests()<br>                <span class="hljs-comment">//...</span><br>                .and()<br>                .formLogin()<br>                <span class="hljs-comment">//...</span><br>                .successHandler(<span class="hljs-keyword">new</span> MyAuthenticationSuccessHandler())<br>                .failureUrl(<span class="hljs-string">&quot;/login.html&quot;</span>)<br>                .and()<br>                .csrf().disable();<span class="hljs-comment">//这里先关闭 CSRF</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>这时我们登录成功后，就会返回一个JSON数组：</p>
+<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json"><span class="hljs-comment">// http://localhost:8080/doLogin</span><br>&#123;<br>    <span class="hljs-attr">&quot;msg&quot;</span>: <span class="hljs-string">&quot;登录成功&quot;</span><br>    <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-number">200</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="自定义登录失败处理"><a href="#自定义登录失败处理" class="headerlink" title="自定义登录失败处理"></a>自定义登录失败处理</h2><h2 id="无状态登录"><a href="#无状态登录" class="headerlink" title="无状态登录"></a>无状态登录</h2><h4 id="什么是有状态"><a href="#什么是有状态" class="headerlink" title="什么是有状态"></a>什么是有状态</h4><p>有状态服务，即服务端需要记录每次会话的客户端信息，从而识别客户端身份，根据用户身份进行请求的处理，典型的设计如 Tomcat 中的 Session。例如登录：用户登录后，我们把用户的信息保存在服务端 session 中，并且给用户一个 cookie 值，记录对应的 session，然后下次请求，用户携带 cookie 值来（这一步有浏览器自动完成），我们就能识别到对应 session，从而找到用户的信息。这种方式目前来看最方便，但是也有一些缺陷，如下：</p>
+<ul>
+<li>服务端保存大量数据，增加服务端压力</li>
+<li>服务端保存用户状态，不支持集群化部署</li>
+</ul>
+<h4 id="什么是无状态"><a href="#什么是无状态" class="headerlink" title="什么是无状态"></a>什么是无状态</h4><p>微服务集群中的每个服务，对外提供的都使用 RESTful 风格的接口。而 RESTful 风格的一个最重要的规范就是：服务的无状态性，即：</p>
+<ul>
+<li>服务端不保存任何客户端请求者信息</li>
+<li>客户端的每次请求必须具备自描述信息，通过这些信息识别客户端身份</li>
+</ul>
+<p>那么这种无状态性有哪些好处呢？</p>
+<ul>
+<li>客户端请求不依赖服务端的信息，多次请求不需要必须访问到同一台服务器</li>
+<li>服务端的集群和状态对客户端透明</li>
+<li>服务端可以任意的迁移和伸缩（可以方便的进行集群化部署）</li>
+<li>减小服务端存储压力</li>
+</ul>
+<h4 id="如何实现无状态"><a href="#如何实现无状态" class="headerlink" title="如何实现无状态"></a>如何实现无状态</h4><p>无状态登录的流程：</p>
+<ul>
+<li>首先客户端发送账户名/密码到服务端进行认证</li>
+<li>认证通过后，服务端将用户信息加密并且编码成一个 token，返回给客户端</li>
+<li>以后客户端每次发送请求，都需要携带认证的 token</li>
+<li>服务端对客户端发送来的 token 进行解密，判断是否有效，并且获取用户登录信息</li>
+</ul>
 
             </div>
             <hr>
