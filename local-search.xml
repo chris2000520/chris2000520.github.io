@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>安装并激活Office 2021</title>
+    <link href="/2022/08/23/office/"/>
+    <url>/2022/08/23/office/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装并激活Office-2021专业增强版"><a href="#安装并激活Office-2021专业增强版" class="headerlink" title="安装并激活Office 2021专业增强版"></a>安装并激活Office 2021专业增强版</h1><h2 id="卸载原有的Office"><a href="#卸载原有的Office" class="headerlink" title="卸载原有的Office"></a>卸载原有的Office</h2><p>不管你是多么舍不得你的Office，你必须从头开始，并且不能拥有任何残留的回忆，包括注册表，缓存等等。这里我推荐使用<code>Office Tool Plus</code>工具卸载，当然用<code>Geek</code>或者是微软自带的卸载程序先卸载一次当然更好。下面我们简称<code>Office Tool Plus</code>为<code>OTP</code>，给出了挂官方下载地址和作者的个人博客（包含了新手入门指南）。</p><ul><li><p><a href="https://otp.landian.vip/zh-cn/">Office Tool Plus 官方网站 - 一键部署 Office </a></p></li><li><p><a href="https://www.coolhub.top/">Yerong の小窝 - Love life, like coding. (coolhub.top)</a></p></li></ul><p>下载完成后我们直接运行，找到工具箱，找到移除office，一键清除的快乐谁用谁知道。</p><h2 id="安装最新版的Office"><a href="#安装最新版的Office" class="headerlink" title="安装最新版的Office"></a>安装最新版的Office</h2><p>安装方法有很多，这里我推荐直接使用OTP的部署，简单方便，还能选择只下载自己需要的软件，对于大多数学生来说，Word，Excel，PPT就够用了😎。</p><ol><li>打开OTP，找到部署界面，选择自己需要的版本，这里作者说最好用Microsoft 365，但是我用Office 2021下载也正常使用了。</li><li>选择需要下载的软件。</li><li>选择语言，简体中文。</li><li>后面的高级设置就不用看了，直接部署，Office就开始下载了。</li></ol><p>下载速度很快，大约5分钟左右就完成了。</p><h2 id="使用KMS激活Office"><a href="#使用KMS激活Office" class="headerlink" title="使用KMS激活Office"></a>使用KMS激活Office</h2><p>这里我使用OTP的一键激活，成功过了，但是我的同学使用却失败了，可能有各种各样的问题，这里我推荐使用沧海的一键激活脚本，绿色，轻便，简单。</p><ul><li><a href="https://kms.cangshui.net/">沧水的KMS服务 – Kms|Windows激活|Office激活|Windows下载|Office下载|搭建KMS服务器 (cangshui.net)</a></li></ul><p>点进去之后会有一个良心且伟大的程序员的自述，什么付费的激活都是坑人的骗子😕。</p><ol><li><p>直接点击本地下载。</p></li><li><p>下载完成后使用管理员打开脚本文件，可能会报错，把你的安全卫士全都关掉再试一次。</p></li><li><p>根据提示输入相应的序号，一路按到底。</p></li><li><p>对于本教程，便是b-a。对于其他的小工具，也可以按需使用。</p><figure class="highlight cmd"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmd">║【A】KMS激活Windows                                                               ║<br>║【B】KMS激活Office                                                                ║<br>║【C】清除Windows KMS                                                              ║<br>║【D】清除Office KMS                                                               ║<br>║【E】查看支持的windows版本                                                          ║<br>╠═════════════════════════════════════其他工具═════════════════════════════════════╣<br>║【<span class="hljs-number">1</span>】去除Office显示“许可证并非正版”                                                  ║<br>║【<span class="hljs-number">2</span>】去除快捷方式小箭头                                                             ║<br>║【<span class="hljs-number">3</span>】恢复快捷方式小箭头                                                             ║<br>║【<span class="hljs-number">4</span>】Win11切换旧版桌面右键菜单                                                      ║<br>║【<span class="hljs-number">5</span>】Win11恢复新版桌面右键菜单                                                      ║<br>║【<span class="hljs-number">6</span>】去除快捷方式小盾牌                                                             ║<br>║【<span class="hljs-number">7</span>】恢复快捷方式小盾牌                                                             ║<br>║【<span class="hljs-number">8</span>】去除创建快捷方式时的后缀“-快捷方式”                                              ║<br>║【<span class="hljs-number">9</span>】去除运行可执行文件时的警告弹窗                                                   ║<br>║【<span class="hljs-number">10</span>】向桌面添加“此电脑”图标<br></code></pre></div></td></tr></table></figure></li><li><p>一般来说，最后的激活会成功的，如果实在不行，可以去沧海的博客看看评论区，总会有人和你不期而遇。</p></li><li><p>当然，我们也可以使用OTP的自带的激活，但是不用两个都用，那样就会重复了。在OTP里使用快捷键 Ctrl + Shift + P，打开命令框，复制下面的命令，粘贴后回车（Enter）以执行操作。<code>ospp /insLicID ProPlus2021Volume /sethst:kms.coolhub.top /setprt:1688 /act</code></p></li></ol><h2 id="验证激活并使用"><a href="#验证激活并使用" class="headerlink" title="验证激活并使用"></a>验证激活并使用</h2><p>任意打开一个文档，点击左上角文件，再点击左下角账户，这时我们可以观察到我们的Office 2021已经激活了，以后就可以开心👍😁敲论文了！</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><div class="note note-success">            <p>KMS有效期不只180天，只要你的电脑接入了互联网，每隔7天便会更新一次，相当于永久激活了。再说，你以后工作的公司会买不起Office？🤭</p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+      <tag>Office</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Spring Security安全框架</title>
     <link href="/2022/04/16/springsecurity/"/>
     <url>/2022/04/16/springsecurity/</url>
