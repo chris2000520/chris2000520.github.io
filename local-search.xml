@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>遗传算法（Genetic Algorithm）</title>
+    <link href="/2022/10/20/ga/"/>
+    <url>/2022/10/20/ga/</url>
+    
+    <content type="html"><![CDATA[<h1 id="遗传算法（Genetic-Algorithm）"><a href="#遗传算法（Genetic-Algorithm）" class="headerlink" title="遗传算法（Genetic Algorithm）"></a>遗传算法（Genetic Algorithm）</h1><h2 id="1-是什么？怎么来的？"><a href="#1-是什么？怎么来的？" class="headerlink" title="1.是什么？怎么来的？"></a>1.是什么？怎么来的？</h2><p>上次我们说到人们从大自然中学习到了许多问题的解决方法，这一次的遗传算法也不例外。生物在自然界中的生存繁衍，显示出了其对自然环境的自适应能力。遗传算法(Genetic Algorithm，简称GA)就是这种生物行为的计算机模拟中令人瞩目的重要成果。基于对生物遗传和进化过程的计算机模拟，遗传算法使得各种人工系统具有优良的自适应能力和优化能力。</p><p><strong>遗传算法所借鉴的生物学基础就是生物的遗传和进化。</strong></p><p>相关术语：</p><table><thead><tr><th>种群</th><th>population</th></tr></thead><tbody><tr><td>变异</td><td>mutation</td></tr><tr><td>个体</td><td>individual</td></tr><tr><td>交叉</td><td>crossover</td></tr><tr><td>选择</td><td>selection</td></tr><tr><td>繁殖</td><td>reproduction</td></tr><tr><td>代</td><td>generation</td></tr><tr><td>适应度</td><td>fitness</td></tr><tr><td>编码</td><td>coding</td></tr><tr><td>解码</td><td>decoding</td></tr></tbody></table><p>我们知道，求最优解或近似最优解的方法主要有三种：</p><p>枚举法、启发式算法和随机搜索算法。</p><p>随着问题种类的不同，以及问题规模的扩大，要寻求到一种能以有限的代价来解决上述最优化问题的通用方法仍是个难题。而遗传算法却为我们解决这类问题提供了一个有效的途径和通用框架，开创了一种新的全局优化搜索算法。</p><h2 id="2-怎么做？"><a href="#2-怎么做？" class="headerlink" title="2.怎么做？"></a>2.怎么做？</h2><p>文字描述，在初始种群中，不断选择个体，将其交叉，变异后依概率选择出适应度最高的个体，并产生新的一代种群。最后不断优化，收敛于最优解附近。</p><p>伪代码描述</p><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">编码<br>初始化种群<br>计算种群的适应度和累积概率<br><span class="hljs-keyword">while</span> iter &lt; itermax:<br>复制 <span class="hljs-comment">//剔除适应度低的，将适应度好的复制一份</span><br>交叉 <span class="hljs-comment">//二进制数字位数交换</span><br>变异 <span class="hljs-comment">//二进制位数取否</span><br>重新计算适应度和累积概率<br>end<br>解码输出结果<br></code></pre></div></td></tr></table></figure><h3 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1 编码"></a>2.1 编码</h3><p>编码的主要方式有二进制码，也是最常用的。在这一阶段是将一个变量或多个变量，根据其约束的定义域以及我们要得到的自变量的精度，选择合适的二进制位数将问题编码。</p><h3 id="2-2-评价个体适应度"><a href="#2-2-评价个体适应度" class="headerlink" title="2.2 评价个体适应度"></a>2.2 评价个体适应度</h3><p>当为单目标优化问题时，适应度就是该点时的函数值。</p><h3 id="2-3-选择"><a href="#2-3-选择" class="headerlink" title="2.3 选择"></a>2.3 选择</h3><p>可以根据<em>轮盘赌法</em>，计算每一个个体的累积概率。就像一个圆盘上被划分成了不同大小的区域块，面积大的我们选择的几率肯定就高。在计算机中，我们把圆盘模拟成0到1的线段，把线段分为不同大小的小线段，我们可以通过让计算机产生一个0到1的随机数来模拟指针转动过程，落在那个区间里，我们就选择那个相对应的个体。比如在一个种群中，选择概率等于<strong>适应度/总适应度</strong>，累积概率等于上一个个体的累积概率加上自身的选择概率。</p><table><thead><tr><th>编号</th><th>适应度</th><th>选择概率</th><th>累积概率</th></tr></thead><tbody><tr><td>1</td><td>8</td><td>0.333</td><td>0.333</td></tr><tr><td>2</td><td>1</td><td>0.042</td><td>0.375</td></tr><tr><td>3</td><td>3</td><td>0.125</td><td>0.5</td></tr><tr><td>4</td><td>12</td><td>0.5</td><td>0.5</td></tr></tbody></table><h3 id="2-4-交叉"><a href="#2-4-交叉" class="headerlink" title="2.4 交叉"></a>2.4 交叉</h3><p>最常用和最基本的是单点交叉算子。</p><ol><li>对群体中的个体进行两两随机配对。若群体大小为M，则共有 [ M/2 ]对相互配对的个体组</li><li> 每一对相互配对的个体，随机设置某一基因座之后的位置为交叉点。若染色体的长度为l ，则共有(l-1)个可能的交叉点位置</li><li>对每一对相互配对的个体，依设定的交叉概率pc在其交叉点处相互交换两个个体的部分染色体，从而产生出两个新的个体</li></ol><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">单点交叉运算的示例如下所示:<br>A：10110111 00          A1：10110111 11<br>B：00011100 11          B1：00011100 00<br></code></pre></div></td></tr></table></figure><h3 id="2-5-变异"><a href="#2-5-变异" class="headerlink" title="2.5 变异"></a>2.5 变异</h3><p>变异是针对个体的某一个或某一些基因座上的基因值执行的，因此变异概率pm也是针对基因而言，通常来说，这个概率非常小。在二进制编码中，简单来说就是随机将某一位基因位取反。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>模拟退火算法</title>
     <link href="/2022/10/14/sa/"/>
     <url>/2022/10/14/sa/</url>
