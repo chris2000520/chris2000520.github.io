@@ -279,7 +279,6 @@
 <p>1111 1111.1111 1111.1111 1111.0000 0000</p>
 <p>计算：</p>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-number">1100</span> <span class="hljs-number">0000.1010</span> <span class="hljs-number">1000.0000</span> <span class="hljs-number">0001.1000</span> <span class="hljs-number">0001</span><br><span class="hljs-number">1111</span> <span class="hljs-number">1111.1111</span> <span class="hljs-number">1111.1111</span> <span class="hljs-number">1111.0000</span> <span class="hljs-number">0000</span><br>———————————————————————————————————————<br><span class="hljs-number">1100</span> <span class="hljs-number">0000.1010</span> <span class="hljs-number">1000.0000</span> <span class="hljs-number">0001.0000</span> <span class="hljs-number">0000</span><br></code></pre></div></td></tr></table></figure>
-
 <p>计算后的这段二进制代码相比于原来的IP地址，后面8位被用0遮掩了。</p>
 <p>为什么要遮掩？因为我们不必关心后面8位是1还是0了。子网网段已经被划分出来了。</p>
 <p>1100 0000.1010 1000.0000 0001.0000 0000的十进制：192.168.1.0</p>
@@ -293,7 +292,6 @@
 <p>给出<strong>新IP地址</strong>：192.168.1.188 再给出<strong>新的子网掩码</strong>：255.255.255.224</p>
 <p>现在IP的网络号就不是192.168.1.0了，不再是网段192.168.1.0到192.168.1.255了</p>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-number">1100</span> <span class="hljs-number">0000.1010</span> <span class="hljs-number">1000.0000</span> <span class="hljs-number">0001.1011</span> <span class="hljs-number">1100</span>  <br><span class="hljs-number">1111</span> <span class="hljs-number">1111.1111</span> <span class="hljs-number">1111.1111</span> <span class="hljs-number">1111.1110</span> <span class="hljs-number">0000</span>  <br>———————————————————————————————————————<br><span class="hljs-number">1100</span> <span class="hljs-number">0000.1010</span> <span class="hljs-number">1000.0000</span> <span class="hljs-number">0001.1010</span> <span class="hljs-number">0000</span><br></code></pre></div></td></tr></table></figure>
-
 <p>不再是24位未被遮掩了，而是27位未被遮掩。被遮掩的后5位，我们不必再关心它是1还是0了。</p>
 <p>这就意味着：后5位不论怎么变换，都是在同一个网段里。</p>
 <p>后5位的变化是在</p>

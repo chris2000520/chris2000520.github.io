@@ -250,7 +250,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年12月6日 中午
+                  本文最后更新于：2022年12月6日 下午
                 
               </p>
             
@@ -273,7 +273,6 @@
 </ol>
 <p>所以总的来说，用伪代码表示退火的流程是这样的：</p>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">double</span> T = <span class="hljs-number">2000</span>; <span class="hljs-comment">//代表开始的温度</span><br><span class="hljs-keyword">double</span> dT = <span class="hljs-number">0.99</span>; <span class="hljs-comment">//代表系数delta T</span><br><span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//相当于0.0000000000000001</span><br><span class="hljs-keyword">while</span>(T &lt; eps) &#123;<br>    <span class="hljs-comment">//--------------</span><br>    <span class="hljs-comment">//这里是每一次退火的操作</span><br>	<span class="hljs-comment">//--------------</span><br>    T = T * dT; <span class="hljs-comment">//温度每次下降一点点， T * 0.99</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="退火详解"><a href="#退火详解" class="headerlink" title="退火详解"></a>退火详解</h4><ol>
 <li><p>第一步，我们需要在找到最值的那个函数里随机找到一点<code>X0</code>，作为我们的初始值。</p>
 </li>
@@ -282,8 +281,9 @@
 <li><p>第三步，我们需要接受更好的状态，假设我们移动到了<code>X1</code>处，此时的山峰比刚才的山峰要高，那我们就接受这个值，并将此时的值设为目前的最优解。</p>
 </li>
 <li><p>第四步，如果我们不小心到达了一个更低的山峰，那我们就一定抛弃这个结果吗？不一定，因为可能低谷的再往同一个方向走，就会出现更高的山峰。如果我们鼠目寸光，只盯着当前的局部最优解，很有可能随着温度的下降，移动幅度减小而陷入小山丘中。这也是人生的大智慧啊！而我们如果到了那个更低的山峰，以<strong>一定的概率接受了它</strong>（概率大小和温度以及当前的值的关键程度有关），会在跳转幅度减少之前，<strong>尽可能找到最优点，也就是那更高的山峰</strong>。</p>
-<p>那么我们以多少的概率去接受它呢？我们用一个公式表示（这个公式我们只需记住，这是科学家推导出来的结论）：<br>$$<br>\Huge e^{\frac{\Delta f}{kT}}<br>$$</p>
-</li>
+<p>那么我们以多少的概率去接受它呢？我们用一个公式表示（这个公式我们只需记住，这是科学家推导出来的结论）：</p>
+<script type="math/tex; mode=display">
+\Huge e^{\frac{\Delta f}{kT}}</script></li>
 <li><p>第五步，△ f必须是一个负数，因为概率是属于0到1的，e的0次方等于1，只要是次数大于0，这个值都会大于1.而只有当次数小于0时，这个值域才和概率相符。</p>
 </li>
 </ol>
@@ -294,10 +294,10 @@
 <li>在前期，由于T的基础数据十分大，分子十分活跃，所以即使我们取到了一个不是那么好的数据，我们接受它的概率也比较大，因为T是分母，k是常数，T趋于无穷大时，e的这个次方就趋近于1，<strong>而且是始终小于1的</strong>.</li>
 </ul>
 <h2 id="3-例题：求√n"><a href="#3-例题：求√n" class="headerlink" title="3.例题：求√n"></a>3.例题：求√n</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-comment">//n代表我们最后函数要逼近的值</span><br><span class="hljs-keyword">double</span> n;<br><span class="hljs-comment">//x表示我们随机产生的那个数的平方和n的靠近程度</span><br><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">func</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">fabs</span>(x * x - n);<br>&#125;<br><span class="hljs-keyword">double</span> T = <span class="hljs-number">20000</span>; <span class="hljs-comment">//初始温度，初始温度主要是看题目开始需要跳转的幅度。</span><br><span class="hljs-keyword">double</span> dT = <span class="hljs-number">0.993</span>; <span class="hljs-comment">//变化率，这里需要速度稍微慢一点，写0.995 或者 0.997都可以，但是越靠近1速度就越慢 </span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//10的-14次方已经非常小了，写这个大概率没问题</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SA</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//首先随机生成一个点x0，这里我用0代替。</span><br>    <span class="hljs-keyword">double</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//算出x平方和n的差距f(x0)</span><br>    <span class="hljs-keyword">double</span> f = func(x);<br>    <span class="hljs-keyword">while</span>(T &gt; eps) &#123;<br>        <span class="hljs-comment">//这里x0既可以变小，也可以变大，所以我们正负都要进行一个跳转,算出变换后的点dx</span><br>        <span class="hljs-keyword">double</span> dx = x + (<span class="hljs-number">2</span> * rand() - RAND_MAX) * T;<br>        <span class="hljs-comment">//但是请注意，dx很明显要保证 &gt;= 0才行，因为算术平方根的定义域是&gt;=0，因此小于0就重新随机</span><br>        <span class="hljs-keyword">while</span>(dx &lt; <span class="hljs-number">0</span>) dx = x + (<span class="hljs-number">2</span> * rand() - RAND_MAX) * T;<br>        <span class="hljs-comment">//算出变换后的点dx的平方和n的差距，f(dx)</span><br>        <span class="hljs-keyword">double</span> df = func(dx);<br>        <span class="hljs-comment">//这里就是关键的地方了，很明显我们需要算出来的function值越小，自变量x更加接近那个根号值。</span><br>        <span class="hljs-comment">//所以如果新来的值df 比 f更小，我们百分百接受</span><br>        <span class="hljs-keyword">if</span>(df &lt; f) &#123;<br>            <span class="hljs-comment">//注意更新所有变量</span><br>            f = df; x = dx;<br>        &#125;<br>        <span class="hljs-comment">//否则我们概率接受，这里的需要写 f - df了，因为这样才是负值。负值说明我们并不是贪心接受的，他是不太好的值。</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">exp</span>((f - df)/T) * RAND_MAX &gt; rand()) &#123;<br>            <span class="hljs-comment">//注意更新所有变量</span><br>            f = df; x = dx;<br>        &#125;<br>        <span class="hljs-comment">//温度下降一下</span><br>        T *= dT;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.8lf&quot;</span>,x);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    SA();<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
-
-
-<p>参考文章：<a target="_blank" rel="noopener" href="https://www.tocry.cn/archives/simulated-annealing#toc-head-9">速通模拟退火 - Don’t Cry！ (tocry.cn)</a></p>
+<script type="math/tex; mode=display">
+W_G^{mn}=max\{0,W_G.\xi_G(f_G^m,f_G^n)\}</script><script type="math/tex; mode=display">
+f(x)=ax+b</script><script type="math/tex; mode=display">
+\sum_{i=0}^N\int_{a}^{b}g(x)\text{d}x</script><p>参考文章：<a target="_blank" rel="noopener" href="https://www.tocry.cn/archives/simulated-annealing#toc-head-9">速通模拟退火 - Don’t Cry！ (tocry.cn)</a></p>
 
             </div>
             <hr>

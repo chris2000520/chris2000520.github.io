@@ -256,15 +256,12 @@
             
             <div class="markdown-body">
               <h1 id="个人博客图片存储问题"><a href="#个人博客图片存储问题" class="headerlink" title="个人博客图片存储问题"></a>个人博客图片存储问题</h1><p>之前搭建博客的时候，只顾美化主题，一些普通的逻辑结构没有完成，就去整那些花里胡哨的主页，实在有点本末倒置，美化的一个大组成成分就是图片，而图片一般比代码和文章要大多了，就导致每次加载网页时都时非常慢的。而我们写思路的的时候，又不得不去使用一些图片，我所知道的有两种方式。</p>
-<h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用</p>
-<figure class="highlight arcade"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arcade">![缩略图](<span class="hljs-regexp">/images/</span>pic.png)<br></code></pre></div></td></tr></table></figure>
-<p>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p>
-<h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35270383">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a target="_blank" rel="noopener" href="https://imgchr.com/">路过图床</a>。</p>
+<h2 id="本地上传"><a href="#本地上传" class="headerlink" title="本地上传"></a>本地上传</h2><p>当我们只需要使用少量图片时，可以本地上传，在文章中的markdown语法中，我们可以使用<br><figure class="highlight arcade"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arcade">![缩略图](<span class="hljs-regexp">/images/</span>pic.png)<br></code></pre></div></td></tr></table></figure><br>这样的语法，来插入图片。[]里的文字就是当图片加载出问题时，显示的文字，后面的链接是主题配置文件里的source/images/文件名.png。</p>
+<h2 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h2><p>知乎上有个大佬写的各种各样的图床的一篇文章，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35270383">盘点国内免费好用的图床</a>。可以借鉴一下，然后呢，我一个一个试了好多，有的需要钱，有的只有几个月，要不就是很复杂，我呢，只想简简单单在描述算法或解决问题的方法时偶尔添加一些图片来加强理解，思来想去我就使用了这个，<a target="_blank" rel="noopener" href="https://imgchr.com">路过图床</a>。</p>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>由于担心图床跑路，图片加载也不是很快，我看别人的博客加载很快（<a target="_blank" rel="noopener" href="http://sloving.gitee.io/">SlovinG的博客</a>），完全看不到加载项，原理是直接部署到Gitee码云代码仓库里，国内的Gitee码云速度是真的快，然而我迁移后，发现不能绑定个人域名，详细请看这篇<a target="_blank" rel="noopener" href="https://yyqx.online/posts/%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB%E8%87%B3gitee/">博客</a>。</p>
 <p>然而我还是舍不得我用了好久的域名，然后我就用Coding了，图片都上传到Coding上，毕竟是国内的网站，加载图片还是可以的。</p>
 <p>小测试：</p>
-<p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！</p>
-<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Markdown">[<span class="hljs-string">![Nssgde.th.png</span>](<span class="hljs-link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="hljs-link">https://imgchr.com/i/Nssgde</span>)<br></code></pre></div></td></tr></table></figure>
+<p>由于评论区是Valine，语法支持Markdown，所以只需要输入一下代码就可以获得一只猫,快来试试！<br><figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Markdown">[<span class="hljs-string">![Nssgde.th.png</span>](<span class="hljs-link">https://s1.ax1x.com/2020/06/26/Nssgde.th.png</span>)](<span class="hljs-link">https://imgchr.com/i/Nssgde</span>)<br></code></pre></div></td></tr></table></figure></p>
 
             </div>
             <hr>

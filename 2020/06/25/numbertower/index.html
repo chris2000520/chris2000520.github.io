@@ -257,110 +257,99 @@
             <div class="markdown-body">
               <p>如下图是一个数塔，从顶部出发在每一个节点可以选择向左或者向右走，一直走到底层，要求找出一条路径，使得路径上的数字之和最大。</p>
 <figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">9</span><br><span class="hljs-attribute">12</span>	<span class="hljs-number">15</span><br><span class="hljs-attribute">10</span>	<span class="hljs-number">6</span>	<span class="hljs-number">8</span><br><span class="hljs-attribute">2</span>	<span class="hljs-number">18</span>	<span class="hljs-number">9</span>	<span class="hljs-number">5</span><br><span class="hljs-attribute">19</span>	<span class="hljs-number">7</span>	<span class="hljs-number">10</span>	<span class="hljs-number">4</span>	<span class="hljs-number">16</span><br></code></pre></div></td></tr></table></figure>
-
-
 <h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>我们可以这样想，从最后一层倒过来看，到倒数第二层，可以选择一个较大的路径，例如，假设我们一步走到了2这里，下一步应该怎么走？只有19或7这两种选择，既然我们想让总的路径之和最大，那我们肯定每一步都要选大的。我们人脑编译器是很简单的，每次只需要倒着推，到最后一个数据就是我们的最大路径。</p>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>假设这个数塔的层数是N，我们可以将这个数塔放在一个NxN的data数组里，也许只需要下三角矩阵i&gt;=j。另外，我们还就可以将每一步最大的路径的数据保存在dp数组里。用两重循环来遍历数组，我们要倒着推，所有要i–，二维的j是从左往右，j++。</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>假设这个数塔的层数是N，我们可以将这个数塔放在一个NxN的data数组里，也许只需要下三角矩阵i&gt;=j。另外，我们还就可以将每一步最大的路径的数据保存在dp数组里。用两重循环来遍历数组，我们要倒着推，所有要i—，二维的j是从左往右，j++。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">data</th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
+<th style="text-align:center">data</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">9</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<tbody>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">12</td>
-<td align="center">15</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">6</td>
-<td align="center">8</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">18</td>
-<td align="center">9</td>
-<td align="center">5</td>
-<td align="center"></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">5</td>
 </tr>
 <tr>
-<td align="center">19</td>
-<td align="center">7</td>
-<td align="center">10</td>
-<td align="center">4</td>
-<td align="center">16</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">16</td>
+<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">dp</th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center"></th>
+<th style="text-align:center">dp</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">59</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<tbody>
+<tr>
+<td style="text-align:center">59</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">50</td>
-<td align="center">49</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">49</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">38</td>
-<td align="center">34</td>
-<td align="center">29</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">29</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">21</td>
-<td align="center">28</td>
-<td align="center">19</td>
-<td align="center">21</td>
-<td align="center"></td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">21</td>
 </tr>
 <tr>
-<td align="center">19</td>
-<td align="center">7</td>
-<td align="center">10</td>
-<td align="center">4</td>
-<td align="center">16</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">16</td>
+<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 101 </span><br><span class="hljs-comment">//最后一层的我们需要多加一层空白数据，不然会数组下标错误</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> a&gt;b?a:b;<br>&#125;<br><br><span class="hljs-keyword">int</span> data[N][N];<span class="hljs-comment">//全局变量已初始化0</span><br><span class="hljs-keyword">int</span> dp[N][N];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;请输入数塔的层数：（不超过100）&quot;</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;n;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;请输入塔的数据&quot;</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n ; ++i) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= i ; ++j) &#123;<br>            <span class="hljs-built_in">cin</span>&gt;&gt;a[i][j];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n<span class="hljs-number">-1</span>; i &gt;=<span class="hljs-number">0</span> ; --i) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= i ; ++j) &#123;<br>            dp[i][j]=max(dp[i+<span class="hljs-number">1</span>][j],dp[i+<span class="hljs-number">1</span>][j+<span class="hljs-number">1</span>])+data[i][j];<br>            <span class="hljs-comment">//最后一层dp数据和data一样max(0,0)</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;最大的路径和是：&quot;</span>&lt;&lt;dp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br></code></pre></div></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++">最大路径和是：<span class="hljs-number">59</span><br></code></pre></div></td></tr></table></figure>
-
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="输出路径"><a href="#输出路径" class="headerlink" title="输出路径"></a>输出路径</h3><p>题目可能会要求我们输出我们是怎么走的，在两个表都填写完整后，第一步不用说，肯定的是data[0][0]，之后，我们用dp[i][j]（还是从dp[0][0]开始）数据减去data数组的这一个位置的数据,我们可以倒着想，我们是用下面两个数据的较大的一个加上data[i][j]数据得到这个dp[i][j]。相减的结果就是较大的那个dp[i+1][j]或者是dp[i+1][j+1]。我们就可以确定是选择了这个路径data[i+1][j]或data[i+1][j+1]。因为这一次我们是正着走的，一条路走到底，每次都选dp大的那一个data数据，只需要循环N-1次就可以了(第一步已确定)。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> node_value;<br>    <span class="hljs-comment">// 首先输出塔顶元素</span><br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;最大路径：&quot;</span> &lt;&lt; data[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; ++i)<br>    &#123;<br>        node_value = dp[i][j] - data[i][j];<br>        <span class="hljs-keyword">if</span> (node_value == dp[i][j + <span class="hljs-number">1</span>])&#123;<br>            j++;<span class="hljs-comment">//记录节点的列，输出要用</span><br>            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;-&gt;&quot;</span> &lt;&lt; data[i+<span class="hljs-number">1</span>][j];<br>        &#125;<span class="hljs-comment">//右边的大，应该往右走</span><br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;-&gt;&quot;</span> &lt;&lt; data[i+<span class="hljs-number">1</span>][j];<br>        &#125;<span class="hljs-comment">//左边的大，应该往左走 </span><br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++">最大路径：<span class="hljs-number">9</span>-&gt;<span class="hljs-number">12</span>-&gt;<span class="hljs-number">10</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">19</span><br></code></pre></div></td></tr></table></figure>
+<p>输出<br><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++">最大路径和是：<span class="hljs-number">59</span><br></code></pre></div></td></tr></table></figure></p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="输出路径"><a href="#输出路径" class="headerlink" title="输出路径"></a>输出路径</h3><p>题目可能会要求我们输出我们是怎么走的，在两个表都填写完整后，第一步不用说，肯定的是data[0][0]，之后，我们用dp[i][j]（还是从dp[0][0]开始）数据减去data数组的这一个位置的数据,我们可以倒着想，我们是用下面两个数据的较大的一个加上data[i][j]数据得到这个dp[i][j]。相减的结果就是较大的那个dp[i+1][j]或者是dp[i+1][j+1]。我们就可以确定是选择了这个路径data[i+1][j]或data[i+1][j+1]。因为这一次我们是正着走的，一条路走到底，每次都选dp大的那一个data数据，只需要循环N-1次就可以了(第一步已确定)。<br><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> node_value;<br>    <span class="hljs-comment">// 首先输出塔顶元素</span><br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;最大路径：&quot;</span> &lt;&lt; data[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; ++i)<br>    &#123;<br>        node_value = dp[i][j] - data[i][j];<br>        <span class="hljs-keyword">if</span> (node_value == dp[i][j + <span class="hljs-number">1</span>])&#123;<br>            j++;<span class="hljs-comment">//记录节点的列，输出要用</span><br>            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;-&gt;&quot;</span> &lt;&lt; data[i+<span class="hljs-number">1</span>][j];<br>        &#125;<span class="hljs-comment">//右边的大，应该往右走</span><br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;-&gt;&quot;</span> &lt;&lt; data[i+<span class="hljs-number">1</span>][j];<br>        &#125;<span class="hljs-comment">//左边的大，应该往左走 </span><br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure><br>输出<br><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++">最大路径：<span class="hljs-number">9</span>-&gt;<span class="hljs-number">12</span>-&gt;<span class="hljs-number">10</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">19</span><br></code></pre></div></td></tr></table></figure></p>
 <h3 id="空间优化"><a href="#空间优化" class="headerlink" title="空间优化"></a>空间优化</h3><p>其实dp数组里的数据不需要每一层都储存起来，用过之后就没用了，我们可以用覆盖的方法将二维数组优化为一维数组，也就是滚动数组。</p>
 <p>参考博客：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/theonegis/article/details/45801201">动态规划：数塔问题——卡尔曼和玻尔兹曼谁曼</a></p>
 

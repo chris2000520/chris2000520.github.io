@@ -265,40 +265,31 @@
 </li>
 <li><p>互操作性高。Linux能够以不同的方式实现与非Linux系统的不同层次的互操作。比如客户-服务器，工作站，仿真等。</p>
 </li>
-<li><p>全面多任务和真正的32位操作系统。Linux允许多个用户同时在一个系统上运行多道程序，支持多种硬件平台。</p>
-</li>
+<li>全面多任务和真正的32位操作系统。Linux允许多个用户同时在一个系统上运行多道程序，支持多种硬件平台。</li>
 </ol>
 <h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><p>Linux有两种版本：核心（Kernel）版本和发行（Distribution）版本。</p>
 <p>核心版本主要是Linux内核，创始人在不断开发和推出新的内核，内核版本由Linus Torvalds本人维护着。版本号由三部分数字构成，其形式为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">major.minor.patchlevel<br></code></pre></div></td></tr></table></figure>
-
 <p>其中，major为主版本号，minor为次版本号，patchlevel表示对当前版本的修订次数。</p>
 <p>发行版本是由各个公司推出的版本，通常将安装界面，系统设定，管理工具集成在一起，构成一个套件，从而方便用户使用，尽管这样，普通用户使用Linux发行版本的人数还是很少，软件支持的也少。目前，有Red Hat，Debian，Ubuntu，红旗Linux，Deepin等发行版。</p>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><h4 id="1-who"><a href="#1-who" class="headerlink" title="1.who"></a>1.who</h4><p><code>who</code>列出所有正在使用系统的用户，所用终端名和注册到系统的时间。而<code>whoami</code>将列出当前用户信息。</p>
    <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ who<br>chris    :0           2021-05-07 17:43 (:0)<br>$ whoami <br>chris<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="2-echo"><a href="#2-echo" class="headerlink" title="2.echo"></a>2.echo</h4><p>将命令行中参数标准输出，相当于<code>cout</code>，<code>printf</code>。要注意空格折叠的问题，例如：</p>
    <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> Hello world<br>Hello world<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;bye    bye&#x27;</span><br><span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span><br>$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span><br><span class="hljs-built_in">bye</span> <span class="hljs-built_in">bye</span><br></code></pre></div></td></tr></table></figure>
-
 <h4 id="3-date"><a href="#3-date" class="headerlink" title="3.date"></a>3.date</h4><p>用来显示当前日期和时间，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ date<br>Fri May  7 17:14:49 CST 2021<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="4-cal"><a href="#4-cal" class="headerlink" title="4.cal"></a>4.cal</h4><p>用来显示公元1~9999年中任意一年或者一个月的日历，第一个参数为月份（也可以用英文缩写表示），第二参数为年份，若不写参数，则显示当前月份的日历，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ cal 2 2021<br>   February 2021<br>Su Mo Tu We Th Fr Sa<br>    1  2  3  4  5  6<br> 7  8  9 10 11 12 13<br>14 15 16 17 18 19 20<br>21 22 23 24 25 26 27<br>28<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="5-clear"><a href="#5-clear" class="headerlink" title="5.clear"></a>5.clear</h4><p>用来清除屏幕上的信息。清屏后，提示符移到屏幕左上角。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ clear<br>$ _<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="6-passwd"><a href="#6-passwd" class="headerlink" title="6.passwd"></a>6.passwd</h4><p>用来修改口令，也就是密码。Linux的安全特性允许用户控制自己的口令，输入后，按照提示来就可修改密码，出于安全考虑，输入的密码都不会在屏幕上显示，所以不要以为自己的键盘⌨坏了哟。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ passwd<br>Change password <span class="hljs-keyword">for</span> user chris<br>(current) UNIX password:<br>New UNIX password:<br>Retype new UNIX password:<br>passwd:all authentication tokens updated successfully.<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="7-pwd"><a href="#7-pwd" class="headerlink" title="7.pwd"></a>7.pwd</h4><p>用来显示当前工作目录，全称为<code>Print Working Directory</code>。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span><br>/home/chris/Downloads<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="8-cd"><a href="#8-cd" class="headerlink" title="8.cd"></a>8.cd</h4><p>用来进入某个文件夹，全称为<code>Change Directory</code>，也就是改变工作目录。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">~$ <span class="hljs-built_in">cd</span> Downloads<br>Downloads$ _<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="9-rm"><a href="#9-rm" class="headerlink" title="9.rm"></a>9.rm</h4><p>用来删除文件或者目录下的文件，不加任何参数的话，只能删除文件，不能删除文件夹，全称为<code>Remove</code>。注意， 该命令是一个危险的命令，使用的时候要特别当心，尤其对于新手，否则整个系统就会毁在这个命令（比如在根目录下执行<code>rm -rf /*</code>）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -306,7 +297,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>-f</td>
 <td>忽略不存在的文件，不会出现警告信息</td>
 </tr>
@@ -322,63 +314,50 @@
 <td>-i</td>
 <td>删除前会询问用户是否操作</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ rm -r Study<br>$ rm hello.c<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="10-cp"><a href="#10-cp" class="headerlink" title="10.cp"></a>10.cp</h4><p>用来对文件进行复制，全称为<code>Copy</code>。后面的文件可以不存在，系统会帮你创建。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ cp hello.c h.c<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="11-mv"><a href="#11-mv" class="headerlink" title="11.mv"></a>11.mv</h4><p>用来对文件或文件夹进行移动，全称为<code>Move</code>如果文件或文件夹存在于当前工作目录，还可以对文件或文件夹进行重命名。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ mv hello.c /home/chris/Downloads<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="12-cat"><a href="#12-cat" class="headerlink" title="12.cat"></a>12.cat</h4><p>用来在标准输出（监控器或屏幕）上查看文件内容，全称为<code>Concatenate and Print Files</code>。例如：</p>
 <figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">$ cat hello.c<br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-
 <h3 id="快乐命令"><a href="#快乐命令" class="headerlink" title="快乐命令"></a>快乐命令</h3><h4 id="1-sl"><a href="#1-sl" class="headerlink" title="1.sl"></a>1.sl</h4><p>你会看到火车🚄从屏幕右边开往左边。相关的参数可以去搜一下。</p>
 <p>安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get install sl<br></code></pre></div></td></tr></table></figure>
-
 <p>运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sl<br></code></pre></div></td></tr></table></figure>
-
 <p>可以来个恶作剧，把<code>ls</code>和<code>sl</code>绑定在一起哈哈哈哈。</p>
 <h4 id="2-fortune"><a href="#2-fortune" class="headerlink" title="2.fortune"></a>2.fortune</h4><p>输出一句话，有笑话🤗，名人名言🙍‍♂️，唐诗宋词📔等等。</p>
 <p>安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get install fortune<br></code></pre></div></td></tr></table></figure>
-
 <p>运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ fortune<br></code></pre></div></td></tr></table></figure>
-
 <h4 id="3-cowsay"><a href="#3-cowsay" class="headerlink" title="3.cowsay"></a>3.cowsay</h4><p>用ASCII字符打印牛🐂，羊🐏等动物，哈哈哈，快来试试吧！</p>
 <p>安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get install cowsay<br></code></pre></div></td></tr></table></figure>
-
 <p>运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ cowsay <span class="hljs-string">&quot;I am a cool boy&quot;</span><br>$ cowsay -f tux <span class="hljs-string">&quot;wuwuwu&quot;</span><br></code></pre></div></td></tr></table></figure>
-
 <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>标准输入重定向（STDIN，文件描述符为0）：默认从键盘输入，也可从其他文件或命令中输入。</p>
 <p>标准输出重定向（STDOUT，文件描述符为1）：默认输出到屏幕。</p>
 <p>错误输出重定向（STDERR，文件描述符为2）：默认输出到屏幕。</p>
 <p>常用小技巧😄，将命令执行的标准输出重定向到一个文件中（清空原有文件的数据），例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt; file.txt<br>$ cat file.txt<br>/home/chris<br></code></pre></div></td></tr></table></figure>
-
 <p>将错误输出重定向到一个文件中（清空原有文件的数据），例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> 2&gt; file.txt<br></code></pre></div></td></tr></table></figure>
-
 <p>将标准输出重定向到一个文件中，注意和第一个不同，这个<code>&gt;&gt;</code>是追加到原有内容的后面，不会清空原有数据，同理，也能将错误输出重定向到文件中（追加），继续上面的操作来，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt<br>$ cat file.txt<br>/home/chris<br>/home/chris<br>$ <span class="hljs-built_in">pwd</span> 2&gt;&gt; file.txt<br></code></pre></div></td></tr></table></figure>
-
 <p>最后是将标准输出与错误输出共同写入到文件中（追加到原有内容的后面用<code>&gt;&gt;</code>，覆盖原有用<code>&gt;</code>），有两种方法，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt 2&gt;&amp;1<br>$ <span class="hljs-built_in">pwd</span> &amp;&gt;&gt; file.txt<br></code></pre></div></td></tr></table></figure>
-
 <h2 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h2><p><code>|</code>在键盘上👆按下<kbd>Shift</kbd>+<kbd>\</kbd>就可以看到管道符啦。其执行格式为<code>oder A | oder B</code>。管道符的作用，用我们老师的话来说就是把前一个命令的输出当作后一个命令的输入，是不是好懂些了？例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ls -l | wc -l <br></code></pre></div></td></tr></table></figure>
-
 <p>这个命令的解释就是列出当前目录的文件，然后统计其行数，当然，文件list是不会在屏幕上显示的，因为它又被当作输入了。因此，最后的结果仅仅为一个数。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">7<br></code></pre></div></td></tr></table></figure>
-
 <p>这个管道符就像一个法宝，可以将它套用到其他不同的命令上。</p>
 <h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>大家可能都有提笔忘字的时候，程序员也不例外，当然，我们是敲盘忘字。比如说我们想找一个文件名以a开头的文件，又隐隐约约记不得后面的单词了，这个时候，通配符就可以大展身手了🤝。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -386,7 +365,8 @@
 <th>匹配含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>*</td>
 <td>任意字符</td>
 </tr>
@@ -430,10 +410,11 @@
 <td>[:punct:]</td>
 <td>标点符号</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>通配符还可以和大括号<code>&#123;&#125;</code>结合起来用，字段之间用逗号<code>,</code>间隔，例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> file&#123;1,2,3,4&#125;<br>file1 file2 file3 file4<br></code></pre></div></td></tr></table></figure>
-
 <h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h2><p>为了能够更好地理解用户的表达，Shell解释器还提供了特别丰富的转义字符来处理输入的特殊数据。在网上找到了4个最常用的转义字符🙋‍♂️！</p>
 <ul>
 <li><p>反斜杠（\）：使反斜杠后面的一个变量变为<strong>单纯的字符</strong>。</p>
@@ -445,29 +426,22 @@
 <li><p>反引号（``）：把其中的命令<strong>执行后返回结果</strong>，其中放的是像ls，pwd，date类似的命令。</p>
 </li>
 </ul>
-<p>下面看几个例子：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ price=2<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is <span class="hljs-variable">$price</span>&quot;</span><br>Price is 5<br></code></pre></div></td></tr></table></figure>
-
+<p>下面看几个例子：<br><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ price=2<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is <span class="hljs-variable">$price</span>&quot;</span><br>Price is 5<br></code></pre></div></td></tr></table></figure></p>
 <p>可以看到我们想要输出的美元符号不见了，不标明货币单位，那有时候可能会出大问题的哦👊。那我们想要输出美元符号，应该怎么做呢？聪明的你应该猜到了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is $<span class="hljs-variable">$price</span>&quot;</span><br>Price is 3577price<br></code></pre></div></td></tr></table></figure>
-
 <p>很不幸的是，$$刚好是显示当前程序的进程ID号码，所以结果还是不对。正确的应该是这样的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is \$<span class="hljs-variable">$price</span>&quot;</span><br>Price is <span class="hljs-variable">$5</span><br></code></pre></div></td></tr></table></figure>
-
 <p>反引号的例子如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> `<span class="hljs-built_in">pwd</span>`<br>/home/chris/bin<br></code></pre></div></td></tr></table></figure>
-
 <p>就是先执行反引号里的命令，然后再标准输出到屏幕上。</p>
 <p>单引号是最简单的啦，最单纯的，不管里面有啥东西，照搬着输出就可以了。例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;$price is \$price&#x27;</span><br><span class="hljs-variable">$price</span> is \<span class="hljs-variable">$price</span><br></code></pre></div></td></tr></table></figure>
-
 <p>以上的转义字符都不容易出错，而什么时候该用双引号却是一个问题。因为好像大多数情况下加不加效果都一样：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb ccc&quot;</span><br>aaa bbb ccc<br>$ <span class="hljs-built_in">echo</span> aaa bbb ccc<br>aaa bbb ccc<br></code></pre></div></td></tr></table></figure>
-
 <p>区别在于用户无法得知第一种执行方式中到底有几个参数，是的，不能确定！因为有可能把“aaa bbb ccc”当作了一个参数整体直接输出到了屏幕，也有可能是分别将aaa、bbb和ccc输出到了屏幕。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% note success %&#125;<br><br>给大家总结一个简单小技巧，就是参数中如果出现了空格，那么就加双引号，如果参数中没有空格，那就不用加。（来自刘遄老师的小提示）<br><br>&#123;% endnote %&#125;<br></code></pre></div></td></tr></table></figure>
-
 <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>变量是计算机系统里用于保存可变值的数据类型。在Linux系统中，变量名称一般都是大写的，而命令都是小写的，也算一种规范了。下面我们来看看最基本的变量。如下表所示：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -475,7 +449,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>HOME</td>
 <td>用户的主目录（家目录）</td>
 </tr>
@@ -511,27 +486,23 @@
 <td>EDITOR</td>
 <td>用户默认文本编辑器</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <div class="note note-warning">
             <p>Linux作为一个多用户多任务的操作系统，能够为每个用户提供独立的、合适的工作运行环境，因此，一个相同的变量会因为用户身份的不同而具有不同的值。</p>
           </div>
-
 <p>我们可以使用下述命令来查看变量的值：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$HOME</span><br>/home/chris<br></code></pre></div></td></tr></table></figure>
-
 <p>其实变量是由固定的变量名与用户或者系统设置的变量两部分组成的，完全可以自行创建变量。例如设置名叫<code>WORKDIR</code>的变量：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ mkdir /home/workdir<br>$ WORKDIR=/home/workdir<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
-
 <p>但是此时的变量不具有全局性，格局小了呀🤨，不能被其他用户使用，但是我们可以使用<code>export</code>命令将其提升为全局变量。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">export</span> WORKDIR<br>$ su ordinary<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
-
 <p>后面要是不用这个变量了，也可以取消它：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">unset</span> WORKDIR<br></code></pre></div></td></tr></table></figure>
-
 <div class="note note-warning">
             <p>直接在终端设置的变量能够立即生效，但重启服务器后就会消失掉，因此我们需要将变量和变量值写入到.bashrc或者.bash_profile文件中以确保永久能使用它们。</p>
           </div>
-
 <h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><p>在Linux中，命令行中也能编辑文本，这时就能用到vim了。基本上vim共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和<strong>底线命令模式（Last line mode）</strong>。</p>
 <h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>当我们打开vim编辑文件的时候，我们首先进入的就是命令模式，此时你按键盘输入，文本上是不会显示的，而是被当作一个命令。常用的有：</p>
 <ul>
@@ -564,9 +535,7 @@
 </ol>
 <h3 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h3><p>像学习我们的第一门编程语言，C语言时，我们现在也来模仿着写一个Hello World的程序，虽然可能现在搞不明白它的结构和过程，但是没关系，大家都是这么过来的。先创建一个demo.sh文件，然后进去编辑它：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ vim demo.sh<br></code></pre></div></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment"># 这行是注释信息</span><br>str=<span class="hljs-string">&quot;Hello World&quot;</span><br><br><span class="hljs-function"><span class="hljs-title">test</span></span>()&#123;<br>        <span class="hljs-built_in">echo</span> <span class="hljs-variable">$str</span><br>&#125;<br><br><span class="hljs-built_in">test</span> echo_str<br></code></pre></div></td></tr></table></figure>
-
 <p>写完后输入<code>:wq</code>保存退出，然后运行脚本。脚本都以<code>#!/bin/bash</code>开头，<code>#</code>称为<code>sharp</code>，<code>!</code>在unix行话里称为<code>bang</code>，合起来简称就是常见的<code>shabang</code>。是不是很搞笑，同时也突然觉得自己变成高手了🐶。而运行脚本文件的方法有两种：</p>
 <ol>
 <li>将脚本作为bash解释器的参数执行：此时首行的<code>#!/bin/bash</code>shabang可以不用写。</li>
@@ -574,15 +543,16 @@
 </ol>
 <p>最后Hello World就会出现在终端上：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">Hello World<br></code></pre></div></td></tr></table></figure>
-
-<h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><table>
+<h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>变量</th>
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$$</td>
 <td>Shell本身的PID</td>
 </tr>
@@ -614,10 +584,11 @@
 <td>$1~n</td>
 <td>各个参数的值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$$&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$!&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$?&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$#</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ bash demo.sh zwy 2<br>91<br><br>0<br>zwy 2<br>zwy 2<br>2<br>demo.sh<br>zwy<br>2<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
