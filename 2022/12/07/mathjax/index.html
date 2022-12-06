@@ -18,7 +18,7 @@
   <meta name="author" content="赵吴涯">
   <meta name="keywords" content="">
   
-  <title>在文章中使用数学公式：Mathjax | 庐山烟雨浙江潮</title>
+  <title>在文章中使用数学公式：MathJax | 庐山烟雨浙江潮</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="在文章中使用数学公式：Mathjax">
+            <span class="h2" id="subtitle" title="在文章中使用数学公式：MathJax">
               
             </span>
 
@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      615 字
+      645 字
     </span>
   
 
@@ -246,7 +246,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">在文章中使用数学公式：Mathjax</h1>
+            <h1 style="display: none">在文章中使用数学公式：MathJax</h1>
             
               <p class="note note-info">
                 
@@ -257,15 +257,16 @@
             <div class="markdown-body">
               <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>最近在写一些算法方面的博客时，经常会出现比较复杂的数学公式，用键盘敲不出来，即使打出来了，效果也不是太好。最后在网上找到了<code>Mathjax</code>插件，能够比较好的在网页上渲染数学公式，就写一篇博客记录一下使用方法🤨。</p>
 <h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><ul>
-<li><p>在正文中同一行插入LaTeX公式用<script type="math/tex">...</script>定义</p>
+<li><p>在正文中同一行插入LaTeX公式用，使用两个<code>$</code>包含公式可以独立一行</p>
 <ul>
-<li>例如语句为<script type="math/tex">f(x) = ax+b</script>,显示为$ f(x) = ax+b $</li>
+<li>例如语句为<code>/$ f(x) = ax+b /$</code>（这里别看/，不加/它就给我渲染了😕）,显示为$ f(x) = ax+b $</li>
 </ul>
 </li>
-<li><p>另起一行用$$$…$$$定义</p>
+<li><p>另起一行用两个<code>/$$</code>（这里也别看/）包含公式</p>
 <ul>
-<li><p>例如语句为<code>$$ \int_0^xf(x)dx $$</code>,显示为<script type="math/tex">\int_0^xf(x)dx</script></p>
-<p>如果想写大一点可以在行首加上<code>\huge</code>标签</p>
+<li><p>例如语句为<code>$$ \int_0^tf(x)dx $$</code>,显示为</p>
+<script type="math/tex; mode=display">
+\int_0^tf(x)dx</script><p>如果想写大一点可以在行首加上<code>\huge</code>标签</p>
 </li>
 </ul>
 </li>
@@ -273,7 +274,7 @@
 <h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><p>可以使用<code>\</code>+希腊字母的单词表示数学公式中的希腊字母</p>
 <p>具体参考文档请看这里<a target="_blank" rel="noopener" href="https://oysz2016.github.io/post/8611e6fb.html#Mathjax简介">数学公式语法——Mathjax教程 | 冲弱’s Blog</a></p>
 <h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><script type="math/tex; mode=display">
-\Huge f^{'}(x)=ax+b+\pi+\alpha+\beta+\gamma+\lambda+\theta \tag {1.1}</script><figure class="highlight taggerscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs taggerscript"><span class="hljs-symbol">\h</span>uge f^&#123;&#x27;&#125;(x)=ax+b+<span class="hljs-symbol">\p</span>i+<span class="hljs-symbol">\a</span>lpha+<span class="hljs-symbol">\b</span>eta+<span class="hljs-symbol">\g</span>amma+<span class="hljs-symbol">\l</span>ambda+<span class="hljs-symbol">\t</span>heta <span class="hljs-symbol">\t</span>ag &#123;1.1&#125;<br></code></pre></div></td></tr></table></figure>
+\Huge f^{'}(x)=ax+b+\pi+\alpha+\beta+\gamma \tag {1.1}</script><figure class="highlight taggerscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs taggerscript"><span class="hljs-symbol">\h</span>uge f^&#123;&#x27;&#125;(x)=ax+b+<span class="hljs-symbol">\p</span>i+<span class="hljs-symbol">\a</span>lpha+<span class="hljs-symbol">\b</span>eta+<span class="hljs-symbol">\g</span>amma <span class="hljs-symbol">\t</span>ag &#123;1.1&#125;<br></code></pre></div></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \huge 0 \neq 1 \quad x \equiv x \quad 1 = 9 \bmod 2</script><figure class="highlight livescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-string">\huge</span> <span class="hljs-number">0</span> <span class="hljs-string">\neq</span> <span class="hljs-number">1</span> <span class="hljs-string">\quad</span> x <span class="hljs-string">\equiv</span> x <span class="hljs-string">\quad</span> <span class="hljs-number">1</span> = <span class="hljs-number">9</span> <span class="hljs-string">\bmod</span> <span class="hljs-number">2</span><br></code></pre></div></td></tr></table></figure>
 <script type="math/tex; mode=display">
