@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>模拟二进制交叉算子</title>
+    <link href="/2023/02/27/sbx/"/>
+    <url>/2023/02/27/sbx/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Simulated-Binary-Crossover"><a href="#Simulated-Binary-Crossover" class="headerlink" title="Simulated Binary Crossover"></a>Simulated Binary Crossover</h1><h2 id="什么是SBX"><a href="#什么是SBX" class="headerlink" title="什么是SBX"></a>什么是SBX</h2><p>SBX 是一种实值交叉算法，它模拟具有单点交叉的二进制编码 GA 的行为。</p><h2 id="为什么不直接使用二进制"><a href="#为什么不直接使用二进制" class="headerlink" title="为什么不直接使用二进制"></a>为什么不直接使用二进制</h2><p>许多复杂的现实世界问题都是约束优化问题，特别是对于工业工程领域的问题，标准的遗传算法很难像二进制字符串那样直接应用。</p><p>难以实现任意精度。固定的字符串长度限制了解决方案的精度，例如：我们需要找到最优解，自变量的范围是[1.6,2.9]，如果使用二进制，很容易想到用五位来表示从<code>10000</code>到<code>11101</code>，但是，如果我们的最优解恰好就在2.1到2.2中间呢？固定的字符串长度是无法精确到任意小数的。字符串的适当长度是先验不知道的。</p><p>海明悬崖问题。在十进制中15和16相邻，但是如果使用二进制，<code>01111</code>和<code>10000</code>却大相径庭，移动到相邻位置（也许就是最优解），二进制需要改变所有位上的数字，这对于单点交叉算子具有很大难度。</p><h2 id="如何设计一个实值交叉算法"><a href="#如何设计一个实值交叉算法" class="headerlink" title="如何设计一个实值交叉算法"></a>如何设计一个实值交叉算法</h2><p>通过生物仿生学，我们也可以借鉴二进制的交叉算法来模拟实值交叉算法。</p><h3 id="二进制交叉特点"><a href="#二进制交叉特点" class="headerlink" title="二进制交叉特点"></a>二进制交叉特点</h3><p>解码参数值的平均值是相等的。很容易理解，单点交叉只是把相同位置上的数字位置进行是互换，但是他们所代表的权重并没有改变。所以有:</p><script type="math/tex; mode=display">\frac{p_1+p_2}{2}=\frac{c_1+c_2}{2}</script><p>大多数交叉事件对应的<code>扩散因子</code>$\beta$约等于1。(即孩子倾向于与父母亲近)。</p><script type="math/tex; mode=display">\beta=\left| \frac{c_1-c_2}{p_1-p_2} \right| \approx 1</script><p>有三种情况，子代在父代两外侧<code>expanding crossover</code>，$\beta&gt;1$，两内侧<code>contracting crossover</code>，$\beta&lt;1$，或者是子代与父代相等<code>stationary crossover</code>，$\beta=1$。</p><p>$\beta$满足均匀分布吗？</p><h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何主持学术会议</title>
     <link href="/2022/12/11/post-conference/"/>
     <url>/2022/12/11/post-conference/</url>
