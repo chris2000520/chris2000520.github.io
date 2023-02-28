@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      505 字
+      602 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      7
        分钟
     </span>
   
@@ -250,7 +250,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年2月27日 凌晨
+                  本文最后更新于：2023年2月28日 早上
                 
               </p>
             
@@ -265,8 +265,23 @@
 \frac{p_1+p_2}{2}=\frac{c_1+c_2}{2}</script><p>大多数交叉事件对应的<code>扩散因子</code>$\beta$约等于1。(即孩子倾向于与父母亲近)。</p>
 <script type="math/tex; mode=display">
 \beta=\left| \frac{c_1-c_2}{p_1-p_2} \right| \approx 1</script><p>有三种情况，子代在父代两外侧<code>expanding crossover</code>，$\beta&gt;1$，两内侧<code>contracting crossover</code>，$\beta&lt;1$，或者是子代与父代相等<code>stationary crossover</code>，$\beta=1$。</p>
-<p>$\beta$满足均匀分布吗？</p>
-<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2>
+<h3 id="扩散因子-beta-的分布"><a href="#扩散因子-beta-的分布" class="headerlink" title="扩散因子$\beta$的分布"></a>扩散因子$\beta$的分布</h3><h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p><strong>Input:</strong> The parent solutions $P_1,P_2 \in R$</p>
+<p>The distribution index $n \in R$</p>
+<p>/<em>Normally prefer to set $n$ to the range from $2$ to $5$ </em>/</p>
+<p><strong>Output</strong>: The children solution $C_1,C_2 \in R$</p>
+<p>if $P_1&gt;P_2$ then</p>
+<p>​    Swap $P_1$ and $P_2$</p>
+<p>end;</p>
+<p>Choose a random number $u\in (0,1)$;</p>
+<p>if $u \leq0.5$ then</p>
+<p>​    $\beta = (2u)^ \frac{1}{n+1}$</p>
+<p>else</p>
+<p>​    $\beta = (\frac{1}{2-2u})^ \frac{1}{n+1}$</p>
+<p>end;</p>
+<p>$C_1=0.5(P_1+P_2)-0.5\beta(P_2-P_1)$</p>
+<p>$C_2=0.5(P_1+P_2)+0.5\beta(P_2-P_1)$</p>
+<p>Return $C_1,C_2$;</p>
+
             </div>
             <hr>
             <div>
