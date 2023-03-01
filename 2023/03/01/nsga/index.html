@@ -285,11 +285,11 @@
 <script type="math/tex; mode=display">
  P[i]_{\text {distance }}=\sum_{k=1}^{r}\left(P[i+1]_{. f_{k}}-P[i-1]_{. f_{k}}\right)</script><p>在二维目标函数中：</p>
 <script type="math/tex; mode=display">
-P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+1]_{. f_{2}}-P[i-1]_{. f_{2}}\right)</script><h2 id="构造偏序集"><a href="#构造偏序集" class="headerlink" title="构造偏序集"></a>构造偏序集</h2><p>经过了排序和拥挤度计算，群体中的每一个个体都有两个属性：非支配序$i<em>{rank}$和拥挤度$i_d$，则定义偏序关系为$\prec</em>{n}$：当满足条件$i<em>{rank}&lt;j</em>{rank}$，或满足$i<em>{rank}=j</em>{rank}$且$i<em>d&gt;j_d$时，定义$i\prec</em>{n}j$。也就是说：如果两个个体的非支配排序不同，取排序号较小的个体（分层排序时，先被分离出来的个体)，如果两个个体在同一级，取周围较不拥挤的个体。</p>
+P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+1]_{. f_{2}}-P[i-1]_{. f_{2}}\right)</script><h2 id="构造偏序集"><a href="#构造偏序集" class="headerlink" title="构造偏序集"></a>构造偏序集</h2><p>经过了排序和拥挤度计算，群体中的每一个个体都有两个属性：非支配序$i{rank}$和拥挤度$id$，则定义偏序关系<script type="math/tex">\prec_{n}</script>为：当满足条件<script type="math/tex">i_{rank}<j_{rank}</script>，或满足<script type="math/tex">i_{rank}=j_{rank}</script>且<script type="math/tex">i_d>j_d</script>时，定义<script type="math/tex">i\prec_{n} j</script>。也就是说：如果两个个体的非支配排序不同，取排序号较小的个体（分层排序时，先被分离出来的个体)，如果两个个体在同一级，取周围较不拥挤的个体。</p>
 <h2 id="精英策略"><a href="#精英策略" class="headerlink" title="精英策略"></a>精英策略</h2><p>NSGA-II 算法采用精英策略防止优秀个体的流失，通过将父代和子代所有个体混合后进行非支配排序的方法。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>首先，随机产生规模为$N$的初始种群$P_t$，经过非支配排序、选择、交叉和变异，产生子代种群$Q_t$，并将两个种群联合在一起形成大小为$2N$的种群$R_t$。</p>
 <p>然后，进行快速非支配排序，同时对每个非支配层中的个体进行拥挤度计算，根据非支配关系以及个体的拥挤度选取合适的个体组成新的父代种群$P_{t+1}$ 。</p>
-<p>最后，通过遗传算法的基本操作产生新的子代种群$Q<em>{t+1}$，将$P</em>{t+1}$与$Q_{t+1}$合并形成新的种群$R_t$，重复以上操作，直到满足程序结束的条件。</p>
+<p>最后，通过遗传算法的基本操作产生新的子代种群<script type="math/tex">Q_{t+1}</script>，<script type="math/tex">P_{t+1}</script>与<script type="math/tex">Q_{t+1}</script>合并形成新的种群$R_t$，重复以上操作，直到满足程序结束的条件。</p>
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>NSGA-II的时间花费有三部分构成：</p>
 <ol>
 <li>快速非支配排序（non-dominated sort): </li>
