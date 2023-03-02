@@ -250,7 +250,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年12月12日 凌晨
+                  本文最后更新于：2023年3月1日 早上
                 
               </p>
             
@@ -272,7 +272,7 @@
 <li>然后降低T的温度，我们通过让T和一个“降温系数”△ T（一个接近1的小数，比如0.99)相乘，达到<strong>慢慢降低</strong>温度的效果，直到接近于0（我们用eps来代表一个接近0的数(比如0.00001)，只要T&lt;eps就可以退出循环了）</li>
 </ol>
 <p>所以总的来说，用伪代码表示退火的流程是这样的：</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">double</span> T = <span class="hljs-number">2000</span>; <span class="hljs-comment">//代表开始的温度</span><br><span class="hljs-keyword">double</span> dT = <span class="hljs-number">0.99</span>; <span class="hljs-comment">//代表系数delta T</span><br><span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//相当于0.0000000000000001</span><br><span class="hljs-keyword">while</span>(T &lt; eps) &#123;<br>    <span class="hljs-comment">//--------------</span><br>    <span class="hljs-comment">//这里是每一次退火的操作</span><br>	<span class="hljs-comment">//--------------</span><br>    T = T * dT; <span class="hljs-comment">//温度每次下降一点点， T * 0.99</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">double</span> T = <span class="hljs-number">2000</span>; <span class="hljs-comment">//代表开始的温度</span><br><span class="hljs-keyword">double</span> dT = <span class="hljs-number">0.99</span>; <span class="hljs-comment">//代表系数delta T</span><br><span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//相当于0.0000000000000001</span><br><span class="hljs-keyword">while</span>(T &gt; eps) &#123;<br>    <span class="hljs-comment">//--------------</span><br>    <span class="hljs-comment">//这里是每一次退火的操作</span><br>	<span class="hljs-comment">//--------------</span><br>    T = T * dT; <span class="hljs-comment">//温度每次下降一点点， T * 0.99</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <h4 id="退火详解"><a href="#退火详解" class="headerlink" title="退火详解"></a>退火详解</h4><ol>
 <li><p>第一步，我们需要在找到最值的那个函数里随机找到一点<code>X0</code>，作为我们的初始值。</p>
 </li>
