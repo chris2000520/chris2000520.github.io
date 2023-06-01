@@ -18,7 +18,7 @@
   <meta name="author" content="赵吴涯">
   <meta name="keywords" content="">
   
-  <title>NSGA-II | 庐山烟雨浙江潮</title>
+  <title>在前后端传值中JSON转化的坑 | 庐山烟雨浙江潮</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="NSGA-II">
+            <span class="h2" id="subtitle" title="在前后端传值中JSON转化的坑">
               
             </span>
 
@@ -194,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-03-01 11:10" pubdate>
-        2023年3月1日 上午
+      <time datetime="2023-06-01 22:33" pubdate>
+        2023年6月1日 晚上
       </time>
     </span>
   
@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      469 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      19
+      5
        分钟
     </span>
   
@@ -246,63 +246,29 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">NSGA-II</h1>
+            <h1 style="display: none">在前后端传值中JSON转化的坑</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年3月2日 凌晨
+                  本文最后更新于：2023年6月1日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="NSGA"><a href="#NSGA" class="headerlink" title="NSGA"></a>NSGA</h1><h2 id="支配与非支配"><a href="#支配与非支配" class="headerlink" title="支配与非支配"></a>支配与非支配</h2><p>对于多个目标函数的问题，我们一般不能找到都很满足条件的解，比如手机价格低，肯定性能就差，一部性价比高的手机就能支配绝大多数手机。</p>
-<p>一个解S1，对于任何一个目标函数，适应度都比另一个S2的要大，那么就说这个解S1<code>严格支配</code>S2。当然也有可能某一目标函数的适应度相等，那样就是<code>非严格的支配</code>。对于解S1，目标函数F1适应度优于解S2的目标函数F1适应度，但是在目标函数F2上，解S2优于解S1，这样，我们就称这两个解是互相<code>非支配</code>的。就像七个葫芦兄弟，各有本事，谁也不服谁，他们就是互相非支配的😁。</p>
-<h3 id="如何进行非支配排序？"><a href="#如何进行非支配排序？" class="headerlink" title="如何进行非支配排序？"></a>如何进行非支配排序？</h3><ol>
-<li>设$i=1$</li>
-<li>对于所有的$j=1，2，3$等，且$j$不等于$i$，按照以上定义比较个体$x_i$和$x_j$之间的支配关系</li>
-<li>如果不存在任何一个个体$x_j$支配$x_i$，则$x_i$标记为非支配个体</li>
-<li>令$i=i+1$，转到步骤2，直到找到所有的非支配个体</li>
-</ol>
-<h2 id="种群分层"><a href="#种群分层" class="headerlink" title="种群分层"></a>种群分层</h2><p>通过一次上述步骤，可以得到种群的第一级非支配层，然后忽略这些被标记的个体，再次遵循步骤1到4，就会得到第二支配层。以此类推，直到整个种群被分层。</p>
-<blockquote>
-<p>思考一下时间复杂度是多少？</p>
+              <h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><p>本人真的是一个大冤种🤨，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。</p>
+<h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到<code>guid</code>的值，其他两个却为<code>null</code>。请求体是这样写的：</p>
+<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;guid&quot;</span>: <span class="hljs-string">&quot;13&quot;</span>,<br>    <span class="hljs-attr">&quot;dName&quot;</span>: <span class="hljs-string">&quot;小明&quot;</span>,<br>    <span class="hljs-attr">&quot;dAge&quot;</span>: <span class="hljs-number">17</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>接受的对象是这样定义的：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> String guid;<br><br>    <span class="hljs-keyword">private</span> String dName;<br><br>    <span class="hljs-keyword">private</span> Integer dAge;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>在控制层我特意打印出接受的对象供Debug用，结果是这样的：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Dog(guid=<span class="hljs-number">13</span>, dName=<span class="hljs-keyword">null</span>, dAge=<span class="hljs-keyword">null</span>)<br></code></pre></div></td></tr></table></figure>
+<p>我就在那里试了好久，一直到要吃饭了，我才恋恋不舍的离开，路上也百思不得其解。最后我看到一篇Blog后恍然大悟🤪，这才是根本原因，全世界的码农们一定要联合起来！<strong>多交流！</strong></p>
+<h2 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h2><blockquote>
+<p>在传输过程中dName的N，也从大写变为了小写，在进行测试时，发现所有格式为aBc的，经过JSON传值，都变为了abc，但是aaBc,经过传值后，依然是aaBc，可见，只有形如aBc这样，大写字母前只有一个小写字母的，才会出现JSON强行将大写转为小写的情况。</p>
 </blockquote>
-<p>NSGA是不带任何方法的直接非支配排序。设目标数$(F_1,F_2…F_M)$为$M$，种群个体数为$N$。一个个体进行一次排序的时间复杂度为$MN$（要与$N-1$个体比较，要比较$M$个目标）。第一轮要比较$N$个个体，因此第一轮的时间复杂度为$MN^2$。在最坏的情况下，每轮只有一个个体为当前一轮排序的非支配解，则要$O(N)$轮排序。因此NSGA的时间复杂度为$O(MN^3)$。</p>
-<h2 id="虚拟适应度值"><a href="#虚拟适应度值" class="headerlink" title="虚拟适应度值"></a>虚拟适应度值</h2><p>种群分层结束后，需要给每级指定一个<code>虚拟适应度值</code>，级别越小，说明其中的个体越优，赋予越高的虚拟适应值，反之级别越大，赋予越低的虚拟适应值。这样可以保证在复制操作中级别越小的非支配个体有更多的机会被选择进入下一代，使得算法以最快的速度<strong>收敛</strong>于最优区域。</p>
-<h1 id="NSGA-Ⅱ"><a href="#NSGA-Ⅱ" class="headerlink" title="NSGA-Ⅱ"></a>NSGA-Ⅱ</h1><blockquote>
-<p>对于NSGA的三大改进，使得算法效率大大提升。</p>
-</blockquote>
-<h2 id="快速非支配排序"><a href="#快速非支配排序" class="headerlink" title="快速非支配排序"></a>快速非支配排序</h2><h3 id="如何体现一个快字？"><a href="#如何体现一个快字？" class="headerlink" title="如何体现一个快字？"></a>如何体现一个<strong>快</strong>字？</h3><p>对于每个个体 $i$ 都设有以下两个参数 $n(i)$ 和 $S(i)$， </p>
-<p>$n(i)$ ：在种群中支配个体$i$的解个体的<code>数量</code>number。</p>
-<p>$S(i)$ ：被个体$i$所支配的解个体的<code>集合</code>set。</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
-<li>第一轮初始化个体，$n_p$为0，$S_p$为空集。第一轮与NSGA相同，时间复杂度为$O(MN^2)$。此时将$n_p=0$的个体加入第一级非支配集$F_1$。</li>
-<li>对上一轮集合$F_1$中，取一个个体$p$，在$p$的$S_p$集合中，依次将个体$q$的$n_q$减去一，若此时$n_q=0$，则将其加入下一轮排序的非支配解集$F_2$。这里可以将每一个个体看成一个结构体，里面包含一个变量和一个存放结构体的数组，三层集合嵌套。</li>
-<li>重复步骤2。时间复杂度在最坏情况下，每一次只能取一个到下一层非支配解集，每一轮需要花费$O(N)$,一共需要$O(N-1)$轮，所以总的时间复杂度为$O(MN^2)=O(MN^2)+O(N^2)$。</li>
-</ol>
-<h2 id="拥挤度排序"><a href="#拥挤度排序" class="headerlink" title="拥挤度排序"></a>拥挤度排序</h2><p>为了保持解群体的分布性和多样性，NSGA-II提出使用计算聚集距离。分布距离的使用只是为了在后面建立偏序集所使用，优先权还是在非支配排序上。</p>
-<p>计算方法就是利用前后个体的目标函数差值计算，可以理解为画一个矩形，顶点是前后个体，计算的就是在矩形中间的个体的拥挤度。在这之间要将同一层非支配的个体按照某一目标函数排序。</p>
-<script type="math/tex; mode=display">
-P[i]_{\text {distance }}=\sum_{k=1}^{r}\left(P[i+1]_{. f_{k}}-P[i-1]_{. f_{k}}\right)</script><p><strong>如果某个方向上的距离很大，就会很大程度上影响总的距离的大小。为了使每个方向上的目标函数对拥挤距离有等效的影响力，需要每个目标函数上的距离要规则化<code>normalized</code>。所以要在最后除以如下变量:</strong></p>
-<script type="math/tex; mode=display">
-P[i]_{\text {distance }}=\frac{P[i]_{\text {distance }}}{(f^{max}_k-f^{min}_k)}</script><p>在二维目标函数中：</p>
-<script type="math/tex; mode=display">
-P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+1]_{. f_{2}}-P[i-1]_{. f_{2}}\right)</script><h2 id="构造偏序集"><a href="#构造偏序集" class="headerlink" title="构造偏序集"></a>构造偏序集</h2><p>经过了排序和拥挤度计算，群体中的每一个个体都有两个属性：非支配序$i{rank}$和拥挤度$id$，则定义偏序关系<script type="math/tex">\prec_{n}</script>为：当满足条件<script type="math/tex">i_{rank}<j_{rank}</script>，或满足<script type="math/tex">i_{rank}=j_{rank}</script>且<script type="math/tex">i_d>j_d</script>时，定义<script type="math/tex">i\prec_{n} j</script>。也就是说：如果两个个体的非支配排序不同，取排序号较小的个体（分层排序时，先被分离出来的个体)，如果两个个体在同一级，取周围较不拥挤的个体。</p>
-<h2 id="精英策略"><a href="#精英策略" class="headerlink" title="精英策略"></a>精英策略</h2><p>NSGA-II 算法采用精英策略防止优秀个体的流失，通过将父代和子代所有个体混合后进行非支配排序的方法。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>首先，随机产生规模为$N$的初始种群$P_t$，经过非支配排序、选择、交叉和变异，产生子代种群$Q_t$，并将两个种群联合在一起形成大小为$2N$的种群$R_t$。</p>
-<p>然后，进行快速非支配排序，同时对每个非支配层中的个体进行拥挤度计算，根据非支配关系以及个体的拥挤度选取合适的个体组成新的父代种群$P_{t+1}$ 。</p>
-<p>最后，通过遗传算法的基本操作产生新的子代种群<script type="math/tex">Q_{t+1}</script>，<script type="math/tex">P_{t+1}</script>与<script type="math/tex">Q_{t+1}</script>合并形成新的种群$R_t$，重复以上操作，直到满足程序结束的条件。</p>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>NSGA-II的时间花费有三部分构成：</p>
-<ol>
-<li>快速非支配排序（non-dominated sort): </li>
-<li>计算聚集距离（crowding distance assignment)：</li>
-<li>构造偏序集（sorting on set):</li>
-</ol>
-<p>所以总时间复杂度为 $O(MN^2)$。</p>
-<p>参考文献：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/407917938">NSGA-II 解读</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ue411c7yK/?spm_id_from=333.999.0.0&amp;vd_source=7b29f4b5d5a2e91632920e2a2814ba3c">纯小白超详细的非支配排序遗传算法原理讲解</a></p>
-
+<p>这是前人总结的经验教训啊！若后人哀之而不鉴之，亦使后人而复哀后人也。所以：</p>
+<p><strong>不要</strong>这样定义类的属性尽量使用驼峰时前面至少有2个小写字母，比如：dogName，dogAge，或者在实体类的getter方法中，加上@JsonProperty(“dName”)，就可以了！</p>
+<h1 id="谨以此篇，敬伟大的前辈们！"><a href="#谨以此篇，敬伟大的前辈们！" class="headerlink" title="谨以此篇，敬伟大的前辈们！"></a>谨以此篇，敬伟大的前辈们！</h1>
             </div>
             <hr>
             <div>
@@ -319,7 +285,11 @@ P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/JSON/">JSON</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Spring-Boot/">Spring Boot</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF/">前后端</a>
                     
                   </div>
                 
@@ -336,18 +306,12 @@ P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/02/JSON/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">在前后端传值中JSON转化的坑</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/27/sbx/">
-                        <span class="hidden-mobile">模拟二进制交叉算子</span>
+                      <a href="/2023/03/01/nsga/">
+                        <span class="hidden-mobile">NSGA-II</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -562,45 +526,6 @@ P[i]_{\text {distance }}=\left(P[i+1]_{. f_{1}}-P[i-1]_{f_{1}}\right)+\left(P[i+
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
-
-  
 
 
 
