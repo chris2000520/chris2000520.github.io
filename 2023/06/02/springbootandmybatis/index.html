@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      1.6k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22
+      24
        分钟
     </span>
   
@@ -250,12 +250,29 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年6月2日 凌晨
+                  本文最后更新于：2023年7月5日 早上
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p><code>$&#123;&#125;</code>本质是字符串拼接，相当于单引号，会有SQL注入问题<br><code>#&#123;&#125;</code>占位符赋值</p>
+              <h2 id="时间格式"><a href="#时间格式" class="headerlink" title="时间格式"></a>时间格式</h2><p>前端，后端，数据库中的数据格式有太多，排列组合起来就更多了，目前使用较多的时间格式是这样的。</p>
+<ul>
+<li><p>前端使用yyyy-MM-dd HH:mm:ss格式传入。</p>
+</li>
+<li><p>后端接收的时候用实体类接收，其中有一个属性为LocalDateTime，必须设置如下注解才能解析：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;, timezone = &quot;GMT+8&quot;)</span><br><span class="hljs-keyword">private</span> LocalDateTime personBirth;<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>不然会报如下错误：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text <span class="hljs-string">&#x27;1900-08-12 21:12:21&#x27;</span> could not be parsed at index <span class="hljs-number">10</span><br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>MySQL数据库中date只能保留年月日，datetime和timestamp可以展示到时分秒。</li>
+<li><code>2023=07-05</code></li>
+<li><code>2023-07-05 00:00:00</code></li>
+</ul>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p><code>$&#123;&#125;</code>本质是字符串拼接，相当于单引号，会有SQL注入问题<br><code>#&#123;&#125;</code>占位符赋值</p>
 <p>如果需要传参有数据时，按数据查找，传参为空时查找所有数据，只需添加<code>&lt;where&gt;</code>以及<code>&lt;if&gt;</code>标签，where标签在if标签判断为空时会自动消失退去。例子如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;findDog&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;String&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.example.demo.pojo.Dog&quot;</span>&gt;</span><br>       select * from t_dog<br>       <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span><br>           <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span> = <span class="hljs-string">&quot; name != null &quot;</span>&gt;</span><br>           <span class="hljs-tag">&lt;<span class="hljs-name">bind</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dogName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x27;%&#x27; + name + &#x27;%&#x27;&quot;</span>/&gt;</span><br>                and d_name like #&#123;dogName&#125;<br>           <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>    	<span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span>   <br>   <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 <p>如果只是使用原本的关键字<code>where</code>而不使用标签，在if标签为空时，SQL语句中还会出现where字段，此时会报SQL语法错误。</p>

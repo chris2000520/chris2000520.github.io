@@ -215,9 +215,14 @@
           
             
           
-          SQL$&#123;&#125;本质是字符串拼接，相当于单引号，会有SQL注入问题#&#123;&#125;占位符赋值
-如果需要传参有数据时，按数据查找，传参为空时查找所有数据，只需添加&lt;where&gt;以及&lt;if&gt;标签，where标签在if标签判断为空时会自动消失退去。例子如下：
-123456789&lt;select id=&quot;findDog&quot; param
+          时间格式前端，后端，数据库中的数据格式有太多，排列组合起来就更多了，目前使用较多的时间格式是这样的。
+
+前端使用yyyy-MM-dd HH:mm:ss格式传入。
+
+后端接收的时候用实体类接收，其中有一个属性为LocalDateTime，必须设置如下注解才能解析：
+
+
+12@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;, timezone 
         </a>
       </p>
 
