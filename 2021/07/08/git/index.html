@@ -206,7 +206,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.5k 字
     </span>
   
 
@@ -216,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      18
        分钟
     </span>
   
@@ -250,7 +250,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月8日 凌晨
+                  本文最后更新于：2024年8月9日 凌晨
                 
               </p>
             
@@ -371,6 +371,24 @@
 <p>修改冲突的部分，重新提交。</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql">git <span class="hljs-keyword">add</span> myfile.txt<br>git <span class="hljs-keyword">commit</span> -m &quot;合并dev3分支&quot;<br># <span class="hljs-keyword">On</span> branch master<br><span class="hljs-keyword">nothing</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (working directory clean)<br></code></pre></div></td></tr></table></figure>
 <p>历史记录如下图所示。因为在这次合并中修改了冲突部分，所以会重新创建合并修改的提交记录。这样，master的HEAD就移动到这里了。这种合并不是fast-forward合并，而是non fast-forward合并。</p>
+<h1 id="个人常用命令"><a href="#个人常用命令" class="headerlink" title="个人常用命令"></a>个人常用命令</h1><p>查看远端仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git remote -v<br></code></pre></div></td></tr></table></figure>
+<p>撤回add操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git reset .<br></code></pre></div></td></tr></table></figure>
+<p>拉取远端仓库后默认只有main分支，在本地新建分支并关联，第二种默认分支名为远端分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git checkout -b zwy origin/zwy<br>git checkout -t origin/feature<br></code></pre></div></td></tr></table></figure>
+<p>使用第一种方法时，如果本地分支名和远端不一样，会出现<code>The upstream branch of your current branch does not match the name of your current branch</code>，分支尽量名称保持一致</p>
+<p>查看本地分支和远程分支关联情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git branch -vv <br></code></pre></div></td></tr></table></figure>
+<p>关联到远端分支</p>
+<p>强制删除分支(在桥上时不要炸桥)</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git branch -D zwy<br></code></pre></div></td></tr></table></figure>
+<p>在远端删除分支后，本地使用<code>git branch -a</code>未能及时更新</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git fetch --prune<br></code></pre></div></td></tr></table></figure>
+<p>恢复工作区中的文件到最近的提交状态（即丢弃对文件的所有未提交更改）</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git restore zwy.md<br>git status<br>nothing to commit, working tree clean<br></code></pre></div></td></tr></table></figure>
+<p>显示分支提交树</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git log --oneline --graph --decorate --all<br><br>--oneline 	日志单行显示<br>--graph		分支图显示<br>--decorate 	可显示分支名称<br>--all		显示所有分支<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
