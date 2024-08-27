@@ -257,7 +257,7 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><p>本人真的是一个大冤种🤨，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。</p>
+              <h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><p>本人真的是一个大冤种，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。</p>
 <h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到<code>guid</code>的值，其他两个却为<code>null</code>。请求体是这样写的：</p>
 <figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;guid&quot;</span>: <span class="hljs-string">&quot;13&quot;</span>,<br>    <span class="hljs-attr">&quot;dName&quot;</span>: <span class="hljs-string">&quot;小明&quot;</span>,<br>    <span class="hljs-attr">&quot;dAge&quot;</span>: <span class="hljs-number">17</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>接受的对象是这样定义的：</p>
