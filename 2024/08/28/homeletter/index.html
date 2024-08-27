@@ -16,11 +16,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#033059">
-  <meta name="description" content="这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。">
+  <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-  <title>算法总结 | 庐山烟雨浙江潮</title>
+  <title>家书 | 庐山烟雨浙江潮</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -181,7 +181,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="算法总结">
+            <span class="h2" id="subtitle" title="家书">
               
             </span>
 
@@ -191,8 +191,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-06-28 11:28" pubdate>
-        2020年6月28日 上午
+      <time datetime="2024-08-28 00:30" pubdate>
+        2024年8月28日 凌晨
       </time>
     </span>
   
@@ -203,7 +203,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      2k 字
     </span>
   
 
@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      19
        分钟
     </span>
   
@@ -243,7 +243,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">算法总结</h1>
+            <h1 style="display: none">家书</h1>
             
               <p class="note note-info">
                 
@@ -252,29 +252,19 @@
               </p>
             
             <div class="markdown-body">
-              <p>这学期的考试我就没出现过写不完的情况，然而事情就的的确确发生在我头上了。算法考试题基本上都是策略分析题，总共加起来得有两千多字了。<br><a id="more"></a></p>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>算法是由若干条指令组成的序列，且满足有输入、输出、可行性、有穷性和确定性五个特性。</p>
-<p>评价算法的主要标准是算法实现的时间，算法实现的存储空间和代码要易于理解。</p>
-<p>贪心法，分治法，和动态规划法的区别和联系：<br>分治法与动态规划都是将问题分解成若干个较小规模的子问题。而分治法是将原问题分解为多个子问题，通过计算出子问题的结果构造出最优解，分治法分解后的子问题被看成是相互独立的。动态规划通过迭代法自底向上求解，动态规划将分解后的子问题理解为相互有联系。贪心算法是依赖于当前已经做出的选择，采用自顶向下的解决方法。具体分析请看这里：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33048876">贪心法，分治法，和动态规划法</a>。</p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="开灯问题"><a href="#开灯问题" class="headerlink" title="开灯问题"></a>开灯问题</h2><p>有n盏灯，编号为1~n，每个灯有个开关，按一下打开，再按一下关闭，再按一下打开。第1个人把所有灯打开，第2个人按下编号为2的倍数的灯的开关，第3个人按下编号为3的倍数的灯的开关，依此类推，一共有k个人，问最后有哪些灯开着？输入n和k，输出开着的灯的编号。k&lt;=n&lt;=1000。</p>
-<p>将灯的状态存入一维数组中，设灯亮的状态为1，第一层循环为从第1个人到第k个人(i代表第几个人)，第二层循环为在所有的n盏灯中（j代表第几盏灯），当第i个人按i的倍数的开关时，即灯的编号能整除i，此时灯的状态取反。代码如下：<br><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)<br>		<span class="hljs-keyword">if</span>(j%i==<span class="hljs-number">0</span>)<br>			a[j]=!a[j];<br></code></pre></div></td></tr></table></figure><br>可以优化第二层循环，不用判断，直接修改数组值。<br><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=k;i++)<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;j&lt;=n;j+=i)<br>		a[j]=!a[j];<br></code></pre></div></td></tr></table></figure><br>最后遍历输出值为1的数组下标即可。更多讨论请看这里<a target="_blank" rel="noopener" href="https://www.nowcoder.com/questionTerminal/406a54ff2b354bdcb1b1077605620465">开灯问题</a>。</p>
-<h2 id="博弈问题"><a href="#博弈问题" class="headerlink" title="博弈问题"></a>博弈问题</h2><p>给定N（N&gt;20) 张牌，两个人轮流取牌，每人每次最少取 1 张牌，最多取 5 张牌。我们判定取完最后一张牌的人输。请你给出两人的最佳博弈方法。</p>
-<p>考试之前以为不知道有多难呢，结果下来一看解析，哦豁，懂了。</p>
-<p>思路：<br>首先N=1+4=5</p>
-<p>（54-1）/5=10余3</p>
-<p>故先拿牌者取3张即可稳保胜利。</p>
-<p>操作如下：</p>
-<p>先手拿三张后，执行如下原则：</p>
-<p>玩家拿1张，先手拿4张；</p>
-<p>玩家拿2张，先手拿3张；</p>
-<p>玩家拿3张，先手拿2张；</p>
-<p>玩家拿4张，先手拿1张；</p>
-<p>就是保持每轮双方一共拿走5张牌，这样先手最后一次取牌后扑克牌就只剩一张，玩家必输。</p>
-<p>要保证每轮拿牌总数在自己控制之内，所以每轮拿5张牌，对方拿N张，则自己拿5-N张，十轮可以拿50张牌，所以问题相当于，一共54-50=4张牌，自己先拿，要给对方省一张牌，所以第一次自己拿3张，以后每次都拿5-N张，其中N为对方拿牌数，1 &lt;= n &lt;= 4。<br>代码参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011262780/article/details/52698975?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase">此博客</a>。</p>
-<h2 id="4色图问题"><a href="#4色图问题" class="headerlink" title="4色图问题"></a>4色图问题</h2><p>4色地图问题的优化求解算法可由( )设计实现</p>
-<h2 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h2><h2 id="12银币问题"><a href="#12银币问题" class="headerlink" title="12银币问题"></a>12银币问题</h2><h2 id="给余猜数问题"><a href="#给余猜数问题" class="headerlink" title="给余猜数问题"></a>给余猜数问题</h2><p>有一堆苹果，3 个 3 个地数，最后余 2 个；5 个 5 个地数，最后余 3 个；7 个 7 个地数，最后余 4 个。<br>问这堆苹果最少有多少个。</p>
-<h2 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h2><h2 id="残缺棋盘问题"><a href="#残缺棋盘问题" class="headerlink" title="残缺棋盘问题"></a>残缺棋盘问题</h2><h2 id="算法优劣问题"><a href="#算法优劣问题" class="headerlink" title="算法优劣问题"></a>算法优劣问题</h2><h1 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h1><h2 id="分治法求最值"><a href="#分治法求最值" class="headerlink" title="分治法求最值"></a>分治法求最值</h2><h2 id="走格子问题"><a href="#走格子问题" class="headerlink" title="走格子问题"></a>走格子问题</h2><h1 id="考试小结"><a href="#考试小结" class="headerlink" title="考试小结"></a>考试小结</h1><p>我做算法题竟然做出了当年语文考试的样子，最后时刻快交卷了，我还有好多策略原理题没写（别问为什么不写代码，问就是不会），就开始狂草起来，那速度，没得说，那字，估计也没得看，想的啥就写啥，跟语文考试写作文写不完的时候一模（mu）一样，就离谱。哎呀，我裂开了呀。最后还是没写完！</p>
-<p>其实还是知识点掌握的不够牢固。</p>
+              <p><img src="https://zhaowuya.s3.bitiful.net/homeletter.jpg" srcset="/img/loading.gif" lazyload alt="一家三口"></p>
+<p>母亲：“涯，这两天与你的谈话，以及你和张老师的通话，让我萌生了想写点东西给你看的念头。”</p>
+<p>第一部分 孤独</p>
+<p>好几年以前，我就在一本杂志上看到这样一句话：孤独，是一个人的狂欢；狂欢，是一群人的孤单。因为我觉得这句话很有道理，也好像触到了我的心弦，所以我便轻而易举地记住了它。当时的我也有很长一段时间的遗憾——-和你一样，遗憾我到向上中学来了没能遇见一个知音，准确地说，是没能遇见一个我满意的好朋友。读书时候的那些朋友，皆都因为地域的不同而变得遥远。就连西斋的K幺幺和洈水的Q妈妈，我都觉得和我不在同一个乡镇而导致我很多时候觉得自己是孤单的。比如，工作上的烦恼我跟她们倾诉起来就很麻烦，我得介绍我们学校的一些背景和大环境。再加上我们各自都有了家，所以约在一起的时间也只能是一年一次，甚至这都很难。那我工作之余没有晚自习的时候我就会觉得要是身边有个知音多好，可以一起散C步，一起相约去逛街。可事实就是身边没有啊，怎么办呢，那我就只有降低要求了。C妈妈虽然比我大了十岁，逛街显然不是最好的伴侣，但一起散步聊天还是不错的，年纪大有年纪大的好处。从此，我就和C妈妈成为了好朋友。</p>
+<p>你读六年级之后，我的生活中开始有了一些一个人的空间。那个时候，我一个人在家（你和你爸都有晚自习），我就时而k一会儿歌，时而看一下书或是我自己喜欢的电影电视剧。因为你爸不喜欢唱歌，而且也不喜欢听普通人k歌，那个时候，我就很珍惜一个人在家的时间，早早的关好门窗开始k歌了。那不就是一个人的狂欢吗？你看那麻将馆里的那一群群人，再看看那在一起吃夜宵，喝啤酒，称兄道弟狂欢到半夜的一堆堆人，那不就是一群人的孤单吗？当然这只是我——-一个经过岁月洗礼沉淀的人的认为，还有些阿Q吧！现在的我有了更多的自由时间，我都用来干一些必要的家务话和让我充实快乐的事情。书，我有时候读，有时候看。有声朗读我认为可以既可以训练普通话（练好了好带孙子）又可以排遣孤独。干家务的时候，打开蓝牙音箱听听歌，有时候甚至激来了兴致就k一把。每天坚持练一个小时的琴，练好一首曲子就交给老师检查。弹给自己听，活在自己的小宇宙里。</p>
+<p>你说你没有朋友，那就把你心目中的朋友拆分成几个，那既没有太降低你择友的标准，又可以多交到几个朋友。也就是说你踢足球就找踢足球的朋友，打游戏就找打游戏的朋友，说说知心话或是相约去旅行就找你那三个老铁呀，平时吃饭、逛超市啥的随便一个认识的人都可以搭个伴，只不过与这些流动朋友相处的前期多听少建议罢了，后来也就慢慢熟了，相处也就更随便了。</p>
+<p>第二部分 回报</p>
+<p>我听见你跟你老师的谈话中谈到“回报父母”这个话题，我想我们有必要向你清楚地说明这个问题。我很欣慰你是个善良而又懂事孝顺的孩子。你说你想回报父母，那你想用什么样的方式回报父母呢？是想早点挣钱给父母买一些礼物或是争取以后自己买房呢？这些我们都不好奇，这些也只是你所认为的回报，那你知道我们想要的你最好的回报是什么吗？今天我来告诉你吧！</p>
+<p>不管你以后的工资有多高，我们想要的不是你每年要给我们多大的红包或是多贵重的礼物，而是你所能做到的健康的生活方式。因为只有健康的生活习惯才能换取长久的幸福。和一份贵重的礼物比起来，我们宁愿要你一个不要频繁熬夜的就寝习惯；和一个百万甚至千万的大红包比起来，我们宁愿要你一个日后不抽烟不喝酒的好习惯；和一句节日的问候比起来，我们宁愿要你一个安全驾驶的好习惯······因为钱对于我们来说可多可少，我们的收入已足够我们的开支，再多的钱在我们眼中也只不过是夜空中的小星星——-只是在我们想看的时候就看看的东西，而你的安康才是我们冬日的暖阳——整天都想沐浴其中的暖阳。</p>
+<p>就目前来说，我们并不希望你早早的工作挣钱回报父母，而是希望你丰满你的羽翼，为以后的人生打下坚实的基础，练就过硬的本领才能搏击长空。十六年的学习储备（本科毕业）就去工作会注定了以后飞不了多高。虽然有很多人本科毕业就去工作，以后的路他们也肯定会走下去，但大多数人要困难得多。对这接下来的三年，我们做父母的抱有美好的憧憬，相信你也会不负众望。</p>
+<p>第三部分 规划</p>
+<p>我这里要说的规划指的是我的后半生规划。在维护好身体健康的基础上，我会在街河市按部就班的工作生活，一直到退休。退休以后就到你所生活的城市，在离你不远的地方租一套房。如果你的收入可观的话，买房不用我们的钱，或是少用我们的钱，那我们也许还有可能是买房而不是租房。当然这不重要，我都能接受。买房我有 10%的心理准备，租房的可能性要大得多。因为现在这房价的泡沫还很多，而年轻人积攒三四年的工资远远不够房价首付。几乎所有的孩子三十岁之前买房都是父母帮的。在你居住的小区内住着，有需求就过去给你们做做饭，搞搞卫生，带带孙子；没有需求我就在家过我的晚年生活。当然这只是我个人的规划，你爸爸的还说不准呢，他还想着退休后去打工挣钱呢！</p>
+<p>关于你谈女朋友的事，我们肯定是希望你能遇见一个相互爱慕的女孩，但我们不会去逼婚。我们鼓励你读研的时候碰到心仪的女孩就勇敢的去追，勇敢到不用担心她的家庭条件有多好或是多坏；勇敢到无论她有多优秀，你都会努力提升自己与她站在同一个平台上······谈朋友花钱是很正常的事，不要舍不得，更不要觉得用父母的钱不好意思。我决定把你每个月钱的额度上调，你自己花了也行，攒着也行。不要因为钱阻碍任何事情，不要为钱烦恼。培养大的格局，路才能走的更远。</p>
 
             </div>
             <hr>
@@ -284,7 +274,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
                     
                   </div>
                 
@@ -292,7 +282,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a>
                     
                   </div>
                 
@@ -309,18 +299,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/21/swingjdbcmysql/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">基于Java的校园招聘系统</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/06/25/solvepic/">
-                        <span class="hidden-mobile">个人博客图片存储问题</span>
+                      <a href="/2024/08/28/clothes/">
+                        <span class="hidden-mobile">理解服装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
