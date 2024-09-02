@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>二〇二五届校招</title>
+    <link href="/2024/09/02/campus2025/"/>
+    <url>/2024/09/02/campus2025/</url>
+    
+    <content type="html"><![CDATA[<h1 id="秋招信息"><a href="#秋招信息" class="headerlink" title="秋招信息"></a>秋招信息</h1><div class="table-container"><table><thead><tr><th>来源</th><th>网址</th></tr></thead><tbody><tr><td>B站Guangju</td><td><a href="https://www.wolai.com/curry00/i1vaQy88yECxie3N1PoBHH">25届秋招</a></td></tr><tr><td>GithubCampus2025</td><td><a href="https://campus2025.top">Campus2025</a></td></tr></tbody></table></div><h1 id="个人情况"><a href="#个人情况" class="headerlink" title="个人情况"></a>个人情况</h1><p>飞书云文档: <a href="https://ri8yidgzuju.feishu.cn/wiki/ItEJwZA1fimnHOkIYoOcASy1ndg?table=tbllV4bB1GNQcoTl&amp;view=vewNixVFJ9">‌‌‍‌‬‍‬⁠‍⁠‌⁠‌‌﻿﻿秋招投递记录</a></p><h1 id="流程总结"><a href="#流程总结" class="headerlink" title="流程总结"></a>流程总结</h1><p>大概就是找到校招的官网，完善简历，有内推码就写上，不写也行。接着就是测评（有些是最后测评），一般都是行测里的<strong>语言理解与表达</strong>，<strong>资料分析</strong>，<strong>图形推理</strong>。第一次写会有点懵，因为每题限时60s，但是做多了就熟练了。其实测评的占比不高，认真做了就行，非要追求一些小技巧，可以去B站看看视频<a href="https://www.bilibili.com/video/BV1f4411C7z5/?spm_id_from=333.337.search-card.all.click">刘文超资料分析</a>等一系列课程，看一点就好，或者直接去咸鱼或淘宝买北森的测评题库。</p><p>接下来是笔试，决定了你是否能参加一面，笔试分值占比大厂一般都是计算机基础30分，算法70分。所以算法还是很重要的，我开始就去背八股了，结果连一面都进不了，还谈什么Offer？</p><p>计算机基础一般包括网络、数据结构、数据库、操作系统、Linux、设计模式和对应的语言题。Java的这些我都是看的<a href="https://javaguide.cn/">JavaGuide</a>和<a href="https://javabetter.cn/xuexiluxian/">沉默王二</a>，基本上都会有覆盖，平时没事的时候可以刷着看一下，或者去<a href="https://www.nowcoder.com/exam/company">牛客网笔试真题</a>上做一下真题巩固一下。3道算法题，能AK的基本上都是拿过牌子的大佬，普通计科的同学大概做个1.5道就能进面了（有小数是因为可能有些测试用例过不了，只能过一些）。大厂算法题都是ACM模式，需要自己处理输入输出，不熟悉的同学可以去卡哥网站<a href="https://kamacoder.com/">卡码网KamaCoder</a>上练练手。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>面试</tag>
+      
+      <tag>工作</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>东方欲晓</title>
     <link href="/2024/08/31/sunrise/"/>
     <url>/2024/08/31/sunrise/</url>
@@ -79,7 +106,7 @@
   
   
   <entry>
-    <title>小米面试总结</title>
+    <title>小米实习一面</title>
     <link href="/2024/06/16/xiaomi/"/>
     <url>/2024/06/16/xiaomi/</url>
     
