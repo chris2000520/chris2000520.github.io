@@ -200,6 +200,172 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/02/springbootandmybatis/" target="_self">
+          Spring Boot整合Mybatis中易错点
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/06/02/springbootandmybatis/" target="_self">
+          
+          
+            
+          
+          时间格式前端，后端，数据库中的数据格式有太多，排列组合起来就更多了，目前使用较多的时间格式是这样的。
+
+前端使用yyyy-MM-dd HH:mm:ss格式传入。
+
+后端接收的时候用实体类接收，其中有一个属性为LocalDateTime，必须设置如下注解才能解析：
+
+
+12@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;, timezone 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-02 09:55" pubdate>
+              2023-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Spring-Boot/">Spring Boot</a>
+            
+              <a href="/tags/Mybatis/">Mybatis</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/02/JSON/" target="_self">
+          在前后端传值中JSON转化的坑
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/06/02/JSON/" target="_self">
+          
+          
+            
+          
+          记录本人真的是一个大冤种，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。
+前因在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到guid的值，其他两个却为null。请求体是这样写的：
+12345&#123;    &qu
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-01 22:33" pubdate>
+              2023-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JSON/">JSON</a>
+            
+              <a href="/tags/Spring-Boot/">Spring Boot</a>
+            
+              <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF/">前后端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/01/nsga/" target="_self">
+          NSGA-II
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/03/01/nsga/" target="_self">
+          
+          
+            
+          
+          NSGA支配与非支配对于多个目标函数的问题，我们一般不能找到都很满足条件的解，比如手机价格低，肯定性能就差，一部性价比高的手机就能支配绝大多数手机。
+一个解S1，对于任何一个目标函数，适应度都比另一个S2的要大，那么就说这个解S1严格支配S2。当然也有可能某一目标函数的适应度相等，那样就是非严格的支配。对于解S1，目标函数F1适应度优于解S2的目标函数F1适应度，但是在目标函数F2上，解S2优于解
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-01 11:10" pubdate>
+              2023-03-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/02/27/sbx/" target="_self">
           模拟二进制交叉算子
         </a>
@@ -448,167 +614,6 @@ Of
               <a href="/tags/Windows/">Windows</a>
             
               <a href="/tags/Office/">Office</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/06/28/homeletter/" target="_self">
-          家书
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/06/28/homeletter/" target="_self">
-          
-          
-            
-          
-          
-母亲：“涯，这两天与你的谈话，以及你和张老师的通话，让我萌生了想写点东西给你看的念头。”
-第一部分 孤独
-好几年以前，我就在一本杂志上看到这样一句话：孤独，是一个人的狂欢；狂欢，是一群人的孤单。因为我觉得这句话很有道理，也好像触到了我的心弦，所以我便轻而易举地记住了它。当时的我也有很长一段时间的遗憾——-和你一样，遗憾我到向上中学来了没能遇见一个知音，准确地说，是没能遇见一个我满意的好朋友。读书
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-06-28 00:30" pubdate>
-              2022-06-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/04/16/springsecurity/" target="_self">
-          Spring Security笔记
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/04/16/springsecurity/" target="_self">
-          
-          
-            
-          
-          简介Spring是非常流行和成功的Java应用开发框架，Spring Security正是Spring家族中的成员。Spring Security基于Spring框架，提供了一套Web应用安全性的完整解决方案。
-Spring Security是Spring家族中的一个安全管理框架，实际上，在Spring Boot出现之前，Spring Security就已经发展了多年了，但是使用的并不多，安全管理
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-04-16 10:53" pubdate>
-              2022-04-16
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Java/">Java</a>
-            
-              <a href="/tags/JavaWeb/">JavaWeb</a>
-            
-              <a href="/tags/Spring/">Spring</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/04/16/filter/" target="_self">
-          Filter过滤器和Listener监听器
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022/04/16/filter/" target="_self">
-          
-          
-            
-          
-          Filter简介Filter也称之为过滤器，它是Servlet技术中最实用的技术，web开发人员通过Filter技术，对web服务器管理的所有web资源：例如Jsp, Servlet, 静态图片文件或静态 html 文件等进行拦截，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。
-它主要用于对用户请求进行预处理，也可以对HttpServletRe
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-04-15 19:45" pubdate>
-              2022-04-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Java/">Java</a>
-            
-              <a href="/tags/JavaWeb/">JavaWeb</a>
             
           </div>
         
