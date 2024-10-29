@@ -203,7 +203,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      953 字
+      1.3k 字
     </span>
   
 
@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      13
        分钟
     </span>
   
@@ -285,9 +285,23 @@
 <li><code>using where</code></li>
 <li><code>distinct</code></li>
 </ul>
-<h1 id="聚簇索引和非聚簇索"><a href="#聚簇索引和非聚簇索" class="headerlink" title="聚簇索引和非聚簇索"></a>聚簇索引和非聚簇索</h1><h1 id="MySQL日志"><a href="#MySQL日志" class="headerlink" title="MySQL日志"></a>MySQL日志</h1><p>MySQL日志主要包括错误日志、查询日志、慢查询日志、事务日志、二进制日志几大类。</p>
-<p>MySQL数据库的<strong>数据备份、主备、主主、主从</strong>都离不开binlog，记录内容是语句的原始逻辑，类似于“给id=2这一行的name字段加 1”，属于<code>MySQL Server</code> 层，依靠 binlog 来同步数据，保证数据一致性。</p>
-<p>MySQL InnoDB 引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用 <strong>undo log(回滚日志)</strong> 来保证事务的<strong>原子性，</strong>拥有崩溃恢复能力。</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="InnoDB为什么使用B-树作为索引"><a href="#InnoDB为什么使用B-树作为索引" class="headerlink" title="InnoDB为什么使用B+树作为索引"></a>InnoDB为什么使用B+树作为索引</h2><ul>
+<li>二叉树 不平衡</li>
+<li>红黑树 高度太高</li>
+<li>哈希表 有哈希冲突，仅能满足<code>=</code>，<code>IN</code>，不支持<code>范围查询</code></li>
+<li>B树 存储同样元素，高度小，效率高</li>
+</ul>
+<p><code>MyISAM</code>在data目录下会看到3类文件：<code>.frm、.myi、.myd</code>，索引和数据是分开存储的，是<code>非聚集索引</code>。<br>（1）.frm，表定义，是描述表结构的文件</p>
+<p>（2）.myd，D表示数据信息文件，是表的数据文件</p>
+<p>（3）.myi，I表示索引信息文件，是表数据文件中任何索引的数据树</p>
+<p>存储引擎是InnoDB, 在data目录下会看到2类文件：<code>.frm、.ibd</code>，索引和数据是存储在一个文件，是<code>聚集索引</code>。<br>（1）*.frm，表结构的文件。</p>
+<p>（2）*.ibd，表数据和索引的文件。该表的索引(B+树)的每个非叶子节点存储索引，叶子节点存储索引和索引对应的数据</p>
+<p>InnoDB支持==事务和锁==，在工作中经常用到。</p>
+<p>为什么建议InnoDB表必须建主键，并且推荐使用<code>整形</code>的<code>自增</code>主键？比较速度快，存储空间小。</p>
+<h2 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h2><p>最左匹配原则，效率高，后面索引在索引树中没有任何顺序。</p>
+<h1 id="MySQL日志"><a href="#MySQL日志" class="headerlink" title="MySQL日志"></a>MySQL日志</h1><p>MySQL日志主要包括错误日志、查询日志、慢查询日志、事务日志、二进制日志几大类。</p>
+<p>MySQL数据库的<strong>数据备份、主备、主主、主从</strong>都离不开binlog，记录内容是语句的原始逻辑，类似于“给id=2这一行的name字段加 1”，属于<code>MySQL Server</code>层，依靠 binlog 来同步数据，保证数据一致性。</p>
+<p>MySQL的InnoDB引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用<strong>undo log(回滚日志)</strong>来保证事务的<strong>原子性，</strong>拥有崩溃恢复能力。</p>
 <h1 id="MVCC原理"><a href="#MVCC原理" class="headerlink" title="MVCC原理"></a>MVCC原理</h1><blockquote>
 <p>RC（Read Commit）读已提交，RR（Repeatable Read）可重复读</p>
 </blockquote>
