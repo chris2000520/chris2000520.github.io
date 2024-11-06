@@ -260,7 +260,7 @@
       <h1 class="index-header">
         
         <a href="/2023/06/02/JSON/" target="_self">
-          在前后端传值中JSON转化的坑
+          关于前后端传值中的JSON转化
         </a>
       </h1>
 
@@ -270,9 +270,8 @@
           
             
           
-          记录本人真的是一个大冤种，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。
-前因在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到guid的值，其他两个却为null。请求体是这样写的：
-12345&#123;    &qu
+          前因在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到guid的值，其他两个却为null。请求体是这样写的：
+12345&#123;    &quot;guid&quot;: &quot;13&quot;,    &quot;dName&quot;: &
         </a>
       </p>
 

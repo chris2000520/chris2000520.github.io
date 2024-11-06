@@ -20,7 +20,7 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-  <title>在前后端传值中JSON转化的坑 | 庐山烟雨浙江潮</title>
+  <title>关于前后端传值中的JSON转化 | 庐山烟雨浙江潮</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -181,7 +181,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="在前后端传值中JSON转化的坑">
+            <span class="h2" id="subtitle" title="关于前后端传值中的JSON转化">
               
             </span>
 
@@ -203,7 +203,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      469 字
+      414 字
     </span>
   
 
@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      4
        分钟
     </span>
   
@@ -243,29 +243,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">在前后端传值中JSON转化的坑</h1>
+            <h1 style="display: none">关于前后端传值中的JSON转化</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2024年8月27日 上午
+                  本文最后更新于：2024年11月6日 凌晨
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h1><p>本人真的是一个大冤种，这么多年了，各种各样的踩坑，这不今天又让我碰上了。客官不要着急，请听我细细分说。</p>
-<h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到<code>guid</code>的值，其他两个却为<code>null</code>。请求体是这样写的：</p>
+              <h1 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h1><p>在做Spring Boot整合Mybatis的一个小DEMO的时候，所有的分层，数据库配置都做好了，结果用Postman测试的新增的时候，传给后端一个JSON对象，后端拿不到值，离谱的是只能拿的到<code>guid</code>的值，其他两个却为<code>null</code>。请求体是这样写的：</p>
 <figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;guid&quot;</span>: <span class="hljs-string">&quot;13&quot;</span>,<br>    <span class="hljs-attr">&quot;dName&quot;</span>: <span class="hljs-string">&quot;小明&quot;</span>,<br>    <span class="hljs-attr">&quot;dAge&quot;</span>: <span class="hljs-number">17</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>接受的对象是这样定义的：</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> String guid;<br><br>    <span class="hljs-keyword">private</span> String dName;<br><br>    <span class="hljs-keyword">private</span> Integer dAge;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>在控制层我特意打印出接受的对象供Debug用，结果是这样的：</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Dog(guid=<span class="hljs-number">13</span>, dName=<span class="hljs-keyword">null</span>, dAge=<span class="hljs-keyword">null</span>)<br></code></pre></div></td></tr></table></figure>
-<p>我就在那里试了好久，一直到要吃饭了，我才恋恋不舍的离开，路上也百思不得其解。最后我看到一篇Blog后恍然大悟🤪，这才是根本原因，全世界的码农们一定要联合起来！<strong>多交流！</strong></p>
-<h2 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h2><blockquote>
+<p>我在此处调试了许久，一直到饭点，我才恋恋不舍地离开，路上也百思不得其解。直到晚上我看到一篇博客后恍然大悟，找到了根本原因。</p>
+<h1 id="后果"><a href="#后果" class="headerlink" title="后果"></a>后果</h1><blockquote>
 <p>在传输过程中dName的N，也从大写变为了小写，在进行测试时，发现所有格式为aBc的，经过JSON传值，都变为了abc，但是aaBc,经过传值后，依然是aaBc，可见，只有形如aBc这样，大写字母前只有一个小写字母的，才会出现JSON强行将大写转为小写的情况。</p>
 </blockquote>
-<p>这是前人总结的经验教训啊！若后人哀之而不鉴之，亦使后人而复哀后人也。所以：</p>
-<p><strong>不要</strong>这样定义类的属性尽量使用驼峰时前面至少有2个小写字母，比如：dogName，dogAge，或者在实体类的getter方法中，加上@JsonProperty(“dName”)，就可以了！</p>
-<h1 id="谨以此篇，敬伟大的前辈们！"><a href="#谨以此篇，敬伟大的前辈们！" class="headerlink" title="谨以此篇，敬伟大的前辈们！"></a>谨以此篇，敬伟大的前辈们！</h1>
+<p>前人总结的经验教训对于程序员来说参考价值极大，若后人哀之而不鉴之，亦使后人而复哀后人也。</p>
+<p>所以，<strong>不要</strong>这样定义类的属性尽量使用驼峰时前面至少有2个小写字母，比如：<code>dogName</code>，<code>dogAge</code>，或者在实体类的get方法上加上<code>@JsonProperty(&quot;dName&quot;)</code>。</p>
+<hr>
+<p>全世界的程序员，联合起来！</p>
+
             </div>
             <hr>
             <div>

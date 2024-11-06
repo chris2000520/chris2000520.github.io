@@ -213,7 +213,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      32
+      31
        分钟
     </span>
   
@@ -247,7 +247,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2024年10月28日 下午
+                  本文最后更新于：2024年11月6日 凌晨
                 
               </p>
             
@@ -281,10 +281,6 @@
 <td>垃圾回收算法</td>
 <td>M-S</td>
 <td>M-C</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -446,17 +442,15 @@
 <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p><strong>一、定义注解</strong></p>
 <p>使用<code>@interface</code>关键字来定义一个注解。例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;<br><span class="hljs-keyword">import</span> java.lang.annotation.Retention;<br><span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;<br><span class="hljs-keyword">import</span> java.lang.annotation.Target;<br><br><span class="hljs-meta">@Target(&#123;ElementType.METHOD, ElementType.FIELD&#125;)</span><br><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> MyCustomAnnotation &#123;<br>    <span class="hljs-function">String <span class="hljs-title">value</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><ol>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><blockquote>
+<p>JDK原生动态代理是Java原生支持的，不需要任何外部依赖，但是它只能基于接口进行代理；CGLIB通过继承的方式进行代理，无论目标对象有没有实现接口都可以代理，但是无法处理final的情况。</p>
+</blockquote>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><ol>
 <li>定义一个要代理的接口</li>
 <li>实现<code>InvocationHandler</code>接口中的<code>invoke</code>方法，表示调用接口后转发到此实现</li>
 <li>通过<code>Proxy.newProxyInstance</code> 方法创建了一个代理实例 <code>hello</code></li>
 </ol>
-<h3 id="参数解析"><a href="#参数解析" class="headerlink" title="参数解析"></a>参数解析</h3><ol>
-<li><strong>ClassLoader loader</strong> <strong>描述</strong>：用于定义代理类的类加载器。一般可以使用目标接口的类加载器，例如 <code>Hello.class.getClassLoader()</code></li>
-<li><strong>Class&lt;?&gt;[] interfaces</strong> <strong>描述</strong>：一个包含代理实例所实现接口的数组。在这个例子中，<code>new Class[] &#123; Hello.class &#125;</code> 表示代理将实现 <code>Hello</code> 接口</li>
-<li><strong>InvocationHandler h</strong> <strong>描述</strong>：实现了<code>InvocationHandler</code> 接口的实例</li>
-</ol>
-
+<h3 id="CGLIB"><a href="#CGLIB" class="headerlink" title="CGLIB"></a>CGLIB</h3>
             </div>
             <hr>
             <div>
