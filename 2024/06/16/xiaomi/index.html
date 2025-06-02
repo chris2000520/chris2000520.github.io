@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>小米实习一面 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="小米实习一面">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-06-16 14:19" pubdate>
+        2024年6月16日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小米实习一面</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年10月29日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><h2 id="Hash特点"><a href="#Hash特点" class="headerlink" title="Hash特点"></a>Hash特点</h2><ol>
+<li>从哈希值不可以反向推导</li>
+<li>输入数据变化，哈希后会得到不同的值</li>
+<li>哈希算法高效</li>
+<li>冲突概率要小</li>
+<li>输入空间值映射到哈希空间内，根据抽屉原理一定会存在冲突</li>
+</ol>
+<h2 id="HashMap-1"><a href="#HashMap-1" class="headerlink" title="HashMap"></a>HashMap</h2><p>扰动函数，目的是使分布更均匀。<code>HashMap</code>可以存储null的key和value，但null作为键只能有一个，null作为值可以有多个。</p>
+<p>默认长度：16</p>
+<p>当有冲突时，采用链表结构，当链表长度达到8时，链表结构将升级为红黑树。</p>
+<h3 id="PUT原理"><a href="#PUT原理" class="headerlink" title="PUT原理"></a>PUT原理</h3><ol>
+<li>获取哈希值</li>
+<li>扰动函数，更散列</li>
+<li>构造出node对象</li>
+<li>路由算法，<code>table.length-1 &amp; node.hash</code>，00001111，01000010，2</li>
+</ol>
+<h3 id="哈希碰撞"><a href="#哈希碰撞" class="headerlink" title="哈希碰撞"></a>哈希碰撞</h3><p>Next链表指向新的node，如果链表过长，查找效率低。</p>
+<h3 id="扩容原理"><a href="#扩容原理" class="headerlink" title="扩容原理"></a>扩容原理</h3><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DEFAULT_INITIAL_CAPACITY</td>
+<td>默认缺省数组大小，2的4次方，aka16</td>
+</tr>
+<tr>
+<td align="center">MAXINUM_CAPACITY</td>
+<td>最大长度，2的30次方</td>
+</tr>
+<tr>
+<td align="center">DEFAULT_LOAD_FACTOR</td>
+<td>负载因子，0.75</td>
+</tr>
+<tr>
+<td align="center">TREEIFY_THRESHOLD</td>
+<td>树化阈值参数，链表元素超过8后将链表可能升级成树，避免链化严重</td>
+</tr>
+<tr>
+<td align="center">UNTREEIFY_THRESHOLD</td>
+<td>链化阈值6</td>
+</tr>
+<tr>
+<td align="center">MIN_TREEIFY_CAPACITY</td>
+<td>树化另一个参数，此时的容量必须不小于64</td>
+</tr>
+</tbody></table>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><h3 id="size"><a href="#size" class="headerlink" title="size"></a>size</h3><h3 id="modCount"><a href="#modCount" class="headerlink" title="modCount"></a>modCount</h3><h3 id="threshold"><a href="#threshold" class="headerlink" title="threshold"></a>threshold</h3><p>$$<br>\large threshold &#x3D; capacity \times loadFactor<br>$$</p>
+<h3 id="loadFactor"><a href="#loadFactor" class="headerlink" title="loadFactor"></a>loadFactor</h3><h3 id="tableSizeFor"><a href="#tableSizeFor" class="headerlink" title="tableSizeFor"></a>tableSizeFor</h3><p>返回一个2的次方大小容量，对于给定的容量，向上取结果，例如输入17，输出32。</p>
+<h2 id="Put方法"><a href="#Put方法" class="headerlink" title="Put方法"></a>Put方法</h2><p>hash函数：将高16位与低16位做异或运算</p>
+<h2 id="Resize方法"><a href="#Resize方法" class="headerlink" title="Resize方法"></a>Resize方法</h2><p>为什么需要扩容？</p>
+<p>如果元素很多的话，链化非常严重，每次查找时间接近$O(n)$。</p>
+<p><strong>有两种情况会调用 resize 方法：</strong></p>
+<ol>
+<li>第一次调用 HashMap 的 put 方法时，会调用 resize 方法对 table 数组进行初始化，如果不传入指定值，默认大小为 16，<code>newCap = DEFAULT_INITAL_CAPACITY;//16</code>。</li>
+<li>扩容时会调用 resize，即 size &gt; threshold 时，table 数组大小翻倍，<code>newCap = oldCap &lt;&lt; 1</code>。</li>
+</ol>
+<p>每次扩容之后容量都是<strong>翻倍</strong>。扩容后要将原数组中的所有元素找到在新数组中合适的位置。计算<code>newCap</code>table</p>
+<p>表大小，计算<code>newThr</code>需要扩容的阈值。</p>
+<h3 id="数组赋值"><a href="#数组赋值" class="headerlink" title="数组赋值"></a>数组赋值</h3><p>旧数据移动到新HashMap中的位置，<code>newTab[e.hash &amp; (newCap-1)]</code>。低位链表，高位链表：存放在扩容之后的数组的下标位置 + 扩容之前的数组的长度，让分布更加均匀。</p>
+<h2 id="Get方法"><a href="#Get方法" class="headerlink" title="Get方法"></a>Get方法</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">e = getNode(hash(key), key)) == <span class="hljs-literal">null</span> ? <span class="hljs-literal">null</span> : e.value;<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="getNode方法"><a href="#getNode方法" class="headerlink" title="getNode方法"></a>getNode方法</h3><ul>
+<li>tab：引用当前HashMap的散列表</li>
+<li>first：桶位中的头元素</li>
+<li>n：table数组长度</li>
+</ul>
+<p>第一种情况：定位出来的桶位元素就是要找的key，直接返回first</p>
+<p>第二种情况：桶位后面升级为红黑树</p>
+<p>第三种情况：桶位后面升级为链表</p>
+<h2 id="Remove方法"><a href="#Remove方法" class="headerlink" title="Remove方法"></a>Remove方法</h2><p>先查找，后删除，有三种情况。</p>
+<h3 id="removeNode方法"><a href="#removeNode方法" class="headerlink" title="removeNode方法"></a>removeNode方法</h3><p><code>matchValue</code>:</p>
+<p><code>movable</code>:</p>
+<p>第一种情况：树节点，调用树节点移出操作。</p>
+<p>第二种情况：node等于p，直接将node下一个元素放入桶位中。</p>
+<p>第二种情况：链表，三个元素去除中间那一个，将当前元素p的下一个元素设置成node（要删除元素）的下一个元素。</p>
+<h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>连续内存，顺序存储，同一类型数据。</p>
+<p><code>ArrayList</code>的底层是数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。在添加大量元素前，应用程序可以使用<code>ensureCapacity</code>操作来增加 <code>ArrayList</code> 实例的容量。这可以减少递增式再分配的数量。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 默认容量是10</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">DEFAULT_CAPACITY</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br><span class="hljs-comment">// 如果容量为0的时候，就返回这个数组</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;<br><span class="hljs-comment">// 使用默认容量10时，返回这个数组</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;<br><span class="hljs-comment">// 元素存放的数组</span><br><span class="hljs-keyword">transient</span> Object[] elementData;<br><span class="hljs-comment">// 元素的个数</span><br><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> size;<br><span class="hljs-comment">// 记录被修改的次数</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">transient</span> <span class="hljs-type">int</span> <span class="hljs-variable">modCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><span class="hljs-comment">// 数组的最大值</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">MAX_ARRAY_SIZE</span> <span class="hljs-operator">=</span> Integer.MAX_VALUE - <span class="hljs-number">8</span><br><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="LinkedList区别"><a href="#LinkedList区别" class="headerlink" title="LinkedList区别"></a>LinkedList区别</h2><h1 id="秒杀系统"><a href="#秒杀系统" class="headerlink" title="秒杀系统"></a>秒杀系统</h1><p>从整体上来说，秒杀主要解决两个问题，<strong>一个是并发读，一个是并发写</strong>，同时还有兜底防范。<strong>稳，准，快</strong>。</p>
+<h2 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h2><ul>
+<li>上线之前，做好压力测试</li>
+<li>服务降级，遇到紧急情况可以快速处理</li>
+</ul>
+<h2 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h2><p>防止超卖，要在秒杀活动建立之前就把库存同步到redis中。</p>
+<ol>
+<li>判断库存名额是否充足</li>
+<li>减少库存名额，扣减成功就是抢到</li>
+</ol>
+<p>我们要保证两种操作的原子性。</p>
+<p>防止少买，我们扣减库存后，发送消息队列，要有重试策略，如果发送消息失败，重试，超过次数后，则持久化磁盘，由补偿服务来进行扫描，后续业务。类似于MySQL日志持久化。</p>
+<h2 id="高性能"><a href="#高性能" class="headerlink" title="高性能"></a>高性能</h2><ul>
+<li><p>请求限流，用户ID限流和用户IP限流。</p>
+</li>
+<li><p>Redis+热数据+消息队列</p>
+</li>
+<li><p>页面静态化</p>
+</li>
+<li><p>CDN加速，就近获取资源</p>
+</li>
+<li><p>集群负载均衡</p>
+</li>
+<li><p>秒杀按钮置灰，限流，防抖</p>
+</li>
+</ul>
+<h1 id="SpringBoot自动装配"><a href="#SpringBoot自动装配" class="headerlink" title="SpringBoot自动装配"></a>SpringBoot自动装配</h1><ol>
+<li>什么是SpringBoot自动装配？</li>
+<li>SpringBoot是如何实现自动装配的？如何实现按需加载？</li>
+<li>如何实现一个 Starter？</li>
+</ol>
+<p>使用Spring  MVC的时候，一定有被 XML 配置统治的恐惧。即使Spring后面引入了基于注解的配置，我们在开启某些Spring特性或者引入第三方依赖的时候，还是需要用XML或Java进行显式配置。</p>
+<ol>
+<li><strong>通过注解或者一些简单的配置就能在 Spring Boot 的帮助下实现某块功能。</strong></li>
+<li></li>
+</ol>
+<h1 id="数据库日志"><a href="#数据库日志" class="headerlink" title="数据库日志"></a>数据库日志</h1><p>MySQL中InnoDB引擎自带日志，undo redo。</p>
+<ol>
+<li>数据定义语言DDL</li>
+</ol>
+<p> 数据定义语言DDL用来创建数据库中的各种对象—–表、视图、索引、同义词、聚簇等如： </p>
+<p> CREATE TABLE&#x2F;VIEW&#x2F;INDEX&#x2F;SYN&#x2F;CLUSTER </p>
+<p> DDL操作是隐性提交的！不能rollback </p>
+<p> 2 .数据操纵语言DML </p>
+<p> 数据操纵语言DML主要有三种形式： </p>
+<ol>
+<li><p>插入：INSERT </p>
+</li>
+<li><p>更新：UPDATE </p>
+</li>
+<li><p>删除：DELETE</p>
+</li>
+</ol>
+<ol start="3">
+<li>数据查询语言DQL</li>
+</ol>
+<p> 数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE子句组成的查询块： </p>
+<p> SELECT &lt;字段名表&gt; </p>
+<p> FROM &lt;表或视图名&gt; </p>
+<p> WHERE &lt;查询条件&gt; </p>
+<ol start="4">
+<li>数据控制语言DCL</li>
+</ol>
+<p> 数据控制语言DCL用来授予或回收访问数据库的某种特权，并控制数据库操纵事务发生的时间及效果，对数据库实行监视等。如： </p>
+<ol>
+<li><p>GRANT：授权。 </p>
+</li>
+<li><p>ROLLBACK [WORK] TO [SAVEPOINT]：回退到某一点。</p>
+</li>
+</ol>
+<p> 回滚—ROLLBACK </p>
+<p> 回滚命令使数据库状态回到上次最后提交的状态。其格式为： </p>
+<p> SQL&gt;ROLLBACK </p>
+<h2 id="Undo-Log"><a href="#Undo-Log" class="headerlink" title="Undo Log"></a>Undo Log</h2><h2 id="Redo-Log"><a href="#Redo-Log" class="headerlink" title="Redo Log"></a>Redo Log</h2><h2 id="Bin-Log"><a href="#Bin-Log" class="headerlink" title="Bin Log"></a>Bin Log</h2><h1 id="MySQL调优"><a href="#MySQL调优" class="headerlink" title="MySQL调优"></a>MySQL调优</h1><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
+<li>二叉树 不平衡</li>
+<li>红黑树 高度太高</li>
+<li>哈希表 有哈希冲突，仅能满足<code>=</code>，<code>IN</code>，不支持<code>范围查询</code></li>
+<li>B树 存储同样元素，高度小，效率高</li>
+</ul>
+<p><code>存储引擎是myisam, 在data目录下会看到3类文件</code>：<strong>.frm、.myi、.myd</strong>，索引和数据是分开存储的，是<code>非聚集索引</code>。<br>（1）*.frm–表定义，是描述表结构的文件。</p>
+<p>（2）*.MYD–”D”数据信息文件，是表的数据文件。</p>
+<p>（3）*.MYI–”I”索引信息文件，是表数据文件中任何索引的数据树</p>
+<p><code>存储引擎是InnoDB</code>, <code>在data目录下会看到2类文件</code>：<strong>.frm、.ibd</strong>，索引和数据是存储在一个文件，是<code>聚集索引</code>。<br>（1）*.frm–表结构的文件。</p>
+<p>（2）*.ibd–表数据和索引的文件。该表的索引(B+树)的每个非叶子节点存储索引，叶子节点存储索引和索引对应的数据</p>
+<p>InnoDB支持&#x3D;&#x3D;事务和锁&#x3D;&#x3D;，在工作中经常用到。</p>
+<p>为什么建议InnoDB表必须建主键，并且推荐使用<code>整形</code>的<code>自增</code>主键？比较速度快，存储空间小。</p>
+<h2 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h2><p>最左匹配原则，效率高，后面索引在索引树中没有任何顺序。</p>
+<h2 id="禁止超过三张表多表关联"><a href="#禁止超过三张表多表关联" class="headerlink" title="禁止超过三张表多表关联"></a>禁止超过三张表多表关联</h2><p>分库分表，每张表上数据非常多。数据库扩容相对于Java扩容要难很多。</p>
+<h2 id="内部组件结构"><a href="#内部组件结构" class="headerlink" title="内部组件结构"></a>内部组件结构</h2><h3 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h3><p>系统配置表，字典表这些几乎不怎么变化的数据表适用于查询缓存，现在基本上在redis中使用，在8.0中已被弃用。</p>
+<h3 id="执行原理"><a href="#执行原理" class="headerlink" title="执行原理"></a>执行原理</h3><h4 id="连接器"><a href="#连接器" class="headerlink" title="连接器"></a>连接器</h4><h4 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h4><h4 id="优化器"><a href="#优化器" class="headerlink" title="优化器"></a>优化器</h4><h4 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h4><h4 id="InnoDB存储引擎"><a href="#InnoDB存储引擎" class="headerlink" title="InnoDB存储引擎"></a>InnoDB存储引擎</h4><h4 id="Buffer-Pool缓冲池"><a href="#Buffer-Pool缓冲池" class="headerlink" title="Buffer Pool缓冲池"></a>Buffer Pool缓冲池</h4><p>检查磁盘中有无数据，加载到池中来。</p>
+<h1 id="Redis分布式锁"><a href="#Redis分布式锁" class="headerlink" title="Redis分布式锁"></a>Redis分布式锁</h1><h1 id="数据库锁"><a href="#数据库锁" class="headerlink" title="数据库锁"></a>数据库锁</h1><h1 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h1><h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h1 id="操作系统内存屏障"><a href="#操作系统内存屏障" class="headerlink" title="操作系统内存屏障"></a>操作系统内存屏障</h1><h1 id="链表重排"><a href="#链表重排" class="headerlink" title="链表重排"></a>链表重排</h1>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

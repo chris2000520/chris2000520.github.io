@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>Shiro权限管理 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Shiro权限管理">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-15 12:16" pubdate>
+        2022年1月15日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Shiro权限管理</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Shiro"><a href="#Shiro" class="headerlink" title="Shiro"></a>Shiro</h1><h2 id="权限管理概念"><a href="#权限管理概念" class="headerlink" title="权限管理概念"></a>权限管理概念</h2><p>基本上涉及到用户参与的系统都要进行权限管理，权限管理属于系统安全的范畴，权限管理实现<code>对用户访问系统的控制</code>，按照安全规则或者<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/160028.htm">安全策略</a>控制用户可以访问而且只能访问自己被授权的资源。权限管理包括用户<code>身份认证</code>和<code>授权</code>两部分，简称<code>认证授权</code>。对于需要访问控制的资源用户首先经过身份认证，认证通过后用户具有该资源的访问权限方可访问。</p>
+<h2 id="Shiro-Core"><a href="#Shiro-Core" class="headerlink" title="Shiro Core"></a>Shiro Core</h2><h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3><p><code>Subject即主体</code>，外部应用与subject进行交互，subject记录了当前操作用户，将用户的概念理解为当前操作的主体，可能是一个通过浏览器请求的用户，也可能是一个运行的程序。	Subject在shiro中是一个接口，接口中定义了很多认证授相关的方法，外部程序通过subject进行认证授，而subject是通过SecurityManager安全管理器进行认证授权</p>
+<h3 id="SecurityManager"><a href="#SecurityManager" class="headerlink" title="SecurityManager"></a>SecurityManager</h3><p><code>SecurityManager即安全管理器</code>，对全部的subject进行安全管理，它是shiro的核心，负责对所有的subject进行安全管理。通过SecurityManager可以完成subject的认证、授权等，实质上SecurityManager是通过Authenticator进行认证，通过Authorizer进行授权，通过SessionManager进行会话管理等。</p>
+<p><code>SecurityManager是一个接口，继承了Authenticator, Authorizer, SessionManager这三个接口。</code></p>
+<h3 id="Authenticator"><a href="#Authenticator" class="headerlink" title="Authenticator"></a>Authenticator</h3><p><code>Authenticator即认证器</code>，对用户身份进行认证，Authenticator是一个接口，shiro提供ModularRealmAuthenticator实现类，通过ModularRealmAuthenticator基本上可以满足大多数需求，也可以自定义认证器。</p>
+<h3 id="Authorizer"><a href="#Authorizer" class="headerlink" title="Authorizer"></a>Authorizer</h3><p><code>Authorizer即授权器</code>，用户通过认证器认证通过，在访问功能时需要通过授权器判断用户是否有此功能的操作权限。</p>
+<h3 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h3><p><code>Realm即领域</code>，相当于datasource数据源，securityManager进行安全认证需要通过Realm获取用户权限数据，比如：如果用户身份数据在数据库那么realm就需要从数据库获取用户身份信息。</p>
+<blockquote>
+<p>注意：不要把realm理解成只是从数据源取数据，在realm中还有认证授权校验的相关的代码。</p>
+</blockquote>
+<h3 id="SessionManager"><a href="#SessionManager" class="headerlink" title="SessionManager"></a>SessionManager</h3><p><code>sessionManager即会话管理</code>，shiro框架定义了一套会话管理，它不依赖web容器的session，所以shiro可以使用在非web应用上，也可以将分布式应用的会话集中在一点管理，此特性可使它实现单点登录。</p>
+<h3 id="SessionDAO"><a href="#SessionDAO" class="headerlink" title="SessionDAO"></a>SessionDAO</h3><p><code>SessionDAO即会话dao</code>，是对session会话操作的一套接口，比如要将session存储到数据库，可以通过jdbc将会话存储到数据库。</p>
+<h3 id="CacheManager"><a href="#CacheManager" class="headerlink" title="CacheManager"></a>CacheManager</h3><p><code>CacheManager即缓存管理</code>，将用户权限数据存储在缓存，这样可以提高性能。</p>
+<h3 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h3><p>​	<code>Cryptography即密码管理</code>，shiro提供了一套加密&#x2F;解密的组件，方便开发。比如提供常用的散列、加&#x2F;解密等功能。</p>
+<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><h4 id="1-创建项目并引入依赖"><a href="#1-创建项目并引入依赖" class="headerlink" title="1. 创建项目并引入依赖"></a>1. 创建项目并引入依赖</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.shiro<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>shiro-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.5.3<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="2-引入shiro配置文件并配置"><a href="#2-引入shiro配置文件并配置" class="headerlink" title="2.引入shiro配置文件并配置"></a>2.引入shiro配置文件并配置</h4><figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[users]</span><br><span class="hljs-attr">zwy</span>=<span class="hljs-number">123</span><br><span class="hljs-attr">fhy</span>=<span class="hljs-number">456</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="3-认证代码"><a href="#3-认证代码" class="headerlink" title="3.认证代码"></a>3.认证代码</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestAuthenticator</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//创建securityManager</span><br>        <span class="hljs-type">DefaultSecurityManager</span> <span class="hljs-variable">defaultSecurityManager</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultSecurityManager</span>();<br>        defaultSecurityManager.setRealm(<span class="hljs-keyword">new</span> <span class="hljs-title class_">IniRealm</span>(<span class="hljs-string">&quot;classpath:shiro.ini&quot;</span>));<br>        <span class="hljs-comment">//将安装工具类中设置默认安全管理器</span><br>        SecurityUtils.setSecurityManager(defaultSecurityManager);<br>        <span class="hljs-comment">//获取主体对象</span><br>        <span class="hljs-type">Subject</span> <span class="hljs-variable">subject</span> <span class="hljs-operator">=</span> SecurityUtils.getSubject();<br>        <span class="hljs-comment">//创建token令牌</span><br>        <span class="hljs-type">UsernamePasswordToken</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UsernamePasswordToken</span>(<span class="hljs-string">&quot;zwy&quot;</span>, <span class="hljs-string">&quot;123&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            subject.login(token);<span class="hljs-comment">//用户登录</span><br>            System.out.println(<span class="hljs-string">&quot;登录成功！&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (UnknownAccountException e) &#123;<br>            e.printStackTrace();<br>            System.out.println(<span class="hljs-string">&quot;用户名错误!!&quot;</span>);<br>        &#125;<span class="hljs-keyword">catch</span> (IncorrectCredentialsException e)&#123;<br>            e.printStackTrace();<br>            System.out.println(<span class="hljs-string">&quot;密码错误!!!&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>分析源码可知：</p>
+<ol>
+<li>最终执行用户名比较<code>SimpleAccountRealm</code>，<code>doGetAuthenticationinfo</code>在这个方法中完成用户名校验。</li>
+<li>最终密码校验是在<code>AuthenticatingRealm</code>中<code>assertCredentialIsMatch</code>。</li>
+</ol>
+<p>总结，<code>AuthenticatingRealm</code>认证realm，<code>doGetAuthenticationInfo</code>，<code>AuthorizingRealm</code>授权realm，<code>doGetAuthorizzationInfo</code>。</p>
+<h3 id="MD5和Salt"><a href="#MD5和Salt" class="headerlink" title="MD5和Salt"></a>MD5和Salt</h3><p><code>MD5</code>算法，一般用于加密或者签名（校验和），特点是：MD5算法不可逆，内容相同无论执行多少次MD5生成的结果始终是一致的。可以用来校验文件是否完整（验证游戏完整性）。网站上有的解密算法，都是通过穷举法来的，比如一些简单的密码，“123”，“123456”等等。所以密码最好加上自己的一些信息。<strong>生成的结果： 不管源文件有多大多小，始终是一个16进制32位长度字符串。</strong></p>
+<p><code>Salt</code>盐，给用户密码加点盐，就是在原先的明文密码后加一串随机字符串，更咸了，密码也就更复杂了一些。所以在数据库里要加盐，并在数据库中保存下来。虽然不能确保系统的百分之百安全，但是能更加相对安全，因为不知道盐加在那个位置，生成了几次。</p>
+<ol>
+<li>用户注册时，通过服务层加盐，确定业务规则，并将盐保存在数据库中。</li>
+<li>用户登录时，首先根据用户名查询是否存在，然后比较密码，此时也需要加保存在数据库中的盐，注意业务规则要一致，比如注册时加在后面，登陆认证时也要加在后面。</li>
+</ol>
+<p>所以要在注入realm之后根据需要是否使用MD5加密，是否加盐，散列多少次都需要明确指出。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//创建安全管理器</span><br>     <span class="hljs-type">DefaultSecurityManager</span> <span class="hljs-variable">defaultSecurityManager</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultSecurityManager</span>();<br><br>     <span class="hljs-comment">//注入realm</span><br>     <span class="hljs-type">CustomerMd5Realm</span> <span class="hljs-variable">realm</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomerMd5Realm</span>();<br><br>     <span class="hljs-comment">//设置realm使用hash凭证匹配器</span><br>     <span class="hljs-type">HashedCredentialsMatcher</span> <span class="hljs-variable">credentialsMatcher</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashedCredentialsMatcher</span>();<br>     <span class="hljs-comment">//使用算法</span><br>     credentialsMatcher.setHashAlgorithmName(<span class="hljs-string">&quot;md5&quot;</span>);<br>     <span class="hljs-comment">//散列次数</span><br>     credentialsMatcher.setHashIterations(<span class="hljs-number">1024</span>);<br>     realm.setCredentialsMatcher(credentialsMatcher);<br>     defaultSecurityManager.setRealm(realm);<br><br>     <span class="hljs-comment">//将安全管理器注入安全工具</span><br>     SecurityUtils.setSecurityManager(defaultSecurityManager);<br><br>     <span class="hljs-comment">//通过安全管理器获取subject</span><br>     <span class="hljs-type">Subject</span> <span class="hljs-variable">subject</span> <span class="hljs-operator">=</span> SecurityUtils.getSubject();<br></code></pre></div></td></tr></table></figure>
+
+<p>指出加盐。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">protected</span> AuthenticationInfo <span class="hljs-title function_">doGetAuthenticationInfo</span><span class="hljs-params">(AuthenticationToken token)</span> <span class="hljs-keyword">throws</span> AuthenticationException &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">principal</span> <span class="hljs-operator">=</span> (String) token.getPrincipal();<br>        <span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;zwy&quot;</span>.equals(principal))&#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;e4f9bf3e0c58f045e62c23c533fcf633&quot;</span>;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">salt</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;X0*7ps&quot;</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleAuthenticationInfo</span>(principal,password, ByteSource.Util.bytes(salt),<span class="hljs-built_in">this</span>.getName());<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><p>授权，即访问控制，控制谁能访问哪些资源。主体进行身份认证后需要分配权限方可访问系统的资源，对于某些资源没有权限是无法访问的。</p>
+<h3 id="关键对象"><a href="#关键对象" class="headerlink" title="关键对象"></a>关键对象</h3><p><strong>授权可简单理解为Who对What进行How操作：</strong></p>
+<p><code>Who，即主体（Subject）</code>，主体需要访问系统中的资源。</p>
+<p><code>What，即资源（Resource)</code>，如系统菜单、页面、按钮、类方法、系统商品信息等。资源包括<code>资源类型</code>和<code>资源实例</code>，比如<code>商品信息为资源类型</code>，类型为t01的商品为<code>资源实例</code>，编号为001的商品信息也属于资源实例。</p>
+<p><code>How，权限/许可（Permission)</code>，规定了主体对资源的操作许可，权限离开资源没有意义，如用户查询权限、用户添加权限、某个类方法的调用权限、编号为001用户的修改权限等，通过权限可知主体对哪些资源都有哪些操作许可。</p>
+<h3 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h3><p><img src="/img/pic030.jpg" srcset="/img/loading.gif" lazyload alt="授权流程"></p>
+<h3 id="授权方式"><a href="#授权方式" class="headerlink" title="授权方式"></a>授权方式</h3><ul>
+<li><p><strong>基于角色的访问控制</strong></p>
+<ul>
+<li><p>RBAC基于角色的访问控制（Role-Based Access Control）是以角色为中心进行访问控制</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(subject.hasRole(<span class="hljs-string">&quot;admin&quot;</span>))&#123;<br>   <span class="hljs-comment">//操作什么资源</span><br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>基于资源的访问控制</strong></p>
+<ul>
+<li><p>RBAC基于资源的访问控制（Resource-Based Access Control）是以资源为中心进行访问控制</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(subject.isPermission(<span class="hljs-string">&quot;user:update:01&quot;</span>))&#123; <span class="hljs-comment">//资源实例</span><br>  <span class="hljs-comment">//对01用户进行修改</span><br>&#125;<br><span class="hljs-keyword">if</span>(subject.isPermission(<span class="hljs-string">&quot;user:update:*&quot;</span>))&#123;  <span class="hljs-comment">//资源类型</span><br>  <span class="hljs-comment">//对01用户进行修改</span><br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="权限字符串"><a href="#权限字符串" class="headerlink" title="权限字符串"></a>权限字符串</h3><p>​		权限字符串的规则是：<strong>资源标识符：操作：资源实例标识符</strong>，意思是对哪个资源的哪个实例具有什么操作，“:”是资源&#x2F;操作&#x2F;实例的分割符，权限字符串也可以使用*通配符。</p>
+<p>例子：</p>
+<ul>
+<li>用户创建权限：user:create，或user:create:*</li>
+<li>用户修改实例001的权限：user:update:001</li>
+<li>用户实例001的所有权限：user:*：001</li>
+</ul>
+<h3 id="编程实现方式"><a href="#编程实现方式" class="headerlink" title="编程实现方式"></a>编程实现方式</h3><ul>
+<li><p>编程式</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Subject</span> <span class="hljs-variable">subject</span> <span class="hljs-operator">=</span> SecurityUtils.getSubject();<br><span class="hljs-keyword">if</span> (subject.hasRole(<span class="hljs-string">&quot;admin&quot;</span>))&#123;<br>    <span class="hljs-comment">//有权限</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">//无权限</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>注解式</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@RequiresRoles(&quot;admin&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">hello</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-comment">//有权限</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>标签式</p>
+<figure class="highlight jsp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs jsp">JSP标签：在JSP页面通过相应的标签完成<br>&lt;shiro:hasRole name=<span class="hljs-string">&quot;admin&quot;</span>&gt;<br>    &lt;!- 有权限-&gt;<br>&lt;/shiro:hasRole&gt;<br>注意！Thymeleaf中使用shiro需要额外集成<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+<h3 id="开发授权"><a href="#开发授权" class="headerlink" title="开发授权"></a>开发授权</h3>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/10/jwt/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JWT学习</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/28/subnet-mask/">
+                        <span class="hidden-mobile">子网掩码的理解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>模拟退火算法 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="模拟退火算法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-10-13 20:20" pubdate>
+        2022年10月13日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">模拟退火算法</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="模拟退火算法（Simulated-Annealing）"><a href="#模拟退火算法（Simulated-Annealing）" class="headerlink" title="模拟退火算法（Simulated Annealing）"></a>模拟退火算法（Simulated Annealing）</h1><h2 id="1-是什么？怎么来的？"><a href="#1-是什么？怎么来的？" class="headerlink" title="1.是什么？怎么来的？"></a>1.是什么？怎么来的？</h2><p>模拟退火是模拟物理上退火方法，通过N次迭代（退火），逼近函数的上的一个<strong>最值</strong>（最大或者最小值）。尽管可能不是最优解，但得到的是一个可行解。</p>
+<p>很多优秀算法的设计灵感都源于自然界和社会生活当中，比如蚁群算法，遗传算法等等，模拟退火算法也不例外，在物理退火当中，先将物体加温，最后让物体自然冷却，缓缓降温，冷却后可达到最低能量状态，较为柔韧，变得更容易弯折，适用于制作各种饰品。哈哈哈大自然都知道慢工出细活😁！</p>
+<p><strong>物理退火分为三个过程</strong></p>
+<ul>
+<li>加温过程——增强粒子的热运动，消除系统原先可能存在的非均匀态；</li>
+<li>等温过程——对于与环境换热而温度不变的封闭系统，系统状态的自发变化总是朝自由能减少的方向进行，当自由能达到最小时，系统达到平衡态；</li>
+<li>冷却过程——使粒子热运动减弱并渐趋有序，系统能量逐渐下降，从而得到低能的晶体结构。</li>
+</ul>
+<p>最早的想法是由N.Metropolis 等人于1953 年所提出，在当时并沒有受到重视。直到1983 年由Kirkpatrick et al. 提出蒙特卡罗模拟（MonteCarlo Simulated）概念的随机搜寻技巧，利用此方法来求解的组合优化问题时，才使此算法受到重视。</p>
+<h2 id="2-怎么做？"><a href="#2-怎么做？" class="headerlink" title="2.怎么做？"></a>2.怎么做？</h2><h4 id="大方向"><a href="#大方向" class="headerlink" title="大方向"></a>大方向</h4><p>首先，理解一下<strong>大方向</strong>：</p>
+<p>模拟退火就是一种<strong>循环算法</strong>。</p>
+<ol>
+<li>我们先设定一个初始的温度$T$（这个温度会比较高，比如2000）</li>
+<li>每次循环都<strong>退火一次</strong>。（具体怎么操作<strong>后面详解</strong>）</li>
+<li>然后降低T的温度，我们通过让T和一个“降温系数”△ T（一个接近1的小数，比如0.99)相乘，达到<strong>慢慢降低</strong>温度的效果，直到接近于0（我们用eps来代表一个接近0的数(比如0.00001)，只要T&lt;eps就可以退出循环了）</li>
+</ol>
+<p>所以总的来说，用伪代码表示退火的流程是这样的：</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-type">double</span> T = <span class="hljs-number">2000</span>; <span class="hljs-comment">//代表开始的温度</span><br><span class="hljs-type">double</span> dT = <span class="hljs-number">0.99</span>; <span class="hljs-comment">//代表系数delta T</span><br><span class="hljs-type">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//相当于0.0000000000000001</span><br><span class="hljs-keyword">while</span>(T &gt; eps) &#123;<br>    <span class="hljs-comment">//--------------</span><br>    <span class="hljs-comment">//这里是每一次退火的操作</span><br>	<span class="hljs-comment">//--------------</span><br>    T = T * dT; <span class="hljs-comment">//温度每次下降一点点， T * 0.99</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="退火详解"><a href="#退火详解" class="headerlink" title="退火详解"></a>退火详解</h4><ol>
+<li><p>第一步，我们需要在找到最值的那个函数里随机找到一点<code>X0</code>，作为我们的初始值。</p>
+</li>
+<li><p>第二步，其实我们可以把寻找最值的过程比喻成在山峦如聚中寻找最高的山峰，我们在上课时，老师也是这么说的，那么问题来了，下一步我们该往哪边走呢？假设只有一个二维的平面，往左还是往右呢？答案应该是随机的吧，因为你也不知道哪边的山会更高。那到底是怎么一个随机法呢？上课的时候这个问题难倒了不少人，同学们各抒己见。结论是：移动的<strong>幅度</strong>和<strong>当前的温度</strong>T有关。**温度T越大，移动的幅度越大。温度T越小，移动的幅度就越小。**这是在模拟粒子无序运动的状态。关于这一点的公式解释，我们会在后面说到。</p>
+</li>
+<li><p>第三步，我们需要接受更好的状态，假设我们移动到了<code>X1</code>处，此时的山峰比刚才的山峰要高，那我们就接受这个值，并将此时的值设为目前的最优解。</p>
+</li>
+<li><p>第四步，如果我们不小心到达了一个更低的山峰，那我们就一定抛弃这个结果吗？不一定，因为可能低谷的再往同一个方向走，就会出现更高的山峰。如果我们鼠目寸光，只盯着当前的局部最优解，很有可能随着温度的下降，移动幅度减小而陷入小山丘中。这也是人生的大智慧啊！而我们如果到了那个更低的山峰，以<strong>一定的概率接受了它</strong>（概率大小和温度以及当前的值的关键程度有关），会在跳转幅度减少之前，<strong>尽可能找到最优点，也就是那更高的山峰</strong>。</p>
+<p>那么我们以多少的概率去接受它呢？我们用一个公式表示（这个公式我们只需记住，这是科学家推导出来的结论）：<br>$$<br>\Huge e^{\frac{\Delta f}{kT}}<br>$$</p>
+</li>
+<li><p>第五步，$\Delta f$必须是一个负数，因为概率是属于0到1的，e的0次方等于1，只要是次数大于0，这个值都会大于1，而$k$和$T$都是大于0的。所以只有当次数小于0时，这个值域才和概率相符。</p>
+</li>
+</ol>
+<p>所以总结一下就是：</p>
+<ul>
+<li>随机后的函数值如果结果更好，我们一定选择它</li>
+<li>随机后的函数值如果结果更差，我们以一定的概率接受它</li>
+<li>在前期，由于T的基础数据十分大，分子十分活跃，所以即使我们取到了一个不是那么好的数据，我们接受它的概率也比较大，因为T是分母，k是常数，T变小时，$ \huge e^{\frac{\Delta f }{kT}} $就趋近于0，<strong>而且是始终小于1的</strong></li>
+</ul>
+<h2 id="3-例题：求-sqrt-n"><a href="#3-例题：求-sqrt-n" class="headerlink" title="3.例题：求$ \sqrt {n} $"></a>3.例题：求$ \sqrt {n} $</h2><blockquote>
+<ol>
+<li>rand()函数可以默认取到[0, 32767]内的随机整数</li>
+<li>RAND_MAX &#x3D; 32767,是常量</li>
+<li>rand()*2-RAND_MAX的范围是[-32767, 32767]</li>
+</ol>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">//n代表我们最后函数要逼近的值</span><br><span class="hljs-type">double</span> n;<br><span class="hljs-comment">//x表示我们随机产生的那个数的平方和n的靠近程度</span><br><span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">func</span><span class="hljs-params">(<span class="hljs-type">double</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">fabs</span>(x * x - n);<br>&#125;<br><span class="hljs-type">double</span> T = <span class="hljs-number">20000</span>; <span class="hljs-comment">//初始温度，初始温度主要是看题目开始需要跳转的幅度。</span><br><span class="hljs-type">double</span> dT = <span class="hljs-number">0.993</span>; <span class="hljs-comment">//变化率，这里需要速度稍微慢一点，写0.995 或者 0.997都可以，但是越靠近1速度就越慢 </span><br><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-14</span>; <span class="hljs-comment">//10的-14次方已经非常小了，写这个大概率没问题</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SA</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//首先随机生成一个点x0，这里我用0代替。</span><br>    <span class="hljs-type">double</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//算出x平方和n的差距f(x0)</span><br>    <span class="hljs-type">double</span> f = <span class="hljs-built_in">func</span>(x);<br>    <span class="hljs-keyword">while</span>(T &gt; eps) &#123;<br>        <span class="hljs-comment">//这里x0既可以变小，也可以变大，所以我们正负都要进行一个跳转,算出变换后的点dx</span><br>        <span class="hljs-type">double</span> dx = x + (<span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>() - RAND_MAX) * T;<br>        <span class="hljs-comment">//但是请注意，dx很明显要保证 &gt;= 0才行，因为算术平方根的定义域是&gt;=0，因此小于0就重新随机</span><br>        <span class="hljs-keyword">while</span>(dx &lt; <span class="hljs-number">0</span>) dx = x + (<span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>() - RAND_MAX) * T;<br>        <span class="hljs-comment">//算出变换后的点dx的平方和n的差距，f(dx)</span><br>        <span class="hljs-type">double</span> df = <span class="hljs-built_in">func</span>(dx);<br>        <span class="hljs-comment">//这里就是关键的地方了，很明显我们需要算出来的function值越小，自变量x更加接近那个根号值。</span><br>        <span class="hljs-comment">//所以如果新来的值df 比 f更小，我们百分百接受</span><br>        <span class="hljs-keyword">if</span>(df &lt; f) &#123;<br>            <span class="hljs-comment">//注意更新所有变量</span><br>            f = df; x = dx;<br>        &#125;<br>        <span class="hljs-comment">//否则我们概率接受，这里的需要写 f - df了，因为这样才是负值。负值说明我们并不是贪心接受的，他是不太好的值。</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">exp</span>((f - df)/T) * RAND_MAX &gt; <span class="hljs-built_in">rand</span>()) &#123;<br>            <span class="hljs-comment">//把概率扩大32767倍，使得两边函数值域相同</span><br>            <span class="hljs-comment">//注意更新所有变量</span><br>            f = df; x = dx;<br>        &#125;<br>        <span class="hljs-comment">//温度下降一下</span><br>        T *= dT;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.8lf&quot;</span>,x);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-built_in">SA</span>();<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.tocry.cn/archives/simulated-annealing#toc-head-9">速通模拟退火 - Don’t Cry！ (tocry.cn)</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/20/ga/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">遗传算法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/23/office/">
+                        <span class="hidden-mobile">安装并激活Office 2021</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

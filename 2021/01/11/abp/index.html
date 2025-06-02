@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>ABP框架初体验 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="ABP框架初体验">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-10 21:43" pubdate>
+        2021年1月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">ABP框架初体验</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="ABP"><a href="#ABP" class="headerlink" title="ABP"></a>ABP</h1><p>简介：</p>
+<p>ABP(ASP.NET Boilerplate Project (ASP.NET样板项目)<br>ASP.NET Boilerplate是一个用最佳实践和流行技术开发现代WEB应用程序的新起点，它旨在成为一个通用的WEB应用程序框架和项目模板。<br><strong>框架</strong><br>ABP是基于最新的ASP.NET CORE，ASP.NET MVC和Web API技术的应用程序框架。并使用流行的框架和库，它提供了便于使用的授权，依赖注入，验证，异常处理，本地化，日志记录，缓存等常用功能。<br><strong>架构</strong><br>ABP实现了多层架构（领域层，应用层，基础设施层和表示层），以及领域驱动设计（实体，存储库，领域服务，应用程序服务，DTO等）。还实现和提供了良好的基础设施来实现最佳实践，如依赖注入。<br><strong>模板</strong><br>ABP轻松地为您的项目创建启动模板。它默认包括最常用的框架和库。还允许您选择单页（Angularjs）或多页架构，EntityFramework或NHibernate作为ORM。<br>访问<a target="_blank" rel="noopener" href="https://aspnetboilerplate.com/">官网</a>，了解更多。</p>
+<h2 id="Application-应用层"><a href="#Application-应用层" class="headerlink" title="Application 应用层"></a>Application 应用层</h2><p>在这里写接口。</p>
+<p>新建两个文件，文件里面实现一个接口和一个实例，<code> IUserAppService.cs</code>和<code>UserAppService.cs</code>。</p>
+<h3 id="Dto"><a href="#Dto" class="headerlink" title="Dto"></a>Dto</h3><p>数据传输对象DTO(Data Transfer Object)，是一种设计模式之间传输数据的软件应用系统。</p>
+<ul>
+<li><p>Dto命名格式：ABP建议命名输入&#x2F;输出参数为：MethodName<strong>Input</strong>和MethodName<strong>Output</strong></p>
+</li>
+<li><p>并为每个应用服务方法定义单独的输入和输出DTO（如果为每个方法的输入输出都定义一个dto，那将有一个庞大的dto类需要定义维护。一般通过定义一个公用的dto进行共用）</p>
+</li>
+<li><p>即使你的方法只接受&#x2F;返回一个参数，也最好是创建一个DTO类</p>
+</li>
+<li><p>一般会在对应实体的应用服务文件夹下新建Dtos文件夹来管理Dto类。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>传值方式</th>
+<th>命名格式（一般情况）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POST</td>
+<td>Create，Insert，Change，Reset开头的</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete，Remove开头的</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>Get开头的</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Put，Update开头的</td>
+</tr>
+</tbody></table>
+<p>“<code>=&gt;</code>”是<strong>C# 3.0</strong>新增的，告诉编译器我们正在使用<code>Lambda</code>表达式。”<code>=&gt;</code>”可以读作”<code>goes to</code>”。</p>
+<p>B站视频后端部分<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV155411W7yL?p=2&t=2762">ABP全栈开发</a> <code>80:22</code>，<code>62:45</code>。</p>
+<h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><h4 id="自动映射"><a href="#自动映射" class="headerlink" title="自动映射"></a>自动映射</h4><p>映射时，可以在视图模型里告诉数据来自哪个模型。<code>给</code>和<code>来自</code>于不一样。</p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#">[<span class="hljs-meta">AutoMapFrom(typeof(Task))</span>]<br>[<span class="hljs-meta">AutoMapTo(typeof(Task))</span>]<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h4 id="自定义映射"><a href="#自定义映射" class="headerlink" title="自定义映射"></a>自定义映射</h4><p>简单地映射可能不适用于一些场景，如，两个类的属性名称有些不同或你可能想要在映射过程中忽略一些属性，这些情况下可以直接使用AutoMapper的Api来自定义映射关系，不过Abp.AutoMapper包定义了更模块化的API。</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>生成动态API接口时，我们的自己写的接口需要继承的一个更往后的接口<code>AppService</code>。只有继承这个接口，我们在创建时，才能够找到API，把它给创建出来。</p>
+<p>例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IUserAppService</span>:<span class="hljs-title">IAppService</span> &#123;&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>继承于<code>项目名+AppServiceBase</code>和<code>IUserAppService</code>,只有继承了这两个接口，在创建时，被发现才能映射到前面去。Test是我自己的项目名。</p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TaskAppService</span> : <span class="hljs-title">TestAppServiceBase</span>, <span class="hljs-title">ITaskAppService</span> &#123;&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>然后依赖注入</p>
+<p>打开Swagger UI 找到自己的接口，try一下。如果数据库有数据，会按照json格式显示出来。</p>
+<h3 id="仓储"><a href="#仓储" class="headerlink" title="仓储"></a>仓储</h3><p>仓储（Repository） 用来操作数据库进行数据存取。仓储接口在领域层定义，而仓储的实现类应该写在基础设施层。</p>
+<p>在ABP中，仓储类要实现<code>IRepository</code>接口，接口定义了常用的增删改查以及聚合方法，其中包括同步及异步方法。如果业务简单，那ABP自带的泛型仓储就足够用了。<code>IRepository</code>定义了从<strong>数据库</strong>中检索实体的常用方法。下面列举一些常用的方法。</p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Get</span>(<span class="hljs-params">TPrimaryKey id</span>)</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>Get方法被用于根据主键值(Id)取得对应的<strong>单一实体</strong>。当数据库中根据主键值找不到相符合的实体时,它会抛出异常。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function">List&lt;TEntity&gt; <span class="hljs-title">GetAllList</span>()</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>GetAllList方法被用于从数据库中检索<strong>所有实体</strong>。重载并且提供过滤实体的功能（相当于条件查询）。例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> allPeople = _personRepository.GetAllList();<br><span class="hljs-keyword">var</span> somePeople = _personRepository.GetAllList(person =&gt; person.IsActive &amp;&amp; person.Age &gt; <span class="hljs-number">42</span>);<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function">IQueryable&lt;TEntity&gt; <span class="hljs-title">GetAll</span>()</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>GetAll方法返回IQueryable&lt;T&gt;类型的<strong>对象</strong>。因此我们可以在调用完这个方法之后进行Linq操作。例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">var</span> query = <span class="hljs-keyword">from</span> p <span class="hljs-keyword">in</span> _personRepository.GetAll()<br>			<span class="hljs-keyword">where</span> p.Age == <span class="hljs-number">20</span><br>			<span class="hljs-keyword">orderby</span> p.Name<br>			<span class="hljs-keyword">select</span> p;<br></code></pre></div></td></tr></table></figure>
+<p>说明：关于IQueryable&lt;T&gt; 当你调用GetAll这个方法在Repository对象以外的地方,必定会开启数据库连接。这是因为IQueryable&lt;T&gt;允许延迟执行。它会<strong>直到</strong>你调用ToList方法或在forEach循环上(或是一些存取已查询的对象方法)使用IQueryable&lt;T&gt;时,才会实际<strong>执行数据库的查询</strong>。因此,当你调用ToList方法时,数据库连接必需是启用状态。总结，GetAll方法不会查询数据库，而是知道之行到ToList方法时才会与查询数据库。</p>
+<h4 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h4><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Insert</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br><span class="hljs-function">TPrimaryKey <span class="hljs-title">InsertAndGetId</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br><span class="hljs-function">TEntity <span class="hljs-title">InsertOrUpdate</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br><span class="hljs-function">TPrimaryKey <span class="hljs-title">InsertOrUpdateAndGetId</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br></code></pre></div></td></tr></table></figure>
+<p>新增方法会新增实体到数据库并且返回相同的已新增实体。InsertAndGetId方法返回新增实体的标识符(Id)。当我们采用自动递增标识符值且需要取得实体的新产生标识符值时非常好用。InsertOfUpdate会新增或更新实体,选择那一种是根据Id是否有值来决定。最后,InsertOrUpdatedAndGetId会在实体被新增或更新后返回Id值。总结，注意参数和返回值，基本上和查询系列方法类似。</p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function">TEntity <span class="hljs-title">Update</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>IRepository定义一个方法来实现更新一个<strong>已存在</strong>于数据库中的实体。它更新实体并返回相同的实体对象。</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">TEntity entity</span>)</span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">TPrimaryKey id</span>)</span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>上面两个方法一个是删除实体，一个是通过Id删除，第三个方法接受一个条件来删除符合条件的实体。要注意,所有符合predicate表达式的实体会<strong>先被检索而后删除</strong>。</p>
+<h4 id="其它方法"><a href="#其它方法" class="headerlink" title="其它方法"></a>其它方法</h4><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">Count</span>()</span>;<br><span class="hljs-function"><span class="hljs-built_in">int</span> <span class="hljs-title">Count</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;<br><span class="hljs-function">Long <span class="hljs-title">LongCount</span>()</span>;<br><span class="hljs-function">Long <span class="hljs-title">LongCount</span>(<span class="hljs-params">Expression&lt;Func&lt;TEntity, <span class="hljs-built_in">bool</span>&gt;&gt; predicate</span>)</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>IRepository也提供一些方法来取得数据表中实体的数量。要注意的同删除系列的predicate表达式。</p>
+<h2 id="Core-领域层"><a href="#Core-领域层" class="headerlink" title="Core 领域层"></a>Core 领域层</h2><p>在这里写实体类，写各种限制。</p>
+<h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3><p>我们定义一个实体类Person，并且为它定义两个属性。父类Entity具有主键属性Id。所有继承Entity类的子类都将具有主键为Id的属性。</p>
+<p>Id数据类型可以被更改。默认是 int类型。如果你想给 Id 定义其它类型，你应该像下面示例一样来指定 Id 的类型。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> : <span class="hljs-title">Entity</span>&lt;<span class="hljs-title">long</span>&gt; <br></code></pre></div></td></tr></table></figure>
+
+<p>C#语法中一个个问号(?)的运算符是指：可以为 null 的类型。 </p>
+<figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">public</span> DateTime? CreateTime &#123;<span class="hljs-keyword">get</span>;<span class="hljs-keyword">set</span>;&#125; <br></code></pre></div></td></tr></table></figure>
+
+<h3 id="领域模型和视图模型"><a href="#领域模型和视图模型" class="headerlink" title="领域模型和视图模型"></a>领域模型和视图模型</h3><table>
+<thead>
+<tr>
+<th align="left">领域模型</th>
+<th>视图模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">在Core层定义了领域模型，在基础设施层的上下文写入，用DbSet方式把领域模型注入进数据库，在应用层使用时，用仓储来获取对当前的数据库的CRUD，总的来说，领域模型是和数据库进行交互的。</td>
+<td>跟视图进行交互，跟前端进行数据交互。要和领域模型产生一个明显的切割，其次，前端拿数据表时字段不是完全按照领域模型来的。前端传回数据也需要视图模型。</td>
+</tr>
+</tbody></table>
+<h2 id="EntityFramework-基础设施层"><a href="#EntityFramework-基础设施层" class="headerlink" title="EntityFramework 基础设施层"></a>EntityFramework 基础设施层</h2><p>写数据库上下文类DbSet。</p>
+<h2 id="Web-Host-Web-Core-展现层"><a href="#Web-Host-Web-Core-展现层" class="headerlink" title="Web Host Web Core 展现层"></a>Web Host Web Core 展现层</h2><p>写网页配置，前端开发。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ASP-NET/">ASP.NET</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/05/07/linuxshell/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux初体验</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/03/myman/">
+                        <span class="hidden-mobile">我的父亲</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,877 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>Linux初体验 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux初体验">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-06 21:50" pubdate>
+        2021年5月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      48
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux初体验</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Linux与Shell编程"><a href="#Linux与Shell编程" class="headerlink" title="Linux与Shell编程"></a>Linux与Shell编程</h1><h2 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>1991年，芬兰赫尔辛基大学的学生🧑Linus Torvalds在Intel 386个人计算机上开发了Linux核心，并利用Internet发布了源码，从而创建了Linux操作系统。之后，有许多大佬给它不断完善，改进和提高。近年来，Linux得到了许多硬件公司的支持，他们开发Linux应用软件，将Linux系统的应用推向各个领域。Linux成功的意义不仅在于Linux操作系统本身，还在于Linus多建立的全新的软件开发方法和GNU精神。自由软件从此变得流行起来。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li><p>与UNIX系统兼容。现在的Linux已经具有了全部UNIX的特征，遵循IEEE POSIX标准的操作系统。Linux系统上使用的命令多数与UNIX命令在名称，格式，功能上相同。</p>
+</li>
+<li><p>自由软件和源码公开。这也是我们经常说的，不像Windows操作系统是封闭的，Linux是开放的。从一开始它就与GNU项目紧密结合起来，许多重要组成部分直接来自于GNU项目。任何人都可以自由使用Linux源程序来开发，激发了全世界人们的创造力。而且通过Internet，这一软件得到迅速传播和广泛使用。</p>
+</li>
+<li><p>性能高和安全性强。在相同硬件环境下，Linux也可以提供各种高性能的服务。Linux还提供了先进的网络支持。因为源码是公开的，所以可以消除系统中是否有“后门”的疑惑。</p>
+</li>
+<li><p>互操作性高。Linux能够以不同的方式实现与非Linux系统的不同层次的互操作。比如客户-服务器，工作站，仿真等。</p>
+</li>
+<li><p>全面多任务和真正的32位操作系统。Linux允许多个用户同时在一个系统上运行多道程序，支持多种硬件平台。</p>
+</li>
+</ol>
+<h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><p>Linux有两种版本：核心（Kernel）版本和发行（Distribution）版本。</p>
+<p>核心版本主要是Linux内核，创始人在不断开发和推出新的内核，内核版本由Linus Torvalds本人维护着。版本号由三部分数字构成，其形式为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">major.minor.patchlevel<br></code></pre></div></td></tr></table></figure>
+
+<p>其中，major为主版本号，minor为次版本号，patchlevel表示对当前版本的修订次数。</p>
+<p>发行版本是由各个公司推出的版本，通常将安装界面，系统设定，管理工具集成在一起，构成一个套件，从而方便用户使用，尽管这样，普通用户使用Linux发行版本的人数还是很少，软件支持的也少。目前，有Red Hat，Debian，Ubuntu，红旗Linux，Deepin等发行版。</p>
+<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><h4 id="1-who"><a href="#1-who" class="headerlink" title="1.who"></a>1.who</h4><p><code>who</code>列出所有正在使用系统的用户，所用终端名和注册到系统的时间。而<code>whoami</code>将列出当前用户信息。</p>
+   <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">who</span><br>chris    :0           2021-05-07 17:43 (:0)<br>$ <span class="hljs-built_in">whoami</span> <br>chris<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="2-echo"><a href="#2-echo" class="headerlink" title="2.echo"></a>2.echo</h4><p>将命令行中参数标准输出，相当于<code>cout</code>，<code>printf</code>。要注意空格折叠的问题，例如：</p>
+   <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> Hello world<br>Hello world<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;bye    bye&#x27;</span><br><span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span><br>$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">bye</span>    <span class="hljs-built_in">bye</span><br><span class="hljs-built_in">bye</span> <span class="hljs-built_in">bye</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="3-date"><a href="#3-date" class="headerlink" title="3.date"></a>3.date</h4><p>用来显示当前日期和时间，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">date</span><br>Fri May  7 17:14:49 CST 2021<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="4-cal"><a href="#4-cal" class="headerlink" title="4.cal"></a>4.cal</h4><p>用来显示公元1~9999年中任意一年或者一个月的日历，第一个参数为月份（也可以用英文缩写表示），第二参数为年份，若不写参数，则显示当前月份的日历，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ cal 2 2021<br>   February 2021<br>Su Mo Tu We Th Fr Sa<br>    1  2  3  4  5  6<br> 7  8  9 10 11 12 13<br>14 15 16 17 18 19 20<br>21 22 23 24 25 26 27<br>28<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="5-clear"><a href="#5-clear" class="headerlink" title="5.clear"></a>5.clear</h4><p>用来清除屏幕上的信息。清屏后，提示符移到屏幕左上角。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ clear<br>$ _<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="6-passwd"><a href="#6-passwd" class="headerlink" title="6.passwd"></a>6.passwd</h4><p>用来修改口令，也就是密码。Linux的安全特性允许用户控制自己的口令，输入后，按照提示来就可修改密码，出于安全考虑，输入的密码都不会在屏幕上显示，所以不要以为自己的键盘⌨坏了哟。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ passwd<br>Change password <span class="hljs-keyword">for</span> user chris<br>(current) UNIX password:<br>New UNIX password:<br>Retype new UNIX password:<br>passwd:all authentication tokens updated successfully.<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="7-pwd"><a href="#7-pwd" class="headerlink" title="7.pwd"></a>7.pwd</h4><p>用来显示当前工作目录，全称为<code>Print Working Directory</code>。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span><br>/home/chris/Downloads<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="8-cd"><a href="#8-cd" class="headerlink" title="8.cd"></a>8.cd</h4><p>用来进入某个文件夹，全称为<code>Change Directory</code>，也就是改变工作目录。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">~$ <span class="hljs-built_in">cd</span> Downloads<br>Downloads$ _<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="9-rm"><a href="#9-rm" class="headerlink" title="9.rm"></a>9.rm</h4><p>用来删除文件或者目录下的文件，不加任何参数的话，只能删除文件，不能删除文件夹，全称为<code>Remove</code>。注意， 该命令是一个危险的命令，使用的时候要特别当心，尤其对于新手，否则整个系统就会毁在这个命令（比如在根目录下执行<code>rm -rf /*</code>）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>忽略不存在的文件，不会出现警告信息</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归删除，后可接上文件夹</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示指令的详细执行过程</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>删除前会询问用户是否操作</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">rm</span> -r Study<br>$ <span class="hljs-built_in">rm</span> hello.c<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="10-cp"><a href="#10-cp" class="headerlink" title="10.cp"></a>10.cp</h4><p>用来对文件进行复制，全称为<code>Copy</code>。后面的文件可以不存在，系统会帮你创建。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">cp</span> hello.c h.c<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="11-mv"><a href="#11-mv" class="headerlink" title="11.mv"></a>11.mv</h4><p>用来对文件或文件夹进行移动，全称为<code>Move</code>如果文件或文件夹存在于当前工作目录，还可以对文件或文件夹进行重命名。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">mv</span> hello.c /home/chris/Downloads<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="12-cat"><a href="#12-cat" class="headerlink" title="12.cat"></a>12.cat</h4><p>用来在标准输出（监控器或屏幕）上查看文件内容，全称为<code>Concatenate and Print Files</code>。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">$ cat hello.c<br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="快乐命令"><a href="#快乐命令" class="headerlink" title="快乐命令"></a>快乐命令</h3><h4 id="1-sl"><a href="#1-sl" class="headerlink" title="1.sl"></a>1.sl</h4><p>你会看到火车🚄从屏幕右边开往左边。相关的参数可以去搜一下。</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">sudo</span> apt-get install sl<br></code></pre></div></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sl<br></code></pre></div></td></tr></table></figure>
+
+<p>可以来个恶作剧，把<code>ls</code>和<code>sl</code>绑定在一起哈哈哈哈。</p>
+<h4 id="2-fortune"><a href="#2-fortune" class="headerlink" title="2.fortune"></a>2.fortune</h4><p>输出一句话，有笑话🤗，名人名言🙍‍♂️，唐诗宋词📔等等。</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">sudo</span> apt-get install fortune<br></code></pre></div></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ fortune<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="3-cowsay"><a href="#3-cowsay" class="headerlink" title="3.cowsay"></a>3.cowsay</h4><p>用ASCII字符打印牛🐂，羊🐏等动物，哈哈哈，快来试试吧！</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">sudo</span> apt-get install cowsay<br></code></pre></div></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ cowsay <span class="hljs-string">&quot;I am a cool boy&quot;</span><br>$ cowsay -f tux <span class="hljs-string">&quot;wuwuwu&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>标准输入重定向（STDIN，文件描述符为0）：默认从键盘输入，也可从其他文件或命令中输入。</p>
+<p>标准输出重定向（STDOUT，文件描述符为1）：默认输出到屏幕。</p>
+<p>错误输出重定向（STDERR，文件描述符为2）：默认输出到屏幕。</p>
+<p>常用小技巧😄，将命令执行的标准输出重定向到一个文件中（清空原有文件的数据），例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt; file.txt<br>$ <span class="hljs-built_in">cat</span> file.txt<br>/home/chris<br></code></pre></div></td></tr></table></figure>
+
+<p>将错误输出重定向到一个文件中（清空原有文件的数据），例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> 2&gt; file.txt<br></code></pre></div></td></tr></table></figure>
+
+<p>将标准输出重定向到一个文件中，注意和第一个不同，这个<code>&gt;&gt;</code>是追加到原有内容的后面，不会清空原有数据，同理，也能将错误输出重定向到文件中（追加），继续上面的操作来，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt<br>$ <span class="hljs-built_in">cat</span> file.txt<br>/home/chris<br>/home/chris<br>$ <span class="hljs-built_in">pwd</span> 2&gt;&gt; file.txt<br></code></pre></div></td></tr></table></figure>
+
+<p>最后是将标准输出与错误输出共同写入到文件中（追加到原有内容的后面用<code>&gt;&gt;</code>，覆盖原有用<code>&gt;</code>），有两种方法，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">pwd</span> &gt;&gt; file.txt 2&gt;&amp;1<br>$ <span class="hljs-built_in">pwd</span> &amp;&gt;&gt; file.txt<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h2><p><code>|</code>在键盘上👆按下<kbd>Shift</kbd>+<kbd>\</kbd>就可以看到管道符啦。其执行格式为<code>oder A | oder B</code>。管道符的作用，用我们老师的话来说就是把前一个命令的输出当作后一个命令的输入，是不是好懂些了？例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">ls</span> -l | <span class="hljs-built_in">wc</span> -l <br></code></pre></div></td></tr></table></figure>
+
+<p>这个命令的解释就是列出当前目录的文件，然后统计其行数，当然，文件list是不会在屏幕上显示的，因为它又被当作输入了。因此，最后的结果仅仅为一个数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">7<br></code></pre></div></td></tr></table></figure>
+
+<p>这个管道符就像一个法宝，可以将它套用到其他不同的命令上。</p>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>大家可能都有提笔忘字的时候，程序员也不例外，当然，我们是敲盘忘字。比如说我们想找一个文件名以a开头的文件，又隐隐约约记不得后面的单词了，这个时候，通配符就可以大展身手了🤝。</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>匹配含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>任意字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>单个任意字符</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>单个小写字母</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>单个大写字母</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>单个数字</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>任意字母</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>任意大写字母</td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>任意小写字母</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td>所有数字</td>
+</tr>
+<tr>
+<td>[:alnum:]</td>
+<td>任意字母加数字</td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td>标点符号</td>
+</tr>
+</tbody></table>
+<p>通配符还可以和大括号<code>&#123;&#125;</code>结合起来用，字段之间用逗号<code>,</code>间隔，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> file&#123;1,2,3,4&#125;<br>file1 file2 file3 file4<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h2><p>为了能够更好地理解用户的表达，Shell解释器还提供了特别丰富的转义字符来处理输入的特殊数据。在网上找到了4个最常用的转义字符🙋‍♂️！</p>
+<ul>
+<li><p>反斜杠（\）：使反斜杠后面的一个变量变为<strong>单纯的字符</strong>。</p>
+</li>
+<li><p>单引号（’’）：转义其中所有的变量为<strong>单纯的字符串</strong>。</p>
+</li>
+<li><p>双引号（””）：<strong>保留</strong>其中的变量属性，不进行转义处理。</p>
+</li>
+<li><p>反引号（&#96;&#96;）：把其中的命令<strong>执行后返回结果</strong>，其中放的是像ls，pwd，date类似的命令。</p>
+</li>
+</ul>
+<p>下面看几个例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ price=2<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is <span class="hljs-variable">$price</span>&quot;</span><br>Price is 5<br></code></pre></div></td></tr></table></figure>
+
+<p>可以看到我们想要输出的美元符号不见了，不标明货币单位，那有时候可能会出大问题的哦👊。那我们想要输出美元符号，应该怎么做呢？聪明的你应该猜到了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is $<span class="hljs-variable">$price</span>&quot;</span><br>Price is 3577price<br></code></pre></div></td></tr></table></figure>
+
+<p>很不幸的是，$$刚好是显示当前程序的进程ID号码，所以结果还是不对。正确的应该是这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Price is \$<span class="hljs-variable">$price</span>&quot;</span><br>Price is <span class="hljs-variable">$5</span><br></code></pre></div></td></tr></table></figure>
+
+<p>反引号的例子如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> `<span class="hljs-built_in">pwd</span>`<br>/home/chris/bin<br></code></pre></div></td></tr></table></figure>
+
+<p>就是先执行反引号里的命令，然后再标准输出到屏幕上。</p>
+<p>单引号是最简单的啦，最单纯的，不管里面有啥东西，照搬着输出就可以了。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;$price is \$price&#x27;</span><br><span class="hljs-variable">$price</span> is \<span class="hljs-variable">$price</span><br></code></pre></div></td></tr></table></figure>
+
+<p>以上的转义字符都不容易出错，而什么时候该用双引号却是一个问题。因为好像大多数情况下加不加效果都一样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aaa bbb ccc&quot;</span><br>aaa bbb ccc<br>$ <span class="hljs-built_in">echo</span> aaa bbb ccc<br>aaa bbb ccc<br></code></pre></div></td></tr></table></figure>
+
+<p>区别在于用户无法得知第一种执行方式中到底有几个参数，是的，不能确定！因为有可能把“aaa bbb ccc”当作了一个参数整体直接输出到了屏幕，也有可能是分别将aaa、bbb和ccc输出到了屏幕。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% note success %&#125;<br><br>给大家总结一个简单小技巧，就是参数中如果出现了空格，那么就加双引号，如果参数中没有空格，那就不用加。（来自刘遄老师的小提示）<br><br>&#123;% endnote %&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>变量是计算机系统里用于保存可变值的数据类型。在Linux系统中，变量名称一般都是大写的，而命令都是小写的，也算一种规范了。下面我们来看看最基本的变量。如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>变量名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HOME</td>
+<td>用户的主目录（家目录）</td>
+</tr>
+<tr>
+<td>SHELL</td>
+<td>用户在使用的Shell解释器名称</td>
+</tr>
+<tr>
+<td>HISTSIZE</td>
+<td>输出的历史命令记录条数</td>
+</tr>
+<tr>
+<td>MAIL</td>
+<td>邮件保存路径</td>
+</tr>
+<tr>
+<td>LANG</td>
+<td>系统语言</td>
+</tr>
+<tr>
+<td>RANDOM</td>
+<td>随机数字</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>定义解释器搜索用户执行命令的路径</td>
+</tr>
+<tr>
+<td>PS1</td>
+<td>Bash解释器的提示符</td>
+</tr>
+<tr>
+<td>EDITOR</td>
+<td>用户默认文本编辑器</td>
+</tr>
+</tbody></table>
+<div class="note note-warning">
+            <p>Linux作为一个多用户多任务的操作系统，能够为每个用户提供独立的、合适的工作运行环境，因此，一个相同的变量会因为用户身份的不同而具有不同的值。</p>
+          </div>
+
+<p>我们可以使用下述命令来查看变量的值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$HOME</span><br>/home/chris<br></code></pre></div></td></tr></table></figure>
+
+<p>其实变量是由固定的变量名与用户或者系统设置的变量两部分组成的，完全可以自行创建变量。例如设置名叫<code>WORKDIR</code>的变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">mkdir</span> /home/workdir<br>$ WORKDIR=/home/workdir<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
+
+<p>但是此时的变量不具有全局性，格局小了呀🤨，不能被其他用户使用，但是我们可以使用<code>export</code>命令将其提升为全局变量。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">export</span> WORKDIR<br>$ su ordinary<br>$ <span class="hljs-built_in">cd</span> <span class="hljs-variable">$WORKDIR</span><br>$ <span class="hljs-built_in">pwd</span><br>/home/workdir<br></code></pre></div></td></tr></table></figure>
+
+<p>后面要是不用这个变量了，也可以取消它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">unset</span> WORKDIR<br></code></pre></div></td></tr></table></figure>
+
+<div class="note note-warning">
+            <p>直接在终端设置的变量能够立即生效，但重启服务器后就会消失掉，因此我们需要将变量和变量值写入到.bashrc或者.bash_profile文件中以确保永久能使用它们。</p>
+          </div>
+
+<h2 id="Vim技巧"><a href="#Vim技巧" class="headerlink" title="Vim技巧"></a>Vim技巧</h2><p>在Linux中，命令行中也能编辑文本，这时就能用到vim了。基本上vim共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）<strong>和</strong>底线命令模式（Last line mode）</strong>。</p>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>当我们打开vim编辑文件的时候，我们首先进入的就是命令模式，此时你按键盘输入，文本上是不会显示的，而是被当作一个命令。常用的有：</p>
+<ul>
+<li><code>i</code> 切换到输入模式，以输入字符。</li>
+<li><code>x</code> 删除当前光标所在处的字符，最后还是停留在命令模式。</li>
+<li><code>:</code> 切换到底线命令模式，以在最底一行输入命令。</li>
+</ul>
+<h3 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h3><p>基本就是正常输入，有几个要注意的：</p>
+<ul>
+<li>按下<kbd>Insert</kbd>，切换光标为输入&#x2F;替换模式。</li>
+<li>按下<kbd>Esc</kbd>，退出输入模式，切换到命令模式。</li>
+</ul>
+<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><p>在命令模式下按下<code>:</code>就进入了底线命令模式。底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
+<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+<ul>
+<li><code>w</code>将编辑的数据写入硬件中，也就是保存。</li>
+<li><code>q</code>离开退出vim。</li>
+<li><code>q!</code>强制退出vim，没有保存修改。</li>
+<li><code>wq</code>保存退出。</li>
+<li><code>ZZ</code>大写的Z，如果修改过，保存当前文件，然后退出。</li>
+<li><code>dd</code>删除光标所在的一整行。</li>
+<li><code>set nu</code>为vim设置行号。</li>
+<li><code>set nonu</code>取消vim中的行号。</li>
+</ul>
+<h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="Shell简介"><a href="#Shell简介" class="headerlink" title="Shell简介"></a>Shell简介</h3><p>shell可以理解为一种脚本语言，像javascript等其它脚本语言一样，只需要一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以shell脚本的本质是：以某种语法格式将shell命令组织起来的由shell程序解析执行的脚本文本文件。主要包括三个部分：</p>
+<ol>
+<li><strong>shell命令</strong>：即<code>ls/cd</code>等linux命令，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/2-shellcmd/index.html">shell命令</a>。</li>
+<li><strong>shell解释器</strong>：即<code>sh/bash/zsh</code>等shell应用程序，详细可参考<a target="_blank" rel="noopener" href="http://codetoolchains.readthedocs.io/en/latest/4-Linux/1-shellenv/1-shellsoft/index.html">shell应用程序。</a></li>
+<li><strong>shell语法</strong>：即<code>数据类型/变量/控制流语句/函数</code>等编程语法。</li>
+</ol>
+<h3 id="脚本结构"><a href="#脚本结构" class="headerlink" title="脚本结构"></a>脚本结构</h3><p>像学习我们的第一门编程语言，C语言时，我们现在也来模仿着写一个Hello World的程序，虽然可能现在搞不明白它的结构和过程，但是没关系，大家都是这么过来的。先创建一个demo.sh文件，然后进去编辑它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ vim demo.sh<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment"># 这行是注释信息</span><br>str=<span class="hljs-string">&quot;Hello World&quot;</span><br><br><span class="hljs-function"><span class="hljs-title">test</span></span>()&#123;<br>        <span class="hljs-built_in">echo</span> <span class="hljs-variable">$str</span><br>&#125;<br><br><span class="hljs-built_in">test</span> echo_str<br></code></pre></div></td></tr></table></figure>
+
+<p>写完后输入<code>:wq</code>保存退出，然后运行脚本。脚本都以<code>#!/bin/bash</code>开头，<code>#</code>称为<code>sharp</code>，<code>!</code>在unix行话里称为<code>bang</code>，合起来简称就是常见的<code>shabang</code>。是不是很搞笑，同时也突然觉得自己变成高手了🐶。而运行脚本文件的方法有两种：</p>
+<ol>
+<li>将脚本作为bash解释器的参数执行：此时首行的<code>#!/bin/bash</code>shabang可以不用写。</li>
+<li><code>chmod +x demo.sh</code>：给脚本添加执行权限,<code>./demo.sh</code>：执行脚本文件。</li>
+</ol>
+<p>最后Hello World就会出现在终端上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">Hello World<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><table>
+<thead>
+<tr>
+<th>变量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$$</td>
+<td>Shell本身的PID</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>Shell最后运行的后台Process的PID</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>最后运行代码的返回值</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>所有参数列表</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>所有参数列表(好像并没有什么不同，我也不知道)</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>参数的个数</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>Shell脚本的文件名</td>
+</tr>
+<tr>
+<td>$1~n</td>
+<td>各个参数的值</td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$$&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$!&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$?&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;$*&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$#</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ bash demo.sh zwy 2<br>91<br><br>0<br>zwy 2<br>zwy 2<br>2<br>demo.sh<br>zwy<br>2<br></code></pre></div></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Shell/">Shell</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/05/12/hexotips/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Fluid小技巧</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/11/abp/">
+                        <span class="hidden-mobile">ABP框架初体验</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

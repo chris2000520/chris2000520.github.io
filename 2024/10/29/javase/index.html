@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>Java基础 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java基础">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-10-28 19:29" pubdate>
+        2024年10月28日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      31
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年11月6日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="浅尝JVM"><a href="#浅尝JVM" class="headerlink" title="浅尝JVM"></a>浅尝JVM</h1><h2 id="JVM内存结构"><a href="#JVM内存结构" class="headerlink" title="JVM内存结构"></a>JVM内存结构</h2><p><img src="https://zhaowuya.s3.bitiful.net/JVM.jpg" srcset="/img/loading.gif" lazyload alt="JVM"></p>
+<h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>装载，链接（验证，准备，解析），初始化。分别有什么作用？</p>
+<h2 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h2><h3 id="分配对象"><a href="#分配对象" class="headerlink" title="分配对象"></a>分配对象</h3><p>Java中对象地址操作主要使用Unsafe调用了C的allocate和free两个方法，分配方法有两种：</p>
+<ul>
+<li>空闲链表（free list）：通过额外的存储，记录</li>
+<li>碰撞指针（bump pointer）：</li>
+</ul>
+<h3 id="收集对象"><a href="#收集对象" class="headerlink" title="收集对象"></a>收集对象</h3><p>上图中蓝色区域为GC的主要工作区域。</p>
+<p>ParNew : 年轻代<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8&spm=1001.2101.3001.7020">垃圾收集器</a>，多线程，采用标记—复制算法。</p>
+<p>CMS：老年代的收集器，全称（Concurrent Mark and Sweep），是一种以获取最短回收停顿时间为目标的收集器。</p>
+<h3 id="CMS与G1"><a href="#CMS与G1" class="headerlink" title="CMS与G1"></a>CMS与G1</h3><table>
+<thead>
+<tr>
+<th>区别</th>
+<th>CMS</th>
+<th>G1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>回收位置</td>
+<td>JDK5</td>
+<td>JDK7</td>
+</tr>
+<tr>
+<td>垃圾回收算法</td>
+<td>M-S</td>
+<td>M-C</td>
+</tr>
+</tbody></table>
+<h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><blockquote>
+<p>单核并发，多核并行，volatile关键字保证变量内存可见性（当一个线程修改了被volatile修饰的变量，其他线程能立即看到这次修改）还有防止指令重排，但是不能保证<strong>原子性。</strong></p>
+</blockquote>
+<h2 id="1-进程与线程的区别"><a href="#1-进程与线程的区别" class="headerlink" title="1.进程与线程的区别"></a>1.进程与线程的区别</h2><p><strong>进程</strong> : 一个运行中的程序的集合; 一个进程往往可以包含多个线程，至少包含一个线程，java默认有几个线程? 两个 main线程 gc线程。</p>
+<p><strong>线程</strong> : 线程（thread）是操作系统能够进行运算调度的最小单位。</p>
+<h2 id="2-用过哪些接口和类"><a href="#2-用过哪些接口和类" class="headerlink" title="2.用过哪些接口和类"></a>2.用过哪些接口和类</h2><h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>ReentrantLock</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Lock</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">ReentrantLock</span> <span class="hljs-variable">lock</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ReentrantLock</span>();<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">m</span><span class="hljs-params">()</span>&#123;<br>        lock.lock();<br>        <span class="hljs-keyword">try</span>&#123;<br>            System.out.println(<span class="hljs-string">&quot;上锁&quot;</span>);<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            lock.unlock();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="线程安全集合"><a href="#线程安全集合" class="headerlink" title="线程安全集合"></a>线程安全集合</h4><h2 id="3-创建线程的方法有哪些？"><a href="#3-创建线程的方法有哪些？" class="headerlink" title="3.创建线程的方法有哪些？"></a>3.创建线程的方法有哪些？</h2><h4 id="3-1继承Thread类"><a href="#3-1继承Thread类" class="headerlink" title="3.1继承Thread类"></a><strong>3.1继承Thread类</strong></h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span>&#123;<br>    <span class="hljs-meta">@override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;喵喵喵~我是一只🐱&quot;</span>)<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// （1）同步</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">()</span>&#123;<br>    start0();<br>&#125;<br><span class="hljs-comment">// （2）本地方法，由c++实现，真正实现的多线程方法</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start0</span><span class="hljs-params">()</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>start方法调用start0后，该线程并不一定会立马执行，只是将线程变成了可运行状态，具体什么时候执行，取决于CPU，由CPU统一调度。</strong></p>
+<h3 id="3-2实现Runnable中的run方法（推荐）"><a href="#3-2实现Runnable中的run方法（推荐）" class="headerlink" title="3.2实现Runnable中的run方法（推荐）"></a><strong>3.2实现Runnable中的run方法（推荐）</strong></h3><p><strong>由于Java是单继承的，当我们要将a当作线程使用，而a已经继承了b，我们就不能通过继承Thread类来实现线程</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span>&#123;&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">Dog</span> <span class="hljs-variable">dog</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>();<br><span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(dog);<br>thread.start();<br></code></pre></div></td></tr></table></figure>
+
+<p>使用到了<strong>静态代理</strong>模式。</p>
+<h3 id="3-3实现Callable接口"><a href="#3-3实现Callable接口" class="headerlink" title="3.3实现Callable接口"></a><strong>3.3实现Callable接口</strong></h3><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">FutureTask&lt;Intger&gt; future = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;<span class="hljs-keyword">return</span> <span class="hljs-number">1024</span>&#125;);<br></code></pre></div></td></tr></table></figure>
+
+<p><strong>有返回值 ，能抛出异常，实现call方法</strong></p>
+<p><code>FutureTask</code>包装一个<code>Callable</code>或<code>Runnable</code>任务，并且可以查询任务是否完成，等待任务完成，并获取结果。</p>
+<h3 id="3-4通过JUC中的线程池"><a href="#3-4通过JUC中的线程池" class="headerlink" title="3.4通过JUC中的线程池"></a><strong>3.4通过JUC中的线程池</strong></h3><p>使用ThreadPoolExecutor线程池。</p>
+<h2 id="4-Java线程状态有哪些，是如何转换的"><a href="#4-Java线程状态有哪些，是如何转换的" class="headerlink" title="4.Java线程状态有哪些，是如何转换的"></a>4.Java线程状态有哪些，是如何转换的</h2><table>
+<thead>
+<tr>
+<th><strong>英文</strong></th>
+<th><strong>中文</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NEW</td>
+<td>新建</td>
+</tr>
+<tr>
+<td>RUNNABLE（Ready，Running）</td>
+<td>这个状态包括了操作系统线程的就绪（ready）和运行（running）两种状态。</td>
+</tr>
+<tr>
+<td>BLOCKED</td>
+<td>阻塞</td>
+</tr>
+<tr>
+<td>WAITING</td>
+<td>等待</td>
+</tr>
+<tr>
+<td>TIMED_WAITING</td>
+<td>超时等待</td>
+</tr>
+<tr>
+<td>TERMINATED</td>
+<td>终结</td>
+</tr>
+</tbody></table>
+<h2 id="5-sleep和wait区别"><a href="#5-sleep和wait区别" class="headerlink" title="5.sleep和wait区别"></a>5.sleep和wait区别</h2><h2 id="6-Java有哪些锁"><a href="#6-Java有哪些锁" class="headerlink" title="6.Java有哪些锁"></a>6.Java有哪些锁</h2><p><img src="https://zhaowuya.s3.bitiful.net/lock.png" srcset="/img/loading.gif" lazyload alt="琐事"></p>
+<h2 id="7-什么是AQS"><a href="#7-什么是AQS" class="headerlink" title="7.什么是AQS"></a>7.什么是AQS</h2><p>多线程中队列同步器，是一种锁机制，基础框架，例如ReentrantLock，Semaphore，CountDownLatch</p>
+<p>state 0无锁 1有锁</p>
+<p>线程1 -2 -3 -4 -5</p>
+<p>队列：head，tail</p>
+<ul>
+<li>怎么保证原子性？<strong>CAS</strong></li>
+<li>AQS是公平锁吗？都可以，等待&#x2F;抢</li>
+</ul>
+<h2 id="8-ReentrantLock实现原理"><a href="#8-ReentrantLock实现原理" class="headerlink" title="8.ReentrantLock实现原理"></a>8.ReentrantLock实现原理</h2><p>主要通过CAS+AQS队列来实现，它支持非&#x2F;公平，公平锁的效率通常没有非公平高。</p>
+<h2 id="9-ConcurrentHashMap"><a href="#9-ConcurrentHashMap" class="headerlink" title="9.ConcurrentHashMap"></a>9.ConcurrentHashMap</h2><p>JDK1.8 采用的数据结构跟HashMap的结构一样</p>
+<h3 id="加锁的方式"><a href="#加锁的方式" class="headerlink" title="加锁的方式"></a>加锁的方式</h3><ul>
+<li>JDK1.7采用分段锁，底层使用的是ReentrantLock</li>
+<li>JDK1.8采用<strong>CAS</strong>添加新的节点，采用<strong>syn</strong>锁定链表或哦红黑数的首节点，锁的粒度更细，效率高。</li>
+</ul>
+<h2 id="10-线程池的核心参数有哪些"><a href="#10-线程池的核心参数有哪些" class="headerlink" title="10.线程池的核心参数有哪些"></a>10.线程池的核心参数有哪些</h2><ol>
+<li>corePoolSize：<strong>核心</strong>线程数，线程池正常情况下保持的线程数，大户人家“长工”的数量。</li>
+<li>maximumPoolSize：<strong>最大</strong>线程数，当线程池繁忙时最多可以拥有的线程数，大户人家“长工”+“短工”的总数量。</li>
+<li>keepAliveTime：空闲线程存活<strong>时间</strong>，没有活之后“短工”可以生存的最大时间。</li>
+<li>TimeUnit：3时间<strong>单位</strong>。</li>
+<li>BlockingQueue：线程池的任务<strong>队列</strong>，用于保存线程池待执行任务的容器。</li>
+<li>ThreadFactory：线程工厂，用于创建线程池中线程的工厂<strong>方法</strong>，通过它可以设置线程的命名规则、优先级和线程类型。</li>
+<li>RejectedExecutionHandler：拒绝<strong>策略</strong>，当任务量超过线程池可以保存的最大任务数时，执行的策略。</li>
+</ol>
+<h2 id="11-谈谈你对ThreadLocal的理解"><a href="#11-谈谈你对ThreadLocal的理解" class="headerlink" title="11.谈谈你对ThreadLocal的理解"></a>11.谈谈你对ThreadLocal的理解</h2><h2 id="12-谈谈CompletableFuture"><a href="#12-谈谈CompletableFuture" class="headerlink" title="12.谈谈CompletableFuture"></a>12.谈谈CompletableFuture</h2><p>原因：使用futureTask的get方法会阻塞线程，isDone方法会轮询CPU消耗资源。</p>
+<p>观察者模式：可以让任务完成后通知主线程。异步任务结束后，会自动回调某个对象的方法，出错时，会自动回调某个对象方法。</p>
+<h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>可以支持将表数范围从小转向大的，而不能反过来，就好像大杯的水不能倒入小杯中，因为会溢出！</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">short</span> s1 = <span class="hljs-number">1</span>; s1 = s1 + <span class="hljs-number">1</span>；``short s1 = <span class="hljs-number">1</span>; s1 += <span class="hljs-number">1</span>;<br></code></pre></div></td></tr></table></figure>
+
+<p>对于 short s1 &#x3D; 1; s1 &#x3D; s1 + 1;编译出错，由于 1 是 int 类型，因此 s1+1 运算结果也是 int 型，需要强制转换类型才能赋值给 short 型。</p>
+<h2 id="自动拆装箱"><a href="#自动拆装箱" class="headerlink" title="自动拆装箱"></a>自动拆装箱</h2><p>那什么是拆箱呢？顾名思义，跟装箱对应，就是自动将包装器类型转换为基本数据类型。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs abnf">Integer i<span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-comment">; // 装箱</span><br>int n <span class="hljs-operator">=</span> i<span class="hljs-comment">;  //拆箱</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>枚举是一种特殊的类，它不能被继承，是一组<strong>命名常量</strong>的集合。这些命名常量被称为枚举常量。例如春夏秋冬、网络状态码、订单状态码、用户标识符等，能够避免<strong>魔法数字</strong>的使用，<strong>提高代码可读性和可维护性</strong>。</p>
+<h2 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h2><ul>
+<li>字节流（二进制文件图片,视频，音频，无损操作），字符流（按字符）(文本文件效率高)</li>
+<li>按流的角色不同为：节点流，包装流</li>
+</ul>
+<p><strong>按行读取</strong>取bufferReader.readLine节点流和处理流</p>
+<h3 id="节点流"><a href="#节点流" class="headerlink" title="节点流"></a>节点流</h3><p>可以从一个特定的数据源读写数据，如FileReader，FileWriter</p>
+<h3 id="包装流"><a href="#包装流" class="headerlink" title="包装流"></a>包装流</h3><p>也叫<strong>处理流</strong>，是连接在已存在的流之上，为程序提供更为强大的功能，如BufferedReader，BufferedWriter。</p>
+<p>装饰器（Decorator）模式的使用</p>
+<h3 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h3><p>能够将基本数据类型或者对象进行<strong>序&#x2F;反序列</strong>化的操作。</p>
+<p>注意事项：</p>
+<ol>
+<li>读写顺序要一致</li>
+<li>实现Serializable接口</li>
+<li>建议添加SerialVersionUID，提高兼容性</li>
+<li>序列化时除了static和transient</li>
+<li>序列化自动继承</li>
+</ol>
+<p>序列化就是保存数据的时候，同时保存数据的值和数据类型，反序列化就是恢复过程。可以实现Serializable和Externalizable</p>
+<h2 id="Stream流"><a href="#Stream流" class="headerlink" title="Stream流"></a>Stream流</h2><p>JDK8新特性</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li><strong>声明式编程</strong>：使用 Stream 流可以采用声明式的方式来表达对数据的处理逻辑，而不是像传统的命令式编程那样通过循环和条件语句来实现。这使得代码更加简洁、易读，并且更接近问题的本质描述。</li>
+<li><strong>懒加载</strong>：许多 Stream 操作是懒加载的，这意味着它们只有在真正需要结果的时候才会执行。例如，当使用一系列中间操作（如过滤、映射等）后，只有在调用终端操作（如<code>forEach</code>、<code>collect</code>等）时，才会实际执行整个流的处理过程。</li>
+<li><strong>函数式编程风格</strong></li>
+</ol>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>中间操作filter，map，sort</p>
+<p>终端操作foreach，collect</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol>
+<li><strong>数据处理和转换</strong>：当需要对大量数据进行复杂的处理和转换时，简洁而高效的方式。</li>
+<li><strong>集合操作</strong>：可以方便地对集合进行各种操作，如过滤、排序、分组等，可以大大简化代码。</li>
+<li><strong>并行处理</strong>：效率高。</li>
+</ol>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="重载与重写区别"><a href="#重载与重写区别" class="headerlink" title="重载与重写区别"></a>重载与重写区别</h3><p>在同一个类中，可能会存在同名的方法，但是他们函数签名（名字，<strong>参数列表</strong>，返回值）不同，主要是参数列表不同。</p>
+<p>在子类中，对于父类中同一个方法（方法签名一样），会根据需求扩展或修改，以更加具体地实现父类中的方法。子类的返回值类型要<strong>小</strong>于父类，抛出比父类更<strong>小</strong>的异常，访问权限比父类<strong>大</strong>。</p>
+<h3 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h3><ol>
+<li>继承与实现</li>
+</ol>
+<ul>
+<li><p>抽象类通过 extends 关键字被继承。一个类只能继承一个抽象类。</p>
+</li>
+<li><p>接口通过 implements 关键字被实现，一个类可以实现多个接口。</p>
+</li>
+<li><p>成员变量修饰符</p>
+</li>
+<li><p>抽象类可以有各种类型的成员变量，包括实例变量。</p>
+</li>
+<li><p>接口中的成员变量默认是 public static final 的<strong>常量</strong>。</p>
+</li>
+<li><p>方法的修饰符</p>
+</li>
+<li><p>抽象类中的方法可以有不同的访问修饰符，并且可以有方法体（非抽象方法）。</p>
+</li>
+<li><p>接口中的方法默认是 <em>public</em> <em>abstract</em> （在Java 8之前，Java 8开始可以有default修饰的方法——可以有实现）。</p>
+</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><ol>
+<li>使用<code>Class.forName()</code>方法获取Class对象。</li>
+<li>获取所有<strong>公共构造函数</strong>，获取<strong>特定参数的构造函数</strong><code>getConstructor()</code>，也可以获取其他公共方法<code>getMethod()</code>。如果有重载情况，可以通过参数不一样<code>(int.class,String.class)</code>来明确要获得的具体方法。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Class&lt;?&gt; clazz = MyClass.class;<br>Constructor&lt;?&gt; constructor = clazz.getConstructor(<span class="hljs-type">int</span>.class, String.class);<br><span class="hljs-comment">// 使用构造函数创建对象</span><br><span class="hljs-type">MyClass</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> (MyClass) constructor.newInstance(<span class="hljs-number">10</span>, <span class="hljs-string">&quot;example&quot;</span>);<br></code></pre></div></td></tr></table></figure>
+
+<ol>
+<li>获取所有字段或者特定字段并访问其值<code>getField()</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br>    Class&lt;?&gt; clazz = MyClass.class;<br>    <span class="hljs-type">Field</span> <span class="hljs-variable">field</span> <span class="hljs-operator">=</span> clazz.getField(<span class="hljs-string">&quot;myField&quot;</span>);<br>    <span class="hljs-type">MyClass</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyClass</span>();<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> field.get(obj);<br>    System.out.println(<span class="hljs-string">&quot;Field value: &quot;</span> + value);<br>&#125; <span class="hljs-keyword">catch</span> (NoSuchFieldException | IllegalAccessException e) &#123;<br>    e.printStackTrace();<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h3><p><strong>一、框架开发</strong></p>
+<ol>
+<li>依赖注入框架，如 Spring，可利用反射自动注入依赖对象。例如，根据配置查找服务类的构造函数，自动创建依赖对象并传入构造函数完成注入。</li>
+<li>ORM 框架通过反射将数据库数据映射到 Java 对象，如 MyBatis 在查询后用反射填充对象属性。</li>
+</ol>
+<p>二**、测试框架**</p>
+<ol>
+<li>单元测试中可通过反射访问类的私有方法和字段进行更全面测试，如在 JUnit 中调用被测试类的私有方法验证功能。</li>
+</ol>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p><strong>一、定义注解</strong></p>
+<p>使用<code>@interface</code>关键字来定义一个注解。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;<br><span class="hljs-keyword">import</span> java.lang.annotation.Retention;<br><span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;<br><span class="hljs-keyword">import</span> java.lang.annotation.Target;<br><br><span class="hljs-meta">@Target(&#123;ElementType.METHOD, ElementType.FIELD&#125;)</span><br><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> MyCustomAnnotation &#123;<br>    String <span class="hljs-title function_">value</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> <span class="hljs-string">&quot;&quot;</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><blockquote>
+<p>JDK原生动态代理是Java原生支持的，不需要任何外部依赖，但是它只能基于接口进行代理；CGLIB通过继承的方式进行代理，无论目标对象有没有实现接口都可以代理，但是无法处理final的情况。</p>
+</blockquote>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><ol>
+<li>定义一个要代理的接口</li>
+<li>实现<code>InvocationHandler</code>接口中的<code>invoke</code>方法，表示调用接口后转发到此实现</li>
+<li>通过<code>Proxy.newProxyInstance</code> 方法创建了一个代理实例 <code>hello</code></li>
+</ol>
+<h3 id="CGLIB"><a href="#CGLIB" class="headerlink" title="CGLIB"></a>CGLIB</h3>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JVM/">JVM</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/29/effectivemysql/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">高性能MySQL</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/02/campus2025/">
+                        <span class="hidden-mobile">二〇二五校招</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

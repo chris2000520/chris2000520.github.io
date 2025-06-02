@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>高性能MySQL | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="高性能MySQL">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-10-28 19:56" pubdate>
+        2024年10月28日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">高性能MySQL</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年11月6日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="MySQL的存储引擎"><a href="#MySQL的存储引擎" class="headerlink" title="MySQL的存储引擎"></a>MySQL的存储引擎</h1><h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><ul>
+<li>支持事务：提供了具有提交、回滚和崩溃恢复能力的事务安全，确保数据的一致性和完整性。</li>
+<li>行级锁定：可以在操作数据行时进行锁定，提高并发性能，减少锁冲突。</li>
+<li>外键约束：支持外键约束，保证数据的参照完整性。</li>
+<li>缓冲池：拥有较大的缓冲池，用于缓存数据和索引，提高数据访问速度。</li>
+</ul>
+<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><ul>
+<li>不支持事务：不提供事务处理功能，但在某些情况下，这可以提高性能和减少存储需求。</li>
+<li>表级锁定：采用表级锁定机制，在写入操作时会锁定整个表，导致并发性能相对较低。</li>
+<li>高速插入和查询：对于大量数据的插入和查询操作速度较快。</li>
+<li>占用空间小：存储数据的方式较为紧凑，占用的磁盘空间相对较少。</li>
+</ul>
+<h1 id="MySQL执行计划分析"><a href="#MySQL执行计划分析" class="headerlink" title="MySQL执行计划分析"></a>MySQL执行计划分析</h1><ul>
+<li>id 子查询的执行顺序</li>
+<li>select_type</li>
+<li>table 表名，别名</li>
+<li>partitions</li>
+<li><strong>type</strong> ALL全表数据，index遍历索引，range索引范围，const一条记录</li>
+<li>possible_keys 可能用到的索引</li>
+<li><strong>key</strong> 使用的索引</li>
+<li>key_length 使用的索引长度</li>
+<li>ref 连接匹配条件</li>
+<li>rows 扫描行数</li>
+<li><strong>extra</strong></li>
+</ul>
+<p>额外信息</p>
+<ul>
+<li><code>using filesort</code></li>
+<li><code>using temporary</code></li>
+<li><code>using index</code></li>
+<li><code>using where</code></li>
+<li><code>distinct</code></li>
+</ul>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="InnoDB为什么使用B-树作为索引"><a href="#InnoDB为什么使用B-树作为索引" class="headerlink" title="InnoDB为什么使用B+树作为索引"></a>InnoDB为什么使用B+树作为索引</h2><ul>
+<li>二叉树 不平衡</li>
+<li>红黑树 高度太高</li>
+<li>哈希表 有哈希冲突，仅能满足<code>=</code>，<code>IN</code>，不支持范围查询</li>
+<li>B树 存储同样元素，高度小，效率高</li>
+<li>B+树 叶子节点有序，连接起来</li>
+</ul>
+<h2 id="聚簇索引与非聚簇索引"><a href="#聚簇索引与非聚簇索引" class="headerlink" title="聚簇索引与非聚簇索引"></a>聚簇索引与非聚簇索引</h2><p><code>MyISAM</code>在data目录下会看到3类文件：<code>.frm、.myi、.myd</code>，索引和数据是分开存储的，是非聚集索引。</p>
+<ol>
+<li>.frm，表定义，是描述表结构的文件</li>
+<li>.myd，D表示数据信息文件，是表的数据文件</li>
+<li>.myi，I表示索引信息文件，是表数据文件中任何索引的数据树</li>
+</ol>
+<p><code>InnoDB</code>在data目录下会看到2类文件：<code>.frm、.ibd</code>，索引和数据是存储在一个文件，是聚集索引。</p>
+<ol>
+<li><em>.frm，表结构的文件。</em></li>
+<li>.ibd，表数据和索引的文件。该表的索引(B+树)的每个非叶子节点存储索引，叶子节点存储索引和索引对应的数据</li>
+</ol>
+<h2 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h2><p>最左匹配原则，效率高，后面索引在索引树中没有任何顺序。</p>
+<h1 id="MySQL日志"><a href="#MySQL日志" class="headerlink" title="MySQL日志"></a>MySQL日志</h1><p>MySQL日志主要包括错误日志、查询日志、慢查询日志、事务日志、二进制日志几大类。</p>
+<p>MySQL数据库的<strong>数据备份、主备、主主、主从</strong>都离不开binlog，记录内容是语句的原始逻辑，类似于“给id&#x3D;2这一行的name字段加 1”，属于<code>MySQL Server</code>层，依靠 binlog 来同步数据，保证数据一致性。</p>
+<p>MySQL的InnoDB引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用**undo log(回滚日志)<strong>来保证事务的</strong>原子性，**拥有崩溃恢复能力。</p>
+<h1 id="MVCC原理"><a href="#MVCC原理" class="headerlink" title="MVCC原理"></a>MVCC原理</h1><blockquote>
+<p>RC（Read Commit）读已提交，RR（Repeatable Read）可重复读</p>
+</blockquote>
+<p><img src="https://zhaowuya.s3.bitiful.net/mvcc.jpg" srcset="/img/loading.gif" lazyload alt="MVCC"></p>
+<h2 id="三大利剑"><a href="#三大利剑" class="headerlink" title="三大利剑"></a>三大利剑</h2><p>隐藏字段，UndoLog版本链，ReadView读视图。</p>
+<p>在每一条数据后，都有三个隐藏字段，其中较重要的是事务ID<code>db_trx_id</code>和回滚指针<code>db_roll_ptr</code>，还有一个隐式主键<code>db_row_id</code>字段在没有显示指定主键时起作用。</p>
+<p>每当事务对数据进行修改后，会在UndoLog中生成日志，将老数据记录下来，并使用新数据的回滚指针指向老数据的地址，经过几次修改后，就会形成一个UndoLog版本链。</p>
+<p>每当事务执行SQL语句时，会得到一个ReadView，用来做可见性判断，判断当前事务是否能看见此版本的数据。ReadView维护了4个字段，<code>trx_list</code>，<code>up_limit_id</code>，<code>low_limit_id</code>，<code>creator_trx_id</code>。</p>
+<h2 id="读操作"><a href="#读操作" class="headerlink" title="读操作"></a>读操作</h2><ol>
+<li>快照读（Snapshot Read），读取的是历史版本的数据，是不加锁的普通读操作。</li>
+<li>当前读（Current Read），读取的是最新版本的数据，并加锁保证数据的一致性和事务隔离。</li>
+</ol>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><ol>
+<li>如果事务ID小于ReadView中的最小值<code>low_limit_id</code>，说明该事务在ReadView之前已提交，可以读到。</li>
+<li>如果事务ID大于等于<code>low_limit_id</code>，如果大于等于则代表DB_TRX_ID 所在的记录在Read View生成后才出现的，那对当前事务肯定不可见，如果小于则进入下一个判断。</li>
+<li>如果事务ID在活跃事务列表<code>trx_list</code>中，当前事务看不见；如果不在，说明这个事务在ReadView生成之前就已经提交了，当前事务还能看见。</li>
+</ol>
+<h2 id="MVCC解决幻读"><a href="#MVCC解决幻读" class="headerlink" title="MVCC解决幻读"></a>MVCC解决幻读</h2><p>解决了部分场景下的幻读，下表所示的情况就没有解决。</p>
+<table>
+<thead>
+<tr>
+<th><code>BEGIN</code></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SELECT * FROM emp WHERE no = 4</code></td>
+<td><strong><code>BEGIN</code></strong></td>
+</tr>
+<tr>
+<td></td>
+<td><code>INSERT INTO emp VALUES (4, &#39;李四&#39;, 4200)</code></td>
+</tr>
+<tr>
+<td><code>UPDATE emp SET ename = &#39;李五&#39; WHERE emp_no = 4</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SELECT * FROM emp WHERE no = 4</code></td>
+<td></td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/29/interviewquestion/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">面试中的问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/29/javase/">
+                        <span class="hidden-mobile">Java基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

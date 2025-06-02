@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>遗传算法 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="遗传算法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-10-19 20:29" pubdate>
+        2022年10月19日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      26
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">遗传算法</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="遗传算法（Genetic-Algorithm）"><a href="#遗传算法（Genetic-Algorithm）" class="headerlink" title="遗传算法（Genetic Algorithm）"></a>遗传算法（Genetic Algorithm）</h1><h2 id="1-是什么？怎么来的？"><a href="#1-是什么？怎么来的？" class="headerlink" title="1.是什么？怎么来的？"></a>1.是什么？怎么来的？</h2><p>上次我们说到人们从大自然中学习到了许多问题的解决方法，这一次的遗传算法也不例外。生物在自然界中的生存繁衍，显示出了其对自然环境的自适应能力。遗传算法(Genetic Algorithm，简称GA)就是这种生物行为的计算机模拟中令人瞩目的重要成果。基于对生物遗传和进化过程的计算机模拟，遗传算法使得各种人工系统具有优良的自适应能力和优化能力。</p>
+<p><strong>遗传算法所借鉴的生物学基础就是生物的遗传和进化。</strong></p>
+<p>相关术语：</p>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>种群</td>
+<td>population</td>
+</tr>
+<tr>
+<td>变异</td>
+<td>mutation</td>
+</tr>
+<tr>
+<td>个体</td>
+<td>individual</td>
+</tr>
+<tr>
+<td>交叉</td>
+<td>crossover</td>
+</tr>
+<tr>
+<td>选择</td>
+<td>selection</td>
+</tr>
+<tr>
+<td>繁殖</td>
+<td>reproduction</td>
+</tr>
+<tr>
+<td>代</td>
+<td>generation</td>
+</tr>
+<tr>
+<td>适应度</td>
+<td>fitness</td>
+</tr>
+<tr>
+<td>编码</td>
+<td>coding</td>
+</tr>
+<tr>
+<td>解码</td>
+<td>decoding</td>
+</tr>
+</tbody></table>
+<p>我们知道，求最优解或近似最优解的方法主要有三种：</p>
+<p>枚举法、启发式算法和随机搜索算法。</p>
+<p>随着问题种类的不同，以及问题规模的扩大，要寻求到一种能以有限的代价来解决上述最优化问题的通用方法仍是个难题。而遗传算法却为我们解决这类问题提供了一个有效的途径和通用框架，开创了一种新的全局优化搜索算法。</p>
+<h2 id="2-怎么做？"><a href="#2-怎么做？" class="headerlink" title="2.怎么做？"></a>2.怎么做？</h2><p>文字描述，在初始种群中，不断选择个体，将其交叉，变异后依概率选择出适应度最高的个体，并产生新的一代种群。最后不断优化，收敛于最优解附近。</p>
+<p>伪代码描述</p>
+<figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c">编码<br>初始化种群<br>计算种群的适应度和累积概率<br><span class="hljs-keyword">while</span> iter &lt; itermax:<br>	复制 <span class="hljs-comment">//剔除适应度低的，将适应度好的复制一份</span><br>	交叉 <span class="hljs-comment">//二进制数字位数交换</span><br>	变异 <span class="hljs-comment">//二进制位数取否</span><br>	重新计算适应度和累积概率<br>	end<br>解码输出结果<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1 编码"></a>2.1 编码</h3><p>编码的主要方式有二进制码，也是最常用的。在这一阶段是将一个变量或多个变量，根据其约束的定义域以及我们要得到的自变量的精度，选择合适的二进制位数将问题编码。</p>
+<p>在随机初始化种群过程中，我们也必须考虑群体的数量是多少，即一个种群是由多少个个体组成的。</p>
+<div class="note note-info">
+            <p>当个体数量取值较小时，可提高遗传算法的运算速度，但搜索空间分布范围有限，降低了群体的多样性，有可能会引起 遗传算法的早熟现象;<br>当个体数量取值较大时，一方面计算复杂，会使遗传算法的运行效率降低，另一方面，部分高适应值的个体可能被淘汰， 影响交叉。<br>初始种群的一般取值范围是20~100。</p>
+          </div>
+
+
+
+<h3 id="2-2-评价个体适应度"><a href="#2-2-评价个体适应度" class="headerlink" title="2.2 评价个体适应度"></a>2.2 评价个体适应度</h3><p>当为单目标优化问题时，适应度就是该点时的函数值。</p>
+<h3 id="2-3-选择"><a href="#2-3-选择" class="headerlink" title="2.3 选择"></a>2.3 选择</h3><p>可以根据<em>轮盘赌法</em>，计算每一个个体的累积概率。就像一个圆盘上被划分成了不同大小的区域块，面积大的我们选择的几率肯定就高。在计算机中，我们把圆盘模拟成0到1的线段，把线段分为不同大小的小线段，我们可以通过让计算机产生一个0到1的随机数来模拟指针转动过程，落在那个区间里，我们就选择那个相对应的个体。比如在一个种群中，选择概率等于<strong>适应度&#x2F;总适应度</strong>，累积概率等于上一个个体的累积概率加上自身的选择概率。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>适应度</th>
+<th>选择概率</th>
+<th>累积概率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>8</td>
+<td>0.333</td>
+<td>0.333</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>0.042</td>
+<td>0.375</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>0.125</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>12</td>
+<td>0.5</td>
+<td>0.5</td>
+</tr>
+</tbody></table>
+<h3 id="2-4-交叉"><a href="#2-4-交叉" class="headerlink" title="2.4 交叉"></a>2.4 交叉</h3><p>最常用和最基本的是单点交叉算子。</p>
+<ol>
+<li>对群体中的个体进行两两随机配对。若群体大小为M，则共有 [ M&#x2F;2 ]对相互配对的个体组</li>
+<li>每一对相互配对的个体，随机设置某一基因座之后的位置为交叉点。若染色体的长度为l ，则共有(l-1)个可能的交叉点位置</li>
+<li>对每一对相互配对的个体，依设定的交叉概率pc在其交叉点处相互交换两个个体的部分染色体，从而产生出两个新的个体</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">单点交叉运算的示例如下所示:<br>A：10110111 00          A1：10110111 11<br>B：00011100 11          B1：00011100 00<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="2-5-变异"><a href="#2-5-变异" class="headerlink" title="2.5 变异"></a>2.5 变异</h3><p>变异是针对个体的某一个或某一些基因座上的基因值执行的，因此变异概率pm也是针对基因而言，通常来说，这个概率非常小。在二进制编码中，简单来说就是随机将某一位基因位取反。</p>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3.代码"></a>3.代码</h2><p>解决01背包问题：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><br><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GA</span> &#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[] w = &#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<span class="hljs-comment">//物品重量,最大装载量等于10</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[] v = &#123;<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>&#125;;<span class="hljs-comment">//物品价格</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">beginsum</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>; <span class="hljs-comment">//初始种群中个体数量</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br>        List&lt;String&gt; beginlist = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        List&lt;String&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; beginsum; i++) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> randomlist();<br>            beginlist.add(s);<br><br>        &#125;<br><br>        System.out.println(beginlist);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">iter</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (iter &lt; <span class="hljs-number">1000</span>) &#123;<br><br>            Iterator&lt;String&gt; iterator = beginlist.iterator();<br>            <span class="hljs-keyword">while</span> (iterator.hasNext()) &#123;<br>                <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> iterator.next();<br>                <span class="hljs-keyword">if</span> (!isLegal(str)) &#123;<br>                    iterator.remove();<br>                &#125;<br>            &#125;<br><br><br>            <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> beginlist.size();<br><br><br>            <span class="hljs-type">double</span> <span class="hljs-variable">fitsum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-type">double</span>[] cp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[beginsum];<span class="hljs-comment">//累积概率cp</span><br>            <span class="hljs-type">int</span>[] select = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[beginsum];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>                fitsum = fitsum + fitness(beginlist.get(i)); <span class="hljs-comment">//求适应度之和fitsum</span><br>            &#125;<br><br><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>                <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) &#123;<br>                    cp[i] = fitness(beginlist.get(i)) / fitsum;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    cp[i] = cp[i - <span class="hljs-number">1</span>] + fitness(beginlist.get(i)) / fitsum; <span class="hljs-comment">//求累积概率</span><br>                &#125;<br><br>            &#125;<br><br><br>            <span class="hljs-comment">//筛选</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; beginsum; i++) &#123;<br>                    <span class="hljs-type">double</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> Math.random();<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">while</span> (cp[j] &lt; random) &#123;<br>                        j++;<br>                    &#125;<br>                    select[j]++; <span class="hljs-comment">//选择次数</span><br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; beginsum; i++) &#123;<br>                <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>                <span class="hljs-type">int</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> r.nextInt(beginsum);<br>                <span class="hljs-keyword">while</span> (select[random] == <span class="hljs-number">0</span>) &#123;<br>                    random = r.nextInt(beginsum);<br>                &#125;<br>                list.add(beginlist.get(random));<span class="hljs-comment">//选择优秀个体</span><br>                select[random]--;<br>            &#125;<br><br><br>            <span class="hljs-comment">//交叉</span><br>            <span class="hljs-comment">//随机配对</span><br>            <span class="hljs-type">boolean</span>[] cross = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[beginsum];<br>            <span class="hljs-type">int</span>[][] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[beginsum/<span class="hljs-number">2</span>][<span class="hljs-number">2</span>];<span class="hljs-comment">//配对数组</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; beginsum/<span class="hljs-number">2</span>; i++) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) &#123;<br>                    <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> r.nextInt(beginsum);<br>                    <span class="hljs-keyword">while</span> (cross[random] == <span class="hljs-literal">true</span>) &#123;<br>                        random = r.nextInt(beginsum);<br>                    &#125;<br>                    cross[random] = <span class="hljs-literal">true</span>;<br>                    arr[i][j] = random;<br>                &#125;<br><br>            &#125;<br><br>            <span class="hljs-comment">//交换基因片段</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>                <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>                String str, str1;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> r.nextInt(<span class="hljs-number">5</span>);<span class="hljs-comment">//随机设置交叉点位置</span><br>                str = list.get(arr[i][<span class="hljs-number">0</span>]);<br>                str1 = list.get(arr[i][<span class="hljs-number">1</span>]);<br>                <span class="hljs-type">String</span> <span class="hljs-variable">strsub</span> <span class="hljs-operator">=</span> str.substring(<span class="hljs-number">0</span>, random),<br>                        strsub1 = str.substring(random),<br>                        str1sub = str1.substring(<span class="hljs-number">0</span>, random),<br>                        str1sub1 = str1.substring(random);<br>                str = strsub + str1sub1;<br>                str1 = str1sub + strsub1;<br><br><br>                list.set(arr[i][<span class="hljs-number">0</span>], str);<br>                list.set(arr[i][<span class="hljs-number">1</span>], str1);<br><br>            &#125;<br><br><br>            <span class="hljs-comment">//变异</span><br>            <span class="hljs-keyword">if</span> (Math.random() &lt; <span class="hljs-number">0.01</span>) &#123;<br>                <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>                <span class="hljs-type">int</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> r.nextInt(beginsum);<span class="hljs-comment">//要变异的个体下标</span><br>                <span class="hljs-type">int</span> <span class="hljs-variable">random1</span> <span class="hljs-operator">=</span> r.nextInt(<span class="hljs-number">5</span>);<span class="hljs-comment">//要变异的基因位置</span><br><br>                <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> list.get(random);<br>                <span class="hljs-type">int</span> <span class="hljs-variable">ch</span> <span class="hljs-operator">=</span> ~str.charAt(random1) - <span class="hljs-string">&#x27;0&#x27;</span>;<br>                <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(str);<br>                sb.setCharAt(random1, (<span class="hljs-type">char</span>) ch);<br>                str = sb.toString();<br>                list.set(random, str);<br><br>            &#125;<br><br>            beginlist.clear();<span class="hljs-comment">//清空list元素</span><br><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; beginsum; i++) &#123;<br>                beginlist.add(list.get(i));<span class="hljs-comment">//赋值给beginlist</span><br>            &#125;<br><br>            list.clear();<span class="hljs-comment">//清空list元素</span><br><br>            iter++;<br><br>        &#125;<br>        System.out.println(beginlist);<br>        System.out.println(<span class="hljs-string">&quot;最大可以拿总价值为&quot;</span> + fitness(beginlist.get(<span class="hljs-number">0</span>)) + <span class="hljs-string">&quot;的物品，拿法如下（序号代表拿第几个物品）：&quot;</span>);<br>        System.out.println(beginlist.get(<span class="hljs-number">0</span>));<br><br><br>    &#125;<br><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 是否合法</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> str</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isLegal</span><span class="hljs-params">(String str)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, num;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>            num = str.charAt(i) - <span class="hljs-string">&#x27;0&#x27;</span>;<br>            sum = sum + num * w[i];<br>        &#125;<br>        <span class="hljs-keyword">if</span> (sum &gt; <span class="hljs-number">10</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 初始化个体</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">randomlist</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> Math.random() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<span class="hljs-comment">//随机产生1，0</span><br>            str += String.valueOf(num);<br>        &#125;<br>        <span class="hljs-keyword">return</span> str;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 计算适应度</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> n</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fitness</span><span class="hljs-params">(String str)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, num;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>            num = str.charAt(i) - <span class="hljs-string">&#x27;0&#x27;</span>;<br>            sum = sum + num * v[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br><br><br>&#125;<br><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/07/mathjax/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在文章中使用数学公式：MathJax</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/14/sa/">
+                        <span class="hidden-mobile">模拟退火算法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+code {
+  color: #ed4b82;
+}
+/* 落霞楷体 */
+html, body, .markdown-body, p {
+  font-family: 'LXGW WenKai Screen';
+}

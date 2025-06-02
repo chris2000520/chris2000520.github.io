@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 引入落霞孤鹜字体 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <link rel="icon" href="https://zhaowuya.s3.bitiful.net/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#033059">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <title>基于Java的校园招聘系统 | 庐山烟雨浙江潮</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"chris2000520.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>庐山烟雨浙江潮</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://zhaowuya.s3.bitiful.net/banner3.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="基于Java的校园招聘系统">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-20 17:18" pubdate>
+        2020年9月20日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">基于Java的校园招聘系统</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2024年8月27日 上午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="确定设计模式"><a href="#确定设计模式" class="headerlink" title="确定设计模式"></a>确定设计模式</h1><p>在学习之前，都没有听说过的MVC。</p>
+<h2 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h2><p>MVC模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p>
+<p>Model（模型）：模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
+<p>View（视图）：视图代表模型包含的数据的可视化。</p>
+<p>Controller（控制器）：控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
+<p>所以我们根据这个模式先创建了一个Java工程和四个包，分别是com.java.Dao，com.java.Model，com.java.Util，com.java.View。</p>
+<h2 id="DAO模式"><a href="#DAO模式" class="headerlink" title="DAO模式"></a>DAO模式</h2><p>DAO(DataAccessobjects 数据存取对象)是指位于业务逻辑和持久化数据之间实现对持久化数据的访问。通俗来讲，就是将数据库操作都封装起来。因为当时是跟着做的，不知道为啥要写这个包，现在来弄明白来。</p>
+<p>DAO接口：把对数据库的所有操作定义成抽象方法，可以提供多种实现。</p>
+<p>DAO实现类：针对不同数据库给出DAO接口定义方法的具体实现。<br>实体类：用于存放与传输对象数据。</p>
+<p>数据库连接和关闭工具类：避免了数据库连接和关闭代码的重复使用，方便修改。</p>
+<h1 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h1><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.java1234.util;<br><br><span class="hljs-keyword">import</span> java.sql.Connection;<br><span class="hljs-keyword">import</span> java.sql.DriverManager;<br><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DbUtil</span> &#123;<br>		<span class="hljs-keyword">private</span> String driver=<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>;<span class="hljs-comment">//驱动名称</span><br>        <span class="hljs-keyword">private</span> String url=<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/demo?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT&quot;</span>;<br>        <span class="hljs-keyword">private</span> String user=<span class="hljs-string">&quot;root&quot;</span>;<span class="hljs-comment">//数据库用户</span><br>        <span class="hljs-keyword">private</span> String psd=<span class="hljs-string">&quot;mysql1970s&quot;</span>;<span class="hljs-comment">//数据库密码</span><br>        <br>        <br>        <span class="hljs-keyword">public</span> Connection <span class="hljs-title function_">getCon</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception&#123;<br>        	Class.forName(driver);<br>        	Connection con=DriverManager.getConnection(url,user,psd);<br>        	<span class="hljs-keyword">return</span> con;<br>        &#125;<br>        <br>        <br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">            关闭数据库</span><br><span class="hljs-comment">        */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">closeCon</span><span class="hljs-params">(Connection con)</span><span class="hljs-keyword">throws</span> Exception &#123;<br>        	<span class="hljs-keyword">if</span>(con!=<span class="hljs-literal">null</span>) &#123;<br>        		con.close();<br>        	&#125;<br>        &#125;<br>        <span class="hljs-comment">//Alt + / 是自动提示</span><br>        <span class="hljs-comment">//main syso</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        	DbUtil dbUtil=<span class="hljs-keyword">new</span> <span class="hljs-title class_">DbUtil</span>();<br>        	<span class="hljs-keyword">try</span> &#123;<br>        		dbUtil.getCon();<br>        		System.out.println(<span class="hljs-string">&quot;数据库连接成功！&quot;</span>);<br>        	&#125;<span class="hljs-keyword">catch</span> (Exception e) &#123;<br>        		e.printStackTrace();<br>        		System.out.println(<span class="hljs-string">&quot;数据库连接失败！&quot;</span>);<br>        	&#125;<br>			<br>		&#125;<br>	<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
+<p>首先我们需要将mysql-connector-java-8.0.19.jar包添加到Bulid Path里面，然后加载驱动<code>&quot;com.mysql.cj.jdbc.Driver&quot; </code>。那些URL都是有固定格式的，可以上网查一下，URL那里把demo换成自己的数据库名就可以了。用完数据库后要断开连接，释放资源，直接<code>con.close</code>就可以。我们在捕获异常里写一个输出，来显示异常。</p>
+<h1 id="创建登陆窗口"><a href="#创建登陆窗口" class="headerlink" title="创建登陆窗口"></a>创建登陆窗口</h1><p>我们用Eclipse里的插件<a target="_blank" rel="noopener" href="https://blog.csdn.net/xueba8/article/details/78561351">WindowBuilder</a>来实现图形化编程，可以说很方便了，在设计界面直接拖拽，勾选，修改，都会在源码界面直接生成代码，但是要自己写各个块的功能。</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loginActionPerfromed</span><span class="hljs-params">(ActionEvent evt)</span> &#123;<br>		String username=<span class="hljs-built_in">this</span>.textField.getText();<br>		String password=<span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-built_in">this</span>.passwordField.getPassword());<br>		<span class="hljs-comment">/*</span><br><span class="hljs-comment">		  判空事件</span><br><span class="hljs-comment">		 */</span><br>		<span class="hljs-keyword">if</span>(StringUtil.isEmpty(username)) &#123;<br>			JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;用户名不能为空！&quot;</span>);<br>		&#125;<br>		<span class="hljs-keyword">if</span>(StringUtil.isEmpty(password)) &#123;<br>			JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;密码不能为空！&quot;</span>);<br>		&#125;<br>		<span class="hljs-comment">/*</span><br><span class="hljs-comment">		   登陆验证</span><br><span class="hljs-comment">		 */</span><br>		User user=<span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(username,password);<br>		Connection con=<span class="hljs-literal">null</span>;<br>		<span class="hljs-keyword">try</span> &#123;<br>			con=dbUtil.getCon();<br>			User currentUser=userdao.login(con, user);<br>			<span class="hljs-keyword">if</span>(currentUser!=<span class="hljs-literal">null</span>) &#123;<br>				JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;登陆成功！&quot;</span>);<br>				<br>				dispose();<span class="hljs-comment">//销毁窗口</span><br>				<br>				<span class="hljs-keyword">new</span> <span class="hljs-title class_">MainFrame</span>().setVisible(<span class="hljs-literal">true</span>);<span class="hljs-comment">//诱导新窗口</span><br>				<br>			&#125;<span class="hljs-keyword">else</span> &#123;<br>				JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;用户名或密码错误！&quot;</span>);<br>			&#125;<br>			<br>		&#125;<span class="hljs-keyword">catch</span>(Exception e) &#123;<br>			e.printStackTrace();<br>		&#125;<span class="hljs-keyword">finally</span> &#123;<br>			<span class="hljs-keyword">try</span> &#123;<br>				dbUtil.closeCon(con);<br>			&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>				<span class="hljs-comment">// TODO Auto-generated catch block</span><br>				e.printStackTrace();<br>			&#125;<br>		&#125;<br>			<br>		<br>	&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> User <span class="hljs-title function_">login</span><span class="hljs-params">(Connection con ,User user)</span><span class="hljs-keyword">throws</span> Exception&#123;<br>		User resultUser=<span class="hljs-literal">null</span>;<br>		String sql=<span class="hljs-string">&quot;select * from userlog where uname=? and upsd=?&quot;</span>;<br>		PreparedStatement pstmt=con.prepareStatement(sql);<br>		pstmt.setString(<span class="hljs-number">1</span>, user.getUsername());<br>		pstmt.setString(<span class="hljs-number">2</span>, user.getPassword());<br>		ResultSet rs=pstmt.executeQuery();<br>		<span class="hljs-keyword">if</span>(rs.next()) &#123;<br>			resultUser=<span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>			resultUser.setId(rs.getInt(<span class="hljs-string">&quot;id&quot;</span>));<br>			resultUser.setUsername(rs.getString(<span class="hljs-string">&quot;uname&quot;</span>));<br>			resultUser.setPassword(rs.getString(<span class="hljs-string">&quot;upsd&quot;</span>));<br>			<br>		&#125;<br>		<span class="hljs-keyword">return</span> resultUser;<br>	&#125;<br></code></pre></div></td></tr></table></figure>
+<p>登陆的逻辑就很简单直接取出两个文本框里的内容去登陆表里一个一个去比较，这里的login就是在UserDao里实现的抽象方法，登陆成功后，要跳转到新的页面，就在登陆按钮的事件里新建一个Jframe窗口，再把登陆的Jframe窗口销毁，就能做出跳转的样子了。对了，说一下PreparedStatement这个类，在数据库的操作过程中，PreparedStatement 对象是一个很不起眼但是记为重要的接口对象，它继承于Statement，并与之在两方面有所不同：</p>
+<p>1）PreparedStatement 实例包含已编译的 SQL 语句。这就是使语句“准备好”。包含于 PreparedStatement 对象中的 SQL 语句可具有一个或多个 IN 参数。IN参数的值在 SQL 语句创建时未被指定。相反的，该语句为每个 IN 参数保留一个问号(“?”)作为占位符。每个问号的值必须在该语句执行之前，通过适当的setXXX 方法来提供。</p>
+<p>2）由于 PreparedStatement 对象已预编译过，所以其执行速度要快于 Statement 对象。因此，多次执行的 SQL 语句经常创建为 PreparedStatement 对象，以提高效率。</p>
+<p>作为 Statement 的子类，PreparedStatement 继承了 Statement 的所有功能。同时，三种方法 execute、 executeQuery 和 executeUpdate 已被更改以使之不再需要参数。这些方法的 Statement 形式（接受 SQL 语句参数的形式）不应该用于 PreparedStatement 对象。</p>
+<h1 id="主页面的功能"><a href="#主页面的功能" class="headerlink" title="主页面的功能"></a>主页面的功能</h1><p> 这里我们用到了JMenu，菜单有二级，三级等等，我的系统实现很简单，主页面就只有退出，添加，修改密码，查询，删除这几个功能。</p>
+<h1 id="添加职位信息"><a href="#添加职位信息" class="headerlink" title="添加职位信息"></a>添加职位信息</h1> <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">workAddActionPerformed</span><span class="hljs-params">(ActionEvent evt)</span> &#123;<br>			String wname=<span class="hljs-built_in">this</span>.textField.getText();<br>			String waddress=<span class="hljs-built_in">this</span>.textField_1.getText();<br>			String wpost=<span class="hljs-built_in">this</span>.textField_2.getText();<br>			<span class="hljs-keyword">if</span>(StringUtil.isEmpty(wname)||StringUtil.isEmpty(waddress)||StringUtil.isEmpty(wpost)) &#123;<br>				JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;这三个选项为必填选项！&quot;</span>);<br>			&#125;<span class="hljs-keyword">else</span> &#123;<br> 			WorkType workType=<span class="hljs-keyword">new</span> <span class="hljs-title class_">WorkType</span>(wname, waddress, wpost);<br> 			Connection con=<span class="hljs-literal">null</span>;<br> 			<span class="hljs-keyword">try</span> &#123;<br> 				con=dbUtil.getCon();<br> 				<span class="hljs-type">int</span> n=workDao.add(con, workType);<br> 				<span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>) &#123;<br> 					JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;成功添加一条记录！&quot;</span>);<br> 					<span class="hljs-built_in">this</span>.resetValue();<br> 				&#125;<span class="hljs-keyword">else</span> &#123;<br> 					JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;添加记录失败！&quot;</span>);<br> 				&#125;<br> 				<br> 			&#125;<span class="hljs-keyword">catch</span>(Exception e) &#123;<br> 				e.printStackTrace();<br> 			&#125;<span class="hljs-keyword">finally</span> &#123;<br> 					<span class="hljs-keyword">try</span> &#123;<br>						dbUtil.closeCon(con);<br>					&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>						<span class="hljs-comment">// TODO Auto-generated catch block</span><br>						e.printStackTrace();<br>					&#125;<br>			&#125;<br> 		&#125;<br>		&#125;<br>	<span class="hljs-comment">// TODO Auto-generated method stub</span><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">resetValue</span><span class="hljs-params">()</span> &#123;<br>		<span class="hljs-built_in">this</span>.textField.setText(<span class="hljs-literal">null</span>);<br>		<span class="hljs-built_in">this</span>.textField_1.setText(<span class="hljs-literal">null</span>);<br>		<span class="hljs-built_in">this</span>.textField_2.setText(<span class="hljs-literal">null</span>);<br>	&#125;<br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">resetValueActionPerformed</span><span class="hljs-params">(ActionEvent evt)</span> &#123;<br>       	<span class="hljs-built_in">this</span>.resetValue();	<br>&#125;<br></code></pre></div></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(Connection con,WorkType work)</span><span class="hljs-keyword">throws</span> Exception&#123;<br>	String sql=<span class="hljs-string">&quot;insert into work values(?,?,?)&quot;</span>;<br>	<span class="hljs-comment">//依次是名称，地址，岗位</span><br>	PreparedStatement pstmt=con.prepareStatement(sql);<br>	pstmt.setString(<span class="hljs-number">1</span>, work.getWname());<br>	pstmt.setString(<span class="hljs-number">2</span>, work.getWaddress());<br>	pstmt.setString(<span class="hljs-number">3</span>, work.getWpost());<br>	<span class="hljs-keyword">return</span> pstmt.executeUpdate();<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>这里还是用到了DAO的设计模式，将添加操作定义为一种抽像方法，几乎就体会不到数据库的存在了。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JDBC/">JDBC</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/24/aspnetmvc5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">基于ASP.NET MVC5的留言板系统</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/28/mytest/">
+                        <span class="hidden-mobile">算法总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love" style="color: #ed4b82"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem; margin: 0.25rem 0;"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
