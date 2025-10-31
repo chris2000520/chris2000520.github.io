@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>开发记录</title>
+    <link href="/2025/11/01/bug/"/>
+    <url>/2025/11/01/bug/</url>
+    
+    <content type="html"><![CDATA[<h1 id="不兼容的类型-推断类型不符合上限"><a href="#不兼容的类型-推断类型不符合上限" class="headerlink" title="不兼容的类型: 推断类型不符合上限"></a>不兼容的类型: 推断类型不符合上限</h1><p>起因是铃神帮我调试WMS代码的时候，本地启动报错：</p><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">java: 不兼容的类型: 推断类型不符合上限<br></code></pre></div></td></tr></table></figure><p>但是在他自己的本地跑得正欢呢，我拉最新代码，重启IDEA，重启电脑都没用，无奈向互联网求助，有篇<a href="https://gitee.com/chinabugotech/hutool/issues/I38NGS">博客</a>提示可能是java版本问题，我们发现他用的是openJDK，而我用的是jdk1.8.0_45，而这个版本号就是博客上报错的那个版本，文中换一个版本就可以解决了，我这边应该也是同样的问题，文中的作者也不清楚具体原因，三年了，往事早已随风飘散。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Idea</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DevOps</title>
+    <link href="/2025/10/31/docker/"/>
+    <url>/2025/10/31/docker/</url>
+    
+    <content type="html"><![CDATA[<p>最近公司的部署上出现了很多问题，同事们解决起来得心应手，但我却无从下手，于是狠下心来学习运维技术，力争做一个合格的全栈工程师。</p><h2 id="Git和GitLab"><a href="#Git和GitLab" class="headerlink" title="Git和GitLab"></a>Git和GitLab</h2><p>代码提交和上传是最基本的操作了，此处略过。</p><p>CI：持续集成，将dev合并到目标分支</p><p>CD：持续部署，合并同意后，直接向容器中部署代码</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>DevOps</tag>
+      
+      <tag>Git</tag>
+      
+      <tag>Docker</tag>
+      
+      <tag>K8S</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>熬夜！放弃人生？</title>
     <link href="/2025/09/08/night/"/>
     <url>/2025/09/08/night/</url>
